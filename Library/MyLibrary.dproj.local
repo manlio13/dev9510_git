@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2020/12/15 13:54:21.000.707,C:\Users\manli\Documenti\Lavori\Projects\Unit1.dfm=C:\Users\manli\Documenti\Lavori\Projects\Library\Unit1.dfm</Transaction>
+    <Transaction>2020/12/15 13:55:11.000.517,C:\Users\manli\Documenti\Lavori\Projects\Project1.dproj=C:\Users\manli\Documenti\Lavori\Projects\Library\MyLibrary.dproj</Transaction>
+    <Transaction>2020/12/15 14:55:42.000.502,C:\Users\manli\Documenti\Lavori\Projects\Library\MyLibrary.dproj=C:\Users\manli\Documenti\Lavori\Projects\Library\MyLibrary.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
