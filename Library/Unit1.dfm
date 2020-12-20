@@ -7,7 +7,7 @@ object Form1: TForm1
   BorderWidth = 3
   Caption = 'My Library'
   ClientHeight = 305
-  ClientWidth = 631
+  ClientWidth = 622
   Color = clOlive
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clBlack
@@ -319,10 +319,11 @@ object Form1: TForm1
     0000000000000000000000000000000000000000000000000000000000000000
     000000000000000000000000000000000000000000000000000000000000}
   OldCreateOrder = False
+  Position = poDesktopCenter
   ShowHint = True
   OnCreate = FormCreate
   DesignSize = (
-    631
+    622
     305)
   PixelsPerInch = 96
   TextHeight = 13
@@ -446,13 +447,14 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 5
+    OnClick = Button2Click
   end
   object Button3: TButton
     Left = 398
     Top = 62
     Width = 75
     Height = 25
-    Caption = 'EDIT'
+    Caption = 'RESET'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -460,6 +462,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 6
+    OnClick = Button3Click
   end
   object Button4: TButton
     Left = 416
@@ -492,28 +495,81 @@ object Form1: TForm1
   end
   object DBGrid1: TDBGrid
     Left = 8
-    Top = 89
-    Width = 611
-    Height = 173
+    Top = 93
+    Width = 613
+    Height = 169
     Anchors = []
+    DataSource = DataSource1
     TabOrder = 9
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clBlack
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'Title'
+        Width = 303
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Author'
+        Width = 205
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Column'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Row'
+        Width = 40
+        Visible = True
+      end>
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 170
+    Top = 268
+    Width = 240
+    Height = 25
+    DataSource = DataSource1
+    TabOrder = 10
   end
   object ABSTable1: TABSTable
     CurrentVersion = '7.92 '
     DatabaseName = 'MyLibrary.abs'
     InMemory = False
     ReadOnly = False
+    StoreDefs = True
+    FieldDefs = <
+      item
+        Name = 'num'
+      end
+      item
+        Name = 'Title'
+      end
+      item
+        Name = 'Author'
+      end
+      item
+        Name = 'Column'
+      end
+      item
+        Name = 'Row'
+      end>
+    TableName = 'Cat'
     Exclusive = False
     Left = 79
     Top = 222
   end
   object ABSQuery1: TABSQuery
     CurrentVersion = '7.92 '
+    DatabaseName = 'MyLibrary.abs'
     InMemory = False
     ReadOnly = False
     Left = 164
@@ -529,5 +585,10 @@ object Form1: TForm1
     SessionName = 'Default'
     Left = 245
     Top = 232
+  end
+  object DataSource1: TDataSource
+    DataSet = ABSQuery1
+    Left = 421
+    Top = 182
   end
 end

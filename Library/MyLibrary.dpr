@@ -1,13 +1,14 @@
 program MyLibrary;
 
 uses
-  Vcl.Forms,
+  Vcl.Forms, ABSMain,
   Unit1 in 'Unit1.pas' {Form1};
 
 {$R *.res}
 
 begin
   Application.Initialize;
+  ABSMain.StartDisconnected:=True;      //consigliato da Absolute Database support
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Library';
   Application.CreateForm(TForm1, Form1);

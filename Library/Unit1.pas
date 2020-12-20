@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
-  Vcl.DBGrids, ABSMain;
+  Vcl.DBGrids, ABSMain, Vcl.ExtCtrls, Vcl.DBCtrls;
  function GetAppVersionStr : string; forward;
 type
   TForm1 = class(TForm)
@@ -26,9 +26,13 @@ type
     ABSTable1: TABSTable;
     ABSQuery1: TABSQuery;
     ABSDatabase1: TABSDatabase;
+    DBNavigator1: TDBNavigator;
+    DataSource1: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,24 +69,84 @@ begin
        end;
 end;
 
+procedure TForm1.Button2Click(Sender: TObject);        //find
+begin
+      DataSource1.DataSet:=ABSQuery1;
+    if ((Edit1.Text='') AND (Edit2.Text='')) then
+     begin
+     ShowMessage('Please fill in Title-Box or Author-Box string to be searched');
+      Exit;
+     end else
+       if ((Edit1.Text<>'') AND (Edit2.Text<>'')) then
+        begin
+       Showmessage('Only one field can be searched at time')
+       end else
+
+   if ((Edit1.Text<>'') AND (Edit2.Text='')) then
+     begin
+
+       with ABSQuery1 do
+       begin
+         Edit1.text:=LowerCase(Edit1.Text);
+         Close;
+         SQL.Text:='select * from Cat where lower(Title) like '+ quotedstr('%'+Edit1.text+'%');
+         ExecSQL;
+         Open;
+         DataSource1.DataSet:=ABSTable1;
+       end;
+     end else
+     begin
+        Edit2.text:=LowerCase(Edit2.Text);
+        with ABSQuery1 do
+       begin
+         Close;
+         SQL.Text:='select * from Cat where lower(Author) like ' + quotedstr('%'+Edit2.text+'%');
+         ExecSQL;
+         Open;
+         DataSource1.DataSet:=ABSTable1;
+       end;
+     end;
+    
+    //Exit;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);        //reset
+begin
+    Edit1.Text:='';
+    Edit2.Text:='';
+    Edit3.Text:='';
+    Edit4.Text:='';
+     DataSource1.DataSet:=ABSQuery1;
+      with ABSQuery1 do
+       begin
+         Close;
+         SQL.Text:='select * from Cat where Num=0'; //per cancellare la DBGrid
+         ExecSQL;
+         Open;
+        end;
+
+end;
+
 procedure TForm1.Button5Click(Sender: TObject);  //done
 
 begin
        if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
-  begin
-  ABSQuery1.Close;
-  ABSTable1.edit;
-  ABSTable1.close;
-  ABSDatabase1.Close;
-  Form1.release;
-  application.Terminate;
-  end else Exit;
+    begin
+       ABSQuery1.Close;
+       ABSTable1.edit;
+       ABSTable1.close;
+       ABSDatabase1.Close;
+       Form1.release;
+       application.Terminate;
+    end else Exit;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
   begin
-     ABSMain.StartDisconnected:=True;      //consigliato da Absolute Database support
+    //ABSMain.StartDisconnected:=True;      //consigliato da Absolute Database support
      ABSDatabase1.DatabaseFilename:= ExtractFilePath(Application.ExeName)+'MyLibrary.ABS';
+     ABSDatabase1.Connected:=True;
+     ABSTable1.Active:=True;
      ABSDatabase1.Open;
          // showmessage(ABSDatabase1.Databasefilename);
      ABSTable1.TableName:='Cat';
