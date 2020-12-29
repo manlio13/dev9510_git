@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
-  Vcl.DBGrids, ABSMain, Vcl.ExtCtrls, Vcl.DBCtrls;
+  Vcl.DBGrids, ABSMain, Vcl.ExtCtrls, Vcl.DBCtrls, frxClass, frxDBSet,
+  frxExportBaseDialog, frxExportPDF;
  function GetAppVersionStr : string; forward;
 type
   TForm1 = class(TForm)
@@ -28,11 +29,17 @@ type
     ABSDatabase1: TABSDatabase;
     DBNavigator1: TDBNavigator;
     DataSource1: TDataSource;
+    Button6: TButton;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    frxPDFExport1: TfrxPDFExport;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -110,7 +117,7 @@ begin
     //Exit;
 end;
 
-procedure TForm1.Button3Click(Sender: TObject);        //reset
+procedure TForm1.Button3Click(Sender: TObject);        //clear
 begin
     Edit1.Text:='';
     Edit2.Text:='';
@@ -127,6 +134,20 @@ begin
 
 end;
 
+procedure TForm1.Button4Click(Sender: TObject);     //List
+begin
+      DataSource1.DataSet:=ABSQuery1;
+   with ABSQuery1 do                                   //inserire il modulo TABSQuery
+   begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
+      Close;                                           //scrivere queste righe di codice
+      SQL.Text:='select * from cat ORDER BY Column ASC';
+      ExecSQL;
+     // Open;
+   end;
+
+  frxReport1.ShowReport;
+end;
+
 procedure TForm1.Button5Click(Sender: TObject);  //done
 
 begin
@@ -140,6 +161,16 @@ begin
        application.Terminate;
     end else Exit;
 end;
+
+procedure TForm1.Button6Click(Sender: TObject);    //Empty DB
+begin
+   if MessageDlg('Attention ! You are going to erase all data.'+#13+'   DO YOU CONFIRM ?',mtConfirmation, mbYesNo,0)=mrYes then
+       begin
+        ABSTable1.Close;
+        ABSTable1.EmptyTable;
+       end  else Exit;
+
+   end;
 
 procedure TForm1.FormCreate(Sender: TObject);
   begin
@@ -162,21 +193,21 @@ Exe: string;
 Size, Handle: DWORD;
 Buffer: TBytes;
 FixedPtr: PVSFixedFileInfo;
-begin
-Exe := ParamStr(0);
-Size := GetFileVersionInfoSize(PChar(Exe), Handle);
-if Size = 0 then
-RaiseLastOSError;
-SetLength(Buffer, Size);
-if not GetFileVersionInfo(PChar(Exe), Handle, Size, Buffer) then
-RaiseLastOSError;
-if not VerQueryValue(Buffer, '\', Pointer(FixedPtr), Size) then
-RaiseLastOSError;
-Result := Format('%d.%d.%d.%d',
-[LongRec(FixedPtr.dwFileVersionMS).Hi, //major
-LongRec(FixedPtr.dwFileVersionMS).Lo, //minor
-LongRec(FixedPtr.dwFileVersionLS).Hi, //release
-LongRec(FixedPtr.dwFileVersionLS).Lo]); //build
-versione:= Result;
-end;
+  begin
+    Exe := ParamStr(0);
+    Size := GetFileVersionInfoSize(PChar(Exe), Handle);
+    if Size = 0 then
+    RaiseLastOSError;
+    SetLength(Buffer, Size);
+    if not GetFileVersionInfo(PChar(Exe), Handle, Size, Buffer) then
+    RaiseLastOSError;
+    if not VerQueryValue(Buffer, '\', Pointer(FixedPtr), Size) then
+    RaiseLastOSError;
+    Result := Format('%d.%d.%d.%d',
+    [LongRec(FixedPtr.dwFileVersionMS).Hi, //major
+    LongRec(FixedPtr.dwFileVersionMS).Lo, //minor
+    LongRec(FixedPtr.dwFileVersionLS).Hi, //release
+    LongRec(FixedPtr.dwFileVersionLS).Lo]); //build
+    versione:= Result;
+  end;
 end.

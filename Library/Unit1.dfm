@@ -454,7 +454,7 @@ object Form1: TForm1
     Top = 62
     Width = 75
     Height = 25
-    Caption = 'RESET'
+    Caption = 'CLEAR'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -15
@@ -477,6 +477,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 7
+    OnClick = Button4Click
   end
   object Button5: TButton
     Left = 502
@@ -496,7 +497,7 @@ object Form1: TForm1
   object DBGrid1: TDBGrid
     Left = 8
     Top = 93
-    Width = 613
+    Width = 606
     Height = 169
     Anchors = []
     DataSource = DataSource1
@@ -539,6 +540,15 @@ object Form1: TForm1
     Height = 25
     DataSource = DataSource1
     TabOrder = 10
+  end
+  object Button6: TButton
+    Left = 8
+    Top = 268
+    Width = 75
+    Height = 25
+    Caption = 'Empty DB'
+    TabOrder = 11
+    OnClick = Button6Click
   end
   object ABSTable1: TABSTable
     CurrentVersion = '7.92 '
@@ -590,5 +600,242 @@ object Form1: TForm1
     DataSet = ABSQuery1
     Left = 421
     Top = 182
+  end
+  object frxReport1: TfrxReport
+    Version = '6.7'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44194.644324548600000000
+    ReportOptions.LastChange = 44194.693866909720000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      ''
+      'begin'
+      ''
+      'end.')
+    Left = 107
+    Top = 148
+    Datasets = <
+      item
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+      MirrorMode = []
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo2: TfrxMemoView
+          AllowVectorExport = True
+          Left = 245.669450000000000000
+          Top = -3.779530000000000000
+          Width = 173.858380000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'LIBRARY CATALOGUE')
+          ParentFont = False
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 147.401670000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        RowCount = 0
+        object frxDBDataset1Title: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 7.559060000000000000
+          Width = 294.803340000000000000
+          Height = 18.897650000000000000
+          DataField = 'Title'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."Title"]')
+        end
+        object frxDBDataset1Author: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 317.480520000000000000
+          Width = 283.464750000000000000
+          Height = 18.897650000000000000
+          DataField = 'Author'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."Author"]')
+        end
+        object frxDBDataset1Column: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 604.724800000000000000
+          Width = 56.692950000000000000
+          Height = 18.897650000000000000
+          DataField = 'Row'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."Row"]')
+        end
+        object frxDBDataset1Row: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 665.197280000000000000
+          Width = 49.133890000000000000
+          Height = 18.897650000000000000
+          DataField = 'Row'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."Row"]')
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 230.551330000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 657.638220000000000000
+          Width = 60.472480000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Page#]')
+        end
+        object Memo4: TfrxMemoView
+          AllowVectorExport = True
+          Left = 404.409710000000000000
+          Width = 124.724490000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'number of records :')
+        end
+        object COUNT: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 532.913730000000000000
+          Width = 56.692950000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[COUNT(MasterData1)]')
+        end
+        object Memo5: TfrxMemoView
+          AllowVectorExport = True
+          Left = 623.622450000000000000
+          Width = 30.236240000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Pag:')
+        end
+      end
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 64.252010000000000000
+        Width = 718.110700000000000000
+        object Memo3: TfrxMemoView
+          AllowVectorExport = True
+          Left = 7.559060000000000000
+          Top = -3.779530000000000000
+          Width = 710.551640000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            
+              'Title                                                           ' +
+              '                 Author                                         ' +
+              '                        column  -   row')
+          ParentFont = False
+        end
+      end
+    end
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'Title=Title'
+      'Author=Author'
+      'Column=Column'
+      'Row=Row')
+    DataSet = ABSQuery1
+    BCDToCurrency = False
+    Left = 184
+    Top = 166
+  end
+  object frxPDFExport1: TfrxPDFExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    OpenAfterExport = False
+    PrintOptimized = False
+    Outline = False
+    Background = False
+    HTMLTags = True
+    Quality = 95
+    Transparency = False
+    Author = 'FastReport'
+    Subject = 'FastReport PDF export'
+    ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
+    HideToolbar = False
+    HideMenubar = False
+    HideWindowUI = False
+    FitWindow = False
+    CenterWindow = False
+    PrintScaling = False
+    PdfA = False
+    PDFStandard = psNone
+    PDFVersion = pv17
+    Left = 286
+    Top = 179
   end
 end
