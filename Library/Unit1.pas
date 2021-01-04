@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
   Vcl.DBGrids, ABSMain, Vcl.ExtCtrls, Vcl.DBCtrls, frxClass, frxDBSet,
-  frxExportBaseDialog, frxExportPDF;
+  frxExportBaseDialog, frxExportPDF,System.UITypes;
  function GetAppVersionStr : string; forward;
 type
   TForm1 = class(TForm)
@@ -33,6 +33,8 @@ type
     frxReport1: TfrxReport;
     frxDBDataset1: TfrxDBDataset;
     frxPDFExport1: TfrxPDFExport;
+    Button7: TButton;
+    Location: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
@@ -40,6 +42,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,6 +52,9 @@ type
 var
   Form1: TForm1;
   versione:string;
+  dato:Integer;
+  N:array[1..50] of Integer;
+
 implementation
 
 {$R *.dfm}
@@ -77,8 +83,10 @@ begin
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);        //find
-begin
-      DataSource1.DataSet:=ABSQuery1;
+    var
+    i:Integer;
+ begin
+     DataSource1.DataSet:=ABSQuery1;
     if ((Edit1.Text='') AND (Edit2.Text='')) then
      begin
      ShowMessage('Please fill in Title-Box or Author-Box string to be searched');
@@ -88,20 +96,16 @@ begin
         begin
        Showmessage('Only one field can be searched at time')
        end else
-
    if ((Edit1.Text<>'') AND (Edit2.Text='')) then
-     begin
-
        with ABSQuery1 do
        begin
          Edit1.text:=LowerCase(Edit1.Text);
          Close;
-         SQL.Text:='select * from Cat where lower(Title) like '+ quotedstr('%'+Edit1.text+'%');
+         SQL.Text:='select * from Cat where lower(Title) like '+
+          quotedstr('%'+Edit1.text+'%');
          ExecSQL;
          Open;
-         DataSource1.DataSet:=ABSTable1;
-       end;
-     end else
+       end else
      begin
         Edit2.text:=LowerCase(Edit2.Text);
         with ABSQuery1 do
@@ -110,12 +114,28 @@ begin
          SQL.Text:='select * from Cat where lower(Author) like ' + quotedstr('%'+Edit2.text+'%');
          ExecSQL;
          Open;
-         DataSource1.DataSet:=ABSTable1;
        end;
      end;
-    
-    //Exit;
-end;
+       dato:=DataSource1.DataSet.RecordCount;
+     if dato>0 then
+     with ABSQuery1  do
+       begin
+        ABSQuery1.First;
+        while not EOF do
+           begin
+             for i:=1 to dato do   //indice deve inziare da 1 NON =0
+             begin        //senza begin-end esegue tutto il ciclo
+              N[i]:= FieldByName('Num').AsInteger;
+              ABSQuery1.Next;
+              next  ;
+              end;
+          end;
+       end else
+     begin
+       ShowMessage('Cannot find any record. Please check your entry.');
+       Exit;
+     end;
+   end;
 
 procedure TForm1.Button3Click(Sender: TObject);        //clear
 begin
@@ -131,7 +151,6 @@ begin
          ExecSQL;
          Open;
         end;
-
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);     //List
@@ -172,7 +191,44 @@ begin
 
    end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TForm1.Button7Click(Sender: TObject);  //edit
+     var
+     S:array[1..50]of string;
+     i:Integer;
+     filtro:string;
+   begin
+       DBGrid1.SetFocus;
+       DBGrid1.DataSource.DataSet:=ABSTable1;
+      with ABSTable1 do
+      begin
+         Filter:='';
+         Filtered:=False;
+         for i := 1 to dato do
+          begin
+            S[i] := 'Num = ' + IntToStr(N[i]) ;
+            if i=1 then
+             Filtro:=S[1] else
+            Filtro:=Filtro +' '+'OR'+' '+S[i]; //essendo il filtro sullo stesso
+            Next;     //campo si usa OR, se campi diversi AND
+          end;
+          Filter:=filtro;
+          Filtered := True;
+      end;
+
+      if DBGrid1.DataSource.DataSet.IsEmpty then
+      begin
+        ShowMessage('There is nothing to edit !');
+        Exit;
+      end ;
+        If DBGrid1.Selectedindex=0 then
+       begin
+        ShowMessage('Please click on the record to be edited');
+        Exit ;
+       end else ShowMessage('ok');
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);        //form
+
   begin
     //ABSMain.StartDisconnected:=True;      //consigliato da Absolute Database support
      ABSDatabase1.DatabaseFilename:= ExtractFilePath(Application.ExeName)+'MyLibrary.ABS';

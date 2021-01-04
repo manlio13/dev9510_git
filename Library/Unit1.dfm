@@ -7,7 +7,7 @@ object Form1: TForm1
   BorderWidth = 3
   Caption = 'My Library'
   ClientHeight = 305
-  ClientWidth = 622
+  ClientWidth = 647
   Color = clOlive
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clBlack
@@ -323,7 +323,7 @@ object Form1: TForm1
   ShowHint = True
   OnCreate = FormCreate
   DesignSize = (
-    622
+    647
     305)
   PixelsPerInch = 96
   TextHeight = 13
@@ -375,6 +375,19 @@ object Form1: TForm1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Location: TLabel
+    Left = 543
+    Top = 73
+    Width = 48
+    Height = 13
+    Caption = 'Location'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
@@ -496,8 +509,8 @@ object Form1: TForm1
   end
   object DBGrid1: TDBGrid
     Left = 8
-    Top = 93
-    Width = 606
+    Top = 92
+    Width = 631
     Height = 169
     Anchors = []
     DataSource = DataSource1
@@ -544,11 +557,26 @@ object Form1: TForm1
   object Button6: TButton
     Left = 8
     Top = 268
-    Width = 75
+    Width = 63
     Height = 25
     Caption = 'Empty DB'
     TabOrder = 11
     OnClick = Button6Click
+  end
+  object Button7: TButton
+    Left = 81
+    Top = 268
+    Width = 75
+    Height = 23
+    Caption = 'EDIT'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 12
+    OnClick = Button7Click
   end
   object ABSTable1: TABSTable
     CurrentVersion = '7.92 '
@@ -575,15 +603,15 @@ object Form1: TForm1
     TableName = 'Cat'
     Exclusive = False
     Left = 79
-    Top = 222
+    Top = 198
   end
   object ABSQuery1: TABSQuery
     CurrentVersion = '7.92 '
     DatabaseName = 'MyLibrary.abs'
     InMemory = False
     ReadOnly = False
-    Left = 164
-    Top = 233
+    Left = 161
+    Top = 213
   end
   object ABSDatabase1: TABSDatabase
     CurrentVersion = '7.92 '
@@ -593,8 +621,8 @@ object Form1: TForm1
     MaxConnections = 500
     MultiUser = False
     SessionName = 'Default'
-    Left = 245
-    Top = 232
+    Left = 526
+    Top = 186
   end
   object DataSource1: TDataSource
     DataSet = ABSQuery1
