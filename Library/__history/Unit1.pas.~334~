@@ -1,0 +1,333 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, ABSMain, Vcl.ExtCtrls, Vcl.DBCtrls, frxClass, frxDBSet,
+  frxExportBaseDialog, frxExportPDF,System.UITypes;
+
+ function GetAppVersionStr : string; forward;
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    DBGrid1: TDBGrid;
+    ABSTable1: TABSTable;
+    ABSQuery1: TABSQuery;
+    ABSDatabase1: TABSDatabase;
+    DBNavigator1: TDBNavigator;
+    DataSource1: TDataSource;
+    Button6: TButton;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    frxPDFExport1: TfrxPDFExport;
+    Button7: TButton;
+    Location: TLabel;
+    Button8: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  versione:string;
+  dato:Integer;
+  N:array[1..50] of Integer;
+  trova:Boolean   ;
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm1.Button1Click(Sender: TObject);  //Fill
+begin
+   if (Edit1.Text='')OR (Edit2.Text='') or (Edit3.Text='') or (Edit4.Text='') then
+     begin
+     ShowMessage('Please fill in Data to be stored ');
+     Exit;
+     end else
+      begin
+       ABSTable1.Append;
+            ABSTable1.FieldByName('Title').AsString:=Edit1.Text;
+            ABSTable1.FieldByName('Author').AsString:=Edit2.Text;
+            ABSTable1.FieldByName('Row').AsString:=Edit3.Text;
+            ABSTable1.FieldByName('Column').AsString:=Edit4.Text;
+       ABSTable1.Post;
+          Edit1.Text:='';
+          Edit2.Text:='';
+          Edit3.Text:='';
+          Edit4.Text:='';
+         ShowMessage('Uploaded');
+         Exit;
+       end;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);        //find
+    var
+    i,t:Integer;
+
+ begin
+    t:=0;
+    trova:=True;
+     DataSource1.DataSet:=ABSQuery1;
+    if ((Edit1.Text='') AND (Edit2.Text='') and (Edit3.Text='') and (Edit4.Text='')) then
+     begin
+     ShowMessage(''The search can be done by Author or by Title'+#13+'or by shelf indicating both the column and the row');
+      Exit;
+     end ;
+       if Edit1.text<>'' then  t:=t+1;                        //per verificare che ci siano i soli dati necessari
+       if Edit2.text<>'' then  t:=t+1;
+       if (Edit3.text<>'')AND (Edit4.text<>'') then  t:=t+1;
+       if (Edit3.text<>'')XOR (Edit4.text<>'') then  t:=2;
+       if t>1 then
+        begin
+        Showmessage('Attention: wrong selection entry.');
+        Button3Click(Self);
+        Exit;
+       end else
+   begin
+    if ((Edit1.Text<>'') AND (Edit2.Text='')) then
+       with ABSQuery1 do
+       begin
+         Edit1.text:=LowerCase(Edit1.Text);
+         Close;
+         SQL.Text:='select * from Cat where lower(Title) like '+
+          quotedstr('%'+Edit1.text+'%');
+         ExecSQL;
+         Open;
+       end;
+    if ((Edit1.Text='') AND (Edit2.Text<>'')) then
+     begin
+        Edit2.text:=LowerCase(Edit2.Text);
+        with ABSQuery1 do
+       begin
+         Close;
+         SQL.Text:='select * from Cat where lower(Author) like ' + quotedstr('%'+Edit2.text+'%');
+         ExecSQL;
+         Open;
+       end;
+     end;
+    if ((Edit3.Text<>'') AND (Edit4.Text<>'')) then
+     begin
+        with ABSQuery1 do
+       begin
+         Close;     //notare il formato della notazione del query. Att.ai nomi riservati SQL
+         SQL.Text:='SELECT * From Cat where Col='+ edit3.text+' AND row ='+Edit4.text;
+         ExecSQL;
+         Open;
+       end;
+     end;
+   end;
+       dato:=DataSource1.DataSet.RecordCount;
+     if dato>0 then
+     with ABSQuery1  do
+       begin
+        ABSQuery1.First;   //costruisce una lista nell'array N dei Num trovati
+        while not EOF do   //per impiegarla nel move
+           begin
+             for i:=1 to dato do   //indice deve inziare da 1 NON =0
+             begin        //senza begin-end esegue tutto il ciclo
+              N[i]:= FieldByName('Num').AsInteger;
+              ABSQuery1.Next;
+              next  ;
+              end;
+          end;
+       end else
+     begin
+       ShowMessage('Cannot find any record. Please check your entry.');
+       Exit;
+     end;
+   end;
+
+procedure TForm1.Button3Click(Sender: TObject);        //clear
+begin
+    Edit1.Text:='';
+    Edit2.Text:='';
+    Edit3.Text:='';
+    Edit4.Text:='';
+     DataSource1.DataSet:=ABSQuery1;
+      with ABSQuery1 do
+       begin
+         Close;
+         SQL.Text:='select * from Cat where Num=0'; //per cancellare la DBGrid
+         ExecSQL;
+         Open;
+        end;
+     trova:=False;
+ end;
+
+procedure TForm1.Button4Click(Sender: TObject);     //List
+begin
+      DataSource1.DataSet:=ABSQuery1;
+   with ABSQuery1 do                                   //inserire il modulo TABSQuery
+   begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
+      Close;                                           //scrivere queste righe di codice
+      SQL.Text:='select * from cat ORDER BY Col ASC';
+      ExecSQL;
+     // Open;
+   end;
+  trova:=False;
+  frxReport1.ShowReport;
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);  //done
+
+begin
+       if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
+    begin
+       ABSQuery1.Close;
+       ABSTable1.edit;
+       ABSTable1.close;
+       ABSDatabase1.Close;
+       Form1.release;
+       application.Terminate;
+    end else Exit;
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);    //Empty DB
+begin
+   if MessageDlg('Attention ! You are going to erase all data.'+#13+'   DO YOU CONFIRM ?',mtConfirmation,mbYesNo,0)=mrYes then
+       begin
+        ABSTable1.Close;
+        ABSTable1.EmptyTable;
+       end  else Exit;
+
+   end;
+
+procedure TForm1.Button7Click(Sender: TObject);  //edit
+     var
+     S:array[1..50]of string;
+     i:Integer;
+     filtro:string;
+   begin
+      if trova=False then
+      begin
+      ShowMessage('Must use "Find" before you can Edit !' );
+      Exit;
+      end;
+       DBGrid1.SetFocus;
+       DBGrid1.DataSource.DataSet:=ABSTable1;
+
+      with ABSTable1 do
+      begin
+         Filter:='';
+         Filtered:=False;
+         for i := 1 to dato do
+          begin
+            S[i] := 'Num = ' + IntToStr(N[i]) ;
+            if i=1 then
+             Filtro:=S[1] else
+            Filtro:=Filtro +' '+'OR'+' '+S[i]; //essendo il filtro sullo stesso
+            Next;     //campo si usa OR, se campi diversi AND
+          end;
+          Filter:=filtro;
+          Filtered := True;
+      end;
+
+      if DBGrid1.DataSource.DataSet.IsEmpty then
+      begin
+        ShowMessage('There is nothing to edit !');
+        Exit;
+      end ;
+        If DBGrid1.Selectedindex=0 then
+       begin
+        ShowMessage('Please click on the record to be edited');
+        Exit ;
+       end else ShowMessage('ok');
+       trova:=False;
+end;
+
+procedure TForm1.Button8Click(Sender: TObject);    //move
+       var
+       ris:string;
+ begin
+    Form1.FormStyle:=fsNormal;  //altrimenti la InputBox non è visibile se fsStayOnTop
+    ris :=InputBox('To move books from a Column or from a Row',' Enter 1 for'+
+    ' Column 2 for Row','');
+    if (ris <>'1') AND (ris <>'2') then
+    begin
+       ShowMessage('It''s not the correct entry.');
+       Exit;
+     end;
+     if ris ='1' then
+      if MessageDlg('Confirm you want to move all books from shelf A to shelf B'+#13+'(to be specified)',mtConfirmation,mbYesNo,0)= mrNo then
+           begin
+             ris:='';
+             Exit;
+           end else  showmessage('You have confirmed to move a shelf of your library.');
+     if ris ='2' then
+      if MessageDlg('Confirm you want to move all books from row A to row B',mtConfirmation,mbYesNo,0)= mrNo then
+           begin
+             ris:='';
+             Exit;
+           end else  showmessage('You have confirmed to move a row of your library');
+
+    Form1.FormStyle := fsStayOnTop;
+  end;
+
+
+procedure TForm1.FormCreate(Sender: TObject);        //form
+
+  begin
+    //ABSMain.StartDisconnected:=True;      //consigliato da Absolute Database support
+     ABSDatabase1.DatabaseFilename:= ExtractFilePath(Application.ExeName)+'MyLibrary.ABS';
+     ABSDatabase1.Connected:=True;
+     ABSTable1.Active:=True;
+     ABSDatabase1.Open;
+         // showmessage(ABSDatabase1.Databasefilename);
+     ABSTable1.TableName:='Cat';
+     ABSTable1.Open;
+     ABSTable1.Last;
+     GetAppVersionStr;
+     Form1.Caption:=Form1.Caption +': Library Catalogue, ver. ' + Versione;
+     trova:=False;
+  end;
+
+   function GetAppVersionStr: string;     //routine per la versione
+       var
+       Exe: string;
+       Size, Handle: DWORD;
+       Buffer: TBytes;
+       FixedPtr: PVSFixedFileInfo;
+    begin
+      Exe := ParamStr(0);
+      Size := GetFileVersionInfoSize(PChar(Exe), Handle);
+      if Size = 0 then
+      RaiseLastOSError;
+      SetLength(Buffer, Size);
+      if not GetFileVersionInfo(PChar(Exe), Handle, Size, Buffer) then
+      RaiseLastOSError;
+      if not VerQueryValue(Buffer, '\', Pointer(FixedPtr), Size) then
+      RaiseLastOSError;
+      Result := Format('%d.%d.%d.%d',
+      [LongRec(FixedPtr.dwFileVersionMS).Hi, //major
+      LongRec(FixedPtr.dwFileVersionMS).Lo, //minor
+      LongRec(FixedPtr.dwFileVersionLS).Hi, //release
+      LongRec(FixedPtr.dwFileVersionLS).Lo]); //build
+      versione:= Result;
+    end;
+  end.
