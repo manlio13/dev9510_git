@@ -191,6 +191,7 @@ begin
          ExecSQL;
          Open;
         end;
+   Form2.visible:=False;
      trova:=False;
  end;
 
@@ -277,11 +278,9 @@ procedure TForm1.Button7Click(Sender: TObject);  //edit
        trova:=False;
 end;
 
-procedure TForm1.Button8Click(Sender: TObject);    //move
-       var
-       ris:string;
+procedure TForm1.Button8Click(Sender: TObject);    //mov
  begin
-   // Form1.FormStyle:=fsNormal;  //altrimenti la InputBox non è visibile se fsStayOnTop
+    Form1.FormStyle:=fsNormal;  //altrimenti la InputBox non è visibile se fsStayOnTop
       if MessageDlg('Confirm you want to move all books'+#13+'from shelf A to shelf B (to be specified)',mtConfirmation,mbYesNo,0)= mrNo then
         Exit else  showmessage('You have confirmed to move a shelf of your library.');
         begin

@@ -38,7 +38,7 @@ procedure TForm2.Button1Click(Sender: TObject);     //acquisisce coordinate
     begin
    if (Edit1.text='') or (Edit2.Text='') or (Edit3.text='') or (Edit4.text='') then
    begin
-    ShowMessage('Wrong or incomplete entry !');
+    ShowMessage('Wrong or incomplete entry !'+#13+'Clear to reset');
       Exit;
    end;
   if messagedlg ('Please check carefully coordinates of shelfs.',mtConfirmation,mbYesNo,0)=mrNo then
@@ -60,6 +60,18 @@ procedure TForm2.Button1Click(Sender: TObject);     //acquisisce coordinate
      Exit
     end  else
    begin
+      Form1.DataSource1.DataSet:=Form1.ABSQuery1;
+     with Form1.ABSQuery1 do
+     begin
+      Close;        //fare grande attenzione alla notazione usata per redigere il query
+      SQL.Text:='select * from Cat where col='+edit1.text+' AND row='+edit2.text;
+      ExecSQL;
+      if Form1.ABSQuery1.isEmpty then
+           ShowMessage('Wrong or incomplete entry !'+#13+'Clear to reset');
+           Exit;
+     end;
+   end;
+   begin
      Form1.DataSource1.DataSet:=Form1.ABSQuery1;
      with Form1.ABSQuery1 do
      begin
@@ -69,6 +81,10 @@ procedure TForm2.Button1Click(Sender: TObject);     //acquisisce coordinate
      // Open;
      end;
    end;
+     Edit1.text:='';
+     Edit2.text:='';
+     Edit3.text:='';
+     Edit4.text:='';
   Form2.visible:=False;
   Form1.FormStyle := fsStayOnTop;
 end;

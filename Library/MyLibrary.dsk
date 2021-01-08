@@ -9,14 +9,14 @@ File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data
 File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.pas',0,1,30892,1,30902,0,0,,
 
 [Modules]
-Module0=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
+Module0=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
 Module1=default.htm
 Module2=C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary.dproj
-Module3=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
+Module3=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
 Count=4
 EditWindowCount=1
 
-[C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas]
+[C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas]
 ModuleType=TSourceModule
 
 [default.htm]
@@ -25,12 +25,12 @@ ModuleType=TURLModule
 [C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary.dproj]
 ModuleType=TBaseProject
 
-[C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas]
+[C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas]
 ModuleType=TSourceModule
 
 [EditWindow0]
 ViewCount=4
-CurrentEditView=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
+CurrentEditView=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
 View0=0
 View1=1
 View2=2
@@ -43,23 +43,23 @@ State=0
 Left=0
 Top=0
 Width=8875
-Height=6861
+Height=7056
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=8875
-ClientHeight=6861
+ClientHeight=7056
 DockedToMainForm=1
 BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1242
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=00000800010100000000130F00000000000001DA040000000000000100000000530E000009000000446F636B53697465330100000000CD1A00001100000050726F7065727479496E73706563746F72FFFFFFFF
+LeftPanelData=000008000101000000006A0B00000000000001DA040000000000000100000000530E000009000000446F636B536974653301000000004A1400001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=844
 RightPanelClients=DockSite2,DockSite4
-RightPanelData=00000800010100000000130F000000000000014C0300000000000001000000004912000009000000446F636B53697465320100000000CD1A000009000000446F636B5369746534FFFFFFFF
-BottomPanelSize=0
+RightPanelData=000008000101000000006A0B000000000000014C0300000000000001000000004912000009000000446F636B536974653201000000004A14000009000000446F636B5369746534FFFFFFFF
+BottomPanelSize=1750
 BottomPanelClients=MessageView,DockSite1
-BottomPanelData=000008000102020000000F0000004D65737361676556696577466F726D09000000446F636B53697465311534000000000000022106000000000000FFFFFFFF
+BottomPanelData=0000080001020100000009000000446F636B5369746531A23D00000000000002D6060000000000000100000000A23D00000F0000004D65737361676556696577466F726DFFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779F1D00000000000002F206000000000000FFFFFFFF
@@ -71,13 +71,13 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
-CursorX=27
-CursorY=219
-TopLine=152
+CursorX=25
+CursorY=194
+TopLine=188
 LeftCol=1
 Elisions=
-Bookmarks={1,284,1}
-EditViewName=Borland.FormDesignerView
+Bookmarks={1,283,1}
+EditViewName=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
 
 [View2]
 CustomEditViewType=TEditView
@@ -93,12 +93,12 @@ EditViewName=C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary.dpr
 [View3]
 CustomEditViewType=TEditView
 Module=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
-CursorX=119
-CursorY=50
-TopLine=28
+CursorX=17
+CursorY=71
+TopLine=55
 LeftCol=1
 Elisions=
-Bookmarks={7,76,5}
+Bookmarks={7,92,5}
 EditViewName=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
 
 [Watches]
@@ -152,12 +152,12 @@ State=0
 Left=0
 Top=278
 Width=9125
-Height=8528
+Height=8722
 MaxLeft=-8
 MaxTop=-14
 ClientWidth=9000
-ClientHeight=8417
-BottomPanelSize=6861
+ClientHeight=8611
+BottomPanelSize=7056
 BottomPanelClients=EditWindow0
 BottomPanelData=0000080000000000000000000000000000000000000000000000000100000000000000000C0000004564697457696E646F775F30FFFFFFFF
 
@@ -183,18 +183,18 @@ StayOnTop=0
 [MessageView]
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=1
 State=0
 Left=0
-Top=0
-Width=2773
-Height=1417
+Top=28
+Width=8875
+Height=1361
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2773
-ClientHeight=1417
-TBDockHeight=1417
+ClientWidth=8875
+ClientHeight=1361
+TBDockHeight=1361
 LRDockWidth=2773
 Dockable=1
 StayOnTop=0
@@ -234,11 +234,11 @@ State=0
 Left=0
 Top=0
 Width=844
-Height=1792
+Height=125
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=844
-ClientHeight=1792
+ClientHeight=125
 TBDockHeight=7153
 LRDockWidth=2000
 Dockable=1
@@ -253,21 +253,16 @@ State=0
 Left=0
 Top=292
 Width=1242
-Height=2806
+Height=1139
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1242
-ClientHeight=2806
-TBDockHeight=6472
+ClientHeight=1139
+TBDockHeight=6667
 LRDockWidth=1242
 Dockable=1
 StayOnTop=0
 SplitPos=73
-
-[PropInspDesignerSelection]
-ArrangeBy=Name
-SelectedItem=Action,
-ExpandedItems=BorderIcons=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -278,11 +273,11 @@ State=0
 Left=0
 Top=0
 Width=1562
-Height=6083
+Height=6278
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1562
-ClientHeight=6083
+ClientHeight=6278
 TBDockHeight=5958
 LRDockWidth=2508
 Dockable=1
@@ -464,11 +459,11 @@ State=0
 Left=0
 Top=0
 Width=125
-Height=6083
+Height=6278
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=125
-ClientHeight=6083
+ClientHeight=6278
 TBDockHeight=4889
 LRDockWidth=7148
 Dockable=1
@@ -642,11 +637,11 @@ State=0
 Left=0
 Top=0
 Width=844
-Height=6083
+Height=6278
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=844
-ClientHeight=6083
+ClientHeight=6278
 TBDockHeight=4889
 LRDockWidth=5305
 Dockable=1
@@ -738,7 +733,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=844
 ClientHeight=4181
-TBDockHeight=6472
+TBDockHeight=6667
 LRDockWidth=844
 Dockable=1
 StayOnTop=0
@@ -762,7 +757,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1242
 ClientHeight=3167
-TBDockHeight=6472
+TBDockHeight=6667
 LRDockWidth=1242
 Dockable=1
 StayOnTop=0
@@ -781,12 +776,12 @@ State=0
 Left=0
 Top=365
 Width=844
-Height=1792
+Height=125
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=844
-ClientHeight=1792
-TBDockHeight=6472
+ClientHeight=125
+TBDockHeight=6667
 LRDockWidth=844
 Dockable=1
 StayOnTop=0
