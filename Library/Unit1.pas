@@ -217,6 +217,8 @@ begin
        ABSTable1.edit;
        ABSTable1.close;
        ABSDatabase1.Close;
+       ABSTable1.ReadOnly:=False;
+       ABSDatabase1.Readonly:=False;
        Form1.release;
        application.Terminate;
     end else Exit;
