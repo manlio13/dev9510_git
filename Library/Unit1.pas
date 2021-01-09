@@ -18,8 +18,8 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
-    Label4: TLabel;
     Button1: TButton;
+    Label4: TLabel;
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
@@ -78,6 +78,7 @@ procedure TForm1.FormCreate(Sender: TObject);        //form
      Form1.Caption:=Form1.Caption +': Library Catalogue, ver. ' + Versione;
      trova:=False;
   end;
+
 procedure TForm1.Button1Click(Sender: TObject);  //Fill
 begin
    if (Edit1.Text='')OR (Edit2.Text='') or (Edit3.Text='') or (Edit4.Text='') then
@@ -105,6 +106,9 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
     var
     i,t:Integer;
  begin
+    if ABSTable1.isEmpty then
+           ShowMessage('There is nothing to find');
+           Exit;
     t:=0;
     trova:=True;
      DataSource1.DataSet:=ABSQuery1;
@@ -197,6 +201,9 @@ begin
 
 procedure TForm1.Button4Click(Sender: TObject);     //List
 begin
+   if ABSTable1.isEmpty then
+           ShowMessage('There is nothing to list');
+           Exit;
       DataSource1.DataSet:=ABSQuery1;
    with ABSQuery1 do                                   //inserire il modulo TABSQuery
    begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
@@ -214,13 +221,11 @@ procedure TForm1.Button5Click(Sender: TObject);  //done
 begin
        if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
     begin
-       ABSQuery1.Close;
-       ABSTable1.edit;
-       ABSTable1.close;
-       ABSDatabase1.Close;
        ABSTable1.ReadOnly:=False;
        ABSDatabase1.Readonly:=False;
-       Form1.release;
+       ABSQuery1.Close;
+       ABSTable1.close;
+       ABSDatabase1.Close;
        application.Terminate;
     end else Exit;
 end;
@@ -278,8 +283,11 @@ procedure TForm1.Button7Click(Sender: TObject);  //edit
        trova:=False;
 end;
 
-procedure TForm1.Button8Click(Sender: TObject);    //mov
+procedure TForm1.Button8Click(Sender: TObject);    //move
  begin
+    if ABSTable1.isEmpty then
+           ShowMessage('There is nothing to move');
+           Exit;
     Form1.FormStyle:=fsNormal;  //altrimenti la InputBox non è visibile se fsStayOnTop
       if MessageDlg('Confirm you want to move all books'+#13+'from shelf A to shelf B (to be specified)',mtConfirmation,mbYesNo,0)= mrNo then
         Exit else  showmessage('You have confirmed to move a shelf of your library.');
@@ -289,9 +297,6 @@ procedure TForm1.Button8Click(Sender: TObject);    //mov
 
 
   end;
-
-
-
 
    function GetAppVersionStr: string;     //routine per la versione
        var

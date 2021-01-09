@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>MyLibrary.dpr</MainSource>
@@ -112,11 +112,11 @@
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\Library\</DCC_DcuOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>MyLibrary_Icon.ico</Icon_MainIcon>
-        <VerInfo_Build>298</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.8.298;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/08 09:23:19</VerInfo_Keys>
+        <VerInfo_Build>310</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.9.310;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/09 18:25:52</VerInfo_Keys>
         <VerInfo_MajorVer>2021</VerInfo_MajorVer>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Release>8</VerInfo_Release>
+        <VerInfo_Release>9</VerInfo_Release>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
@@ -125,13 +125,13 @@
         <DCC_ExeOutput>C:\Users\manli\Documenti\Lavori\Projects\Library\</DCC_ExeOutput>
         <DCC_UnitSearchPath>C:\Users\manli\Documenti\Lavori\Projects\Library;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_DcuOutput>C:\Users\manli\Documenti\Lavori\Projects\Library\</DCC_DcuOutput>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.8.2;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/08 09:22:13</VerInfo_Keys>
-        <VerInfo_Build>2</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.9.3;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/09 18:22:45</VerInfo_Keys>
+        <VerInfo_Build>3</VerInfo_Build>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_MajorVer>2021</VerInfo_MajorVer>
         <Icon_MainIcon>MyLibrary_Icon.ico</Icon_MainIcon>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Release>8</VerInfo_Release>
+        <VerInfo_Release>9</VerInfo_Release>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -144,20 +144,20 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>2021Icon.ico</Icon_MainIcon>
-        <VerInfo_Build>37</VerInfo_Build>
+        <VerInfo_Build>41</VerInfo_Build>
         <VerInfo_MajorVer>2021</VerInfo_MajorVer>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Release>8</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.8.37;InternalName=Catalogo;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/08 18:01:08</VerInfo_Keys>
+        <VerInfo_Release>9</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.9.41;InternalName=Catalogo;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/09 18:40:33</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <VerInfo_Build>4</VerInfo_Build>
+        <VerInfo_Build>18</VerInfo_Build>
         <VerInfo_MajorVer>2021</VerInfo_MajorVer>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Release>8</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.8.4;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/08 10:05:33</VerInfo_Keys>
+        <VerInfo_Release>9</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.9.18;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/09 18:46:06</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>MyLibrary_Icon.ico</Icon_MainIcon>
     </PropertyGroup>
