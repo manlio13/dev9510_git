@@ -31,9 +31,6 @@ Coordinates=10,214,64,36
 [Label1]
 Coordinates=191,10,53,58
 
-[Button5]
-Coordinates=265,146,59,58
-
 [Edit3]
 Coordinates=136,78,44,58
 
@@ -50,5 +47,5 @@ Coordinates=477,1,102,36
 Coordinates=99,10,82,58
 
 []
-Coordinates=477,56,91,36
+Coordinates=265,146,59,58
 

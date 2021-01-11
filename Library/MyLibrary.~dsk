@@ -1,40 +1,35 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'C:\Program Files (x86)\Embarcadero\Studio\21.0\source\fmx\FMX.Dialogs.pas',0,1,1,1,1,0,0,,
-File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Controls.pas',0,1,7585,1,7597,0,0,,
-File_2=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.StdCtrls.pas',0,1,5427,1,5438,0,0,{{1715,4}
-File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Forms.pas',0,1,4777,1,4788,0,0,{{1891,4}
-File_4=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\rtl\common\System.Classes.pas',0,1,18010,1,18022,0,0,,
-File_5=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,8382,1,8394,0,0,,
-File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data\Data.DB.pas',0,1,6430,1,6438,0,0,,
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.StdCtrls.pas',0,1,5594,1,5608,0,0,{{1715,4}
+File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Controls.pas',0,1,7583,1,7597,0,0,,
+File_2=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data\Data.DB.pas',0,1,3220,1,3234,0,0,,
+File_3=TSourceModule,'C:\Program Files (x86)\Embarcadero\Studio\21.0\source\fmx\FMX.Dialogs.pas',0,1,1,1,1,0,0,,
+File_4=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Forms.pas',0,1,4777,1,4788,0,0,{{1891,4}
+File_5=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\rtl\common\System.Classes.pas',0,1,18010,1,18022,0,0,,
+File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,8382,1,8394,0,0,,
 File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.pas',0,1,30892,1,30902,0,0,,
 
 [Modules]
 Module0=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
-Module1=default.htm
-Module2=C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary.dproj
-Module3=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
-Count=4
+Module1=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
+Module2=default.htm
+Count=3
 EditWindowCount=1
 
 [C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas]
 ModuleType=TSourceModule
 
-[default.htm]
-ModuleType=TURLModule
-
-[C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary.dproj]
-ModuleType=TBaseProject
-
 [C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas]
 ModuleType=TSourceModule
 
+[default.htm]
+ModuleType=TURLModule
+
 [EditWindow0]
-ViewCount=4
+ViewCount=3
 CurrentEditView=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
 View0=0
 View1=1
 View2=2
-View3=3
 PercentageSizes=1
 Create=1
 Visible=1
@@ -51,12 +46,12 @@ ClientHeight=7889
 DockedToMainForm=1
 BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
-LeftPanelSize=1242
+LeftPanelSize=1820
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=000008000101000000003F0D00000000000001DA040000000000000100000000530E000009000000446F636B536974653301000000008C1700001100000050726F7065727479496E73706563746F72FFFFFFFF
-RightPanelSize=1320
+LeftPanelData=000008000101000000003F0D000000000000011C0700000000000001000000002106000009000000446F636B536974653301000000008C1700001100000050726F7065727479496E73706563746F72FFFFFFFF
+RightPanelSize=1914
 RightPanelClients=DockSite2,DockSite4
-RightPanelData=000008000101000000003F0D00000000000001280500000000000001000000004912000009000000446F636B536974653201000000008C17000009000000446F636B5369746534FFFFFFFF
+RightPanelData=000008000101000000003F0D000000000000017A070000000000000100000000C60B000009000000446F636B536974653201000000008C17000009000000446F636B5369746534FFFFFFFF
 BottomPanelSize=1750
 BottomPanelClients=MessageView,DockSite1
 BottomPanelData=0000080001020100000009000000446F636B5369746531DF4300000000000002D6060000000000000100000000DF4300000F0000004D65737361676556696577466F726DFFFFFFFF
@@ -71,35 +66,24 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
-CursorX=30
-CursorY=234
-TopLine=223
+CursorX=19
+CursorY=312
+TopLine=302
 LeftCol=1
 Elisions=
-Bookmarks={1,284,1}{7,234,30}
+Bookmarks={1,279,1}{7,299,19}
 EditViewName=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
 
 [View2]
 CustomEditViewType=TEditView
-Module=C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary.dpr
-CursorX=50
-CursorY=17
-TopLine=12
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary.dpr
-
-[View3]
-CustomEditViewType=TEditView
 Module=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
-CursorX=17
-CursorY=71
-TopLine=56
+CursorX=10
+CursorY=60
+TopLine=53
 LeftCol=1
 Elisions=
 Bookmarks={7,92,5}
-EditViewName=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
+EditViewName=Borland.FormDesignerView
 
 [Watches]
 Count=0
@@ -169,12 +153,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1320
-Height=3792
+Width=1914
+Height=2125
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1320
-ClientHeight=3792
+ClientWidth=1914
+ClientHeight=2125
 TBDockHeight=5903
 LRDockWidth=2352
 Dockable=1
@@ -233,12 +217,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1320
-Height=958
+Width=1914
+Height=2625
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1320
-ClientHeight=958
+ClientWidth=1914
+ClientHeight=2625
 TBDockHeight=7153
 LRDockWidth=2000
 Dockable=1
@@ -251,18 +235,23 @@ Visible=1
 Docked=1
 State=0
 Left=0
-Top=292
-Width=1242
-Height=1972
+Top=141
+Width=1820
+Height=4069
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1242
-ClientHeight=1972
+ClientWidth=1820
+ClientHeight=4069
 TBDockHeight=4444
-LRDockWidth=1242
+LRDockWidth=1820
 Dockable=1
 StayOnTop=0
-SplitPos=73
+SplitPos=130
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Caption,OnClick
+ExpandedItems=LiveBindings=0,"LiveBindings Designer=0",Margins=0,StyleElements=0,Anchors=0,Constraints=0,Font=0,ImageMargins=0,Options=1,CustomTitleBar=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -579,12 +568,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1242
-Height=3167
+Width=1820
+Height=1069
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1242
-ClientHeight=3167
+ClientWidth=1820
+ClientHeight=1069
 TBDockHeight=3681
 LRDockWidth=1898
 Dockable=1
@@ -746,14 +735,14 @@ Docked=1
 State=0
 Left=0
 Top=28
-Width=1320
-Height=4181
+Width=1914
+Height=2514
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1320
-ClientHeight=4181
+ClientWidth=1914
+ClientHeight=2514
 TBDockHeight=7500
-LRDockWidth=1320
+LRDockWidth=1914
 Dockable=1
 StayOnTop=0
 TabPosition=1
@@ -770,14 +759,14 @@ Docked=1
 State=0
 Left=0
 Top=28
-Width=1242
-Height=3167
+Width=1820
+Height=1069
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1242
-ClientHeight=3167
+ClientWidth=1820
+ClientHeight=1069
 TBDockHeight=4444
-LRDockWidth=1242
+LRDockWidth=1820
 Dockable=1
 StayOnTop=0
 TabPosition=1
@@ -793,15 +782,15 @@ Visible=1
 Docked=1
 State=0
 Left=0
-Top=365
-Width=1320
-Height=958
+Top=245
+Width=1914
+Height=2625
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1320
-ClientHeight=958
+ClientWidth=1914
+ClientHeight=2625
 TBDockHeight=7500
-LRDockWidth=1320
+LRDockWidth=1914
 Dockable=1
 StayOnTop=0
 TabPosition=1

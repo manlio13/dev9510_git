@@ -494,21 +494,6 @@ object Form1: TForm1
     TabOrder = 7
     OnClick = Button4Click
   end
-  object Button5: TButton
-    Left = 564
-    Top = 259
-    Width = 75
-    Height = 25
-    Caption = 'DONE'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -15
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentFont = False
-    TabOrder = 8
-    OnClick = Button5Click
-  end
   object DBGrid1: TDBGrid
     Left = 8
     Top = 85
@@ -516,7 +501,7 @@ object Form1: TForm1
     Height = 168
     Anchors = []
     DataSource = DataSource1
-    TabOrder = 9
+    TabOrder = 8
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clBlack
     TitleFont.Height = -11
@@ -557,7 +542,7 @@ object Form1: TForm1
     Width = 240
     Height = 25
     DataSource = DataSource1
-    TabOrder = 10
+    TabOrder = 9
   end
   object Button6: TButton
     Left = 8
@@ -565,7 +550,7 @@ object Form1: TForm1
     Width = 63
     Height = 25
     Caption = 'Empty DB'
-    TabOrder = 11
+    TabOrder = 10
     OnClick = Button6Click
   end
   object Button7: TButton
@@ -580,7 +565,7 @@ object Form1: TForm1
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 12
+    TabOrder = 11
     OnClick = Button7Click
   end
   object Button8: TButton
@@ -595,8 +580,24 @@ object Form1: TForm1
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    TabOrder = 13
+    TabOrder = 12
     OnClick = Button8Click
+  end
+  object Button5: TButton
+    Left = 584
+    Top = 259
+    Width = 75
+    Height = 25
+    Caption = 'DONE'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 13
+    StyleElements = [seBorder]
+    OnClick = Button5Click
   end
   object ABSTable1: TABSTable
     CurrentVersion = '7.92 '

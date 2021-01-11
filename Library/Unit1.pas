@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
   Vcl.DBGrids, ABSMain, Vcl.ExtCtrls, Vcl.DBCtrls, frxClass, frxDBSet,
-  frxExportBaseDialog, frxExportPDF,System.UITypes;
+  frxExportBaseDialog, frxExportPDF,System.UITypes, JvExControls, JvColorBox,
+  JvColorButton, JvComponentBase, JvCaptionButton;
 
  function GetAppVersionStr : string; forward;
 type
@@ -23,7 +24,6 @@ type
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
-    Button5: TButton;
     DBGrid1: TDBGrid;
     ABSTable1: TABSTable;
     ABSQuery1: TABSQuery;
@@ -37,15 +37,18 @@ type
     Button7: TButton;
     Location: TLabel;
     Button8: TButton;
+    Button5: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure Button5Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
+    procedure DONE(Sender: TObject);
+    procedure JvCaptionButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -216,10 +219,9 @@ begin
   frxReport1.ShowReport;
 end;
 
-procedure TForm1.Button5Click(Sender: TObject);  //done
-
+procedure TForm1.Button5Click(Sender: TObject);
 begin
-       if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
+      if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
     begin
        ABSTable1.ReadOnly:=False;
        ABSDatabase1.Readonly:=False;
@@ -297,6 +299,32 @@ procedure TForm1.Button8Click(Sender: TObject);    //move
 
 
   end;
+
+procedure TForm1.DONE(Sender: TObject);      //DONE
+begin
+      if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
+    begin
+       ABSTable1.ReadOnly:=False;
+       ABSDatabase1.Readonly:=False;
+       ABSQuery1.Close;
+       ABSTable1.close;
+       ABSDatabase1.Close;
+       application.Terminate;
+    end else Exit;
+end;
+
+procedure TForm1.JvCaptionButton1Click(Sender: TObject);
+begin
+     if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
+    begin
+       ABSTable1.ReadOnly:=False;
+       ABSDatabase1.Readonly:=False;
+       ABSQuery1.Close;
+       ABSTable1.close;
+       ABSDatabase1.Close;
+       application.Terminate;
+    end else Exit;
+end;
 
    function GetAppVersionStr: string;     //routine per la versione
        var
