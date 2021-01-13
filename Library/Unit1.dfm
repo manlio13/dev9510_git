@@ -8,7 +8,7 @@ object Form1: TForm1
   BorderStyle = bsDialog
   BorderWidth = 3
   Caption = 'My Library '
-  ClientHeight = 285
+  ClientHeight = 291
   ClientWidth = 697
   Color = clOlive
   Font.Charset = DEFAULT_CHARSET
@@ -326,7 +326,7 @@ object Form1: TForm1
   OnCreate = FormCreate
   DesignSize = (
     697
-    285)
+    291)
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -496,7 +496,7 @@ object Form1: TForm1
   end
   object DBGrid1: TDBGrid
     Left = 8
-    Top = 85
+    Top = 89
     Width = 681
     Height = 168
     Anchors = []
@@ -583,21 +583,23 @@ object Form1: TForm1
     TabOrder = 12
     OnClick = Button8Click
   end
-  object Button5: TButton
-    Left = 584
-    Top = 259
+  object JvHTButton1: TJvHTButton
+    Left = 576
+    Top = 258
     Width = 75
     Height = 25
-    Caption = 'DONE'
+    Caption = 'Done'
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clRed
+    Font.Color = clNavy
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 13
-    StyleElements = [seBorder]
-    OnClick = Button5Click
+    OnClick = JvHTButton1Click
+    Color = clOlive
+    ParentColor = False
+    SuperSubScriptRatio = 0.666666666666666600
   end
   object ABSTable1: TABSTable
     CurrentVersion = '7.92 '

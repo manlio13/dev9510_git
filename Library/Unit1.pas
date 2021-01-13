@@ -7,7 +7,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids,
   Vcl.DBGrids, ABSMain, Vcl.ExtCtrls, Vcl.DBCtrls, frxClass, frxDBSet,
   frxExportBaseDialog, frxExportPDF,System.UITypes, JvExControls, JvColorBox,
-  JvColorButton, JvComponentBase, JvCaptionButton;
+  JvColorButton, JvComponentBase, JvCaptionButton, Vcl.Buttons, JvExButtons,
+  JvButtons;
 
  function GetAppVersionStr : string; forward;
 type
@@ -37,7 +38,7 @@ type
     Button7: TButton;
     Location: TLabel;
     Button8: TButton;
-    Button5: TButton;
+    JvHTButton1: TJvHTButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -49,6 +50,7 @@ type
     procedure Button8Click(Sender: TObject);
     procedure DONE(Sender: TObject);
     procedure JvCaptionButton1Click(Sender: TObject);
+    procedure JvHTButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -316,6 +318,19 @@ end;
 procedure TForm1.JvCaptionButton1Click(Sender: TObject);
 begin
      if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
+    begin
+       ABSTable1.ReadOnly:=False;
+       ABSDatabase1.Readonly:=False;
+       ABSQuery1.Close;
+       ABSTable1.close;
+       ABSDatabase1.Close;
+       application.Terminate;
+    end else Exit;
+end;
+
+procedure TForm1.JvHTButton1Click(Sender: TObject);
+begin
+      if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
     begin
        ABSTable1.ReadOnly:=False;
        ABSDatabase1.Readonly:=False;
