@@ -481,7 +481,7 @@ object Form1: TForm1
   end
   object Button4: TButton
     Left = 416
-    Top = 259
+    Top = 258
     Width = 57
     Height = 25
     Caption = 'LIST'
@@ -569,8 +569,8 @@ object Form1: TForm1
     OnClick = Button7Click
   end
   object Button8: TButton
-    Left = 483
-    Top = 259
+    Left = 479
+    Top = 258
     Width = 54
     Height = 25
     Caption = 'MOVE'
@@ -583,23 +583,20 @@ object Form1: TForm1
     TabOrder = 12
     OnClick = Button8Click
   end
-  object JvHTButton1: TJvHTButton
+  object Button5: TButton
     Left = 576
     Top = 258
-    Width = 75
+    Width = 57
     Height = 25
-    Caption = 'Done'
+    Caption = 'DONE'
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clNavy
+    Font.Color = clBlack
     Font.Height = -15
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 13
-    OnClick = JvHTButton1Click
-    Color = clOlive
-    ParentColor = False
-    SuperSubScriptRatio = 0.666666666666666600
+    OnClick = Button5Click
   end
   object ABSTable1: TABSTable
     CurrentVersion = '7.92 '
@@ -640,7 +637,7 @@ object Form1: TForm1
     CurrentVersion = '7.92 '
     DatabaseFileName = '.\MyLibrary.abs'
     DatabaseName = 'MyLibrary.abs'
-    Exclusive = False
+    Exclusive = True
     MaxConnections = 500
     MultiUser = False
     SessionName = 'Default'

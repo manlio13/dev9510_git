@@ -38,7 +38,7 @@ type
     Button7: TButton;
     Location: TLabel;
     Button8: TButton;
-    JvHTButton1: TJvHTButton;
+    Button5: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -48,9 +48,6 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
-    procedure DONE(Sender: TObject);
-    procedure JvCaptionButton1Click(Sender: TObject);
-    procedure JvHTButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -71,7 +68,6 @@ Unit2,Vcl.HtmlHelpViewer;
 procedure TForm1.FormCreate(Sender: TObject);        //form
 
   begin
-     ABSMain.StartDisconnected:=True;      //consigliato da Absolute Database support
      ABSDatabase1.DatabaseFilename:= ExtractFilePath(Application.ExeName)+'MyLibrary.ABS';
      ABSDatabase1.Connected:=True;
      ABSTable1.Active:=True;
@@ -112,14 +108,17 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
     i,t:Integer;
  begin
     if ABSTable1.isEmpty then
-           ShowMessage('There is nothing to find');
-           Exit;
+    begin
+       ShowMessage('There is nothing to find');
+       Exit;
+    end;
     t:=0;
     trova:=True;
      DataSource1.DataSet:=ABSQuery1;
     if ((Edit1.Text='') AND (Edit2.Text='') and (Edit3.Text='') and (Edit4.Text='')) then
      begin
-     ShowMessage('The search for books can be done by Author or by Title'+#13+'or by Shelf indicating both the column and the row');
+     ShowMessage('The search for books can be done by Author or by Title'+#13+
+     'or by Shelf indicating both the column and the row'+#13+'    Please fill data');
       Exit;
      end ;
        if Edit1.text<>'' then  t:=t+1;                        //per verificare che ci siano i soli dati necessari
@@ -207,21 +206,23 @@ begin
 procedure TForm1.Button4Click(Sender: TObject);     //List
 begin
    if ABSTable1.isEmpty then
-           ShowMessage('There is nothing to list');
-           Exit;
+            begin
+              ShowMessage('There is nothing to list');
+              Exit
+            end;
       DataSource1.DataSet:=ABSQuery1;
    with ABSQuery1 do                                   //inserire il modulo TABSQuery
    begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
       Close;                                           //scrivere queste righe di codice
       SQL.Text:='select * from cat ORDER BY Col ASC';
       ExecSQL;
-     // Open;
+      Open;
    end;
   trova:=False;
   frxReport1.ShowReport;
 end;
 
-procedure TForm1.Button5Click(Sender: TObject);
+procedure TForm1.Button5Click(Sender: TObject);     //Done
 begin
       if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
     begin
@@ -290,8 +291,10 @@ end;
 procedure TForm1.Button8Click(Sender: TObject);    //move
  begin
     if ABSTable1.isEmpty then
-           ShowMessage('There is nothing to move');
-           Exit;
+    begin
+       ShowMessage('There is nothing to move');
+        Exit;
+    end;
     Form1.FormStyle:=fsNormal;  //altrimenti la InputBox non è visibile se fsStayOnTop
       if MessageDlg('Confirm you want to move all books'+#13+'from shelf A to shelf B (to be specified)',mtConfirmation,mbYesNo,0)= mrNo then
         Exit else  showmessage('You have confirmed to move a shelf of your library.');
@@ -302,46 +305,7 @@ procedure TForm1.Button8Click(Sender: TObject);    //move
 
   end;
 
-procedure TForm1.DONE(Sender: TObject);      //DONE
-begin
-      if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
-    begin
-       ABSTable1.ReadOnly:=False;
-       ABSDatabase1.Readonly:=False;
-       ABSQuery1.Close;
-       ABSTable1.close;
-       ABSDatabase1.Close;
-       application.Terminate;
-    end else Exit;
-end;
-
-procedure TForm1.JvCaptionButton1Click(Sender: TObject);
-begin
-     if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
-    begin
-       ABSTable1.ReadOnly:=False;
-       ABSDatabase1.Readonly:=False;
-       ABSQuery1.Close;
-       ABSTable1.close;
-       ABSDatabase1.Close;
-       application.Terminate;
-    end else Exit;
-end;
-
-procedure TForm1.JvHTButton1Click(Sender: TObject);
-begin
-      if MessageDlg('Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
-    begin
-       ABSTable1.ReadOnly:=False;
-       ABSDatabase1.Readonly:=False;
-       ABSQuery1.Close;
-       ABSTable1.close;
-       ABSDatabase1.Close;
-       application.Terminate;
-    end else Exit;
-end;
-
-   function GetAppVersionStr: string;     //routine per la versione
+function GetAppVersionStr: string;     //routine per la versione
        var
        Exe: string;
        Size, Handle: DWORD;
