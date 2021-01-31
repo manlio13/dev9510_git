@@ -5,7 +5,7 @@
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>MyLibrary.dpr</MainSource>
@@ -112,11 +112,11 @@
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\Library\</DCC_DcuOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>MyLibrary_Icon.ico</Icon_MainIcon>
-        <VerInfo_Build>333</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.20.333;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/20 11:53:01</VerInfo_Keys>
+        <VerInfo_Build>357</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.25.357;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/25 11:07:41</VerInfo_Keys>
         <VerInfo_MajorVer>2021</VerInfo_MajorVer>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Release>20</VerInfo_Release>
+        <VerInfo_Release>25</VerInfo_Release>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
@@ -144,20 +144,20 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>2021Icon.ico</Icon_MainIcon>
-        <VerInfo_Build>48</VerInfo_Build>
+        <VerInfo_Build>99</VerInfo_Build>
         <VerInfo_MajorVer>2021</VerInfo_MajorVer>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Release>20</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.20.48;InternalName=Catalogo;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/20 11:54:06</VerInfo_Keys>
+        <VerInfo_Release>31</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.31.99;InternalName=Catalogo;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/31 14:11:47</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <VerInfo_Build>41</VerInfo_Build>
+        <VerInfo_Build>49</VerInfo_Build>
         <VerInfo_MajorVer>2021</VerInfo_MajorVer>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
-        <VerInfo_Release>20</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.20.41;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/20 11:58:20</VerInfo_Keys>
+        <VerInfo_Release>31</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2021.1.31.49;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/01/31 14:08:44</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>MyLibrary_Icon.ico</Icon_MainIcon>
     </PropertyGroup>
@@ -170,7 +170,6 @@
         </DCCReference>
         <DCCReference Include="Unit2.pas">
             <Form>Form2</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <RcItem Include="MyLibrary_Icon.ico">
             <ResourceType>ICON</ResourceType>

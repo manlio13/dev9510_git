@@ -2,9 +2,9 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Library"
-#define MyAppVersion "1.8.26"
+#define MyAppVersion "1.31.48"
 #define MyAppPublisher "MLSoft 2021"
-#define MyAppExeName "MyLibrary32r.exe"
+#define MyAppExeName "MyLibrary64r.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -20,7 +20,7 @@ DefaultGroupName={#MyAppName}
 PrivilegesRequired=admin
 LicenseFile=C:\Users\manli\Documents\Lavori\Projects\Readme.txt
 OutputDir=C:\Users\manli\Documents\Lavori\Projects\Library\install
-OutputBaseFilename=Library32rsetup
+OutputBaseFilename=Library64rsetup
 SetupIconFile=C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary_Icon.ico
 Compression=lzma
 SolidCompression=yes
@@ -33,7 +33,7 @@ Name: "italian"; MessagesFile: "compiler:Languages\Italian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary32r.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary64r.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\manli\Documents\Lavori\Projects\Library\library.chm"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary.abs"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\manli\Documents\Lavori\Projects\Library\MyLibrary_Icon.ico"; DestDir: "{app}"; Flags: ignoreversion
