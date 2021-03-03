@@ -435,7 +435,7 @@ object Form1: TForm1
     TabOrder = 3
   end
   object Button1: TButton
-    Left = 284
+    Left = 296
     Top = 54
     Width = 75
     Height = 25
@@ -450,8 +450,8 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 375
-    Top = 53
+    Left = 383
+    Top = 55
     Width = 75
     Height = 25
     Caption = 'FIND /?'
@@ -466,7 +466,7 @@ object Form1: TForm1
   end
   object Button3: TButton
     Left = 467
-    Top = 54
+    Top = 55
     Width = 75
     Height = 25
     Caption = 'CLEAR'
@@ -496,7 +496,7 @@ object Form1: TForm1
   end
   object DBGrid1: TDBGrid
     Left = 8
-    Top = 86
+    Top = 85
     Width = 681
     Height = 168
     Anchors = []
@@ -604,7 +604,7 @@ object Form1: TForm1
   object CheckBox1: TCheckBox
     Left = 190
     Top = 54
-    Width = 88
+    Width = 100
     Height = 17
     Caption = ' Same location'
     Checked = True
