@@ -344,7 +344,7 @@ var
    testo:string;
 begin
       DataSource1.DataSet:=ABSQuery1;
-        testo:='Select * from ecomTB where DataCons="" ';
+        testo:='Select * from ecomTB where DataCons="" ';  //nelle stringhe SQL usare i doppi apici
     //   testo:= StringReplace(testo,',','.',[rfReplaceAll]);
         //SQL vuole il punto come separatore decimale
        with ABSQuery1 do

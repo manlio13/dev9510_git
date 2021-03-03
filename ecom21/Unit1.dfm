@@ -2,9 +2,12 @@ object Form1: TForm1
   Left = 891
   Top = 309
   Anchors = []
+  AutoSize = True
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
   Caption = 'Controllo acquisti online - v 8.1'
-  ClientHeight = 410
-  ClientWidth = 946
+  ClientHeight = 405
+  ClientWidth = 930
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,8 +20,8 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 10
-    Top = 46
+    Left = 2
+    Top = 43
     Width = 646
     Height = 13
     Caption = 
@@ -27,15 +30,15 @@ object Form1: TForm1
       '                                  Filtro libero SQL'
   end
   object Label2: TLabel
-    Left = 8
-    Top = 3
+    Left = 0
+    Top = 0
     Width = 65
     Height = 13
     Caption = 'DataOrd...da'
   end
   object Label3: TLabel
-    Left = 249
-    Top = 20
+    Left = 241
+    Top = 17
     Width = 144
     Height = 20
     AutoSize = False
@@ -47,28 +50,28 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 408
-    Top = 19
+    Left = 400
+    Top = 16
     Width = 81
     Height = 21
     AutoSize = False
   end
   object Label5: TLabel
-    Left = 507
-    Top = 18
+    Left = 499
+    Top = 15
     Width = 214
     Height = 22
     AutoSize = False
   end
   object Label6: TLabel
-    Left = 731
-    Top = 15
+    Left = 723
+    Top = 12
     Width = 3
     Height = 13
   end
   object Label7: TLabel
-    Left = 127
-    Top = 357
+    Left = 119
+    Top = 354
     Width = 347
     Height = 13
     Caption = 
@@ -84,8 +87,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object DBGrid1: TDBGrid
-    Left = 9
-    Top = 92
+    Left = 1
+    Top = 89
     Width = 929
     Height = 265
     Color = clYellow
@@ -175,8 +178,8 @@ object Form1: TForm1
       end>
   end
   object DBNavigator1: TDBNavigator
-    Left = 8
-    Top = 375
+    Left = 0
+    Top = 372
     Width = 240
     Height = 25
     DataSource = DataSource1
@@ -184,8 +187,8 @@ object Form1: TForm1
     OnClick = DBNavigator1Click
   end
   object Edit1: TEdit
-    Left = 9
-    Top = 64
+    Left = 1
+    Top = 61
     Width = 65
     Height = 21
     Font.Charset = DEFAULT_CHARSET
@@ -198,8 +201,8 @@ object Form1: TForm1
     Text = 'gg/mm/aaaa'
   end
   object Edit2: TEdit
-    Left = 80
-    Top = 64
+    Left = 72
+    Top = 61
     Width = 82
     Height = 21
     Font.Charset = DEFAULT_CHARSET
@@ -211,8 +214,8 @@ object Form1: TForm1
     TabOrder = 3
   end
   object Edit3: TEdit
-    Left = 168
-    Top = 64
+    Left = 160
+    Top = 61
     Width = 177
     Height = 21
     Font.Charset = DEFAULT_CHARSET
@@ -224,8 +227,8 @@ object Form1: TForm1
     TabOrder = 4
   end
   object Edit4: TEdit
-    Left = 351
-    Top = 64
+    Left = 343
+    Top = 61
     Width = 90
     Height = 21
     Font.Charset = DEFAULT_CHARSET
@@ -237,16 +240,16 @@ object Form1: TForm1
     TabOrder = 5
   end
   object Edit5: TEdit
-    Left = 8
-    Top = 19
+    Left = 0
+    Top = 16
     Width = 65
     Height = 21
     TabOrder = 6
     Text = '01/02/2014'
   end
   object Button1: TButton
-    Left = 79
-    Top = 15
+    Left = 71
+    Top = 12
     Width = 75
     Height = 25
     Caption = 'Cerca'
@@ -254,8 +257,8 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 168
-    Top = 15
+    Left = 160
+    Top = 12
     Width = 75
     Height = 25
     Caption = 'Reset'
@@ -263,8 +266,8 @@ object Form1: TForm1
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 270
-    Top = 376
+    Left = 262
+    Top = 373
     Width = 75
     Height = 25
     Caption = 'Query>Table'
@@ -272,8 +275,8 @@ object Form1: TForm1
     OnClick = Button3Click
   end
   object Edit6: TEdit
-    Left = 447
-    Top = 65
+    Left = 439
+    Top = 62
     Width = 426
     Height = 21
     Hint = 'exs.: Select * from ecomTB where Fornitore ='#39'amazon'#39
@@ -289,8 +292,8 @@ object Form1: TForm1
     Text = 'select * from ecomTB'
   end
   object Button4: TButton
-    Left = 672
-    Top = 40
+    Left = 664
+    Top = 37
     Width = 75
     Height = 18
     Caption = 'Filtra'
@@ -298,8 +301,8 @@ object Form1: TForm1
     OnClick = Button4Click
   end
   object Button5: TButton
-    Left = 753
-    Top = 40
+    Left = 745
+    Top = 37
     Width = 75
     Height = 18
     Caption = 'Reset'
@@ -307,8 +310,8 @@ object Form1: TForm1
     OnClick = Button5Click
   end
   object Button6: TButton
-    Left = 359
-    Top = 375
+    Left = 351
+    Top = 372
     Width = 75
     Height = 33
     Caption = '  Azzera Database '
@@ -317,8 +320,8 @@ object Form1: TForm1
     OnClick = Button6Click
   end
   object Button7: TButton
-    Left = 449
-    Top = 375
+    Left = 441
+    Top = 372
     Width = 75
     Height = 25
     Caption = 'Done'
@@ -326,8 +329,8 @@ object Form1: TForm1
     OnClick = Button7Click
   end
   object Button8: TButton
-    Left = 535
-    Top = 375
+    Left = 527
+    Top = 372
     Width = 75
     Height = 25
     Caption = 'Backup'
@@ -335,8 +338,8 @@ object Form1: TForm1
     OnClick = Button8Click
   end
   object Button9: TButton
-    Left = 622
-    Top = 376
+    Left = 614
+    Top = 373
     Width = 75
     Height = 25
     Caption = 'Report'
@@ -344,8 +347,8 @@ object Form1: TForm1
     OnClick = Button9Click
   end
   object DBLookupComboBox: TDBLookupComboBox
-    Left = 656
-    Top = 168
+    Left = 648
+    Top = 165
     Width = 145
     Height = 21
     DataField = 'MezzoPag'
@@ -356,8 +359,8 @@ object Form1: TForm1
     Visible = False
   end
   object JvDBLookupCombo1: TJvDBLookupCombo
-    Left = 432
-    Top = 304
+    Left = 424
+    Top = 301
     Width = 145
     Height = 21
     DataField = 'Fornitore'
@@ -370,8 +373,8 @@ object Form1: TForm1
     OnChange = DBGrid1ColExit
   end
   object JvDBLookupCombo2: TJvDBLookupCombo
-    Left = 656
-    Top = 272
+    Left = 648
+    Top = 269
     Width = 145
     Height = 21
     DataField = 'MezzoPag'
@@ -384,8 +387,8 @@ object Form1: TForm1
     OnChange = DBGrid1ColExit
   end
   object Button10: TButton
-    Left = 711
-    Top = 375
+    Left = 703
+    Top = 372
     Width = 75
     Height = 25
     Caption = 'Statistics'
@@ -393,8 +396,8 @@ object Form1: TForm1
     OnClick = Button10Click
   end
   object Button11: TButton
-    Left = 800
-    Top = 376
+    Left = 792
+    Top = 373
     Width = 75
     Height = 25
     Caption = 'Undelivered'
