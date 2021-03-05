@@ -38,9 +38,9 @@ object Form1: TForm1
     Caption = 'Ord.date..from'
   end
   object Label3: TLabel
-    Left = 241
-    Top = 8
-    Width = 137
+    Left = 249
+    Top = 6
+    Width = 163
     Height = 24
     AutoSize = False
     Font.Charset = DEFAULT_CHARSET
@@ -51,33 +51,31 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 384
-    Top = 8
+    Left = 421
+    Top = 6
     Width = 105
     Height = 29
     AutoSize = False
   end
   object Label5: TLabel
-    Left = 522
-    Top = 8
+    Left = 530
+    Top = 6
     Width = 193
     Height = 24
     AutoSize = False
   end
   object Label6: TLabel
-    Left = 728
-    Top = 8
-    Width = 3
-    Height = 13
+    Left = 733
+    Top = 6
+    Width = 49
+    Height = 23
   end
   object Label7: TLabel
     Left = 119
     Top = 354
-    Width = 347
+    Width = 271
     Height = 13
-    Caption = 
-      'Per inserire un dato nuovo di Fornitore o Mezzo di Pag.  PREMERE' +
-      ' SHIFT'
+    Caption = 'To enter a new Supplier or  Payment Method: press shift'
     Color = clYellow
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
