@@ -6,35 +6,35 @@ object Form1: TForm1
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   BorderWidth = 2
-  Caption = 'Controllo acquisti online - v 8.1'
+  Caption = 'Control of online purchases. Version :'
   ClientHeight = 405
   ClientWidth = 929
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
+  Font.Height = -9
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
   Position = poDefault
   OnCreate = FormCreate
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 11
   object Label1: TLabel
-    Left = 1
-    Top = 43
-    Width = 630
-    Height = 13
+    Left = 0
+    Top = 45
+    Width = 553
+    Height = 11
     Caption = 
       'Ord.date...to    Supplier               Product                 ' +
-      '                               Payment                          ' +
-      '                                 Free SQL filter'
+      '                                Payment                         ' +
+      '           Free SQL filter'
   end
   object Label2: TLabel
     Left = 0
     Top = 0
-    Width = 74
-    Height = 13
+    Width = 62
+    Height = 11
     Caption = 'Ord.date..from'
   end
   object Label3: TLabel
@@ -54,7 +54,7 @@ object Form1: TForm1
     Left = 421
     Top = 6
     Width = 105
-    Height = 29
+    Height = 24
     AutoSize = False
   end
   object Label5: TLabel
@@ -67,8 +67,8 @@ object Form1: TForm1
   object Label6: TLabel
     Left = 733
     Top = 6
-    Width = 49
-    Height = 23
+    Width = 3
+    Height = 11
   end
   object Label7: TLabel
     Left = 119
@@ -198,10 +198,10 @@ object Form1: TForm1
     Left = 1
     Top = 61
     Width = 65
-    Height = 21
+    Height = 19
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -11
+    Font.Height = -9
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
@@ -251,7 +251,7 @@ object Form1: TForm1
     Left = 0
     Top = 16
     Width = 65
-    Height = 21
+    Height = 19
     TabOrder = 6
     Text = '01/02/2014'
   end
@@ -300,7 +300,7 @@ object Form1: TForm1
     Text = 'select * from ecomTB'
   end
   object Button4: TButton
-    Left = 664
+    Left = 733
     Top = 38
     Width = 75
     Height = 18
@@ -309,8 +309,8 @@ object Form1: TForm1
     OnClick = Button4Click
   end
   object Button5: TButton
-    Left = 745
-    Top = 37
+    Left = 817
+    Top = 38
     Width = 75
     Height = 18
     Caption = 'Reset'
@@ -358,7 +358,7 @@ object Form1: TForm1
     Left = 648
     Top = 165
     Width = 145
-    Height = 21
+    Height = 19
     DataField = 'MezzoPag'
     DataSource = DataSource1
     KeyField = 'MP'
