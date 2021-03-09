@@ -1,4 +1,4 @@
-unit Unit1;
+unit Unit1;       //good
 interface
 
 uses
@@ -114,24 +114,24 @@ begin
   AbsTable1.First; { Go to first record, which sets Eof False }
   inizio:= ABSTable1.FieldByName('DataOrd').AsDateTime;
   Edit5.Text:= DateTimeToStr(inizio);
-  Label4.Caption:='Dal '+ABSTable1.FieldByName('DataOrd').AsString;
+  Label4.Caption:='From '+ABSTable1.FieldByName('DataOrd').AsString;
   while (not AbsTable1.Eof) do { Cycle until Eof is True }
   begin
     somma:=somma+AbsTable1.FieldByName('prezzo').AsFloat;
     AbsTable1.Next; { Eof False on success; Eof True when Next fails on last record }
   end;
  finally
-  Label3.Caption:='Totale acquistato = € : '+ floattostr(somma);
+  Label3.Caption:='Total purchased = €:'+ floattostr(somma);
   if DaysBetween(Now,inizio)>0 then
    begin
-      Label5.Caption:='€ '+FloatToStrF(Somma/(DaysBetween(Now,inizio)/30),ffFixed,4,2)+' al mese';
-      Label6.Caption:='N. articoli: '+IntToStr(ABSTable1.RecNo);
+      Label5.Caption:='€ '+FloatToStrF(Somma/(DaysBetween(Now,inizio)/30),ffFixed,4,2)+' per month';
+      Label6.Caption:='N. items: '+IntToStr(ABSTable1.RecNo);
       somma:=0;
    end;
   
   end;
 
-   Form1.Caption:='Controllo acquisti on line, ' + ' Versione : '+ GetAppVersionStr;
+   Form1.Caption:='Control of online purchases, ' + ' Version : '+ GetAppVersionStr;
 end;
 
 
@@ -230,7 +230,7 @@ end;
 procedure TForm1.Button4Click(Sender: TObject);   //sql   free text
 begin
        DataSource1.DataSet:=ABSQuery1;
-      // edit6.Text:= StringReplace(edit6.text,',','.',[rfReplaceAll]);  //SQL vuole il punto come separatore decimale
+       edit6.Text:= StringReplace(edit6.text,',','.',[rfReplaceAll]);  //SQL vuole il punto come separatore decimale
        with ABSQuery1 do
      begin
        close;
@@ -251,7 +251,7 @@ end;
 
 procedure TForm1.Button6Click(Sender: TObject);  //azzera il database
 begin
-      if messageDlg('Vuoi veramente cancellare tutti i dati ?',mtConfirmation,mbYesNo,0)=mrNo then
+      if messageDlg('You really want to erase all data ?',mtConfirmation,mbYesNo,0)=mrNo then
        exit;
       ABSTable1.Close;
       ABSTable1.EmptyTable;
@@ -260,10 +260,10 @@ end;
 procedure TForm1.Button7Click(Sender: TObject);   // Done
 begin
         if cambio=True then
-        if MessageDlg('Hai dati da confermare ?',
+        if MessageDlg('Data to be confirmed ?',
          mtconfirmation, [mbYes,mbNo], 0) = mrYes then Exit else cambio:=False;
 
-         if MessageDlg('Confermi di voler uscire ?',
+         if MessageDlg('Do you want to quit ?',
          mtconfirmation, [mbYes,mbNo], 0) = mrYes then
   begin
     //Button8Click;
@@ -283,12 +283,12 @@ procedure TForm1.Button8Click(Sender: TObject);     //Backup
    dir:string;
    dirList:TStringList;      //occorre creare un StringList perchè JVshFileOperation non accetta altro che da StingList
 begin
-   if MessageDlg('Confermi di voler effettuare il backup del DataBase ?',
+   if MessageDlg('Confirm that you want to backup the database ?',
              mtconfirmation, [mbYes,mbNo], 0) = mrYes then
      begin
          dirList:= TStringList.Create;      //inizializzare la string list
          ABSDatabase1.Close;
-             if MessageDlg('Vuoi cambiare il percorso di salvataggio ?',
+             if MessageDlg('Do you want to change backup path ?',
              mtconfirmation, [mbYes,mbNo], 0) = mrYes then
                begin
                   dir:=InputBox('Indicare il path','digitare l''intero percorso che termina per \','');  // creare la string
@@ -302,9 +302,9 @@ begin
          ABSDatabase1.Open;
          ABSTable1.Open;
          if FileExists('ecom.bkp') then
-         ShowMessage('Effettuato il backup') else
+         ShowMessage('Backup done') else
            begin
-              ShowMessage('Errore ! Backup non effettuato');
+              ShowMessage('Error ! Backup non done');
               Exit;
            end;
 
@@ -344,9 +344,7 @@ var
    testo:string;
 begin
       DataSource1.DataSet:=ABSQuery1;
-        testo:='Select * from ecomTB where DataCons='' ';
-    //   testo:= StringReplace(testo,',','.',[rfReplaceAll]);
-        //SQL vuole il punto come separatore decimale
+        testo:='Select * from ecomTB where DataCons="" ';  //nelle stringhe SQL usare i doppi apici
        with ABSQuery1 do
      begin
        close;
@@ -369,7 +367,7 @@ begin
      if dbgrid1.Columns.Items[clnu].Field.Value=null then
        begin
            ABSTable1.Edit;
-        if MessageDlg('Inserisci la data di oggi ?',
+        if MessageDlg('Today date ?',
              mtconfirmation, [mbYes,mbNo], 0) = mrYes then
              begin
                dbgrid1.Columns.Items[clnu].Field.Value:=DateToStr(Now);
@@ -558,7 +556,7 @@ procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
              d2:=ABSTable1.FieldByName('Datacons').AsDateTime;
              d3:=ABSTable1.FieldByName('DataSped').AsDateTime;
               if (d2<d1) and (d2>0) then
-                 ShowMessage('Errore di date');
+                 ShowMessage('Date error');
                   if d2>d1 then
             begin
                ABSTable1.Edit;
@@ -572,7 +570,7 @@ procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
               ABSTable1.Post;
             end else
             begin
-               ShowMessage('Errore nella Data Ordine');
+               ShowMessage('Order date error');
                Exit;
             end;
             ABSTable1.Next;
