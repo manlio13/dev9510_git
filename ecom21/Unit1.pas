@@ -52,6 +52,7 @@ type
     frxReport2: TfrxReport;
     Button10: TButton;
     Button11: TButton;
+    Label8: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);

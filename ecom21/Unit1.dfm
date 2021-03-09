@@ -16,19 +16,16 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDefault
+  Position = poDesktopCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 11
   object Label1: TLabel
-    Left = 0
-    Top = 45
-    Width = 553
+    Left = 1
+    Top = 44
+    Width = 226
     Height = 11
-    Caption = 
-      'Ord.date...to    Supplier               Product                 ' +
-      '                                Payment                         ' +
-      '           Free SQL filter'
+    Caption = 'Ord.date...to      Supplier                 Product             '
   end
   object Label2: TLabel
     Left = 0
@@ -84,6 +81,13 @@ object Form1: TForm1
     Font.Style = []
     ParentColor = False
     ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 343
+    Top = 44
+    Width = 194
+    Height = 11
+    Caption = 'Payments                          Free SQL filetr'
   end
   object DBGrid1: TDBGrid
     Left = 0
