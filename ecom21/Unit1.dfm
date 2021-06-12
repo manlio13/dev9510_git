@@ -85,7 +85,7 @@ object Form1: TForm1
   object Label8: TLabel
     Left = 343
     Top = 44
-    Width = 194
+    Width = 181
     Height = 11
     Caption = 'Payments                          Free SQL filetr'
   end
@@ -261,10 +261,16 @@ object Form1: TForm1
   end
   object Button1: TButton
     Left = 71
-    Top = 12
+    Top = 13
     Width = 75
     Height = 25
     Caption = 'Find'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 7
     OnClick = Button1Click
   end
@@ -274,6 +280,12 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Reset'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 8
     OnClick = Button2Click
   end
@@ -283,6 +295,12 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Query>Table'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 9
     OnClick = Button3Click
   end
@@ -309,6 +327,12 @@ object Form1: TForm1
     Width = 75
     Height = 18
     Caption = 'Filter'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 11
     OnClick = Button4Click
   end
@@ -318,6 +342,12 @@ object Form1: TForm1
     Width = 75
     Height = 18
     Caption = 'Reset'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 12
     OnClick = Button5Click
   end
@@ -327,16 +357,28 @@ object Form1: TForm1
     Width = 75
     Height = 33
     Caption = 'Empty DB'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 13
     WordWrap = True
     OnClick = Button6Click
   end
   object Button7: TButton
-    Left = 441
+    Left = 446
     Top = 372
     Width = 75
     Height = 25
     Caption = 'Done'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 14
     OnClick = Button7Click
   end
@@ -346,6 +388,12 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Backup'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 15
     OnClick = Button8Click
   end
@@ -355,6 +403,12 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Report'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 16
     OnClick = Button9Click
   end
@@ -399,11 +453,17 @@ object Form1: TForm1
     OnChange = DBGrid1ColExit
   end
   object Button10: TButton
-    Left = 703
+    Left = 711
     Top = 372
     Width = 75
     Height = 25
     Caption = 'Statistics'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 20
     OnClick = Button10Click
   end
@@ -413,6 +473,12 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Undelivered'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 21
     OnClick = Button11Click
   end
