@@ -501,12 +501,14 @@ object Form1: TForm1
     Height = 168
     Anchors = []
     DataSource = DataSource1
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgMultiSelect, dgTitleClick, dgTitleHotTrack]
     TabOrder = 8
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clBlack
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
     Columns = <
       item
         Expanded = False
@@ -605,7 +607,10 @@ object Form1: TForm1
     Width = 88
     Height = 17
     Caption = ' Same location'
+    Checked = True
+    State = cbChecked
     TabOrder = 14
+    OnClick = CheckBox1Click
   end
   object ABSTable1: TABSTable
     CurrentVersion = '7.92 '
