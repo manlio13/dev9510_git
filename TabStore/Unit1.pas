@@ -11,6 +11,7 @@ type
     ABSDatabase1: TABSDatabase;
     ABSTable1: TABSTable;
     ABSTable2: TABSTable;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -23,5 +24,15 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+ABSDatabase1.DatabaseFilename:= ExtractFilePath(Application.ExeName)+'TSdata.ABS';
+ABSDatabase1.Open;
+ABSTable1.TableName:='TS';
+ABSTable2.TableName:='TStab';
+ABSTable1.Open;
+ABSTable2.Open;
+end;
 
 end.
