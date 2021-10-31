@@ -4,22 +4,13 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, ABSMain, Vcl.StdCtrls,
-  Vcl.DBCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, ABSMain;
 
 type
   TForm1 = class(TForm)
     ABSDatabase1: TABSDatabase;
     ABSTable1: TABSTable;
     ABSTable2: TABSTable;
-    DBMemo1: TDBMemo;
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
-    Label1: TLabel;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
