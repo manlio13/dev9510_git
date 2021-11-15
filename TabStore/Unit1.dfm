@@ -3,10 +3,10 @@ object Form1: TForm1
   Top = 154
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Form1'
-  ClientHeight = 249
+  Caption = 'TabStore'
+  ClientHeight = 256
   ClientWidth = 589
-  Color = clBtnFace
+  Color = clInactiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -20,48 +20,60 @@ object Form1: TForm1
   object Label1: TLabel
     Left = 197
     Top = 191
-    Width = 288
+    Width = 84
     Height = 13
-    Caption = 
-      '   Tab1                                  Tab2                   ' +
-      '                Tab3'
+    Caption = '   Tab1 &&  Find     '
+  end
+  object Label2: TLabel
+    Left = 336
+    Top = 191
+    Width = 24
+    Height = 13
+    Caption = 'Tab2'
+  end
+  object Label3: TLabel
+    Left = 464
+    Top = 191
+    Width = 24
+    Height = 13
+    Caption = 'Tab3'
   end
   object DBMemo1: TDBMemo
     Left = 8
-    Top = 0
+    Top = 8
     Width = 563
     Height = 177
     TabOrder = 0
   end
   object Button1: TButton
     Left = 8
-    Top = 210
+    Top = 191
     Width = 57
     Height = 25
-    Caption = 'Button1'
+    Caption = 'New'
     TabOrder = 1
   end
   object Button2: TButton
-    Left = 71
-    Top = 210
+    Left = 8
+    Top = 223
     Width = 57
     Height = 25
-    Caption = 'Button2'
+    Caption = 'Save'
     TabOrder = 2
   end
   object Button3: TButton
-    Left = 134
-    Top = 210
+    Left = 71
+    Top = 191
     Width = 57
     Height = 25
-    Caption = 'Button3'
+    Caption = 'Find'
     TabOrder = 3
   end
   object Edit1: TEdit
     Left = 197
     Top = 210
     Width = 121
-    Height = 22
+    Height = 21
     TabOrder = 4
     Text = 'Edit1'
   end
@@ -69,7 +81,7 @@ object Form1: TForm1
     Left = 324
     Top = 210
     Width = 121
-    Height = 22
+    Height = 21
     TabOrder = 5
     Text = 'Edit2'
   end
@@ -80,6 +92,38 @@ object Form1: TForm1
     Height = 21
     TabOrder = 6
     Text = 'Edit3'
+  end
+  object Button4: TButton
+    Left = 71
+    Top = 222
+    Width = 57
+    Height = 25
+    Caption = 'Next'
+    TabOrder = 7
+  end
+  object Button5: TButton
+    Left = 134
+    Top = 191
+    Width = 57
+    Height = 25
+    Caption = 'Delete'
+    TabOrder = 8
+  end
+  object Button6: TButton
+    Left = 134
+    Top = 223
+    Width = 57
+    Height = 25
+    Caption = 'Done'
+    TabOrder = 9
+  end
+  object Button8: TButton
+    Left = 112
+    Top = 248
+    Width = 25
+    Height = 1
+    Caption = 'Button8'
+    TabOrder = 10
   end
   object ABSDatabase1: TABSDatabase
     Connected = True

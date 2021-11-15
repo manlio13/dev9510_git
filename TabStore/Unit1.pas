@@ -11,7 +11,6 @@ type
   TForm1 = class(TForm)
     ABSDatabase1: TABSDatabase;
     ABSTable1: TABSTable;
-    ABSTable2: TABSTable;
     DBMemo1: TDBMemo;
     Button1: TButton;
     Button2: TButton;
@@ -20,6 +19,13 @@ type
     Edit2: TEdit;
     Edit3: TEdit;
     Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button8: TButton;
+    ABSTable2: TABSTable;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
