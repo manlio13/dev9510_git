@@ -4,7 +4,7 @@ object Form1: TForm1
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'TabStore'
-  ClientHeight = 282
+  ClientHeight = 280
   ClientWidth = 589
   Color = clInactiveCaption
   Font.Charset = DEFAULT_CHARSET
@@ -19,21 +19,21 @@ object Form1: TForm1
   TextHeight = 13
   object Label1: TLabel
     Left = 197
-    Top = 215
+    Top = 227
     Width = 84
     Height = 13
     Caption = '   Tab1 &&  Find     '
   end
   object Label2: TLabel
-    Left = 336
-    Top = 215
+    Left = 344
+    Top = 227
     Width = 24
     Height = 13
     Caption = 'Tab2'
   end
   object Label3: TLabel
-    Left = 464
-    Top = 215
+    Left = 471
+    Top = 227
     Width = 24
     Height = 13
     Caption = 'Tab3'
@@ -50,17 +50,12 @@ object Form1: TForm1
     ParentColor = False
     Transparent = False
   end
-  object DBText1: TDBText
-    Left = 328
-    Top = 136
-    Width = 65
-    Height = 17
-  end
   object DBMemo1: TDBMemo
     Left = 8
-    Top = 8
+    Top = -2
     Width = 573
     Height = 177
+    DataField = 'info'
     DataSource = DataSource1
     TabOrder = 0
   end
@@ -80,6 +75,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Save'
     TabOrder = 2
+    OnClick = Button2Click
   end
   object Button3: TButton
     Left = 71
@@ -89,37 +85,13 @@ object Form1: TForm1
     Caption = 'Find'
     TabOrder = 3
   end
-  object Edit1: TEdit
-    Left = 197
-    Top = 234
-    Width = 121
-    Height = 21
-    TabOrder = 4
-    Text = 'Edit1'
-  end
-  object Edit2: TEdit
-    Left = 324
-    Top = 234
-    Width = 121
-    Height = 21
-    TabOrder = 5
-    Text = 'Edit2'
-  end
-  object Edit3: TEdit
-    Left = 451
-    Top = 234
-    Width = 121
-    Height = 21
-    TabOrder = 6
-    Text = 'Edit3'
-  end
   object Button4: TButton
     Left = 71
     Top = 248
     Width = 57
     Height = 25
     Caption = 'Next'
-    TabOrder = 7
+    TabOrder = 4
   end
   object Button5: TButton
     Left = 134
@@ -127,7 +99,7 @@ object Form1: TForm1
     Width = 57
     Height = 25
     Caption = 'Delete'
-    TabOrder = 8
+    TabOrder = 5
   end
   object Button6: TButton
     Left = 134
@@ -135,20 +107,49 @@ object Form1: TForm1
     Width = 57
     Height = 25
     Caption = 'Done'
-    TabOrder = 9
+    TabOrder = 6
     OnClick = Button6Click
   end
   object DBNavigator1: TDBNavigator
-    Left = 345
-    Top = 186
+    Left = 342
+    Top = 181
     Width = 240
     Height = 25
+    DataSource = DataSource1
+    TabOrder = 7
+  end
+  object DBEdit1: TDBEdit
+    Left = 197
+    Top = 251
+    Width = 133
+    Height = 21
+    AutoSize = False
+    DataField = 'tab1'
+    DataSource = DataSource1
+    TabOrder = 8
+  end
+  object DBEdit2: TDBEdit
+    Left = 336
+    Top = 251
+    Width = 121
+    Height = 21
+    DataField = 'tab2'
+    DataSource = DataSource1
+    TabOrder = 9
+  end
+  object DBEdit3: TDBEdit
+    Left = 463
+    Top = 251
+    Width = 121
+    Height = 21
+    DataField = 'tab3'
     DataSource = DataSource1
     TabOrder = 10
   end
   object ABSDatabase1: TABSDatabase
+    Connected = True
     CurrentVersion = '7.92 '
-    DatabaseFileName = './TSdata.abs'
+    DatabaseFileName = '.\TSdata.abs'
     DatabaseName = 'TSData.abs'
     Exclusive = False
     MaxConnections = 500

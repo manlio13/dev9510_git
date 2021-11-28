@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, ABSMain, Vcl.StdCtrls,
-  Vcl.DBCtrls, Vcl.ExtCtrls;
+  Vcl.DBCtrls, Vcl.ExtCtrls, Vcl.Mask;
 
 type
   TForm1 = class(TForm)
@@ -15,9 +15,6 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -25,12 +22,15 @@ type
     Button5: TButton;
     Button6: TButton;
     Label4: TLabel;
-    DBText1: TDBText;
     DataSource1: TDataSource;
     DBNavigator1: TDBNavigator;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,6 +60,19 @@ begin
   ABSTable1.Insert;
   ABSTable1.Edit;
   Label4.Caption:='New record created.Fill Memo && One or more Tab, Click on Save';
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);   //Save
+begin
+  if DBEdit1.text='' then
+    begin
+      ShowMessage('Tab data cannot be empty!');
+      Exit;
+    end else begin
+
+               ABSTable1.Post;
+             end;
 
 end;
 
