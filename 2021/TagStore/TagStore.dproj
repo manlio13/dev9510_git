@@ -71,6 +71,9 @@
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>TagStore</SanitizedProjectName>
         <DCC_UnitSearchPath>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_Define>EUREKALOG_VER7;EUREKALOG;$(DCC_Define)</DCC_Define>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;vclactnband;vclFireDAC;bindcompvclsmp;tethering;svnui;JvGlobus;FireDACADSDriver;JvPluginSystem;frx27;JvMM;vcltouch;JvBands;vcldb;bindcompfmx;svn;JvJans;JvNet;inetdb;JvAppFrm;FmxTeeUI;JvDotNetCtrls;fmx;FireDACIBDriver;fmxdae;vcledge;vclib;JvWizards;dbexpress;IndyCore;vclx;frxTee27;JvPageComps;dsnap;FireDACCommon;JvDB;RESTBackendComponents;VCLRESTComponents;soapserver;JclDeveloperTools;vclie;FMXfrxDB27;bindengine;DBXMySQLDriver;CloudService;JvCmp;FireDACMySQLDriver;JvHMI;FireDACCommonODBC;FireDACCommonDriver;inet;IndyIPCommon;bindcompdbx;frxDB27;FMXfrx27;vcl;IndyIPServer;JvCustom;JvXPCtrls;IndySystem;bindcompvclwinx;dsnapcon;madExcept_;dclAbsDBd27;FireDACMSAccDriver;fmxFireDAC;vclimg;madBasic_;TeeDB;FireDAC;Jcl;JvCore;JvCrypt;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FMXTee;soaprtl;DbxCommonDriver;JvDlgs;JvRuntimeDesign;ibxpress;Tee;JvManagedThreads;xmlrtl;soapmidas;ibxbindings;fmxobj;vclwinx;JvTimeFramework;rtl;vclAbsDBd27;DbxClientDriver;madDisAsm_;CustomIPTransport;vcldsnap;CodeSiteExpressPkg;JvSystem;JvStdCtrls;bindcomp;appanalytics;IndyIPClient;EurekaLogCore;bindcompvcl;frxe27;TeeUI;JvDocking;dbxcds;VclSmp;JvPascalInterpreter;adortl;JclVcl;dsnapxml;dbrtl;IndyProtocols;inetdbxpress;JvControls;JvPrintPreview;JclContainers;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
@@ -100,6 +103,7 @@
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</DCC_DcuOutput>
+        <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</DCC_DcpOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -122,11 +126,11 @@
         <Debugger_HostApplication>C:\Users\manli\Documents\Lavori\Projects\TabStore\</Debugger_HostApplication>
         <Debugger_CWD>C:\Users\manli\Documents\Lavori\Projects\TabStore\</Debugger_CWD>
         <Debugger_DebugSourcePath>C:\Users\manli\Documents\Lavori\Projects\TabStore\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
-        <VerInfo_Build>39</VerInfo_Build>
+        <VerInfo_Build>77</VerInfo_Build>
         <VerInfo_MajorVer>2021</VerInfo_MajorVer>
         <VerInfo_MinorVer>12</VerInfo_MinorVer>
         <VerInfo_Release>3</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=MLSoft 2021;FileDescription=$(MSBuildProjectName);FileVersion=2021.12.3.39;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/12/03 12:41:12</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=MLSoft 2021;FileDescription=$(MSBuildProjectName);FileVersion=2021.12.3.77;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/12/03 16:52:40</VerInfo_Keys>
         <BRCC_IncludePath>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\;$(BRCC_IncludePath)</BRCC_IncludePath>
         <VerInfo_Debug>true</VerInfo_Debug>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
@@ -153,7 +157,6 @@
         </DelphiCompile>
         <DCCReference Include="Unit1.pas">
             <Form>Form1</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -187,14 +190,14 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="TagStore.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win64">
+                <DeployFile LocalName="Win32\Debug\TagStore.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
                         <RemoteName>TagStore.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\TagStore.exe" Configuration="Debug" Class="ProjectOutput">
-                    <Platform Name="Win32">
+                <DeployFile LocalName="TagStore.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
                         <RemoteName>TagStore.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>

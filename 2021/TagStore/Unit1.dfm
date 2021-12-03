@@ -69,11 +69,14 @@ object Form1: TForm1
     Transparent = False
   end
   object Label5: TLabel
-    Left = 335
+    Left = 336
     Top = 252
-    Width = 111
-    Height = 13
-    Caption = '<-- Tag to find here'
+    Width = 120
+    Height = 21
+    Margins.Left = 4
+    Margins.Right = 4
+    AutoSize = False
+    Caption = '<--Tag to find here'
     Color = clYellow
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
@@ -140,6 +143,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Next'
     TabOrder = 4
+    OnClick = Button4Click
   end
   object Button5: TButton
     Left = 71
@@ -166,7 +170,7 @@ object Form1: TForm1
     Height = 21
     AutoSize = False
     CharCase = ecLowerCase
-    DataField = 'tab1'
+    DataField = 'tag1'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
@@ -182,7 +186,7 @@ object Form1: TForm1
     Width = 121
     Height = 21
     CharCase = ecLowerCase
-    DataField = 'tab2'
+    DataField = 'tag2'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
@@ -198,7 +202,7 @@ object Form1: TForm1
     Width = 121
     Height = 21
     CharCase = ecLowerCase
-    DataField = 'tab3'
+    DataField = 'tag3'
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clNavy
@@ -220,6 +224,22 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 10
+  end
+  object Button7: TButton
+    Left = 462
+    Top = 250
+    Width = 59
+    Height = 25
+    Caption = 'Report'
+    TabOrder = 11
+  end
+  object Button8: TButton
+    Left = 523
+    Top = 250
+    Width = 58
+    Height = 25
+    Caption = 'Reset'
+    TabOrder = 12
   end
   object ABSDatabase1: TABSDatabase
     CurrentVersion = '7.93 '
@@ -248,17 +268,17 @@ object Form1: TForm1
         DataType = ftFmtMemo
       end
       item
-        Name = 'tab1'
+        Name = 'tag1'
         DataType = ftString
         Size = 20
       end
       item
-        Name = 'tab2'
+        Name = 'tag2'
         DataType = ftString
         Size = 20
       end
       item
-        Name = 'tab3'
+        Name = 'tag3'
         DataType = ftString
         Size = 20
       end>
@@ -274,6 +294,7 @@ object Form1: TForm1
   end
   object ABSQuery1: TABSQuery
     CurrentVersion = '7.93 '
+    DatabaseName = 'TSData.abs'
     InMemory = False
     ReadOnly = False
     Left = 472
