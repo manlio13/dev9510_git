@@ -26,11 +26,15 @@ type
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
+    Edit1: TEdit;
+    Label5: TLabel;
+    ABSQuery1: TABSQuery;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -78,6 +82,29 @@ begin
                ABSTable1.Post;
                Label4.Caption:='Record saved.';
              end;
+
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  if Edit1.text='' then
+   begin
+     ShowMessage('Enter tag text to find');
+     Exit;
+   end
+     else
+     begin
+      DataSource1.DataSet:=ABSQuery1;
+          with ABSQuery1 do
+        begin
+         Close;
+         SQL.Text:='Select * from TS where tag1='+QuotedStr(Edit1.text)+'OR tag2='+
+         QuotedStr(Edit1.text) +'OR tag3='+QuotedStr(Edit1.text);
+         ExecSQL;
+         Open;
+        end;
+
+     end;
 
 end;
 

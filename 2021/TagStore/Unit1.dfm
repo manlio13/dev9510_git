@@ -7,7 +7,7 @@ object Form1: TForm1
   BorderWidth = 4
   Caption = 'TabStore'
   ClientHeight = 281
-  ClientWidth = 581
+  ClientWidth = 589
   Color = clHotLight
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clHighlightText
@@ -22,11 +22,11 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 197
-    Top = 227
-    Width = 93
+    Left = 199
+    Top = 208
+    Width = 37
     Height = 13
-    Caption = '   Tag1 &&  Find     '
+    Caption = '   Tag1'
     Color = clHighlightText
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlightText
@@ -37,15 +37,15 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 344
-    Top = 227
+    Left = 339
+    Top = 210
     Width = 28
     Height = 13
     Caption = 'Tag2'
   end
   object Label3: TLabel
-    Left = 471
-    Top = 227
+    Left = 470
+    Top = 210
     Width = 28
     Height = 13
     Caption = 'Tag3'
@@ -64,6 +64,22 @@ object Form1: TForm1
     Font.Height = -13
     Font.Name = 'Tahoma'
     Font.Style = []
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object Label5: TLabel
+    Left = 335
+    Top = 252
+    Width = 111
+    Height = 13
+    Caption = '<-- Tag to find here'
+    Color = clYellow
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
     Transparent = False
@@ -91,8 +107,8 @@ object Form1: TForm1
     TabOrder = 0
   end
   object Button1: TButton
-    Left = 8
-    Top = 217
+    Left = 9
+    Top = 218
     Width = 57
     Height = 25
     Caption = 'New'
@@ -109,24 +125,25 @@ object Form1: TForm1
     OnClick = Button2Click
   end
   object Button3: TButton
-    Left = 71
-    Top = 217
+    Left = 133
+    Top = 218
     Width = 57
     Height = 25
     Caption = 'Find'
     TabOrder = 3
+    OnClick = Button3Click
   end
   object Button4: TButton
-    Left = 71
-    Top = 248
+    Left = 134
+    Top = 249
     Width = 57
     Height = 25
     Caption = 'Next'
     TabOrder = 4
   end
   object Button5: TButton
-    Left = 134
-    Top = 217
+    Left = 71
+    Top = 218
     Width = 57
     Height = 25
     Caption = 'Delete'
@@ -134,7 +151,7 @@ object Form1: TForm1
     OnClick = Button5Click
   end
   object Button6: TButton
-    Left = 134
+    Left = 71
     Top = 249
     Width = 57
     Height = 25
@@ -143,8 +160,8 @@ object Form1: TForm1
     OnClick = Button6Click
   end
   object DBEdit1: TDBEdit
-    Left = 197
-    Top = 252
+    Left = 196
+    Top = 225
     Width = 133
     Height = 21
     AutoSize = False
@@ -160,8 +177,8 @@ object Form1: TForm1
     TabOrder = 7
   end
   object DBEdit2: TDBEdit
-    Left = 336
-    Top = 252
+    Left = 335
+    Top = 225
     Width = 121
     Height = 21
     CharCase = ecLowerCase
@@ -176,8 +193,8 @@ object Form1: TForm1
     TabOrder = 8
   end
   object DBEdit3: TDBEdit
-    Left = 463
-    Top = 251
+    Left = 460
+    Top = 225
     Width = 121
     Height = 21
     CharCase = ecLowerCase
@@ -191,8 +208,21 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 9
   end
+  object Edit1: TEdit
+    Left = 197
+    Top = 249
+    Width = 132
+    Height = 21
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clNavy
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 10
+  end
   object ABSDatabase1: TABSDatabase
-    CurrentVersion = '7.92 '
+    CurrentVersion = '7.93 '
     DatabaseFileName = '.\TSdata.abs'
     DatabaseName = 'TSData.abs'
     Exclusive = False
@@ -203,7 +233,7 @@ object Form1: TForm1
     Top = 88
   end
   object ABSTable1: TABSTable
-    CurrentVersion = '7.92 '
+    CurrentVersion = '7.93 '
     DatabaseName = 'TSData.abs'
     InMemory = False
     ReadOnly = False
@@ -241,5 +271,12 @@ object Form1: TForm1
     DataSet = ABSTable1
     Left = 392
     Top = 56
+  end
+  object ABSQuery1: TABSQuery
+    CurrentVersion = '7.93 '
+    InMemory = False
+    ReadOnly = False
+    Left = 472
+    Top = 64
   end
 end
