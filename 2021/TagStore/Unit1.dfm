@@ -69,20 +69,22 @@ object Form1: TForm1
     Transparent = False
   end
   object Label5: TLabel
-    Left = 336
+    Left = 335
     Top = 252
-    Width = 120
+    Width = 121
     Height = 21
-    Margins.Left = 4
-    Margins.Right = 4
+    Margins.Left = 1
+    Margins.Top = 1
+    Margins.Right = 1
+    Margins.Bottom = 1
     AutoSize = False
-    Caption = '<--Tag to find here'
+    Caption = ' <--Tag to find here'
     Color = clYellow
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clRed
     Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
+    Font.Style = [fsBold, fsItalic]
     ParentColor = False
     ParentFont = False
     Transparent = False
@@ -111,37 +113,37 @@ object Form1: TForm1
     OnChange = DBMemo1Change
   end
   object Button1: TButton
-    Left = 7
-    Top = 213
+    Left = 8
+    Top = 210
     Width = 40
-    Height = 25
+    Height = 29
     Caption = 'New'
     TabOrder = 1
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 9
-    Top = 249
+    Left = 7
+    Top = 245
     Width = 40
-    Height = 25
+    Height = 29
     Caption = 'Save'
     TabOrder = 2
     OnClick = Button2Click
   end
   object Button3: TButton
     Left = 102
-    Top = 213
+    Top = 210
     Width = 40
-    Height = 25
+    Height = 29
     Caption = 'Find'
     TabOrder = 3
     OnClick = Button3Click
   end
   object Button4: TButton
-    Left = 103
-    Top = 249
+    Left = 101
+    Top = 248
     Width = 40
-    Height = 25
+    Height = 29
     Caption = 'Next'
     TabOrder = 4
     OnClick = Button4Click
@@ -169,9 +171,9 @@ object Form1: TForm1
     Caption = 'DONE'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlightText
-    Font.Height = -8
+    Font.Height = -11
     Font.Name = 'Tahoma'
-    Font.Style = [fsBold, fsItalic]
+    Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 6
     OnClick = Button6Click
@@ -195,7 +197,7 @@ object Form1: TForm1
   end
   object DBEdit2: TDBEdit
     Left = 335
-    Top = 225
+    Top = 224
     Width = 121
     Height = 21
     CharCase = ecLowerCase
@@ -271,9 +273,9 @@ object Form1: TForm1
   end
   object Button9: TButton
     Left = 147
-    Top = 249
+    Top = 248
     Width = 40
-    Height = 25
+    Height = 29
     Caption = 'Previous'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlightText
@@ -286,9 +288,9 @@ object Form1: TForm1
   end
   object Button10: TButton
     Left = 148
-    Top = 213
+    Top = 210
     Width = 40
-    Height = 25
+    Height = 29
     Caption = 'Browse'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlightText

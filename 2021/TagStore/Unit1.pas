@@ -80,6 +80,9 @@ begin
   GetAppVersionStr;
   caption:=caption + '  - ver: '+versione;
   Button2.Enabled:=False;
+  Button5.Enabled:=False;
+  Button11.Enabled:=False;
+  Button12.Enabled:=False;
   Button4.Enabled:=False;
   Button9.Enabled:=False;
   Button10.Enabled:=True;
@@ -93,6 +96,7 @@ var
 n:Integer;
 begin
  br:=1;
+  Edit1.Text:='';
   DataSource1.DataSet:=ABSQuery1;
           with ABSQuery1 do
         begin
@@ -101,6 +105,9 @@ begin
          ExecSQL;
          Open;
           n:=ABSQuery1.RecordCount;
+         Button5.Enabled:=True;
+         Button11.Enabled:=True;
+         Button12.Enabled:=True;
          Button4.enabled:=True;
          Button9.Enabled:=True;
          Label4.Caption:='Dataset of '+IntToStr(n)+' records.';
@@ -115,6 +122,8 @@ begin
   ABSTable1.append;
   DBMemo1.SetFocus;
   ABSTable1.Edit;
+  Button5.Enabled:=False;
+  Button12.Enabled:=False;
   Edit1.Text:='';
   Label4.caption:='To make an entry type text and one or more Tag.'+
    ' Then click on save. Or you can use Find.';
@@ -195,6 +204,9 @@ begin
           begin
             Button4.enabled:=True;
             Button9.Enabled:=True;
+            Button5.Enabled:=True;
+            Button11.Enabled:=True;
+            Button12.Enabled:=True;
           end else
                 begin
                   Edit1.text:='';
@@ -235,6 +247,12 @@ begin
     Abort else
     ABSTable1.Delete;
     Label4.caption:='Record deleted.';
+   Button2.Enabled:=False;
+   Button5.Enabled:=False;
+   Button11.Enabled:=False;
+   Button12.Enabled:=False;
+   Button4.Enabled:=False;
+   Button9.Enabled:=False;
     DataSource1.DataSet:=ABSTable1; //sembra che dal browse il datasource sia sempre ABSQuery
     ABSTable1.append;      //quindi occorre ritornare su ABSTable1 per usare append
 end;
@@ -254,7 +272,7 @@ procedure TForm1.Button7Click(Sender: TObject);    //Print
 begin
   if ABSQuery1.IsEmpty =True then
    begin
-     Label4.caption:='Print can be used after Find or Browse';
+     Label4.caption:='Print can be used only after Find or Browse';
      Exit;
    end;
 
