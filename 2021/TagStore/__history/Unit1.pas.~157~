@@ -1,0 +1,309 @@
+unit Unit1;        //TagStore 5/12/2021 versione 1 preliminare
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, ABSMain, Vcl.StdCtrls,
+  Vcl.DBCtrls, Vcl.ExtCtrls, Vcl.Mask,System.UITypes, frxClass, frxDBSet;
+
+type
+  TForm1 = class(TForm)
+    ABSDatabase1: TABSDatabase;
+    ABSTable1: TABSTable;
+    DBMemo1: TDBMemo;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Label4: TLabel;
+    DataSource1: TDataSource;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    Edit1: TEdit;
+    Label5: TLabel;
+    ABSQuery1: TABSQuery;
+    Button7: TButton;
+    Button8: TButton;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    Button9: TButton;
+    Button10: TButton;
+    Button11: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
+    procedure DBMemo1Change(Sender: TObject);
+    procedure Button11Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    function GetAppVersionStr: string;
+  end;
+
+var
+  Form1: TForm1;
+  dir,versione :string;
+  br :SmallInt;
+  num :Integer;
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm1.FormCreate(Sender: TObject);        //Form create
+begin
+  dir:= ExtractFilePath(Application.ExeName)+'TSdata.ABS';
+  ABSDatabase1.DatabaseFilename  :=dir;
+  ABSDatabase1.Open;
+  ABSTable1.TableName:='TS';
+  ABSTable1.Open;
+  ABSTable1.Last;
+  ABSTable1.Append;
+  GetAppVersionStr;
+  caption:=caption + '  - ver: '+versione;
+  Button2.Enabled:=False;
+  Button4.Enabled:=False;
+  Button9.Enabled:=False;
+  Button10.Enabled:=True;
+  Label4.caption:='To make an entry type text and one or more Tag. Then click on save. Or you can use Find.';
+ br:=0;
+end;
+
+
+procedure TForm1.Button10Click(Sender: TObject);       //Browse
+var
+n:Integer;
+begin
+ br:=1;
+  DataSource1.DataSet:=ABSQuery1;
+          with ABSQuery1 do
+        begin
+         Close;
+         SQL.Text:='Select * from TS';
+         ExecSQL;
+         Open;
+          n:=ABSQuery1.RecordCount;
+         Button4.enabled:=True;
+         Button9.Enabled:=True;
+         Label4.Caption:='Dataset of '+IntToStr(n)+' records.';
+       end;
+end;
+
+procedure TForm1.Button11Click(Sender: TObject);        //clear
+begin
+  DataSource1.DataSet:=ABSTable1;
+  ABSTable1.Open;
+  ABSTable1.Last;
+  ABSTable1.append;
+  DBMemo1.SetFocus;
+  ABSTable1.Edit;
+  Label4.caption:='To make an entry type text and one or more Tag.'+
+   ' Then click on save. Or you can use Find.';
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);  //New
+begin
+  DataSource1.DataSet:=ABSTable1;
+  ABSTable1.Open;
+  ABSTable1.Last;
+  DBMemo1.SetFocus;
+  ABSTable1.Edit;
+  ABSTable1.Append;
+  Button2.Enabled:=True;
+  Label4.Caption:='New record created.Fill Memo && One or more Tag, Click on Save';
+ end;
+
+
+
+procedure TForm1.Button2Click(Sender: TObject);   //Save
+begin
+  if DBEdit1.text='' then
+    begin
+      //ShowMessage('Tab data cannot be empty!');
+      Label4.Caption:= 'Type at least one Tag!';
+      Exit;
+    end
+    else
+       begin
+          ABSTable1.Post;
+          Label4.Caption:='Record saved.';
+          ABSTable1.last;
+          ABSTable1.Append;
+        end;
+
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);   //find
+var
+n:SmallInt;
+begin
+  if Edit1.text='' then
+   begin
+     Label4.Caption:='Enter tag text to find';
+     Exit;
+   end
+     else
+     begin
+      Button4.Enabled:=False;
+      DataSource1.DataSet:=ABSQuery1;
+          with ABSQuery1 do
+        begin
+         Close;
+         SQL.Text:='Select * from TS where tag1 ='+ quotedstr(Edit1.text)+'OR tag2='+
+         QuotedStr(Edit1.text) +'OR tag3='+QuotedStr(Edit1.text);;
+         ExecSQL;
+           Open;
+          n:=RecordCount ;
+          Label4.Caption:='Found '+IntToStr(n)+' records with requested tag';
+          if n>0 then
+          begin
+            Button4.enabled:=True;
+            Button9.Enabled:=True;
+          end else
+                begin
+                  Edit1.text:='';
+                  Exit;
+                end;
+         end;
+     end;
+end ;
+
+procedure TForm1.Button4Click(Sender: TObject); //next
+begin
+  DataSource1.DataSet:=ABSQuery1;
+  ABSQuery1.Next;
+  if ABSQuery1.eof=True then
+    begin
+     if br=0 then Label4.Caption:='No more records with requested tag !'else
+     Label4.caption:='Last record.';
+      Edit1.text:='';
+      Button4.enabled:=False;
+      Exit;
+    end else
+          begin
+           if br=0 then Label4.Caption:='Next record with requested tag !'else
+            Label4.caption:='Next record';
+           Button9.Enabled:=True;
+           end;
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);     //delete
+begin
+  num:=ABSQuery1.FieldByName('numero').AsInteger;
+  if not ABSTable1.locate('numero',IntToStr(num),[]) then
+  begin
+   Label4.caption:='Error: no record to delete found.';
+   Exit;
+  end else
+  if MessageDlg('Delete This Record?', mtConfirmation, mbYesNoCancel, 0) <> mrYes then
+    Abort else
+    ABSTable1.Delete;
+    Label4.caption:='Record deleted.';
+    DataSource1.DataSet:=ABSTable1; //sembra che dal browse il datasource sia sempre ABSQuery
+    ABSTable1.append;      //quindi occorre ritornare su ABSTable1 per usare append
+end;
+
+
+procedure TForm1.Button6Click(Sender: TObject);   //Done
+begin
+   ABSTable1.edit;
+    ABSTable1.close;
+    ABSDatabase1.Close;
+    Form1.release;
+    application.Terminate;
+end;
+
+
+procedure TForm1.Button7Click(Sender: TObject);    //Print
+begin
+  if ABSQuery1.IsEmpty =True then
+   begin
+     Label4.caption:='Print can be used after Find or Browse';
+     Exit;
+   end;
+
+  frxDBDataSet1.RangeBegin := rbCurrent;
+  frxDBDataSet1.RangeEnd := reCurrent;
+  frxReport1.ShowReport;
+  Label4.caption:='Printing';
+end;
+
+procedure TForm1.Button8Click(Sender: TObject);   //reset
+begin
+  if messageDlg('Do you really want to erase all data ?',mtConfirmation,mbYesNo,0)=mrNo then
+       exit;
+      ABSTable1.Close;
+      ABSTable1.EmptyTable;
+      ABSTable1.Open;
+      ABSTable1.Last;
+      ABSTable1.append;
+      DBMemo1.SetFocus;
+      ABSTable1.Edit;
+  Label4.caption:='To make an entry type text and one or more Tag.'+
+   ' Then click on save. Or you can use Find.';
+end;
+
+procedure TForm1.Button9Click(Sender: TObject);   // prior
+
+begin
+  DataSource1.DataSet:=ABSQuery1;
+  ABSQuery1.Prior;
+  Button4.enabled:=True;
+  if ABSQuery1.RecNo =1 then
+    begin
+      if br=0 then Label4.Caption:='This is the first record with requested tag !'else
+      Label4.caption:='First record.';
+      Edit1.text:='';
+      Button9.enabled:=False;
+      Exit;
+    end else
+    if br=0 then Label4.Caption:='Previous record with requested tag !'else
+    Label4.caption:='Previous record';
+end;
+
+
+procedure TForm1.DBMemo1Change(Sender: TObject);  // di servizio
+begin
+  Button2.enabled:=True;
+end;
+
+function TForm1.GetAppVersionStr: string;       //versione
+var
+Exe: string;
+Size, Handle: DWORD;
+Buffer: TBytes;
+FixedPtr: PVSFixedFileInfo;
+begin
+Exe := ParamStr(0);
+Size := GetFileVersionInfoSize(PChar(Exe), Handle);
+if Size = 0 then
+RaiseLastOSError;
+SetLength(Buffer, Size);
+if not GetFileVersionInfo(PChar(Exe), Handle, Size, Buffer) then
+RaiseLastOSError;
+if not VerQueryValue(Buffer, '\', Pointer(FixedPtr), Size) then
+RaiseLastOSError;
+Result := Format('%d.%d.%d.%d',
+[LongRec(FixedPtr.dwFileVersionMS).Hi, //major
+LongRec(FixedPtr.dwFileVersionMS).Lo, //minor
+LongRec(FixedPtr.dwFileVersionLS).Hi, //release
+LongRec(FixedPtr.dwFileVersionLS).Lo]); //build
+versione:= Result;
+end;
+end.
