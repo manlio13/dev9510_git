@@ -126,11 +126,11 @@
         <Debugger_HostApplication>C:\Users\manli\Documents\Lavori\Projects\TabStore\</Debugger_HostApplication>
         <Debugger_CWD>C:\Users\manli\Documents\Lavori\Projects\TabStore\</Debugger_CWD>
         <Debugger_DebugSourcePath>C:\Users\manli\Documents\Lavori\Projects\TabStore\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
-        <VerInfo_Build>202</VerInfo_Build>
+        <VerInfo_Build>208</VerInfo_Build>
         <VerInfo_MajorVer>2021</VerInfo_MajorVer>
         <VerInfo_MinorVer>12</VerInfo_MinorVer>
         <VerInfo_Release>6</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=MLSoft 2021;FileDescription=$(MSBuildProjectName);FileVersion=2021.12.6.202;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/12/06 14:58:38</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=MLSoft 2021;FileDescription=$(MSBuildProjectName);FileVersion=2021.12.6.208;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/12/06 19:00:01</VerInfo_Keys>
         <BRCC_IncludePath>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\;$(BRCC_IncludePath)</BRCC_IncludePath>
         <VerInfo_Debug>true</VerInfo_Debug>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>

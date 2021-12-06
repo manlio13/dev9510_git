@@ -147,20 +147,32 @@ object Form1: TForm1
     OnClick = Button4Click
   end
   object Button5: TButton
-    Left = 55
-    Top = 213
+    Left = 53
+    Top = 234
     Width = 40
-    Height = 25
-    Caption = 'Delete'
+    Height = 20
+    Caption = 'DELETE'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clHighlightText
+    Font.Height = -8
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
     TabOrder = 5
     OnClick = Button5Click
   end
   object Button6: TButton
-    Left = 55
-    Top = 249
+    Left = 53
+    Top = 258
     Width = 40
-    Height = 25
-    Caption = 'Done'
+    Height = 20
+    Caption = 'DONE'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clHighlightText
+    Font.Height = -8
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
     TabOrder = 6
     OnClick = Button6Click
   end
@@ -301,6 +313,21 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 15
     OnClick = Button11Click
+  end
+  object Button12: TButton
+    Left = 53
+    Top = 210
+    Width = 40
+    Height = 20
+    Caption = 'Edit'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clHighlightText
+    Font.Height = -8
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    TabOrder = 16
+    OnClick = Button12Click
   end
   object ABSDatabase1: TABSDatabase
     CurrentVersion = '7.93 '

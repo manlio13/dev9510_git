@@ -36,6 +36,7 @@ type
     Button9: TButton;
     Button10: TButton;
     Button11: TButton;
+    Button12: TButton;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
@@ -49,6 +50,7 @@ type
     procedure Button10Click(Sender: TObject);
     procedure DBMemo1Change(Sender: TObject);
     procedure Button11Click(Sender: TObject);
+    procedure Button12Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -113,8 +115,26 @@ begin
   ABSTable1.append;
   DBMemo1.SetFocus;
   ABSTable1.Edit;
+  Edit1.Text:='';
   Label4.caption:='To make an entry type text and one or more Tag.'+
    ' Then click on save. Or you can use Find.';
+end;
+
+procedure TForm1.Button12Click(Sender: TObject);     //edit
+begin
+   num:=ABSQuery1.FieldByName('numero').AsInteger;
+  if not ABSTable1.locate('numero',IntToStr(num),[]) then
+  begin
+   Label4.caption:='Error: no record to edit found.';
+   Exit;
+  end else
+  if MessageDlg('Edit This Record?', mtConfirmation, mbYesNoCancel, 0) <> mrYes then
+    Abort else
+    DataSource1.Dataset:= ABSTable1;
+    ABSTable1.Edit;
+
+    Label4.caption:='Edit record and click on save.';
+
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);  //New
