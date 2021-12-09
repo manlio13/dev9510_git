@@ -286,6 +286,8 @@ procedure TForm1.Button8Click(Sender: TObject);   //reset
 begin
   if messageDlg('Do you really want to erase all data ?',mtConfirmation,mbYesNo,0)=mrNo then
        exit;
+      DataSource1.DataSet:=ABSTable1;
+      ABSTable1.Open;
       ABSTable1.Close;
       ABSTable1.EmptyTable;
       ABSTable1.Open;
