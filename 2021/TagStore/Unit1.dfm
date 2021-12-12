@@ -533,44 +533,44 @@ object Form1: TForm1
     TabOrder = 0
     OnChange = DBMemo1Change
   end
-  object Button1: TButton
+  object NewB: TButton
     Left = 8
     Top = 210
     Width = 40
     Height = 29
     Caption = 'New'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = NewBClick
   end
-  object Button2: TButton
-    Left = 7
+  object SaveB: TButton
+    Left = 8
     Top = 245
     Width = 40
     Height = 29
     Caption = 'Save'
     TabOrder = 2
-    OnClick = Button2Click
+    OnClick = SaveBClick
   end
-  object Button3: TButton
+  object FindB: TButton
     Left = 102
     Top = 210
     Width = 40
     Height = 29
     Caption = 'Find'
     TabOrder = 3
-    OnClick = Button3Click
+    OnClick = FindBClick
   end
-  object Button4: TButton
+  object NextB: TButton
     Left = 101
-    Top = 248
+    Top = 245
     Width = 40
     Height = 29
     Caption = 'Next'
     TabOrder = 4
-    OnClick = Button4Click
+    OnClick = NextBClick
   end
-  object Button5: TButton
-    Left = 53
+  object DeleteB: TButton
+    Left = 56
     Top = 234
     Width = 40
     Height = 20
@@ -582,10 +582,10 @@ object Form1: TForm1
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
     TabOrder = 5
-    OnClick = Button5Click
+    OnClick = DeleteBClick
   end
-  object Button6: TButton
-    Left = 53
+  object DoneB: TButton
+    Left = 56
     Top = 258
     Width = 40
     Height = 20
@@ -597,7 +597,7 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 6
-    OnClick = Button6Click
+    OnClick = DoneBClick
   end
   object DBEdit1: TDBEdit
     Left = 194
@@ -662,9 +662,9 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 10
   end
-  object Button7: TButton
+  object PrintB: TButton
     Left = 462
-    Top = 250
+    Top = 248
     Width = 42
     Height = 25
     Caption = 'Print'
@@ -675,11 +675,11 @@ object Form1: TForm1
     Font.Style = [fsItalic]
     ParentFont = False
     TabOrder = 11
-    OnClick = Button7Click
+    OnClick = PrintBClick
   end
-  object Button8: TButton
+  object ResetB: TButton
     Left = 545
-    Top = 250
+    Top = 248
     Width = 42
     Height = 25
     Caption = 'Reset'
@@ -690,14 +690,14 @@ object Form1: TForm1
     Font.Style = [fsItalic]
     ParentFont = False
     TabOrder = 12
-    OnClick = Button8Click
+    OnClick = ResetBClick
   end
-  object Button9: TButton
+  object PreviousB: TButton
     Left = 147
-    Top = 248
+    Top = 245
     Width = 40
     Height = 29
-    Caption = 'Previous'
+    Caption = 'PreviousB'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlightText
     Font.Height = -8
@@ -705,9 +705,9 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 13
-    OnClick = Button9Click
+    OnClick = PreviousBClick
   end
-  object Button10: TButton
+  object BrowseB: TButton
     Left = 148
     Top = 210
     Width = 40
@@ -720,11 +720,11 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 14
-    OnClick = Button10Click
+    OnClick = BrowseBClick
   end
-  object Button11: TButton
+  object ClearB: TButton
     Left = 504
-    Top = 250
+    Top = 248
     Width = 42
     Height = 25
     Caption = 'Clear'
@@ -735,10 +735,10 @@ object Form1: TForm1
     Font.Style = [fsItalic]
     ParentFont = False
     TabOrder = 15
-    OnClick = Button11Click
+    OnClick = ClearBClick
   end
-  object Button12: TButton
-    Left = 53
+  object EditB: TButton
+    Left = 56
     Top = 210
     Width = 40
     Height = 20
@@ -750,7 +750,7 @@ object Form1: TForm1
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
     TabOrder = 16
-    OnClick = Button12Click
+    OnClick = EditBClick
   end
   object ABSDatabase1: TABSDatabase
     CurrentVersion = '7.93 '
