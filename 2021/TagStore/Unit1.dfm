@@ -531,7 +531,6 @@ object Form1: TForm1
     ScrollBars = ssVertical
     ShowHint = False
     TabOrder = 0
-    OnChange = DBMemo1Change
   end
   object NewB: TButton
     Left = 8
@@ -697,7 +696,7 @@ object Form1: TForm1
     Top = 245
     Width = 40
     Height = 29
-    Caption = 'PreviousB'
+    Caption = 'Previous'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlightText
     Font.Height = -8
@@ -871,7 +870,7 @@ object Form1: TForm1
       object MasterData1: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
-        Height = 34.015770000000000000
+        Height = 52.913420000000000000
         Top = 102.047310000000000000
         Width = 718.110700000000000000
         AllowSplit = True
@@ -881,7 +880,9 @@ object Form1: TForm1
         object frxDBDataset1numero: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Width = 68.031540000000000000
+          Left = 3.779530000000000000
+          Top = 18.897650000000000000
+          Width = 64.252010000000000000
           Height = 18.897650000000000000
           DataField = 'numero'
           DataSet = frxDBDataset1
@@ -893,7 +894,8 @@ object Form1: TForm1
         object frxDBDataset1info: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 71.811070000000000000
+          Left = 75.590600000000000000
+          Top = 18.897650000000000000
           Width = 604.724800000000000000
           Height = 30.236240000000000000
           CanShrink = True
@@ -906,12 +908,21 @@ object Form1: TForm1
             '[frxDBDataset1."info"]')
           Wysiwyg = False
         end
+        object Memo3: TfrxMemoView
+          AllowVectorExport = True
+          Top = -3.779530000000000000
+          Width = 181.417440000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Number             Memo')
+        end
       end
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
         Frame.Typ = []
         Height = 22.677180000000000000
-        Top = 196.535560000000000000
+        Top = 260.787570000000000000
         Width = 718.110700000000000000
         PrintOnSinglePage = True
         object Page: TfrxMemoView
@@ -924,6 +935,65 @@ object Form1: TForm1
           Frame.Typ = []
           Memo.UTF8W = (
             '[Page#]')
+        end
+      end
+      object DetailData1: TfrxDetailData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 177.637910000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        RowCount = 0
+        object frxDBDataset1tag1: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 86.929190000000000000
+          Width = 102.047310000000000000
+          Height = 18.897650000000000000
+          DataField = 'tag1'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."tag1"]')
+        end
+        object Memo2: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = 3.779530000000000000
+          Width = 34.015770000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Tag:')
+        end
+        object frxDBDataset1tag2: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 283.464750000000000000
+          Width = 105.826840000000000000
+          Height = 18.897650000000000000
+          DataField = 'tag2'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."tag2"]')
+        end
+        object frxDBDataset1tag3: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 498.897960000000000000
+          Width = 105.826840000000000000
+          Height = 18.897650000000000000
+          DataField = 'tag3'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."tag3"]')
         end
       end
     end

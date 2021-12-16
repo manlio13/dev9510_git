@@ -47,10 +47,10 @@ type
     procedure ResetBClick(Sender: TObject);
     procedure PrintBClick(Sender: TObject);
     procedure BrowseBClick(Sender: TObject);
-    procedure DBMemo1Change(Sender: TObject);
     procedure ClearBClick(Sender: TObject);
     procedure EditBClick(Sender: TObject);
     procedure PreviousBClick(Sender: TObject);
+    procedure Stato(nn:Integer);
   private
     { Private declarations }
   public
@@ -62,71 +62,45 @@ var
   Form1: TForm1;
   dir,versione :string;
   br :SmallInt;
-  num,n :Integer;
-  setnew:Boolean;
+  num,n,nn:Integer;
+  setnew,setedit:Boolean;
 implementation
 
 {$R *.dfm}
 
 procedure TForm1.FormCreate(Sender: TObject);        //Form create
 begin
-  dir:= ExtractFilePath(Application.ExeName)+'TSdata.ABS';
+    if FileExists('TSdata.ABS') then
+     begin
+      dir:= ExtractFilePath(Application.ExeName)+'TSdata.ABS';
+     end else
+     begin
+       ShowMessage('Unexpected error. Please verify program installation.');
+       application.Terminate;
+     end;
   ABSDatabase1.DatabaseFilename  :=dir;
   ABSDatabase1.Open;
   ABSTable1.TableName:='TS';
   DataSource1.DataSet:=ABSTable1;
   ABSTable1.Open;
-  //ABSTable1.Last;
-  //ABSTable1.Append;
   GetAppVersionStr;
-  caption:=caption + '  - ver: '+versione;
-  br:=0;
   n:=ABSTable1.RecordCount;
-  if n=0 then
-  begin
-    FindB.Enabled:= False;
-    BrowseB.Enabled:=False;
-    ResetB.Enabled:=False;
+  caption:=caption + '  - ver: '+versione +'  number of records = '+IntToStr(n);
+  ABSTable1.close ;
+   Label4.caption:='To make an entry click on New';
+   Stato(n);
+   // BrowseB.Enabled:=False;
+   // ResetB.Enabled:=False;
     PrintB.Enabled:=False;
     EditB.Enabled:=False;
     NextB.Enabled:=False;
     PreviousB.Enabled:=False;
     DeleteB.Enabled:=False;
-    Label4.caption:='To make an entry type text and one or more Tag. Then click on save. Or you can use Find.';
+    ClearB.Enabled :=False;
+    setnew:=False;
+    setedit:=False;
 
-  end else
-  Begin
-    BrowseB.Enabled:=True;
-    NextB.Enabled:=True;
-    PreviousB.Enabled:=True;
-    DeleteB.Enabled:=True;
-    ClearB.Enabled:=True;
-  End;
-
-  if n=1 then
-  begin
-    FindB.Enabled:= False;
-    BrowseB.Enabled:=False;
-    ResetB.Enabled:=True;
-    PrintB.Enabled:=True;
-    EditB.Enabled:=True;
-    NextB.Enabled:=False;
-    PreviousB.Enabled:=False;
-    DeleteB.Enabled:=True;
-  end else if n>1 then
-  begin
-    FindB.Enabled:= True ;
-    BrowseB.Enabled:=True;
-    ResetB.Enabled:=True;
-    PrintB.Enabled:=True;
-    EditB.Enabled:=True;
-    NextB.Enabled:=True;
-    PreviousB.Enabled:=True;
-    DeleteB.Enabled:=True;
-  end;
-
-
-end;
+ end;
 
 
 procedure TForm1.BrowseBClick(Sender: TObject);       //Browse
@@ -136,47 +110,64 @@ begin
  br:=1;
   Edit1.Text:='';
   DataSource1.DataSet:=ABSQuery1;
-          with ABSQuery1 do
-        begin
+      with ABSQuery1 do
+    begin
          Close;
          SQL.Text:='Select * from TS';
          ExecSQL;
          Open;
           n:=ABSQuery1.RecordCount;
-          if n>0 then
-          begin
-             NextB.enabled:=True;
-             PreviousB.Enabled:=True;
-             Label4.Caption:='Dataset of '+IntToStr(n)+' records.';
-          end;
-        // Button5.Enabled:=True;
-        // Button11.Enabled:=True;
-         //Button12.Enabled:=True;
+          Stato(n);
+     if n>0 then
+      Label4.Caption:='Dataset of '+IntToStr(n)+' records. First record.'else
+             Label4.Caption:='only one record.';
+         Stato(n);
 
-       end;
+
+    end
 end;
 
 procedure TForm1.ClearBClick(Sender: TObject);        //clear
 begin
-
+   DataSource1.DataSet:=ABSTable1;
+   ABSTable1.open;
+   n:=ABSTable1.RecordCount;
+   Edit1.text:='';
    DBMemo1.Clear;
-  
+   DBEdit1.text:='';
+   DBEdit2.text:='';
+   DBEdit3.text:='';
+   Caption:='';
+   Caption:='TagStore' + '  - ver: '+versione +
+           '  number of records = '+IntToStr(n);
+   Stato(n);
 end;
 
 procedure TForm1.EditBClick(Sender: TObject);     //edit
 begin
-   num:=ABSQuery1.FieldByName('numero').AsInteger;
+
+   if ABSQuery1.IsEmpty =False then         //trova il numero del record
+   num:=ABSQuery1.FieldByName('numero').AsInteger else
+      begin
+       DataSource1.Dataset:=ABSTable1;
+       ABSTable1.open;
+       num:=ABSTable1.FieldByName('numero').AsInteger;
+      end;
+  DataSource1.Dataset:=ABSTable1;
+  ABSTable1.open;
   if not ABSTable1.locate('numero',IntToStr(num),[]) then
   begin
    Label4.caption:='Error: no record to edit found.';
    Exit;
   end else
   if MessageDlg('Edit This Record?', mtConfirmation, mbYesNoCancel, 0) <> mrYes then
-    Abort else
-    DataSource1.Dataset:= ABSTable1;
+    Exit else
+    ABSQuery1.Close;
     ABSTable1.Edit;
+    setedit:=True;
     Label4.caption:='Edit record and click on save.';
 end;
+
 
 procedure TForm1.NewBClick(Sender: TObject);  //New
 begin
@@ -184,37 +175,93 @@ begin
   ABSTable1.Open;
   ABSTable1.Last;
   DBMemo1.SetFocus;
-  ABSTable1.Edit;
+  //ABSTable1.Edit;
   if setnew=True then
    begin
     Label4.caption:= 'New record already created.';
     Exit;
    end else
      begin
-      ABSTable1.Append;
+      ABSTable1.append;
       setnew :=True;
-      //Button2.Enabled:=True;
       Label4.Caption:='New record created.Fill Memo && One or more Tag, Click on Save';
-     end;
+      FindB.Enabled:=False;
+      BrowseB.Enabled:=False;
+      Form1.BorderIcons:=[ ];
+      end;
   end;
 
 
 procedure TForm1.SaveBClick(Sender: TObject);   //Save
 begin
-  if (DBEdit1.text='') and (DBEdit2.text ='') and (DBEdit3.text = '') then
+   if (setnew=False) or (setedit=false) then
     begin
-      //ShowMessage('Tab data cannot be empty!');
-      Label4.Caption:= 'Type at least one Tag!';
+     Label4.Caption:= 'There is noting to save.';
+     Exit;
+    end;
+
+  if (DBMemo1.text='')or((DBEdit1.text='') and (DBEdit2.text ='') and (DBEdit3.text = '')) then
+    begin
+      Label4.Caption:= 'Record has not been correctly filled.';
+      DeleteB.enabled:=True;
       Exit;
     end
     else
        begin
           ABSTable1.Post;
           Label4.Caption:='Record saved.';
-          ABSTable1.last;
-          //STable1.Append;
+          setnew:=False;
+          setedit:=False;
+          //ABSTable1.last;
+          n:=ABSTable1.RecordCount;
+           Caption:='';
+           Caption:='TagStore' + '  - ver: '+versione +
+           '  number of records = '+IntToStr(n);
+          Stato(n);
         end;
 end;
+
+procedure TForm1.Stato(nn: Integer);        //Stato
+begin
+  if nn=0 then
+  begin
+    FindB.Enabled:= False;
+    BrowseB.Enabled:=False;
+    ResetB.Enabled:=False;
+    PrintB.Enabled:=False;
+    EditB.Enabled:=False;
+    NextB.Enabled:=False;
+    PreviousB.Enabled:=False;
+    DeleteB.Enabled:=False;
+    ClearB.Enabled :=False;
+  end else
+   if nn=1 then
+  begin
+    FindB.Enabled:= True;
+    BrowseB.Enabled:=False;
+    ResetB.Enabled:=True;
+    PrintB.Enabled:=True;
+    EditB.Enabled:=True;
+    NextB.Enabled:=True;
+    PreviousB.Enabled:=True;
+    DeleteB.Enabled:=True;
+    ClearB.Enabled:=True;
+  end else
+   if nn>1 then
+  begin
+    FindB.Enabled:= True ;
+    BrowseB.Enabled:=True;
+    ResetB.Enabled:=True;
+    PrintB.Enabled:=True;
+    EditB.Enabled:=True;
+    NextB.Enabled:=True;
+    PreviousB.Enabled:=True;
+    DeleteB.Enabled:=True;
+    ClearB.Enabled:=True;
+  end;
+
+  end;
+
 
 procedure TForm1.FindBClick(Sender: TObject);   //find
 
@@ -226,7 +273,7 @@ begin
    end
      else
      begin
-      NextB.Enabled:=False;
+      //NextB.Enabled:=False;
       DataSource1.DataSet:=ABSQuery1;
           with ABSQuery1 do
         begin
@@ -241,9 +288,9 @@ begin
           begin
             NextB.Enabled:=True;
             PreviousB.Enabled:=True;
-           // Button5.Enabled:=True;
-           // Button11.Enabled:=True;
-           // Button12.Enabled:=True;
+            BrowseB.Enabled:=False;
+            EditB.Enabled:=True;
+            ClearB.Enabled:=True;
           end else
                 begin
                   Edit1.text:='';
@@ -256,21 +303,21 @@ end ;
 procedure TForm1.NextBClick(Sender: TObject); //next
 begin
   DataSource1.DataSet:=ABSQuery1;
-  if ABSQuery1.IsEmpty =True then
+  if ABSQuery1.IsEmpty =True then //per utillizzare next senza il query
    begin
     // num:=ABSTable1.FieldByName('numero').AsInteger;
        DataSource1.DataSet:=ABSTable1;
+       ABSTable1.open;
        ABSTable1.Next;
        Exit;
    end;
 
- // DataSource1.DataSet:=ABSQuery1;
-  ABSQuery1.Next;
+  ABSQuery1.Next;              //br =0 per usare next con find
   if ABSQuery1.eof=True then
     begin
      if br=0 then Label4.Caption:='No more records with requested tag !'else
      Label4.caption:='Last record.';
-      Edit1.text:='';
+      Edit1.text:='';   //cancella il tag di ricerca
       NextB.enabled:=False;
       Exit;
     end else
@@ -281,40 +328,63 @@ begin
            end;
 end;
 
+
 procedure TForm1.DeleteBClick(Sender: TObject);     //delete
 begin
-  num:=ABSQuery1.FieldByName('numero').AsInteger;
-  if not ABSTable1.locate('numero',IntToStr(num),[]) then
-  begin
-   Label4.caption:='Error: no record to delete found.';
-   Exit;
-  end else
-  if MessageDlg('Delete This Record?', mtConfirmation, mbYesNoCancel, 0) <> mrYes then
-    Abort else
-    ABSTable1.Delete;
-    Label4.caption:='Record deleted.';
-    setnew:=False;
-   //Button2.Enabled:=False;
-   //Button5.Enabled:=False;
-   //Button11.Enabled:=False;
-   //Button12.Enabled:=False;
-   NextB.Enabled:=False;
-   PreviousB.Enabled:=False;
-    DataSource1.DataSet:=ABSTable1; //sembra che dal browse il datasource sia sempre ABSQuery
-    ABSTable1.append;      //quindi occorre ritornare su ABSTable1 per usare append
-end;
+     DataSource1.DataSet:=ABSQuery1;
+    if ABSQuery1.RecordCount>0 then
+    num:=ABSQuery1.FieldByName('numero').AsInteger else
+    begin
+      DataSource1.Dataset:=ABSTable1;
+      ABSTable1.open;
+      num:=ABSTable1.FieldByName('numero').AsInteger;
+    end;
 
+      DataSource1.Dataset:=ABSTable1; //comunque si arriva ad ABSTable1
+      ABSTable1.open;
+    if not ABSTable1.locate('numero',IntToStr(num),[]) then
+    begin
+      Label4.caption:='Error: no record to delete found.';
+      Exit;
+    end else
+    if MessageDlg('Delete This Record?', mtConfirmation, mbYesNoCancel, 0) <> mrYes then
+      begin
+      ABSTable1.Close;
+       Exit ;
+      End else
+      ABSTable1.Delete;
+      Label4.caption:='Record deleted.';
+      ABSQuery1.Close;
+      if setnew=True then
+      begin
+       setnew:=False;
+       Form1.BorderIcons:=[biSystemMenu];
+      end;
+      ClearBClick(Self);
+end;
 
 procedure TForm1.DoneBClick(Sender: TObject);   //Done
 begin
-  if setnew=True then
+  if (setnew=True) and (DBMemo1.text='') and (DBEdit1.text='') and (DBEdit2.text='')
+   and (DBEdit3.text='') then
+   begin
+    //ABSTable1.open;
+    //ABSTable1.edit;
+    ABSTable1.close;
+    ABSDatabase1.Close;
+    Form1.release;
+    application.Terminate;
+   end else
+   if setnew=True then
   begin
     Label4.caption:='A new record has been created and not filled.';
-    ABSTable1.last;
-    //Button11.enabled:=True;
+   DataSource1.DataSet :=ABSTable1;
+    ABSTable1.open;
+    ABSTable1.Edit;
+     Form1.BorderIcons:=[ ];
+    //Exit;  }
   end else
   begin
-    ABSTable1.edit;
     ABSTable1.close;
     ABSDatabase1.Close;
     Form1.release;
@@ -346,13 +416,6 @@ begin
       ABSTable1.Close;
       ABSTable1.EmptyTable;
       setnew:=False;
-      ABSTable1.Open;
-      ABSTable1.Last;
-      ABSTable1.append;
-      DBMemo1.SetFocus;
-      ABSTable1.Edit;
-  Label4.caption:='To make an entry type text and one or more Tag.'+
-   ' Then click on save. Or you can use Find.';
 end;
 
 
@@ -379,12 +442,6 @@ begin
     end else
     if br=0 then Label4.Caption:='Previous record with requested tag !'else
     Label4.caption:='Previous record';
-end;
-
-
-procedure TForm1.DBMemo1Change(Sender: TObject);  // di servizio
-begin
-  ClearB.enabled:=True;
 end;
 
 
