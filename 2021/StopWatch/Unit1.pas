@@ -18,10 +18,13 @@ type
     Timer1: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
+
 
   private
     { Private declarations }
+
+     Fstopwatch:Boolean;
   public
     { Public declarations }
   end;
@@ -30,25 +33,36 @@ var
   Form1: TForm1;
    ms:Integer;
    sw:Tstopwatch;
+   key:Char;
 implementation
 
 {$R *.dfm}
-
-
-
-
-
 procedure TForm1.FormCreate(Sender: TObject);
 begin
  ms:=0;
  sw:=TStopwatch.Create;
  Shape1.visible:=False;
+ Fstopwatch:=False;
+
+end;
+
+procedure TForm1.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+  //ShowMessage(key);
+    if (Key=Char(VK_space)) and not Fstopwatch then
+  begin
+    sw.stop;
+    ms:=sw.ElapsedMilliseconds;
+    Edit1.text:=IntToStr(ms);
+    Shape1.visible :=False;
+    Fstopwatch:=True;
+  end else
+  Showmessage('nessun tasto');
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);       //start
 var
   I,n: Integer;
-  key:PChar;
 begin
    Edit1.text:='';
    sw.reset;
@@ -59,21 +73,13 @@ begin
        Timer1.interval:=n;
        Timer1.enabled:=True;
        Shape1.visible:=True;
-        if Key = chr(VK_SPACE)then
-          beep;
-          //Key := #0;
+       FormKeyPress(Sender,Key);
        end;
 
      end;
    //sw.start;
 //end;
 
-procedure TForm1.Button2Click(Sender: TObject);   //stop
-begin
-   sw.stop;
-   ms:=sw.ElapsedMilliseconds;
-   Edit1.text:=IntToStr(ms);
-end;
 end.
 
 

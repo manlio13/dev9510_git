@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Style = []
   OldCreateOrder = False
   OnCreate = FormCreate
+  OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
@@ -30,7 +31,6 @@ object Form1: TForm1
     Height = 25
     Caption = 'stop'
     TabOrder = 1
-    OnClick = Button2Click
   end
   object Button3: TButton
     Left = 88

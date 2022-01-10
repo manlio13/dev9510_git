@@ -832,7 +832,7 @@ object Form1: TForm1
     PrintOptions.PrintMode = pmSplit
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44535.453131030110000000
-    ReportOptions.LastChange = 44535.603466122690000000
+    ReportOptions.LastChange = 44571.715033483790000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -882,7 +882,7 @@ object Form1: TForm1
       object MasterData1: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
-        Height = 52.913420000000000000
+        Height = 268.346630000000000000
         Top = 102.047310000000000000
         Width = 718.110700000000000000
         AllowSplit = True
@@ -893,7 +893,7 @@ object Form1: TForm1
           IndexTag = 1
           AllowVectorExport = True
           Left = 3.779530000000000000
-          Top = 18.897650000000000000
+          Top = 22.677180000000000000
           Width = 64.252010000000000000
           Height = 18.897650000000000000
           DataField = 'numero'
@@ -907,7 +907,7 @@ object Form1: TForm1
           IndexTag = 1
           AllowVectorExport = True
           Left = 75.590600000000000000
-          Top = 18.897650000000000000
+          Top = 22.677180000000000000
           Width = 604.724800000000000000
           Height = 30.236240000000000000
           CanShrink = True
@@ -922,7 +922,6 @@ object Form1: TForm1
         end
         object Memo3: TfrxMemoView
           AllowVectorExport = True
-          Top = -3.779530000000000000
           Width = 181.417440000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
@@ -934,7 +933,7 @@ object Form1: TForm1
         FillType = ftBrush
         Frame.Typ = []
         Height = 22.677180000000000000
-        Top = 260.787570000000000000
+        Top = 476.220780000000000000
         Width = 718.110700000000000000
         PrintOnSinglePage = True
         object Page: TfrxMemoView
@@ -953,7 +952,7 @@ object Form1: TForm1
         FillType = ftBrush
         Frame.Typ = []
         Height = 22.677180000000000000
-        Top = 177.637910000000000000
+        Top = 393.071120000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
