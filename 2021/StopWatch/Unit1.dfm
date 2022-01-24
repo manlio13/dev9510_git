@@ -10,9 +10,10 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  FormStyle = fsStayOnTop
+  KeyPreview = True
   OldCreateOrder = False
   OnCreate = FormCreate
-  OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
@@ -49,15 +50,14 @@ object Form1: TForm1
     Text = 'ms'
   end
   object Panel1: TPanel
-    Left = 48
+    Left = 56
     Top = 8
     Width = 81
-    Height = 80
-    Caption = 'Panel1'
+    Height = 65
     TabOrder = 4
     object Shape1: TShape
       Left = 16
-      Top = 24
+      Top = 15
       Width = 49
       Height = 34
       Brush.Color = clRed
@@ -65,8 +65,16 @@ object Form1: TForm1
       Visible = False
     end
   end
+  object Edit2: TEdit
+    Left = 72
+    Top = 79
+    Width = 57
+    Height = 21
+    TabOrder = 5
+  end
   object Timer1: TTimer
     Enabled = False
+    OnTimer = Timer1Timer
     Left = 192
     Top = 56
   end

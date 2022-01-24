@@ -1,0 +1,102 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,System.Diagnostics,Vcl.StdCtrls,
+  Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Edit1: TEdit;
+    Panel1: TPanel;
+    Shape1: TShape;
+    Timer1: TTimer;
+    Edit2: TEdit;
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
+
+  private
+
+   //procedure Timer1Timer(Sender: TObject);
+    { Private declarations }
+  public
+  procedure WMHotKey(var Message:TMessage); message WM_HOTKEY;
+
+  end;
+
+var
+  Form1: TForm1;
+   ms:double;
+   sw:Tstopwatch;
+   key:Char;
+   park:Boolean;
+
+  // ElapsedMillisecond:Int64;
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm1.FormCreate(Sender: TObject);
+ begin
+ //ElapsedMillisecond:=0;
+   RegisterHotKey(Handle,1,0, VK_SPACE);  //0 nessun tasto doppio
+    sw:=TStopwatch.Create;
+   Shape1.visible:=False;
+   Park:=False;
+ end;
+
+   procedure TForm1.Timer1Timer(Sender: TObject); //NB aggiungere TForm1 per unsatisfied forward
+begin
+ Form1.Shape1.Visible:=True;
+end;
+
+procedure TForm1.WMHotKey(var message: TMessage);
+ begin
+  while Park do
+       Application.ProcessMessages;
+         if key=(Char(VK_space)) then
+         begin
+          ShowMessage('tasto spazio');
+          park:=False;
+          sw.stop;
+          ms:=sw.ElapsedMilliseconds;
+          Edit1.text:=FloatToStr(ms);
+          Shape1.visible :=False;
+         end;
+ end;
+
+procedure TForm1.Button1Click(Sender: TObject);       //start
+var
+  I,n,k: Integer;
+
+  begin
+   k:=0;
+   Edit1.text:='';
+   sw.reset;
+
+     Edit2.Text:= IntToStr(k);
+    for I :=0 to 10 do
+     begin
+       sw.start;   //parte il generale                    v
+       park:=True;
+       k:=k+1;
+       n:=1000 +random (10000);
+       //ShowMessage(IntToStr(n));
+       Timer1.interval:=n;
+       Timer1.enabled:=True;
+       Edit2.Text:= IntToStr(k);
+       Form1.WMHotKey(var message:TMessage);
+       end ;
+  end;
+
+
+ end.
+
+

@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,System.Diagnostics, Vcl.StdCtrls,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,System.Diagnostics,Vcl.StdCtrls,
   Vcl.ExtCtrls;
 
 type
@@ -16,71 +16,87 @@ type
     Panel1: TPanel;
     Shape1: TShape;
     Timer1: TTimer;
+    Edit2: TEdit;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
-    procedure FormKeyPress(Sender: TObject; var Key: Char);
-
+    procedure Timer1Timer(Sender: TObject);
 
   private
-    { Private declarations }
 
-     Fstopwatch:Boolean;
+   //procedure Timer1Timer(Sender: TObject);
+    { Private declarations }
   public
-    { Public declarations }
+  procedure WMHotKey(var Message:TMessage); message WM_HOTKEY;
+
   end;
 
 var
   Form1: TForm1;
-   ms:Integer;
+   ms:double;
    sw:Tstopwatch;
    key:Char;
+   park:Boolean;
+
+  // ElapsedMillisecond:Int64;
 implementation
 
 {$R *.dfm}
+
+
 procedure TForm1.FormCreate(Sender: TObject);
-begin
- ms:=0;
- sw:=TStopwatch.Create;
- Shape1.visible:=False;
- Fstopwatch:=False;
+ begin
+ //ElapsedMillisecond:=0;
+   RegisterHotKey(Handle,1,0, VK_SPACE);  //0 nessun tasto doppio
+    sw:=TStopwatch.Create;
+   Shape1.visible:=False;
+   Park:=False;
+ end;
 
+   procedure TForm1.Timer1Timer(Sender: TObject); //NB aggiungere TForm1 per unsatisfied forward
+begin
+ Form1.Shape1.Visible:=True;
 end;
 
-procedure TForm1.FormKeyPress(Sender: TObject; var Key: Char);
-begin
-  //ShowMessage(key);
-    if (Key=Char(VK_space)) and not Fstopwatch then
-  begin
-    sw.stop;
-    ms:=sw.ElapsedMilliseconds;
-    Edit1.text:=IntToStr(ms);
-    Shape1.visible :=False;
-    Fstopwatch:=True;
-  end else
-  Showmessage('nessun tasto');
-end;
+procedure TForm1.WMHotKey(var message: TMessage);
+ begin
+  while Park do
+       Application.ProcessMessages;
+         if key=(Char(VK_space)) then
+         begin
+          ShowMessage('tasto spazio');
+          park:=False;
+          sw.stop;
+          ms:=sw.ElapsedMilliseconds;
+          Edit1.text:=FloatToStr(ms);
+          Shape1.visible :=False;
+         end;
+ end;
 
 procedure TForm1.Button1Click(Sender: TObject);       //start
 var
-  I,n: Integer;
-begin
+  I,n,k: Integer;
+  message:Tmessage;
+  begin
+   k:=0;
    Edit1.text:='';
    sw.reset;
-   for I :=0 to 10 do
+
+     Edit2.Text:= IntToStr(k);
+    for I :=0 to 10 do
      begin
+       sw.start;   //parte il generale                    v
+       park:=True;
+       k:=k+1;
        n:=1000 +random (10000);
        //ShowMessage(IntToStr(n));
        Timer1.interval:=n;
        Timer1.enabled:=True;
-       Shape1.visible:=True;
-       FormKeyPress(Sender,Key);
-       end;
+       Edit2.Text:= IntToStr(k);
+       Form1.WMHotKey(message);
+       end ;
+  end;
 
-     end;
-   //sw.start;
-//end;
 
-end.
-
+ end.
 
 
