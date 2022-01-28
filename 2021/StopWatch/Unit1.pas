@@ -20,13 +20,14 @@ type
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 
   private
 
    //procedure Timer1Timer(Sender: TObject);
     { Private declarations }
   public
-  procedure WMHotKey(var Message:TMessage); message WM_HOTKEY;
+
 
   end;
 
@@ -36,7 +37,7 @@ var
    sw:Tstopwatch;
    key:Char;
    park:Boolean;
-
+   k, i:Integer;
   // ElapsedMillisecond:Int64;
 implementation
 
@@ -46,55 +47,62 @@ implementation
 procedure TForm1.FormCreate(Sender: TObject);
  begin
  //ElapsedMillisecond:=0;
-   RegisterHotKey(Handle,1,0, VK_SPACE);  //0 nessun tasto doppio
-    sw:=TStopwatch.Create;
+  // RegisterHotKey(Handle,1,MOD_CONTROL, VK_SPACE);  //0 nessun tasto doppio
+   sw:=TStopwatch.Create;
    Shape1.visible:=False;
    Park:=False;
  end;
 
-   procedure TForm1.Timer1Timer(Sender: TObject); //NB aggiungere TForm1 per unsatisfied forward
+   procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
- Form1.Shape1.Visible:=True;
-end;
+   k:=1 ;
+    for i := 1 to 10 do
 
-procedure TForm1.WMHotKey(var message: TMessage);
- begin
-  while Park do
-       Application.ProcessMessages;
-         if key=(Char(VK_space)) then
+     begin
+       Edit2.Text:= IntToStr(k) ;
+         if (key=(VK_space))and (park=False) then
          begin
-          ShowMessage('tasto spazio');
-          park:=False;
+          //ShowMessage('tasto spazio');
+          park:=True;
           sw.stop;
           ms:=sw.ElapsedMilliseconds;
           Edit1.text:=FloatToStr(ms);
           Shape1.visible :=False;
          end;
+         k:=k+1;
+       end;
  end;
+
+procedure TForm1.Timer1Timer(Sender: TObject); //NB aggiungere TForm1 per unsatisfied forward
+begin
+ Form1.Shape1.Visible:=True;
+ sw.start;   //parte il tempo
+end;
+
 
 procedure TForm1.Button1Click(Sender: TObject);       //start
 var
-  I,n,k: Integer;
-  message:Tmessage;
+  n: Integer;
   begin
-   k:=0;
-   Edit1.text:='';
-   sw.reset;
 
-     Edit2.Text:= IntToStr(k);
-    for I :=0 to 10 do
-     begin
-       sw.start;   //parte il generale                    v
-       park:=True;
-       k:=k+1;
-       n:=1000 +random (10000);
-       //ShowMessage(IntToStr(n));
-       Timer1.interval:=n;
-       Timer1.enabled:=True;
-       Edit2.Text:= IntToStr(k);
-       Form1.WMHotKey(message);
-       end ;
-  end;
+   Edit2.text:='';
+   sw.reset;
+          park:=True;
+           n:=1000 +random (10000);
+           Timer1.interval:=n;
+           Timer1.enabled:=True;
+
+           while park do
+          begin
+             park:=False;
+
+             Application.ProcessMessages;
+
+           end;
+      end ;
+
+
 
 
  end.

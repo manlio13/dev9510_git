@@ -14,6 +14,7 @@ object Form1: TForm1
   KeyPreview = True
   OldCreateOrder = False
   OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
