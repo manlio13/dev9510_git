@@ -32,7 +32,7 @@ var
    ms,mt:double;
    sw:Tstopwatch;
    key:Char;
-   park,continua:Boolean;
+   park,continua,basta:Boolean;
    k, i:Integer;
   // ElapsedMillisecond:Int64;
 implementation
@@ -50,6 +50,7 @@ procedure TForm1.FormCreate(Sender: TObject);
    Shape1.visible:=False;
    Park:=true;
    continua:=True;
+   basta:=False;
    k:=1;
  end;
 
@@ -82,8 +83,11 @@ begin
 
 procedure TForm1.Timer1Timer(Sender: TObject); //NB aggiungere TForm1 per unsatisfied forward
 begin
+     if basta=False then
+    begin
       Form1.Shape1.Visible:=True;
       sw.start;   //parte il tempo
+    end;
 end;
 
 
@@ -103,6 +107,7 @@ var
           ms:=mt/10;
           Edit1.text:='Average = '+floattostr(ms);
           mt:=0;
+          basta:=True;
           exit;
        end else
         begin
