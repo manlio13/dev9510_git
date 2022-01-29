@@ -1,10 +1,11 @@
 object Form1: TForm1
-  Left = 0
-  Top = 0
-  Caption = 'Form1'
+  Left = 457
+  Top = 257
+  BorderIcons = []
+  Caption = 'Reaction times - Cicles of 10'
   ClientHeight = 186
   ClientWidth = 418
-  Color = clBtnFace
+  Color = clNavy
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -13,6 +14,7 @@ object Form1: TForm1
   FormStyle = fsStayOnTop
   KeyPreview = True
   OldCreateOrder = False
+  Position = poDesigned
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   PixelsPerInch = 96
@@ -33,21 +35,14 @@ object Form1: TForm1
     Height = 25
     Caption = 'stop'
     TabOrder = 1
-  end
-  object Button3: TButton
-    Left = 88
-    Top = 122
-    Width = 105
-    Height = 31
-    Caption = 'Button3'
-    TabOrder = 2
+    OnClick = Button2Click
   end
   object Edit1: TEdit
     Left = 272
     Top = 127
     Width = 121
     Height = 21
-    TabOrder = 3
+    TabOrder = 2
     Text = 'ms'
   end
   object Panel1: TPanel
@@ -55,7 +50,7 @@ object Form1: TForm1
     Top = 8
     Width = 81
     Height = 65
-    TabOrder = 4
+    TabOrder = 3
     object Shape1: TShape
       Left = 16
       Top = 15
@@ -71,10 +66,11 @@ object Form1: TForm1
     Top = 79
     Width = 57
     Height = 21
-    TabOrder = 5
+    TabOrder = 4
   end
   object Timer1: TTimer
     Enabled = False
+    Interval = 0
     OnTimer = Timer1Timer
     Left = 192
     Top = 56

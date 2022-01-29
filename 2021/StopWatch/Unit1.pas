@@ -11,73 +11,79 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Button2: TButton;
-    Button3: TButton;
     Edit1: TEdit;
     Panel1: TPanel;
     Shape1: TShape;
-    Timer1: TTimer;
     Edit2: TEdit;
+    Timer1: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure Button2Click(Sender: TObject);
 
   private
-
    //procedure Timer1Timer(Sender: TObject);
     { Private declarations }
   public
-
-
   end;
-
 var
   Form1: TForm1;
-   ms:double;
+   ms,mt:double;
    sw:Tstopwatch;
    key:Char;
-   park:Boolean;
+   park,continua:Boolean;
    k, i:Integer;
   // ElapsedMillisecond:Int64;
 implementation
 
 {$R *.dfm}
-
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+   Form1.release;
+   application.Terminate;
+end;
 
 procedure TForm1.FormCreate(Sender: TObject);
  begin
- //ElapsedMillisecond:=0;
-  // RegisterHotKey(Handle,1,MOD_CONTROL, VK_SPACE);  //0 nessun tasto doppio
    sw:=TStopwatch.Create;
    Shape1.visible:=False;
-   Park:=False;
+   Park:=true;
+   continua:=True;
+   k:=1;
  end;
 
    procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-   k:=1 ;
-    for i := 1 to 10 do
-
-     begin
-       Edit2.Text:= IntToStr(k) ;
-         if (key=(VK_space))and (park=False) then
+         if (key=(VK_space))and (park=True) then
          begin
+           Edit2.Text:= IntToStr(k) ;
           //ShowMessage('tasto spazio');
-          park:=True;
+          k:=k+1;
+         //park:=True;
+          continua:=False;
           sw.stop;
           ms:=sw.ElapsedMilliseconds;
+          mt:=mt+ms;
           Edit1.text:=FloatToStr(ms);
+          if ms=0 then
+            begin
+              Edit1.text:='Too soon';
+              k:=k-1;
+            end;
           Shape1.visible :=False;
+          sw.reset;
          end;
-         k:=k+1;
-       end;
+         continua:=True;
+         Button1Click(Self);
+
  end;
 
 procedure TForm1.Timer1Timer(Sender: TObject); //NB aggiungere TForm1 per unsatisfied forward
 begin
- Form1.Shape1.Visible:=True;
- sw.start;   //parte il tempo
+      Form1.Shape1.Visible:=True;
+      sw.start;   //parte il tempo
 end;
 
 
@@ -85,26 +91,31 @@ procedure TForm1.Button1Click(Sender: TObject);       //start
 var
   n: Integer;
   begin
-
-   Edit2.text:='';
-   sw.reset;
-          park:=True;
+     if k=11 then
+       begin
+          k:=1;
+          sw.reset;
+          continua:=False;
+          park:=False;
+          shape1.visible:=False;
+          edit2.text:='Cicle end';
+          Timer1.Enabled:=False;
+          ms:=mt/10;
+          Edit1.text:='Average = '+floattostr(ms);
+          mt:=0;
+          exit;
+       end else
+        begin
+           park:=True;
            n:=1000 +random (10000);
            Timer1.interval:=n;
            Timer1.enabled:=True;
-
-           while park do
+           while park and continua do
           begin
-             park:=False;
-
-             Application.ProcessMessages;
-
+            Application.ProcessMessages;
            end;
-      end ;
-
-
-
-
+        end;
+  end ;
  end.
 
 
