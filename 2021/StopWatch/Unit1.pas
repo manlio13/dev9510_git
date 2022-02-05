@@ -16,6 +16,7 @@ type
     Shape1: TShape;
     Edit2: TEdit;
     Timer1: TTimer;
+    Label1: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);

@@ -19,6 +19,21 @@ object Form1: TForm1
   OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 160
+    Width = 253
+    Height = 14
+    Caption = 'Click on spacebar when red circle appears'
+    Color = clBlue
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
   object Button1: TButton
     Left = 272
     Top = 32
