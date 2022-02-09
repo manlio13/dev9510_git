@@ -2,7 +2,9 @@ object Form1: TForm1
   Left = 457
   Top = 257
   BorderIcons = []
-  Caption = 'Reaction times - Cicles of 10'
+  Caption = 
+    'Reaction times - Cicles of 10                Please read Readme ' +
+    'file'
   ClientHeight = 186
   ClientWidth = 418
   Color = clNavy
@@ -22,9 +24,9 @@ object Form1: TForm1
   object Label1: TLabel
     Left = 24
     Top = 160
-    Width = 253
+    Width = 350
     Height = 14
-    Caption = 'Click on spacebar when red circle appears'
+    Caption = 'Click on spacebar when red circle appears or hear a  beep'
     Color = clBlue
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWhite
@@ -61,7 +63,7 @@ object Form1: TForm1
     Text = 'ms'
   end
   object Panel1: TPanel
-    Left = 56
+    Left = 48
     Top = 8
     Width = 81
     Height = 65
@@ -77,11 +79,29 @@ object Form1: TForm1
     end
   end
   object Edit2: TEdit
-    Left = 72
+    Left = 71
     Top = 79
-    Width = 57
+    Width = 28
     Height = 21
     TabOrder = 4
+  end
+  object Button3: TButton
+    Left = 24
+    Top = 106
+    Width = 75
+    Height = 25
+    Caption = 'Visual'
+    TabOrder = 5
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 120
+    Top = 106
+    Width = 75
+    Height = 25
+    Caption = 'Acustic'
+    TabOrder = 6
+    OnClick = Button4Click
   end
   object Timer1: TTimer
     Enabled = False
