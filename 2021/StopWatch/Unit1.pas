@@ -47,6 +47,7 @@ procedure TForm1.Button2Click(Sender: TObject);  //done
 begin
    Form1.release;
    application.Terminate;
+   Exit;
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);      //visual
@@ -78,6 +79,8 @@ procedure TForm1.FormCreate(Sender: TObject);   //Create
    basta:=False;
    vis:=False;
    k:=1;
+   mt:=0;
+   ms:=0;
    scelto:=False;
  end;
 
@@ -92,7 +95,7 @@ begin
           sw.stop;
           if vis  then
           ms:=sw.ElapsedMilliseconds-100 else
-          ms:=sw.ElapsedMilliseconds-500;
+          ms:=sw.ElapsedMilliseconds-450;
 
           mt:=mt+ms;
           Edit1.text:=FloatToStr(Abs(ms));
@@ -115,7 +118,6 @@ begin
       if vis then
       Form1.Shape1.Visible:=True else
       Windows.beep(1500,500);
-
       sw.start;   //parte il tempo
     end;
 end;
@@ -137,12 +139,14 @@ var
           sw.reset;
           continua:=False;
           park:=False;
+          vis:=False;
           shape1.visible:=False;
           edit2.text:='Cicle end';
           Timer1.Enabled:=False;
           ms:=mt/10;
           Edit1.text:='Average = '+floattostr(ms);
           mt:=0;
+          ms:=0;
           basta:=True;
           exit;
        end else

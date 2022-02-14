@@ -8,305 +8,306 @@
   resources were bound to the produced executable.
 */
 
-#define Vcl_Imaging_pnglang_EPNGCannotAddInvalidImageText 64368
-#define Vcl_Imaging_pnglang_EPNGCouldNotLoadResourceText 64369
-#define Vcl_Imaging_pnglang_EPNGOutMemoryText 64370
-#define Vcl_Imaging_pnglang_EPNGCannotChangeTransparentText 64371
-#define Vcl_Imaging_pnglang_EPNGHeaderNotPresentText 64372
-#define Vcl_Imaging_pnglang_EInvalidNewSize 64373
-#define Vcl_Imaging_pnglang_EInvalidSpec 64374
-#define Vcl_Imaging_pnglang_EPNGInvalidBitDepthText 64375
-#define Vcl_Imaging_JConsts_sChangeJPGSize 64376
-#define Vcl_Imaging_JConsts_sJPEGError 64377
-#define Vcl_Imaging_JConsts_sJPEGImageFile 64378
-#define Vcl_Imaging_pnglang_EPNGInvalidIHDRText 64384
-#define Vcl_Imaging_pnglang_EPNGMissingMultipleIDATText 64385
-#define Vcl_Imaging_pnglang_EPNGZLIBErrorText 64386
-#define Vcl_Imaging_pnglang_EPNGInvalidPaletteText 64387
-#define Vcl_Imaging_pnglang_EPNGInvalidFileHeaderText 64388
-#define Vcl_Imaging_pnglang_EPNGIHDRNotFirstText 64389
-#define Vcl_Imaging_pnglang_EPNGSizeExceedsText 64390
-#define Vcl_Imaging_pnglang_EPNGUnknownPalEntryText 64391
-#define Vcl_Imaging_pnglang_EPNGUnknownCriticalChunkText 64392
-#define Vcl_Imaging_pnglang_EPNGUnknownCompressionText 64393
-#define Vcl_Imaging_pnglang_EPNGUnknownInterlaceText 64394
-#define Vcl_Imaging_pnglang_EPNGUnknownColorTypeText 64395
-#define Vcl_Imaging_pnglang_EPNGCannotAssignChunkText 64396
-#define Vcl_Imaging_pnglang_EPNGUnexpectedEndText 64397
-#define Vcl_Imaging_pnglang_EPNGNoImageDataText 64398
-#define Vcl_Imaging_pnglang_EPNGCannotAddChunkText 64399
-#define ABSDecConst2_sInvalidKeySize 64400
-#define ABSDecConst2_sNotInitialized 64401
-#define Vcl_VDBConsts_SFirstRecord 64402
-#define Vcl_VDBConsts_SPriorRecord 64403
-#define Vcl_VDBConsts_SNextRecord 64404
-#define Vcl_VDBConsts_SLastRecord 64405
-#define Vcl_VDBConsts_SInsertRecord 64406
-#define Vcl_VDBConsts_SDeleteRecord 64407
-#define Vcl_VDBConsts_SEditRecord 64408
-#define Vcl_VDBConsts_SPostEdit 64409
-#define Vcl_VDBConsts_SCancelEdit 64410
-#define Vcl_VDBConsts_SRefreshRecord 64411
-#define Vcl_VDBConsts_SApplyUpdates 64412
-#define Vcl_VDBConsts_SCancelUpdates 64413
-#define Vcl_VDBConsts_SRemoteLogin 64414
-#define Vcl_Imaging_pnglang_EPngInvalidCRCText 64415
-#define Data_DBConsts_SUnassignedVar 64416
-#define Data_DBConsts_SRecordNotFound 64417
-#define Data_DBConsts_SBcdOverflow 64418
-#define Data_DBConsts_SInvalidBcdValue 64419
-#define Data_DBConsts_SCouldNotParseTimeStamp 64420
-#define Data_DBConsts_SInvalidSqlTimeStamp 64421
-#define ABSDecConst2_sProtectionCircular 64422
-#define ABSDecConst2_sStringFormatExists 64423
-#define ABSDecConst2_sInvalidStringFormat 64424
-#define ABSDecConst2_sInvalidFormatString 64425
-#define ABSDecConst2_sFMT_COPY 64426
-#define ABSDecConst2_sFMT_HEX 64427
-#define ABSDecConst2_sFMT_HEXL 64428
-#define ABSDecConst2_sFMT_MIME64 64429
-#define ABSDecConst2_sFMT_UU 64430
-#define ABSDecConst2_sFMT_XX 64431
-#define Data_DBConsts_SLookupInfoError 64432
-#define Data_DBConsts_SDataSourceChange 64433
-#define Data_DBConsts_SDataSetOpen 64434
-#define Data_DBConsts_SNotEditing 64435
-#define Data_DBConsts_SDataSetClosed 64436
-#define Data_DBConsts_SDataSetEmpty 64437
-#define Data_DBConsts_SDataSetReadOnly 64438
-#define Data_DBConsts_SNestedDataSetClass 64439
-#define Data_DBConsts_STextFalse 64440
-#define Data_DBConsts_STextTrue 64441
-#define Data_DBConsts_SParameterNotFound 64442
-#define Data_DBConsts_SInvalidVersion 64443
-#define Data_DBConsts_SBadFieldType 64444
-#define Data_DBConsts_SProviderSQLNotSupported 64445
-#define Data_DBConsts_SProviderExecuteNotSupported 64446
-#define Data_DBConsts_SDataSetUnidirectional 64447
-#define Data_DBConsts_SBcdFieldRangeError 64448
-#define Data_DBConsts_SInvalidIntegerValue 64449
-#define Data_DBConsts_SInvalidBoolValue 64450
-#define Data_DBConsts_SInvalidFloatValue 64451
-#define Data_DBConsts_SFieldTypeMismatch 64452
-#define Data_DBConsts_SFieldSizeMismatch 64453
-#define Data_DBConsts_SInvalidVarByteArray 64454
-#define Data_DBConsts_SFieldOutOfRange 64455
-#define Data_DBConsts_SFieldRequired 64456
-#define Data_DBConsts_SDataSetMissing 64457
-#define Data_DBConsts_SInvalidCalcType 64458
-#define Data_DBConsts_SDuplicateIndexName 64459
-#define Data_DBConsts_SNoIndexForFields 64460
-#define Data_DBConsts_SIndexNotFound 64461
-#define Data_DBConsts_SDBDuplicateName 64462
-#define Data_DBConsts_SCircularDataLink 64463
-#define EExceptionInfoCLR_SCLRException 64464
-#define EExceptionInfoCLR_SExternalExceptionExtendedInfo 64465
-#define EExceptionInfoCpp_GenericErrorMsg 64466
-#define EExceptionInfoCpp_DelayLoadErrorMsg 64467
-#define ELogBuilder_rsHandles 64468
-#define EZLib_SZInvalid 64469
-#define EZip_rsELInvalidPassword 64470
-#define Data_DBConsts_SInvalidFieldSize 64471
-#define Data_DBConsts_SInvalidFieldKind 64472
-#define Data_DBConsts_SUnknownFieldType 64473
-#define Data_DBConsts_SFieldNameMissing 64474
-#define Data_DBConsts_SDuplicateFieldName 64475
-#define Data_DBConsts_SFieldNotFound 64476
-#define Data_DBConsts_SFieldAccessError 64477
-#define Data_DBConsts_SFieldValueError 64478
-#define Data_DBConsts_SFieldRangeError 64479
-#define EExceptionInfoGeneric_SInvalidHandleException 64480
-#define EExceptionInfoGeneric_SNoMemoryException 64481
-#define EExceptionInfoGeneric_SNonContinuableException 64482
-#define EExceptionInfoGeneric_SInvalidDispositionException 64483
-#define EExceptionInfoGeneric_SSegmentNotificationException 64484
-#define EExceptionInfoGeneric_SDbgControlCException 64485
-#define EExceptionInfoGeneric_SDbgPrintException 64486
-#define EExceptionInfoGeneric_SDbgRIPEventException 64487
-#define EExceptionInfoGeneric_SDbgControlBreakException 64488
-#define EExceptionInfoGeneric_SDbgCommandException 64489
-#define EExceptionInfoGeneric_SAssertionFailureException 64490
-#define EExceptionInfoGeneric_SBufferOverrun 64491
-#define EExceptionInfoGeneric_SCppException 64492
-#define EExceptionInfoGeneric_SLLVMException 64493
-#define EExceptionInfoGeneric_SCLRException 64494
-#define EExceptionInfoGeneric_SMSCppException 64495
-#define Vcl_ComStrs_sInvalidLevel 64496
-#define Vcl_ComStrs_sInvalidLevelEx 64497
-#define Vcl_ComStrs_sInvalidIndex 64498
-#define Vcl_ComStrs_sInsertError 64499
-#define Vcl_ComStrs_sInvalidOwner 64500
-#define Vcl_ComStrs_sUDAssociated 64501
-#define Vcl_ComStrs_sInvalidComCtl32 64502
-#define EExceptionInfoGeneric_SExternalExceptionObj 64503
-#define EExceptionInfoGeneric_SExternalExceptionExtendedInfo 64504
-#define EExceptionInfoGeneric_SExternalExceptionExtendedInfo2 64505
-#define EExceptionInfoGeneric_SStackOverflow 64506
-#define EExceptionInfoGeneric_SGuardPageViolationException 64507
-#define EExceptionInfoGeneric_SBreakpointException 64508
-#define EExceptionInfoGeneric_SMisalignmentException 64509
-#define EExceptionInfoGeneric_SSingleStepException 64510
-#define EExceptionInfoGeneric_SInPageErrorException 64511
-#define Vcl_Consts_SStyleFormatError 64512
-#define Vcl_Consts_SStyleHookClassRegistered 64513
-#define Vcl_Consts_SStyleHookClassNotRegistered 64514
-#define Vcl_Consts_SStyleInvalidParameter 64515
-#define Vcl_Consts_SStyleFeatureNotSupported 64516
-#define Vcl_Consts_SStyleNotRegistered 64517
-#define Vcl_Consts_SStyleUnregisterError 64518
-#define Vcl_Consts_SStyleNotRegisteredNoName 64519
-#define Vcl_Consts_sBeginInvokeNoHandle 64520
-#define Vcl_ComStrs_sTabFailClear 64521
-#define Vcl_ComStrs_sTabFailDelete 64522
-#define Vcl_ComStrs_sTabFailRetrieve 64523
-#define Vcl_ComStrs_sTabFailGetObject 64524
-#define Vcl_ComStrs_sTabFailSet 64525
-#define Vcl_ComStrs_sTabFailSetObject 64526
-#define Vcl_ComStrs_sTabMustBeMultiLine 64527
-#define Vcl_Consts_SSeparator 64528
-#define Vcl_Consts_SErrorSettingCount 64529
-#define Vcl_Consts_SListBoxMustBeVirtual 64530
-#define Vcl_Consts_SNoGetItemEventHandler 64531
-#define Vcl_Consts_STrayIconRemoveError 64532
-#define Vcl_Consts_SWindowsVistaRequired 64533
-#define Vcl_Consts_STaskDlgButtonCaption 64534
-#define Vcl_Consts_STaskDlgRadioButtonCaption 64535
-#define Vcl_Consts_SInvalidTaskDlgButtonCaption 64536
-#define Vcl_Consts_SStyleLoadError 64537
-#define Vcl_Consts_SStyleLoadErrors 64538
-#define Vcl_Consts_SStyleRegisterError 64539
-#define Vcl_Consts_SStyleClassRegisterError 64540
-#define Vcl_Consts_SStyleNotFound 64541
-#define Vcl_Consts_SStyleClassNotFound 64542
-#define Vcl_Consts_SStyleInvalidHandle 64543
-#define Vcl_Consts_SInvalidMemoSize 64544
-#define Vcl_Consts_SInvalidPrinterOp 64545
-#define Vcl_Consts_SNoDefaultPrinter 64546
-#define Vcl_Consts_SDuplicateMenus 64547
-#define Vcl_Consts_SDockedCtlNeedsName 64548
-#define Vcl_Consts_SDockTreeRemoveError 64549
-#define Vcl_Consts_SDockZoneNotFound 64550
-#define Vcl_Consts_SDockZoneHasNoCtl 64551
-#define Vcl_Consts_SDockZoneVersionConflict 64552
-#define Vcl_Consts_SMultiSelectRequired 64553
-#define Vcl_Consts_SPromptArrayTooShort 64554
-#define Vcl_Consts_SPromptArrayEmpty 64555
-#define Vcl_Consts_SUsername 64556
-#define Vcl_Consts_SPassword 64557
-#define Vcl_Consts_SDomain 64558
-#define Vcl_Consts_SLogin 64559
-#define Vcl_Consts_SmkcLeft 64560
-#define Vcl_Consts_SmkcUp 64561
-#define Vcl_Consts_SmkcRight 64562
-#define Vcl_Consts_SmkcDown 64563
-#define Vcl_Consts_SmkcIns 64564
-#define Vcl_Consts_SmkcDel 64565
-#define Vcl_Consts_SmkcShift 64566
-#define Vcl_Consts_SmkcCtrl 64567
-#define Vcl_Consts_SmkcAlt 64568
-#define Vcl_Consts_srNone 64569
-#define Vcl_Consts_SOutOfRange 64570
-#define Vcl_Consts_sAllFilter 64571
-#define Vcl_Consts_SInsertLineError 64572
-#define Vcl_Consts_SInvalidClipFmt 64573
-#define Vcl_Consts_SIconToClipboard 64574
-#define Vcl_Consts_SCannotOpenClipboard 64575
-#define Vcl_Consts_SMsgDlgAbort 64576
-#define Vcl_Consts_SMsgDlgRetry 64577
-#define Vcl_Consts_SMsgDlgIgnore 64578
-#define Vcl_Consts_SMsgDlgAll 64579
-#define Vcl_Consts_SMsgDlgNoToAll 64580
-#define Vcl_Consts_SMsgDlgYesToAll 64581
-#define Vcl_Consts_SMsgDlgClose 64582
-#define Vcl_Consts_SmkcBkSp 64583
-#define Vcl_Consts_SmkcTab 64584
-#define Vcl_Consts_SmkcEsc 64585
-#define Vcl_Consts_SmkcEnter 64586
-#define Vcl_Consts_SmkcSpace 64587
-#define Vcl_Consts_SmkcPgUp 64588
-#define Vcl_Consts_SmkcPgDn 64589
-#define Vcl_Consts_SmkcEnd 64590
-#define Vcl_Consts_SmkcHome 64591
-#define Vcl_Consts_SVMetafiles 64592
-#define Vcl_Consts_SVEnhMetafiles 64593
-#define Vcl_Consts_SVIcons 64594
-#define Vcl_Consts_SVBitmaps 64595
-#define Vcl_Consts_SVTIFFImages 64596
-#define Vcl_Consts_SMaskErr 64597
-#define Vcl_Consts_SMaskEditErr 64598
-#define Vcl_Consts_SMsgDlgWarning 64599
-#define Vcl_Consts_SMsgDlgError 64600
-#define Vcl_Consts_SMsgDlgInformation 64601
-#define Vcl_Consts_SMsgDlgConfirm 64602
-#define Vcl_Consts_SMsgDlgYes 64603
-#define Vcl_Consts_SMsgDlgNo 64604
-#define Vcl_Consts_SMsgDlgOK 64605
-#define Vcl_Consts_SMsgDlgCancel 64606
-#define Vcl_Consts_SMsgDlgHelp 64607
-#define Vcl_Consts_SDeviceOnPort 64608
-#define Vcl_Consts_SGroupIndexTooLow 64609
-#define Vcl_Consts_SNoMDIForm 64610
-#define Vcl_Consts_SImageCanvasNeedsBitmap 64611
-#define Vcl_Consts_SControlParentSetToSelf 64612
-#define Vcl_Consts_SOKButton 64613
-#define Vcl_Consts_SCancelButton 64614
-#define Vcl_Consts_SYesButton 64615
-#define Vcl_Consts_SNoButton 64616
-#define Vcl_Consts_SHelpButton 64617
-#define Vcl_Consts_SCloseButton 64618
-#define Vcl_Consts_SIgnoreButton 64619
-#define Vcl_Consts_SRetryButton 64620
-#define Vcl_Consts_SAbortButton 64621
-#define Vcl_Consts_SAllButton 64622
-#define Vcl_Consts_SCannotDragForm 64623
-#define Vcl_Consts_SParentRequired 64624
-#define Vcl_Consts_SControlPath 64625
-#define Vcl_Consts_SParentGivenNotAParent 64626
-#define Vcl_Consts_SMDIChildNotVisible 64627
-#define Vcl_Consts_SVisibleChanged 64628
-#define Vcl_Consts_SCannotShowModal 64629
-#define Vcl_Consts_SScrollBarRange 64630
-#define Vcl_Consts_SPropertyOutOfRange 64631
-#define Vcl_Consts_SMenuIndexError 64632
-#define Vcl_Consts_SMenuReinserted 64633
-#define Vcl_Consts_SMenuNotFound 64634
-#define Vcl_Consts_SNoTimers 64635
-#define Vcl_Consts_SNotPrinting 64636
-#define Vcl_Consts_SPrinting 64637
-#define Vcl_Consts_SPrinterIndexError 64638
-#define Vcl_Consts_SInvalidPrinter 64639
-#define Vcl_Consts_SUnknownExtension 64640
-#define Vcl_Consts_SUnknownClipboardFormat 64641
-#define Vcl_Consts_SUnknownStreamFormat 64642
-#define Vcl_Consts_SOutOfResources 64643
-#define Vcl_Consts_SNoCanvasHandle 64644
-#define Vcl_Consts_SInvalidTextFormatFlag 64645
-#define Vcl_Consts_SInvalidImageSize 64646
-#define Vcl_Consts_SInvalidImageList 64647
-#define Vcl_Consts_SReplaceImage 64648
-#define Vcl_Consts_SInsertImage 64649
-#define Vcl_Consts_SImageIndexError 64650
-#define Vcl_Consts_SImageReadFail 64651
-#define Vcl_Consts_SImageWriteFail 64652
-#define Vcl_Consts_SWindowDCError 64653
-#define Vcl_Consts_SWindowClass 64654
-#define Vcl_Consts_SCannotFocus 64655
+#define Vcl_Imaging_pnglang_EPNGCannotAddChunkText 64368
+#define Vcl_Imaging_pnglang_EPNGCannotAddInvalidImageText 64369
+#define Vcl_Imaging_pnglang_EPNGCouldNotLoadResourceText 64370
+#define Vcl_Imaging_pnglang_EPNGOutMemoryText 64371
+#define Vcl_Imaging_pnglang_EPNGCannotChangeTransparentText 64372
+#define Vcl_Imaging_pnglang_EPNGHeaderNotPresentText 64373
+#define Vcl_Imaging_pnglang_EInvalidNewSize 64374
+#define Vcl_Imaging_pnglang_EInvalidSpec 64375
+#define Vcl_Imaging_pnglang_EPNGInvalidBitDepthText 64376
+#define Vcl_Imaging_JConsts_sChangeJPGSize 64377
+#define Vcl_Imaging_JConsts_sJPEGError 64378
+#define Vcl_Imaging_JConsts_sJPEGImageFile 64379
+#define Vcl_Imaging_pnglang_EPngInvalidCRCText 64384
+#define Vcl_Imaging_pnglang_EPNGInvalidIHDRText 64385
+#define Vcl_Imaging_pnglang_EPNGMissingMultipleIDATText 64386
+#define Vcl_Imaging_pnglang_EPNGZLIBErrorText 64387
+#define Vcl_Imaging_pnglang_EPNGInvalidPaletteText 64388
+#define Vcl_Imaging_pnglang_EPNGInvalidFileHeaderText 64389
+#define Vcl_Imaging_pnglang_EPNGIHDRNotFirstText 64390
+#define Vcl_Imaging_pnglang_EPNGSizeExceedsText 64391
+#define Vcl_Imaging_pnglang_EPNGUnknownPalEntryText 64392
+#define Vcl_Imaging_pnglang_EPNGUnknownCriticalChunkText 64393
+#define Vcl_Imaging_pnglang_EPNGUnknownCompressionText 64394
+#define Vcl_Imaging_pnglang_EPNGUnknownInterlaceText 64395
+#define Vcl_Imaging_pnglang_EPNGUnknownColorTypeText 64396
+#define Vcl_Imaging_pnglang_EPNGCannotAssignChunkText 64397
+#define Vcl_Imaging_pnglang_EPNGUnexpectedEndText 64398
+#define Vcl_Imaging_pnglang_EPNGNoImageDataText 64399
+#define ABSDecConst2_sFMT_XX 64400
+#define ABSDecConst2_sInvalidKeySize 64401
+#define ABSDecConst2_sNotInitialized 64402
+#define Vcl_VDBConsts_SFirstRecord 64403
+#define Vcl_VDBConsts_SPriorRecord 64404
+#define Vcl_VDBConsts_SNextRecord 64405
+#define Vcl_VDBConsts_SLastRecord 64406
+#define Vcl_VDBConsts_SInsertRecord 64407
+#define Vcl_VDBConsts_SDeleteRecord 64408
+#define Vcl_VDBConsts_SEditRecord 64409
+#define Vcl_VDBConsts_SPostEdit 64410
+#define Vcl_VDBConsts_SCancelEdit 64411
+#define Vcl_VDBConsts_SRefreshRecord 64412
+#define Vcl_VDBConsts_SApplyUpdates 64413
+#define Vcl_VDBConsts_SCancelUpdates 64414
+#define Vcl_VDBConsts_SRemoteLogin 64415
+#define Data_DBConsts_SDataSetUnidirectional 64416
+#define Data_DBConsts_SUnassignedVar 64417
+#define Data_DBConsts_SRecordNotFound 64418
+#define Data_DBConsts_SBcdOverflow 64419
+#define Data_DBConsts_SInvalidBcdValue 64420
+#define Data_DBConsts_SCouldNotParseTimeStamp 64421
+#define Data_DBConsts_SInvalidSqlTimeStamp 64422
+#define ABSDecConst2_sProtectionCircular 64423
+#define ABSDecConst2_sStringFormatExists 64424
+#define ABSDecConst2_sInvalidStringFormat 64425
+#define ABSDecConst2_sInvalidFormatString 64426
+#define ABSDecConst2_sFMT_COPY 64427
+#define ABSDecConst2_sFMT_HEX 64428
+#define ABSDecConst2_sFMT_HEXL 64429
+#define ABSDecConst2_sFMT_MIME64 64430
+#define ABSDecConst2_sFMT_UU 64431
+#define Data_DBConsts_SCircularDataLink 64432
+#define Data_DBConsts_SLookupInfoError 64433
+#define Data_DBConsts_SDataSourceChange 64434
+#define Data_DBConsts_SDataSetOpen 64435
+#define Data_DBConsts_SNotEditing 64436
+#define Data_DBConsts_SDataSetClosed 64437
+#define Data_DBConsts_SDataSetEmpty 64438
+#define Data_DBConsts_SDataSetReadOnly 64439
+#define Data_DBConsts_SNestedDataSetClass 64440
+#define Data_DBConsts_STextFalse 64441
+#define Data_DBConsts_STextTrue 64442
+#define Data_DBConsts_SParameterNotFound 64443
+#define Data_DBConsts_SInvalidVersion 64444
+#define Data_DBConsts_SBadFieldType 64445
+#define Data_DBConsts_SProviderSQLNotSupported 64446
+#define Data_DBConsts_SProviderExecuteNotSupported 64447
+#define Data_DBConsts_SFieldRangeError 64448
+#define Data_DBConsts_SBcdFieldRangeError 64449
+#define Data_DBConsts_SInvalidIntegerValue 64450
+#define Data_DBConsts_SInvalidBoolValue 64451
+#define Data_DBConsts_SInvalidFloatValue 64452
+#define Data_DBConsts_SFieldTypeMismatch 64453
+#define Data_DBConsts_SFieldSizeMismatch 64454
+#define Data_DBConsts_SInvalidVarByteArray 64455
+#define Data_DBConsts_SFieldOutOfRange 64456
+#define Data_DBConsts_SFieldRequired 64457
+#define Data_DBConsts_SDataSetMissing 64458
+#define Data_DBConsts_SInvalidCalcType 64459
+#define Data_DBConsts_SDuplicateIndexName 64460
+#define Data_DBConsts_SNoIndexForFields 64461
+#define Data_DBConsts_SIndexNotFound 64462
+#define Data_DBConsts_SDBDuplicateName 64463
+#define EExceptionInfoGeneric_SMSCppException 64464
+#define EExceptionInfoCLR_SCLRException 64465
+#define EExceptionInfoCLR_SExternalExceptionExtendedInfo 64466
+#define EExceptionInfoCpp_GenericErrorMsg 64467
+#define EExceptionInfoCpp_DelayLoadErrorMsg 64468
+#define ELogBuilder_rsHandles 64469
+#define EZLib_SZInvalid 64470
+#define EZip_rsELInvalidPassword 64471
+#define Data_DBConsts_SInvalidFieldSize 64472
+#define Data_DBConsts_SInvalidFieldKind 64473
+#define Data_DBConsts_SUnknownFieldType 64474
+#define Data_DBConsts_SFieldNameMissing 64475
+#define Data_DBConsts_SDuplicateFieldName 64476
+#define Data_DBConsts_SFieldNotFound 64477
+#define Data_DBConsts_SFieldAccessError 64478
+#define Data_DBConsts_SFieldValueError 64479
+#define EExceptionInfoGeneric_SInPageErrorException 64480
+#define EExceptionInfoGeneric_SInvalidHandleException 64481
+#define EExceptionInfoGeneric_SNoMemoryException 64482
+#define EExceptionInfoGeneric_SNonContinuableException 64483
+#define EExceptionInfoGeneric_SInvalidDispositionException 64484
+#define EExceptionInfoGeneric_SSegmentNotificationException 64485
+#define EExceptionInfoGeneric_SDbgControlCException 64486
+#define EExceptionInfoGeneric_SDbgPrintException 64487
+#define EExceptionInfoGeneric_SDbgRIPEventException 64488
+#define EExceptionInfoGeneric_SDbgControlBreakException 64489
+#define EExceptionInfoGeneric_SDbgCommandException 64490
+#define EExceptionInfoGeneric_SAssertionFailureException 64491
+#define EExceptionInfoGeneric_SBufferOverrun 64492
+#define EExceptionInfoGeneric_SCppException 64493
+#define EExceptionInfoGeneric_SLLVMException 64494
+#define EExceptionInfoGeneric_SCLRException 64495
+#define Vcl_ComStrs_sTabMustBeMultiLine 64496
+#define Vcl_ComStrs_sInvalidLevel 64497
+#define Vcl_ComStrs_sInvalidLevelEx 64498
+#define Vcl_ComStrs_sInvalidIndex 64499
+#define Vcl_ComStrs_sInsertError 64500
+#define Vcl_ComStrs_sInvalidOwner 64501
+#define Vcl_ComStrs_sUDAssociated 64502
+#define Vcl_ComStrs_sInvalidComCtl32 64503
+#define EExceptionInfoGeneric_SExternalExceptionObj 64504
+#define EExceptionInfoGeneric_SExternalExceptionExtendedInfo 64505
+#define EExceptionInfoGeneric_SExternalExceptionExtendedInfo2 64506
+#define EExceptionInfoGeneric_SStackOverflow 64507
+#define EExceptionInfoGeneric_SGuardPageViolationException 64508
+#define EExceptionInfoGeneric_SBreakpointException 64509
+#define EExceptionInfoGeneric_SMisalignmentException 64510
+#define EExceptionInfoGeneric_SSingleStepException 64511
+#define Vcl_Consts_SStyleInvalidHandle 64512
+#define Vcl_Consts_SStyleFormatError 64513
+#define Vcl_Consts_SStyleHookClassRegistered 64514
+#define Vcl_Consts_SStyleHookClassNotRegistered 64515
+#define Vcl_Consts_SStyleInvalidParameter 64516
+#define Vcl_Consts_SStyleFeatureNotSupported 64517
+#define Vcl_Consts_SStyleNotRegistered 64518
+#define Vcl_Consts_SStyleUnregisterError 64519
+#define Vcl_Consts_SStyleNotRegisteredNoName 64520
+#define Vcl_Consts_sBeginInvokeNoHandle 64521
+#define Vcl_ComStrs_sTabFailClear 64522
+#define Vcl_ComStrs_sTabFailDelete 64523
+#define Vcl_ComStrs_sTabFailRetrieve 64524
+#define Vcl_ComStrs_sTabFailGetObject 64525
+#define Vcl_ComStrs_sTabFailSet 64526
+#define Vcl_ComStrs_sTabFailSetObject 64527
+#define Vcl_Consts_SLogin 64528
+#define Vcl_Consts_SSeparator 64529
+#define Vcl_Consts_SErrorSettingCount 64530
+#define Vcl_Consts_SListBoxMustBeVirtual 64531
+#define Vcl_Consts_SNoGetItemEventHandler 64532
+#define Vcl_Consts_STrayIconRemoveError 64533
+#define Vcl_Consts_SWindowsVistaRequired 64534
+#define Vcl_Consts_STaskDlgButtonCaption 64535
+#define Vcl_Consts_STaskDlgRadioButtonCaption 64536
+#define Vcl_Consts_SInvalidTaskDlgButtonCaption 64537
+#define Vcl_Consts_SStyleLoadError 64538
+#define Vcl_Consts_SStyleLoadErrors 64539
+#define Vcl_Consts_SStyleRegisterError 64540
+#define Vcl_Consts_SStyleClassRegisterError 64541
+#define Vcl_Consts_SStyleNotFound 64542
+#define Vcl_Consts_SStyleClassNotFound 64543
+#define Vcl_Consts_SCannotOpenClipboard 64544
+#define Vcl_Consts_SInvalidMemoSize 64545
+#define Vcl_Consts_SInvalidPrinterOp 64546
+#define Vcl_Consts_SNoDefaultPrinter 64547
+#define Vcl_Consts_SDuplicateMenus 64548
+#define Vcl_Consts_SDockedCtlNeedsName 64549
+#define Vcl_Consts_SDockTreeRemoveError 64550
+#define Vcl_Consts_SDockZoneNotFound 64551
+#define Vcl_Consts_SDockZoneHasNoCtl 64552
+#define Vcl_Consts_SDockZoneVersionConflict 64553
+#define Vcl_Consts_SMultiSelectRequired 64554
+#define Vcl_Consts_SPromptArrayTooShort 64555
+#define Vcl_Consts_SPromptArrayEmpty 64556
+#define Vcl_Consts_SUsername 64557
+#define Vcl_Consts_SPassword 64558
+#define Vcl_Consts_SDomain 64559
+#define Vcl_Consts_SmkcHome 64560
+#define Vcl_Consts_SmkcLeft 64561
+#define Vcl_Consts_SmkcUp 64562
+#define Vcl_Consts_SmkcRight 64563
+#define Vcl_Consts_SmkcDown 64564
+#define Vcl_Consts_SmkcIns 64565
+#define Vcl_Consts_SmkcDel 64566
+#define Vcl_Consts_SmkcShift 64567
+#define Vcl_Consts_SmkcCtrl 64568
+#define Vcl_Consts_SmkcAlt 64569
+#define Vcl_Consts_srNone 64570
+#define Vcl_Consts_SOutOfRange 64571
+#define Vcl_Consts_sAllFilter 64572
+#define Vcl_Consts_SInsertLineError 64573
+#define Vcl_Consts_SInvalidClipFmt 64574
+#define Vcl_Consts_SIconToClipboard 64575
+#define Vcl_Consts_SMsgDlgHelp 64576
+#define Vcl_Consts_SMsgDlgAbort 64577
+#define Vcl_Consts_SMsgDlgRetry 64578
+#define Vcl_Consts_SMsgDlgIgnore 64579
+#define Vcl_Consts_SMsgDlgAll 64580
+#define Vcl_Consts_SMsgDlgNoToAll 64581
+#define Vcl_Consts_SMsgDlgYesToAll 64582
+#define Vcl_Consts_SMsgDlgClose 64583
+#define Vcl_Consts_SmkcBkSp 64584
+#define Vcl_Consts_SmkcTab 64585
+#define Vcl_Consts_SmkcEsc 64586
+#define Vcl_Consts_SmkcEnter 64587
+#define Vcl_Consts_SmkcSpace 64588
+#define Vcl_Consts_SmkcPgUp 64589
+#define Vcl_Consts_SmkcPgDn 64590
+#define Vcl_Consts_SmkcEnd 64591
+#define Vcl_Consts_SCannotDragForm 64592
+#define Vcl_Consts_SVMetafiles 64593
+#define Vcl_Consts_SVEnhMetafiles 64594
+#define Vcl_Consts_SVIcons 64595
+#define Vcl_Consts_SVBitmaps 64596
+#define Vcl_Consts_SVTIFFImages 64597
+#define Vcl_Consts_SMaskErr 64598
+#define Vcl_Consts_SMaskEditErr 64599
+#define Vcl_Consts_SMsgDlgWarning 64600
+#define Vcl_Consts_SMsgDlgError 64601
+#define Vcl_Consts_SMsgDlgInformation 64602
+#define Vcl_Consts_SMsgDlgConfirm 64603
+#define Vcl_Consts_SMsgDlgYes 64604
+#define Vcl_Consts_SMsgDlgNo 64605
+#define Vcl_Consts_SMsgDlgOK 64606
+#define Vcl_Consts_SMsgDlgCancel 64607
+#define Vcl_Consts_SInvalidPrinter 64608
+#define Vcl_Consts_SDeviceOnPort 64609
+#define Vcl_Consts_SGroupIndexTooLow 64610
+#define Vcl_Consts_SNoMDIForm 64611
+#define Vcl_Consts_SImageCanvasNeedsBitmap 64612
+#define Vcl_Consts_SControlParentSetToSelf 64613
+#define Vcl_Consts_SOKButton 64614
+#define Vcl_Consts_SCancelButton 64615
+#define Vcl_Consts_SYesButton 64616
+#define Vcl_Consts_SNoButton 64617
+#define Vcl_Consts_SHelpButton 64618
+#define Vcl_Consts_SCloseButton 64619
+#define Vcl_Consts_SIgnoreButton 64620
+#define Vcl_Consts_SRetryButton 64621
+#define Vcl_Consts_SAbortButton 64622
+#define Vcl_Consts_SAllButton 64623
+#define Vcl_Consts_SCannotFocus 64624
+#define Vcl_Consts_SParentRequired 64625
+#define Vcl_Consts_SControlPath 64626
+#define Vcl_Consts_SParentGivenNotAParent 64627
+#define Vcl_Consts_SMDIChildNotVisible 64628
+#define Vcl_Consts_SVisibleChanged 64629
+#define Vcl_Consts_SCannotShowModal 64630
+#define Vcl_Consts_SScrollBarRange 64631
+#define Vcl_Consts_SPropertyOutOfRange 64632
+#define Vcl_Consts_SMenuIndexError 64633
+#define Vcl_Consts_SMenuReinserted 64634
+#define Vcl_Consts_SMenuNotFound 64635
+#define Vcl_Consts_SNoTimers 64636
+#define Vcl_Consts_SNotPrinting 64637
+#define Vcl_Consts_SPrinting 64638
+#define Vcl_Consts_SPrinterIndexError 64639
+#define Vcl_Consts_SChangeWicSize 64640
+#define Vcl_Consts_SUnknownExtension 64641
+#define Vcl_Consts_SUnknownClipboardFormat 64642
+#define Vcl_Consts_SUnknownStreamFormat 64643
+#define Vcl_Consts_SOutOfResources 64644
+#define Vcl_Consts_SNoCanvasHandle 64645
+#define Vcl_Consts_SInvalidTextFormatFlag 64646
+#define Vcl_Consts_SInvalidImageSize 64647
+#define Vcl_Consts_SInvalidImageList 64648
+#define Vcl_Consts_SReplaceImage 64649
+#define Vcl_Consts_SInsertImage 64650
+#define Vcl_Consts_SImageIndexError 64651
+#define Vcl_Consts_SImageReadFail 64652
+#define Vcl_Consts_SImageWriteFail 64653
+#define Vcl_Consts_SWindowDCError 64654
+#define Vcl_Consts_SWindowClass 64655
 #define System_Win_ComConst_SDCOMNotInstalled 64656
-#define EBaseClasses_rsUnableToResizeVirtualStream 64657
-#define EBaseClasses_SFCreateErrorEx2 64658
-#define EBaseClasses_SFOpenErrorEx2 64659
-#define EBaseClasses_rsInvalidDelete 64660
-#define EBaseClasses_rsDoubleFree 64661
-#define EBaseClasses_rsUseDeleted 64662
-#define Vcl_Consts_SInvalidTabPosition 64663
-#define Vcl_Consts_SInvalidTabStyle 64664
-#define Vcl_Consts_SInvalidBitmap 64665
-#define Vcl_Consts_SInvalidIcon 64666
-#define Vcl_Consts_SInvalidMetafile 64667
-#define Vcl_Consts_SInvalidPixelFormat 64668
-#define Vcl_Consts_SScanLine 64669
-#define Vcl_Consts_SChangeIconSize 64670
-#define Vcl_Consts_SChangeWicSize 64671
+#define EEncoding_rsInvalidEncoding 64657
+#define EBaseClasses_rsUnableToResizeVirtualStream 64658
+#define EBaseClasses_SFCreateErrorEx2 64659
+#define EBaseClasses_SFOpenErrorEx2 64660
+#define EBaseClasses_rsInvalidDelete 64661
+#define EBaseClasses_rsDoubleFree 64662
+#define EBaseClasses_rsUseDeleted 64663
+#define Vcl_Consts_SInvalidTabPosition 64664
+#define Vcl_Consts_SInvalidTabStyle 64665
+#define Vcl_Consts_SInvalidBitmap 64666
+#define Vcl_Consts_SInvalidIcon 64667
+#define Vcl_Consts_SInvalidMetafile 64668
+#define Vcl_Consts_SInvalidPixelFormat 64669
+#define Vcl_Consts_SScanLine 64670
+#define Vcl_Consts_SChangeIconSize 64671
 #define System_RTLConsts_SWinRTInstanceError 64672
 #define System_RTLConsts_sObserverUnsupported 64673
 #define System_RTLConsts_sObserverMultipleSingleCast 64674
@@ -1173,6 +1174,7 @@
 #define EStrConsts_rsELDialog_OKButtonCaptionMsg 65535
 STRINGTABLE
 BEGIN
+	Vcl_Imaging_pnglang_EPNGCannotAddChunkText,	L"The program tried to add a existent critical chunk to the current image which is not allowed."
 	Vcl_Imaging_pnglang_EPNGCannotAddInvalidImageText,	L"It's not allowed to add a new chunk because the current image is invalid."
 	Vcl_Imaging_pnglang_EPNGCouldNotLoadResourceText,	L"The png image could not be loaded from the resource ID."
 	Vcl_Imaging_pnglang_EPNGOutMemoryText,	L"Some operation could not be performed because the system is out of resources. Close some windows and try again."
@@ -1184,6 +1186,7 @@ BEGIN
 	Vcl_Imaging_JConsts_sChangeJPGSize,	L"Cannot change the size of a JPEG image"
 	Vcl_Imaging_JConsts_sJPEGError,	L"JPEG error #%d"
 	Vcl_Imaging_JConsts_sJPEGImageFile,	L"JPEG Image File"
+	Vcl_Imaging_pnglang_EPngInvalidCRCText,	L"This \"Portable Network Graphics\" image is not valid because it contains invalid pieces of data (crc error)"
 	Vcl_Imaging_pnglang_EPNGInvalidIHDRText,	L"The \"Portable Network Graphics\" image could not be loaded because one of its main piece of data (ihdr) might be corrupted"
 	Vcl_Imaging_pnglang_EPNGMissingMultipleIDATText,	L"This \"Portable Network Graphics\" image is invalid because it has missing image parts."
 	Vcl_Imaging_pnglang_EPNGZLIBErrorText,	L"Could not decompress the image because it contains invalid compressed data.\r\n Description: "
@@ -1199,7 +1202,7 @@ BEGIN
 	Vcl_Imaging_pnglang_EPNGCannotAssignChunkText,	L"The chunks must be compatible to be assigned."
 	Vcl_Imaging_pnglang_EPNGUnexpectedEndText,	L"This \"Portable Network Graphics\" image is invalid because the decoder found an unexpected end of the file."
 	Vcl_Imaging_pnglang_EPNGNoImageDataText,	L"This \"Portable Network Graphics\" image contains no data."
-	Vcl_Imaging_pnglang_EPNGCannotAddChunkText,	L"The program tried to add a existent critical chunk to the current image which is not allowed."
+	ABSDecConst2_sFMT_XX,	L"XX Coding"
 	ABSDecConst2_sInvalidKeySize,	L"Length from Encryptionkey is invalid.\r\nKeysize for %s must be to %d-%d bytes"
 	ABSDecConst2_sNotInitialized,	L"%s is not initialized call Init() or InitKey() before."
 	Vcl_VDBConsts_SFirstRecord,	L"First record"
@@ -1215,7 +1218,7 @@ BEGIN
 	Vcl_VDBConsts_SApplyUpdates,	L"Apply updates"
 	Vcl_VDBConsts_SCancelUpdates,	L"Cancel updates"
 	Vcl_VDBConsts_SRemoteLogin,	L"Remote Login"
-	Vcl_Imaging_pnglang_EPngInvalidCRCText,	L"This \"Portable Network Graphics\" image is not valid because it contains invalid pieces of data (crc error)"
+	Data_DBConsts_SDataSetUnidirectional,	L"Operation not allowed on a unidirectional dataset"
 	Data_DBConsts_SUnassignedVar,	L"Unassigned variant value"
 	Data_DBConsts_SRecordNotFound,	L"Record not found"
 	Data_DBConsts_SBcdOverflow,	L"BCD overflow"
@@ -1231,7 +1234,7 @@ BEGIN
 	ABSDecConst2_sFMT_HEXL,	L"Hexadecimal lowercase"
 	ABSDecConst2_sFMT_MIME64,	L"MIME Base 64"
 	ABSDecConst2_sFMT_UU,	L"UU Coding"
-	ABSDecConst2_sFMT_XX,	L"XX Coding"
+	Data_DBConsts_SCircularDataLink,	L"Circular datalinks are not allowed"
 	Data_DBConsts_SLookupInfoError,	L"Lookup information for field '%s' is incomplete"
 	Data_DBConsts_SDataSourceChange,	L"DataSource cannot be changed"
 	Data_DBConsts_SDataSetOpen,	L"Cannot perform this operation on an open dataset"
@@ -1247,7 +1250,7 @@ BEGIN
 	Data_DBConsts_SBadFieldType,	L"Field '%s' is of an unsupported type"
 	Data_DBConsts_SProviderSQLNotSupported,	L"SQL not supported"
 	Data_DBConsts_SProviderExecuteNotSupported,	L"Execute not supported"
-	Data_DBConsts_SDataSetUnidirectional,	L"Operation not allowed on a unidirectional dataset"
+	Data_DBConsts_SFieldRangeError,	L"%g is not a valid value for field '%s'. The allowed range is %g to %g"
 	Data_DBConsts_SBcdFieldRangeError,	L"%s is not a valid value for field '%s'. The allowed range is %s to %s"
 	Data_DBConsts_SInvalidIntegerValue,	L"'%s' is not a valid integer value for field '%s'"
 	Data_DBConsts_SInvalidBoolValue,	L"'%s' is not a valid boolean value for field '%s'"
@@ -1263,7 +1266,7 @@ BEGIN
 	Data_DBConsts_SNoIndexForFields,	L"No index for fields '%s'"
 	Data_DBConsts_SIndexNotFound,	L"Index '%s' not found"
 	Data_DBConsts_SDBDuplicateName,	L"Duplicate name '%s' in %s"
-	Data_DBConsts_SCircularDataLink,	L"Circular datalinks are not allowed"
+	EExceptionInfoGeneric_SMSCppException,	L"C++ Exception (Microsoft)"
 	EExceptionInfoCLR_SCLRException,	L"CLR (.NET) Exception"
 	EExceptionInfoCLR_SExternalExceptionExtendedInfo,	L"%s\r\n\r\nHRESULT: %x (%s)\r\nModule: %s\r\nCode: %x\r\nAddress: %p (%p)"
 	EExceptionInfoCpp_GenericErrorMsg,	L"%s\r\nSeverity: %s\r\nCode: $s"
@@ -1279,7 +1282,7 @@ BEGIN
 	Data_DBConsts_SFieldNotFound,	L"Field '%s' not found"
 	Data_DBConsts_SFieldAccessError,	L"Cannot access field '%s' as type %s"
 	Data_DBConsts_SFieldValueError,	L"Invalid value for field '%s'"
-	Data_DBConsts_SFieldRangeError,	L"%g is not a valid value for field '%s'. The allowed range is %g to %g"
+	EExceptionInfoGeneric_SInPageErrorException,	L"The system is unable to load the memory page."
 	EExceptionInfoGeneric_SInvalidHandleException,	L"The thread used a handle to a kernel object that was invalid."
 	EExceptionInfoGeneric_SNoMemoryException,	L"Out of memory."
 	EExceptionInfoGeneric_SNonContinuableException,	L"Cannot continue from this exception."
@@ -1295,7 +1298,7 @@ BEGIN
 	EExceptionInfoGeneric_SCppException,	L"C++ Exception (Builder)"
 	EExceptionInfoGeneric_SLLVMException,	L"LLVM Exception"
 	EExceptionInfoGeneric_SCLRException,	L".NET Exception"
-	EExceptionInfoGeneric_SMSCppException,	L"C++ Exception (Microsoft)"
+	Vcl_ComStrs_sTabMustBeMultiLine,	L"MultiLine must be True when TabPosition is tpLeft or tpRight"
 	Vcl_ComStrs_sInvalidLevel,	L"Invalid item level assignment"
 	Vcl_ComStrs_sInvalidLevelEx,	L"Invalid level (%d) for item \"%s\""
 	Vcl_ComStrs_sInvalidIndex,	L"Invalid index"
@@ -1311,7 +1314,7 @@ BEGIN
 	EExceptionInfoGeneric_SBreakpointException,	L"A breakpoint has been reached."
 	EExceptionInfoGeneric_SMisalignmentException,	L"A datatype misalignment was detected in a load or store instruction."
 	EExceptionInfoGeneric_SSingleStepException,	L"A single step or trace operation has just been completed."
-	EExceptionInfoGeneric_SInPageErrorException,	L"The system is unable to load the memory page."
+	Vcl_Consts_SStyleInvalidHandle,	L"Invalid style handle"
 	Vcl_Consts_SStyleFormatError,	L"Invalid style format"
 	Vcl_Consts_SStyleHookClassRegistered,	L"Class '%s' is already registered for '%s'"
 	Vcl_Consts_SStyleHookClassNotRegistered,	L"Class '%s' is not registered for '%s'"
@@ -1327,7 +1330,7 @@ BEGIN
 	Vcl_ComStrs_sTabFailGetObject,	L"Failed to get object at index %d"
 	Vcl_ComStrs_sTabFailSet,	L"Failed to set tab \"%s\" at index %d"
 	Vcl_ComStrs_sTabFailSetObject,	L"Failed to set object at index %d"
-	Vcl_ComStrs_sTabMustBeMultiLine,	L"MultiLine must be True when TabPosition is tpLeft or tpRight"
+	Vcl_Consts_SLogin,	L"Login"
 	Vcl_Consts_SSeparator,	L"Separator"
 	Vcl_Consts_SErrorSettingCount,	L"Error setting %s.Count"
 	Vcl_Consts_SListBoxMustBeVirtual,	L"Listbox (%s) style must be virtual in order to set Count"
@@ -1343,7 +1346,7 @@ BEGIN
 	Vcl_Consts_SStyleClassRegisterError,	L"Style class '%s' already registered"
 	Vcl_Consts_SStyleNotFound,	L"Style '%s' not found"
 	Vcl_Consts_SStyleClassNotFound,	L"Style class '%s' not found"
-	Vcl_Consts_SStyleInvalidHandle,	L"Invalid style handle"
+	Vcl_Consts_SCannotOpenClipboard,	L"Cannot open clipboard: %s"
 	Vcl_Consts_SInvalidMemoSize,	L"Text exceeds memo capacity"
 	Vcl_Consts_SInvalidPrinterOp,	L"Operation not supported on selected printer"
 	Vcl_Consts_SNoDefaultPrinter,	L"There is no default printer currently selected"
@@ -1359,7 +1362,7 @@ BEGIN
 	Vcl_Consts_SUsername,	L"&Username"
 	Vcl_Consts_SPassword,	L"&Password"
 	Vcl_Consts_SDomain,	L"&Domain"
-	Vcl_Consts_SLogin,	L"Login"
+	Vcl_Consts_SmkcHome,	L"Home"
 	Vcl_Consts_SmkcLeft,	L"Left"
 	Vcl_Consts_SmkcUp,	L"Up"
 	Vcl_Consts_SmkcRight,	L"Right"
@@ -1375,7 +1378,7 @@ BEGIN
 	Vcl_Consts_SInsertLineError,	L"Unable to insert a line"
 	Vcl_Consts_SInvalidClipFmt,	L"Invalid clipboard format"
 	Vcl_Consts_SIconToClipboard,	L"Clipboard does not support Icons"
-	Vcl_Consts_SCannotOpenClipboard,	L"Cannot open clipboard: %s"
+	Vcl_Consts_SMsgDlgHelp,	L"&Help"
 	Vcl_Consts_SMsgDlgAbort,	L"&Abort"
 	Vcl_Consts_SMsgDlgRetry,	L"&Retry"
 	Vcl_Consts_SMsgDlgIgnore,	L"&Ignore"
@@ -1391,7 +1394,7 @@ BEGIN
 	Vcl_Consts_SmkcPgUp,	L"PgUp"
 	Vcl_Consts_SmkcPgDn,	L"PgDn"
 	Vcl_Consts_SmkcEnd,	L"End"
-	Vcl_Consts_SmkcHome,	L"Home"
+	Vcl_Consts_SCannotDragForm,	L"Cannot drag a form"
 	Vcl_Consts_SVMetafiles,	L"Metafiles"
 	Vcl_Consts_SVEnhMetafiles,	L"Enhanced Metafiles"
 	Vcl_Consts_SVIcons,	L"Icons"
@@ -1407,7 +1410,7 @@ BEGIN
 	Vcl_Consts_SMsgDlgNo,	L"&No"
 	Vcl_Consts_SMsgDlgOK,	L"OK"
 	Vcl_Consts_SMsgDlgCancel,	L"Cancel"
-	Vcl_Consts_SMsgDlgHelp,	L"&Help"
+	Vcl_Consts_SInvalidPrinter,	L"Printer selected is not valid"
 	Vcl_Consts_SDeviceOnPort,	L"%s on %s"
 	Vcl_Consts_SGroupIndexTooLow,	L"GroupIndex cannot be less than a previous menu item's GroupIndex"
 	Vcl_Consts_SNoMDIForm,	L"Cannot create form. No MDI forms are currently active"
@@ -1423,7 +1426,7 @@ BEGIN
 	Vcl_Consts_SRetryButton,	L"&Retry"
 	Vcl_Consts_SAbortButton,	L"Abort"
 	Vcl_Consts_SAllButton,	L"&All"
-	Vcl_Consts_SCannotDragForm,	L"Cannot drag a form"
+	Vcl_Consts_SCannotFocus,	L"Cannot focus a disabled or invisible window"
 	Vcl_Consts_SParentRequired,	L"Control '%s' has no parent window"
 	Vcl_Consts_SControlPath,	L". Path:\r\n%s"
 	Vcl_Consts_SParentGivenNotAParent,	L"Parent given is not a parent of '%s'"
@@ -1439,7 +1442,7 @@ BEGIN
 	Vcl_Consts_SNotPrinting,	L"Printer is not currently printing"
 	Vcl_Consts_SPrinting,	L"Printing in progress"
 	Vcl_Consts_SPrinterIndexError,	L"Printer index out of range"
-	Vcl_Consts_SInvalidPrinter,	L"Printer selected is not valid"
+	Vcl_Consts_SChangeWicSize,	L"Cannot change the size of a WIC Image"
 	Vcl_Consts_SUnknownExtension,	L"Unknown picture file extension (.%s)"
 	Vcl_Consts_SUnknownClipboardFormat,	L"Unsupported clipboard format"
 	Vcl_Consts_SUnknownStreamFormat,	L"Unsupported stream format"
@@ -1455,8 +1458,8 @@ BEGIN
 	Vcl_Consts_SImageWriteFail,	L"Failed to write ImageList data to stream"
 	Vcl_Consts_SWindowDCError,	L"Error creating window device context"
 	Vcl_Consts_SWindowClass,	L"Error creating window class"
-	Vcl_Consts_SCannotFocus,	L"Cannot focus a disabled or invisible window"
 	System_Win_ComConst_SDCOMNotInstalled,	L"DCOM not installed"
+	EEncoding_rsInvalidEncoding,	L"File %s contains invalid characters.\r\nFile is supposed to be in the %s encoding.\r\nThe error message for loading file was:"
 	EBaseClasses_rsUnableToResizeVirtualStream,	L"Can not change size of a virtual stream"
 	EBaseClasses_SFCreateErrorEx2,	L"Cannot create file \"%s\". The %s cannot access the file because it is being %s by %s"
 	EBaseClasses_SFOpenErrorEx2,	L"Cannot open file \"%s\". The %s cannot access the file because it is being %s by %s"
@@ -1471,7 +1474,6 @@ BEGIN
 	Vcl_Consts_SInvalidPixelFormat,	L"Invalid pixel format"
 	Vcl_Consts_SScanLine,	L"Scan line index out of range"
 	Vcl_Consts_SChangeIconSize,	L"Cannot change the size of an icon"
-	Vcl_Consts_SChangeWicSize,	L"Cannot change the size of a WIC Image"
 	System_RTLConsts_SWinRTInstanceError,	L"Cannot create instance of class %s"
 	System_RTLConsts_sObserverUnsupported,	L"Observer is not supported"
 	System_RTLConsts_sObserverMultipleSingleCast,	L"Cannot have multiple single cast observers added to the observers collection"

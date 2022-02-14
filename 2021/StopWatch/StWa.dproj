@@ -94,11 +94,11 @@
         <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2021\StopWatch\</BRCC_OutputDir>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Build>89</VerInfo_Build>
+        <VerInfo_Build>99</VerInfo_Build>
         <VerInfo_MajorVer>2022</VerInfo_MajorVer>
         <VerInfo_MinorVer>2</VerInfo_MinorVer>
-        <VerInfo_Release>8</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2022.2.8.89;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2022/02/08 17:26:24</VerInfo_Keys>
+        <VerInfo_Release>14</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2022.2.14.99;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2022/02/14 10:02:11</VerInfo_Keys>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Debugger_CWD>C:\Users\manli\Documents\Lavori\Projects\2021\StopWatch</Debugger_CWD>
         <Debugger_DebugSourcePath>C:\Users\manli\Documents\Lavori\Projects\2021\StopWatch;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
@@ -115,9 +115,9 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_MajorVer>2022</VerInfo_MajorVer>
         <VerInfo_MinorVer>2</VerInfo_MinorVer>
-        <VerInfo_Release>8</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2022.2.8.9;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2022/02/08 18:32:36</VerInfo_Keys>
-        <VerInfo_Build>9</VerInfo_Build>
+        <VerInfo_Release>14</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2022.2.14.45;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2022/02/14 10:02:24</VerInfo_Keys>
+        <VerInfo_Build>45</VerInfo_Build>
         <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2021\StopWatch\</DCC_DcpOutput>
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\StopWatch\</DCC_DcuOutput>
         <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2021\StopWatch\</BRCC_OutputDir>
