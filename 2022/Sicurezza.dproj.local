@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject>
-	<Transactions>
-    <Transaction>2022/12/28 15:35:36.000.184,=C:\Users\manli\Documents\Lavori\Projects\2021\ecom21\Unit2.pas</Transaction>
-    <Transaction>2022/12/28 15:43:40.000.767,C:\Users\manli\Documents\Lavori\Projects\2022\Unit2.dfm=C:\Users\manli\Documents\Lavori\Projects\2021\ecom21\Unit2.dfm</Transaction>
-    <Transaction>2022/12/28 15:43:40.000.767,C:\Users\manli\Documents\Lavori\Projects\2022\Unit2.pas=C:\Users\manli\Documents\Lavori\Projects\2021\ecom21\Unit2.pas</Transaction>
-    <Transaction>2022/12/28 15:43:59.000.324,C:\Users\manli\Documents\Lavori\Projects\2022\Sicurezza.dproj=C:\Users\manli\Documents\Lavori\Projects\2021\ecom21\Project1.dproj</Transaction>
-  </Transactions>
-</BorlandProject>
