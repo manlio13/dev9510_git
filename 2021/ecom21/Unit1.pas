@@ -1,4 +1,4 @@
-unit Unit1;       //good
+unit Unit1;       //questa è la versione giusta al 12/2022
 interface
 
 uses
@@ -339,9 +339,8 @@ begin
 frxReport2.ShowReport;
 end;
 
-
 procedure TForm1.Button11Click(Sender: TObject);  //Undelivered
-var
+   var
    testo:string;
 begin
       DataSource1.DataSet:=ABSQuery1;
@@ -375,12 +374,16 @@ begin
                //ABSTable1.Post;
                Form1.DBNavigator1Click(nil,nbPost);
              end;
+         if MessageDlg('More ?',
+             mtconfirmation, [mbYes,mbNo], 0) = mrYes then
+              begin
+
+              end;
+
+
        end;
 
     end ;
-  // if (clnu=1) or (clnu=2) or (clnu=3) or (clnu=5) then ABSTable1.Edit;
-
-
 end ;
 
 
@@ -406,7 +409,7 @@ end;
 procedure TForm1.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
   var
-  clnu:Integer;        // per creare le combo box
+  clnu,rnum:Integer;        // per creare le combo box  o inserire valori
 begin
 
   if GetKeyState(VK_SHIFT)<0 //tests if shiftkey is down per inserire un nuovo dato nelle combobox
@@ -433,7 +436,6 @@ begin
      end;
    clnu:=DBGrid1.SelectedIndex;
   if (clnu = 2)or (clnu=5) then
-
    begin
 
         if ABSTable1.RecordCount>0 then
@@ -448,7 +450,7 @@ begin
       ABSQuery1.First;
             // ShowMessage('numero di rec '+IntToStr(ABSQuery1.RecordCount));
       ABSTable2.close;
-      ABSTable2.EmptyTable;
+      ABSTable2.EmptyTable;        //prima la svuota e poi la ricompila
       ABSTable2.Open;
         while not ABSQuery1.eof do
       begin
@@ -459,7 +461,6 @@ begin
         ABSQuery1.Next;
       end;
       end;
-
 
          with JvDBLookupCombo1 do
         begin
@@ -505,15 +506,21 @@ begin
             Visible := True;
           end;
         end;
+   end;
+  {  if (clnu=6) then
+         begin
+          DBGrid1.DataSource.DataSet.Last;
+          rnum:= DBGrid1.SelectedRows.Count ;
+           // ABSTable1.Post;
+           // ABSTable1.Last;
+          ShowMessage(IntToStr(rnum));
+          // Form1.DBNavigator1Click(nil,nbPost);
+           dbgrid1.DataSource.DataSet.Post;
+           dbgrid1.SelectedIndex := 7;
+           Button7Click(self) ;
 
-   end; {else              // righe di codice eliminate perchè bloccavano la dbgrid quando
-       if clnu=1 then      // si cliccava sul campo prodotto cioè clnu=1
-     begin
-       DBGrid1.SetFocus;
-       // dbgrid1.SelectedIndex := 1;
-     end;}
-
-end;
+         end ; //  }
+  end;
 
 procedure TForm1.DBGrid1KeyPress(Sender: TObject; var Key: Char);
  var
@@ -535,8 +542,8 @@ begin
 end;
 
 procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
-           var
-   d1,d2,d3:TDate;
+          var
+  d1,d2,d3:TDate;
 
   begin
 
@@ -548,9 +555,9 @@ procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
 
        end;
 
-     if (Button = nbPost)  then
-    begin
-         ABSTable1.First;
+         if (Button = nbPost)  then
+       begin
+        ABSTable1.First;
          while not ABSTable1.Eof do   //lo scan serve per consentire più di una modifica/aggiunta
           begin
              d1:=ABSTable1.FieldByName('DataOrd').AsDateTime;
@@ -578,7 +585,11 @@ procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
           end;
 
            FormCreate(Self);
-    end;
+
+
+
+       end;
+
   end;
 
  { function GetAppVersionStr: string;

@@ -95,7 +95,7 @@ begin
           sw.stop;
           if vis  then
           ms:=sw.ElapsedMilliseconds-100 else
-          ms:=sw.ElapsedMilliseconds-450;
+          ms:=sw.ElapsedMilliseconds - 500;
 
           mt:=mt+ms;
           Edit1.text:=FloatToStr(Abs(ms));
