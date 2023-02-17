@@ -2,6 +2,11 @@ program WrksLog;
  {$IFOPT D-}{$WEAKLINKRTTI ON}{$ENDIF}
 {$RTTI EXPLICIT METHODS([]) PROPERTIES([]) FIELDS([])}
 uses
+  madExcept,
+  madLinkDisAsm,
+  madListHardware,
+  madListProcesses,
+  madListModules,
   Forms,
   Unit1 in 'Unit1.pas' {Form1},
   Vcl.Themes,
