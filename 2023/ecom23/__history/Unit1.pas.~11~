@@ -1,4 +1,4 @@
-unit Unit1;       //versione vecchia da rinfrescare 2023
+unit Unit1;           // Release 2020 en
 interface
 
 uses
@@ -51,8 +51,6 @@ type
     Label7: TLabel;
     frxReport2: TfrxReport;
     Button10: TButton;
-    Button11: TButton;
-    Label8: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -81,11 +79,10 @@ type
 
 var
   Form1: TForm1;
-  filtro,result:string;
+  filtro,result,mom:string;
   somma:double;
   inizio:TDateTime;
   nk,salta,cambio:boolean;
-
 implementation
 
 {$R *.dfm}
@@ -122,19 +119,40 @@ begin
     AbsTable1.Next; { Eof False on success; Eof True when Next fails on last record }
   end;
  finally
-  Label3.Caption:='Total purchased = €:'+ floattostr(somma);
+  Label3.Caption:='Total purchased =  : '+ floattostr(somma);
   if DaysBetween(Now,inizio)>0 then
    begin
-      Label5.Caption:='€ '+FloatToStrF(Somma/(DaysBetween(Now,inizio)/30),ffFixed,4,2)+' per month';
-      Label6.Caption:='N. items: '+IntToStr(ABSTable1.RecNo);
+      Label5.Caption:=FloatToStrF(Somma/(DaysBetween(Now,inizio)/30),ffFixed,4,2)+' for month';
+      if ABSTable1.RecNo<0 then mom:='0' else mom := IntToStr(ABSTable1.RecNo);
+      Label6.Caption:='N. items : '+ mom;
       somma:=0;
    end;
   
   end;
 
-   Form1.Caption:='Control of online purchases, ' + ' Version : '+ GetAppVersionStr;
+   Form1.Caption:='Online orders control , ' + ' Version : '+ GetAppVersionStr;
 end;
 
+
+procedure TForm1.Button11Click(Sender: TObject);   //undelivered
+begin
+    var
+   testo:string;
+begin
+      DataSource1.DataSet:=ABSQuery1;
+        testo:='Select * from ecomTB where DataCons="" ';
+    //   testo:= StringReplace(testo,',','.',[rfReplaceAll]);
+        //SQL vuole il punto come separatore decimale
+       with ABSQuery1 do
+     begin
+       close;
+       SQL.text := testo;
+       ExecSql;
+       open;
+       TFloatField(ABSQuery1.FieldByName('Prezzo')).DisplayFormat := '##0.00';
+     end;
+end;
+end;
 
 procedure TForm1.Button1Click(Sender: TObject);  //cerca
 label vai;
@@ -228,7 +246,7 @@ begin
         ABSQuery1.Close;
 end;
 
-procedure TForm1.Button4Click(Sender: TObject);   //sql   free text
+procedure TForm1.Button4Click(Sender: TObject);
 begin
        DataSource1.DataSet:=ABSQuery1;
        edit6.Text:= StringReplace(edit6.text,',','.',[rfReplaceAll]);  //SQL vuole il punto come separatore decimale
@@ -252,7 +270,7 @@ end;
 
 procedure TForm1.Button6Click(Sender: TObject);  //azzera il database
 begin
-      if messageDlg('You really want to erase all data ?',mtConfirmation,mbYesNo,0)=mrNo then
+      if messageDlg('Do you really want to remove all data ?',mtConfirmation,mbYesNo,0)=mrNo then
        exit;
       ABSTable1.Close;
       ABSTable1.EmptyTable;
@@ -261,10 +279,11 @@ end;
 procedure TForm1.Button7Click(Sender: TObject);   // Done
 begin
         if cambio=True then
-        if MessageDlg('Data to be confirmed ?',
-         mtconfirmation, [mbYes,mbNo], 0) = mrYes then Exit else cambio:=False;
+        if MessageDlg('Do you have data to confirm ?',
+         mtconfirmation, [mbYes,mbNo], 0) = mrYes then
+         Form1.DBNavigator1Click(nil,nbPost)else cambio:=False;
 
-         if MessageDlg('Do you want to quit ?',
+         if MessageDlg('Do you want to exit ?',
          mtconfirmation, [mbYes,mbNo], 0) = mrYes then
   begin
     //Button8Click;
@@ -284,15 +303,15 @@ procedure TForm1.Button8Click(Sender: TObject);     //Backup
    dir:string;
    dirList:TStringList;      //occorre creare un StringList perchè JVshFileOperation non accetta altro che da StingList
 begin
-   if MessageDlg('Confirm that you want to backup the database ?',
+   if MessageDlg('Do you confirm to backup the database ?',
              mtconfirmation, [mbYes,mbNo], 0) = mrYes then
      begin
          dirList:= TStringList.Create;      //inizializzare la string list
          ABSDatabase1.Close;
-             if MessageDlg('Do you want to change backup path ?',
+             if MessageDlg('Do you like to change the saving path ?',
              mtconfirmation, [mbYes,mbNo], 0) = mrYes then
                begin
-                  dir:=InputBox('Indicare il path','digitare l''intero percorso che termina per \','');  // creare la string
+                  dir:=InputBox('Enter the new path','Pls enter the whole path, ending by \','');  // creare la string
                   dir:=dir+'ecom.bkp';                                              //list passando attraverso una comune string
                   dirList.Add(dir) ;     // nuovo path
 
@@ -305,7 +324,7 @@ begin
          if FileExists('ecom.bkp') then
          ShowMessage('Backup done') else
            begin
-              ShowMessage('Error ! Backup non done');
+              ShowMessage('Error ! Failed backup');
               Exit;
            end;
 
@@ -315,7 +334,7 @@ begin
 end;
 
 
-procedure TForm1.Button9Click(Sender: TObject);
+procedure TForm1.Button9Click(Sender: TObject);       //report
 begin
    //occorre ordinare il database prima del rapporto         ISTRUZIONI
    with ABSQuery1 do                                   //inserire il modulo TABSQuery
@@ -339,23 +358,6 @@ begin
 frxReport2.ShowReport;
 end;
 
-
-procedure TForm1.Button11Click(Sender: TObject);  //Undelivered
-var
-   testo:string;
-begin
-      DataSource1.DataSet:=ABSQuery1;
-        testo:='Select * from ecomTB where DataCons="" ';  //nelle stringhe SQL usare i doppi apici
-       with ABSQuery1 do
-     begin
-       close;
-       SQL.text := testo;
-       ExecSql;
-       open;
-       TFloatField(ABSQuery1.FieldByName('Prezzo')).DisplayFormat := '##0.00';
-     end;
-end;
-
 procedure TForm1.DBGrid1CellClick(Column: TColumn);
  var
  clnu:integer;       //per inserire in modo semiautomatica la data del giorno
@@ -368,7 +370,7 @@ begin
      if dbgrid1.Columns.Items[clnu].Field.Value=null then
        begin
            ABSTable1.Edit;
-        if MessageDlg('Today date ?',
+        if MessageDlg('Do you want to enter today date ?',
              mtconfirmation, [mbYes,mbNo], 0) = mrYes then
              begin
                dbgrid1.Columns.Items[clnu].Field.Value:=DateToStr(Now);
@@ -378,7 +380,7 @@ begin
        end;
 
     end ;
-  // if (clnu=1) or (clnu=2) or (clnu=3) or (clnu=5) then ABSTable1.Edit;
+   if (clnu=1) or (clnu=2) or (clnu=3) or (clnu=5) then ABSTable1.Edit;
 
 
 end ;
