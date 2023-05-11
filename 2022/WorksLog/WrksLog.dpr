@@ -7,6 +7,7 @@ uses
   madListHardware,
   madListProcesses,
   madListModules,
+
   Forms,
   Unit1 in 'Unit1.pas' {Form1},
   Vcl.Themes,

@@ -1,11 +1,11 @@
-unit Unit1;        //07/09/2022 vers. 8.1  > WorksLog
+unit Unit1;        //11/05/2023 vers. 8.2  > WorksLog
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls,Grids,DBGrids,DB,ABSmain,ComCtrls,ExtCtrls,Buttons, DBCtrls,
   Mask,HTMLHelpViewer,System.UITypes, Datasnap.DBClient,printers,JvSHFileOperation,JvBaseDlg,
-  frxClass, frxExportPDF, frxDBSet, frxExportBaseDialog;
+  frxClass, frxExportPDF, frxDBSet, frxExportBaseDialog, frxRich;
 
 type
   TForm1 = class(TForm)
@@ -41,11 +41,14 @@ type
     Button6: TButton;
     Button7: TButton;
     jvshfile1: TJvSHFileOperation;
-    frxDBDataset1: TfrxDBDataset;
-    frxReport1: TfrxReport;
-    frxPDFExport1: TfrxPDFExport;
+
+
+
     Button8: TButton;
     ABSQuery1: TABSQuery;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    frxPDFExport1: TfrxPDFExport;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject); //lookup
     Procedure FilterUp(var filtro: string);
@@ -246,27 +249,26 @@ var
   grd : array of array of string;
   f:TextFile;
 begin                        //seleziona tutti i record in DBGrid
-                             J:=0;
-                             numgrid:=0;
-                             SetLength (grd,numgrid,2);
-                             DBGrid1.SelectedRows.Clear;
-                             
-                             with DBGrid1.DataSource.DataSet do
-                                 begin
-                                 DisableControls;
-                                 First;
-                                    try
-                                     while not EOF do
-                                      begin
-                                       DBGrid1.SelectedRows.CurrentRowSelected := True;
-                                       J:=J+1;
-                                       Next;
-                                      end;
-                                    finally
-                                     EnableControls;
-                                    end;
-                                  numgrid:=J;   //determina la lunghezza della DBGrid
-                                 end;
+   J:=0;
+   numgrid:=0;
+   SetLength (grd,numgrid,2);
+   DBGrid1.SelectedRows.Clear;
+   with DBGrid1.DataSource.DataSet do
+     begin
+        DisableControls;
+        First;
+          try
+              while not EOF do
+                  begin
+                   DBGrid1.SelectedRows.CurrentRowSelected := True;
+                   J:=J+1;
+                   Next;
+                  end;
+          finally
+           EnableControls;
+          end;
+      numgrid:=J;   //determina la lunghezza della DBGrid
+     end;
           //carica l'array con i valori dei record;
                                  SetLength (grd,numgrid,2);
                    with DBGrid1.DataSource.DataSet do
@@ -335,7 +337,7 @@ begin
       SQL.Text:='select * from dlog ORDER BY Filed ASC';
       ExecSQL;
    end;
-frxReport1.ShowReport;
+    frxReport1.ShowReport;
 end;
 
 procedure TForm1.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;

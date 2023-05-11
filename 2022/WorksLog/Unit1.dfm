@@ -8,10 +8,14 @@ object Form1: TForm1
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   BorderWidth = 3
-  Caption = 'Works   LOG   v. 8.1'
-  ClientHeight = 515
-  ClientWidth = 869
+  Caption = 'Works   LOG   v. 8.2'
+  ClientHeight = 516
+  ClientWidth = 868
   Color = clSkyBlue
+  Constraints.MaxHeight = 551
+  Constraints.MaxWidth = 880
+  Constraints.MinHeight = 551
+  Constraints.MinWidth = 880
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clNavy
   Font.Height = -11
@@ -324,11 +328,12 @@ object Form1: TForm1
   OldCreateOrder = False
   Position = poDesktopCenter
   ShowHint = True
+  Visible = True
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   DesignSize = (
-    869
-    515)
+    868
+    516)
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -701,7 +706,7 @@ object Form1: TForm1
   end
   object Button6: TButton
     Left = 275
-    Top = 484
+    Top = 483
     Width = 75
     Height = 25
     Caption = 'Done'
@@ -711,7 +716,7 @@ object Form1: TForm1
   object Button7: TButton
     Left = 434
     Top = 482
-    Width = 75
+    Width = 89
     Height = 25
     Caption = 'Backup'
     TabOrder = 21
@@ -821,35 +826,32 @@ object Form1: TForm1
     Left = 360
     Top = 272
   end
-  object frxDBDataset1: TfrxDBDataset
-    UserName = 'frxDBDataset1'
-    CloseDataSource = False
-    FieldAliases.Strings = (
-      'Filed=Data'
-      'What= Cosa'
-      'Type= Tipo')
-    DataSet = ABSQuery1
-    BCDToCurrency = False
-    Left = 576
-    Top = 320
+  object ABSQuery1: TABSQuery
+    CurrentVersion = '7.93 '
+    DatabaseName = 'DailyLog.abs'
+    InMemory = False
+    ReadOnly = False
+    DataSource = DataSource1
+    Left = 152
+    Top = 256
   end
   object frxReport1: TfrxReport
     Version = '6.7'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
-    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 43222.774254953700000000
-    ReportOptions.LastChange = 43222.774254953700000000
+    ReportOptions.CreateDate = 45056.795786157400000000
+    ReportOptions.LastChange = 45057.457746030090000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
-    Left = 488
-    Top = 304
+    Left = 520
+    Top = 264
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -871,19 +873,56 @@ object Form1: TForm1
       BottomMargin = 10.000000000000000000
       Frame.Typ = []
       MirrorMode = []
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 49.133890000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 200.315090000000000000
+          Width = 332.598640000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Elenco lavori effettuati sull'#39'HR 40 Amarose')
+          ParentFont = False
+        end
+        object Memo2: TfrxMemoView
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 30.236240000000000000
+          Width = 608.504330000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            
+              'Data                       Cosa                                 ' +
+              '                                                                ' +
+              'Tipo')
+        end
+      end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
-        Height = 18.897650000000000000
-        Top = 84.000000000000000000
+        Height = 26.456710000000000000
+        Top = 128.504020000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
         object frxDBDataset1Data: TfrxMemoView
+          IndexTag = 1
           AllowVectorExport = True
-          Left = 3.779530000000000000
-          Width = 79.370130000000000000
+          Left = 7.559060000000000000
+          Top = 3.779530000000000000
+          Width = 113.385900000000000000
           Height = 18.897650000000000000
           DataField = 'Data'
           DataSet = frxDBDataset1
@@ -893,48 +932,54 @@ object Form1: TForm1
             '[frxDBDataset1."Data"]')
         end
         object frxDBDataset1Cosa: TfrxMemoView
+          IndexTag = 1
           AllowVectorExport = True
-          Left = 86.929190000000000000
-          Width = 517.795610000000000000
+          Left = 128.504020000000000000
+          Top = 3.779530000000000000
+          Width = 393.071120000000000000
           Height = 18.897650000000000000
-          DataField = ' Cosa'
+          DataField = 'Cosa'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset1." Cosa"]')
+            '[frxDBDataset1."Cosa"]')
         end
         object frxDBDataset1Tipo: TfrxMemoView
+          IndexTag = 1
           AllowVectorExport = True
-          Left = 597.165740000000000000
-          Width = 128.504020000000000000
+          Left = 532.913730000000000000
+          Top = 3.779530000000000000
+          Width = 158.740260000000000000
           Height = 18.897650000000000000
-          DataField = ' Tipo'
+          DataField = 'Tipo'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset1." Tipo"]')
+            '[frxDBDataset1."Tipo"]')
         end
       end
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
         Frame.Typ = []
         Height = 22.677180000000000000
-        Top = 124.000000000000000000
+        Top = 215.433210000000000000
         Width = 718.110700000000000000
-        object Memo3: TfrxMemoView
+        object Page: TfrxMemoView
+          IndexTag = 1
           AllowVectorExport = True
-          Left = 600.945270000000000000
-          Width = 37.795300000000000000
+          Left = 544.252320000000000000
+          Width = 45.354360000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
-            'Pag.:')
+            '[Page]')
         end
-        object Page: TfrxMemoView
+        object Page2: TfrxMemoView
+          IndexTag = 1
           AllowVectorExport = True
-          Left = 642.520100000000000000
+          Left = 604.724800000000000000
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
@@ -942,47 +987,19 @@ object Form1: TForm1
             '[Page#]')
         end
       end
-      object PageHeader1: TfrxPageHeader
-        FillType = ftBrush
-        Frame.Typ = []
-        Height = 49.133890000000000000
-        Top = 16.000000000000000000
-        Width = 718.110700000000000000
-        object Memo1: TfrxMemoView
-          AllowVectorExport = True
-          Left = 158.740260000000000000
-          Width = 366.614410000000000000
-          Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -17
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            'Elenco lavori effettuati sull'#39'HR40 Amarose')
-          ParentFont = False
-        end
-        object Memo2: TfrxMemoView
-          AllowVectorExport = True
-          Left = 22.677180000000000000
-          Top = 22.677180000000000000
-          Width = 559.370440000000000000
-          Height = 18.897650000000000000
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -15
-          Font.Name = 'Arial'
-          Font.Style = [fsBold, fsItalic]
-          Frame.Typ = []
-          Memo.UTF8W = (
-            
-              'Data                          Cosa                              ' +
-              '                                              Tipo')
-          ParentFont = False
-        end
-      end
     end
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'Filed=Data'
+      'What=Cosa'
+      'Type=Tipo')
+    DataSet = ABSQuery1
+    BCDToCurrency = False
+    Left = 152
+    Top = 136
   end
   object frxPDFExport1: TfrxPDFExport
     UseFileCache = True
@@ -1008,16 +1025,7 @@ object Form1: TForm1
     PdfA = False
     PDFStandard = psNone
     PDFVersion = pv17
-    Left = 680
-    Top = 304
-  end
-  object ABSQuery1: TABSQuery
-    CurrentVersion = '7.93 '
-    DatabaseName = 'DailyLog.abs'
-    InMemory = False
-    ReadOnly = False
-    DataSource = DataSource1
-    Left = 152
-    Top = 256
+    Left = 432
+    Top = 312
   end
 end

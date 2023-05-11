@@ -105,25 +105,25 @@
         <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\</DCC_DcpOutput>
         <Debugger_CWD>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\</Debugger_CWD>
         <Debugger_DebugSourcePath>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
-        <VerInfo_Build>78</VerInfo_Build>
+        <VerInfo_Build>88</VerInfo_Build>
         <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\</BRCC_OutputDir>
         <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\</DCC_ExeOutput>
-        <DCC_UnitSearchPath>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\;C:\Program Files (x86)\Embarcadero\Studio\21.0\bin;C:\Program Files (x86)\ComponentAce\AbsoluteDatabase\Lib\Delphi 10.4 and C++ Builder 10.4 (Sydney);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-        <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\</DCC_DcuOutput>
+        <DCC_UnitSearchPath>$(BDSLIB)\jvcl\run\JvSHFileOperation.pas;$(USERPROFILE)\Documents\Lavori\Projects\2022\WorksLog\;$(BDSBIN);$(ProgramFiles(x86))\ComponentAce\AbsoluteDatabase\Lib\Delphi 10.4 and C++ Builder 10.4 (Sydney)</DCC_UnitSearchPath>
+        <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\;</DCC_DcuOutput>
         <DCC_DebugDCUs>false</DCC_DebugDCUs>
         <Icon_MainIcon>DailyLog_Icon2.ico</Icon_MainIcon>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_AutoGenVersion>false</VerInfo_AutoGenVersion>
-        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <VerInfo_MinorVer>5</VerInfo_MinorVer>
         <VerInfo_MajorVer>2023</VerInfo_MajorVer>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=Work logger;FileVersion=2023.1.24.78;InternalName=;LegalCopyright=@MLSoft 2013;LegalTrademarks=;OriginalFilename=dailyLog;ProductName=Works Log;ProductVersion=5.0.0.0;Comments=mlsoft@iol.it;5.1.0=;LastCompiledTime=2023/01/24 21:43:47;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=Work logger;FileVersion=2023.5.10.88;InternalName=;LegalCopyright=@MLSoft 2013;LegalTrademarks=;OriginalFilename=dailyLog;ProductName=Works Log;ProductVersion=5.0.0.0;Comments=mlsoft@iol.it;5.1.0=;LastCompiledTime=2023/05/10 18:03:05;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Release>24</VerInfo_Release>
+        <VerInfo_Release>10</VerInfo_Release>
         <BT_BuildType>Debug</BT_BuildType>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;vclFireDAC;bindcompvclsmp;tethering;FireDACADSDriver;bindcompfmx;FmxTeeUI;fmx;FireDACIBDriver;fmxdae;vcledge;FireDACCommon;RESTBackendComponents;VCLRESTComponents;soapserver;bindengine;CloudService;FireDACMySQLDriver;FireDACCommonODBC;FireDACCommonDriver;IndyIPCommon;bindcompdbx;IndyIPServer;bindcompvclwinx;FireDACMSAccDriver;fmxFireDAC;FireDAC;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FMXTee;soapmidas;ibxbindings;fmxobj;vclwinx;CustomIPTransport;vcldsnap;bindcomp;appanalytics;IndyIPClient;bindcompvcl;dsnapxml;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
-        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
         <DCC_MapFile>3</DCC_MapFile>
+        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_ExeOutput>C:\Users\Manlio_Laschena\Documents\RAD Studio\Projects\2013\WorksLog\</DCC_ExeOutput>
@@ -211,6 +211,7 @@
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD27\dclfrxtee27.bpl">FastReport 6.0 Tee Components</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
                     <Source Name="MainSource">WrksLog.dpr</Source>
