@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2013/03/23 12:06:49.000.698,C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\Log\Project1.dproj=C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\Log\DailyLog.dproj</Transaction>
-    <Transaction>2014/01/22 12:09:42.000.055,C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\WorksLog\WrksLog.dproj=C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\Log\DailyLog.dproj</Transaction>
-    <Transaction>2014/01/22 12:10:20.000.339,C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\WorksLog\Unit1.dfm=C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\Log\Unit1.dfm</Transaction>
+    <Transaction>2013/03/23 12:06:49.000.698,C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\Log\DailyLog.dproj=C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\Log\Project1.dproj</Transaction>
+    <Transaction>2014/01/22 12:09:42.000.055,C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\Log\DailyLog.dproj=C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\WorksLog\WrksLog.dproj</Transaction>
+    <Transaction>2014/01/22 12:10:20.000.339,C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\Log\Unit1.dfm=C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\WorksLog\Unit1.dfm</Transaction>
   </Transactions>
 </BorlandProject>

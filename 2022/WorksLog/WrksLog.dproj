@@ -4,7 +4,7 @@
         <ProjectVersion>19.2</ProjectVersion>
         <MainSource>WrksLog.dpr</MainSource>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Config Condition="'$(Config)'==''">Release</Config>
         <AppType>Application</AppType>
         <FrameworkType>VCL</FrameworkType>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
@@ -133,22 +133,28 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Build>1</VerInfo_Build>
-        <VerInfo_Release>8</VerInfo_Release>
-        <DCC_DcpOutput>C:\Users\manli\Documents\RAD Studio\Projects\2013\WorksLog\</DCC_DcpOutput>
-        <DCC_UnitSearchPath>C:\Users\manli\Documents\RAD Studio\Projects\2013\WorksLog\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-        <DCC_DcuOutput>C:\Users\manli\Documents\RAD Studio\Projects\2013\WorksLog\</DCC_DcuOutput>
-        <BRCC_OutputDir>C:\Users\manli\Documents\RAD Studio\Projects\2013\WorksLog\</BRCC_OutputDir>
+        <VerInfo_Build>7</VerInfo_Build>
+        <VerInfo_Release>13</VerInfo_Release>
+        <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\</DCC_DcpOutput>
+        <DCC_UnitSearchPath>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\</DCC_DcuOutput>
+        <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\</BRCC_OutputDir>
         <Debugger_DebugSourcePath>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\WorksLog;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_AutoGenVersion>false</VerInfo_AutoGenVersion>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Manifest_File>None</Manifest_File>
-        <VerInfo_Keys>CompanyName=;FileVersion=2022.4.8.1;InternalName=;LegalCopyright=;LegalTrademarks=MLSoft 2014;OriginalFilename=DailyLog;ProductName=WorksLog;ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2022/04/08 18:28:58;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName)</VerInfo_Keys>
-        <VerInfo_MajorVer>2022</VerInfo_MajorVer>
-        <VerInfo_MinorVer>4</VerInfo_MinorVer>
-        <DCC_ExeOutput>C:\Users\manli\Documents\RAD Studio\Projects\2013\WorksLog\</DCC_ExeOutput>
+        <VerInfo_Keys>CompanyName=;FileVersion=2023.5.13.7;InternalName=;LegalCopyright=;LegalTrademarks=MLSoft 2014;OriginalFilename=DailyLog;ProductName=WorksLog;ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2023/05/13 00:42:25;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_MajorVer>2023</VerInfo_MajorVer>
+        <VerInfo_MinorVer>5</VerInfo_MinorVer>
+        <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\</DCC_ExeOutput>
         <Debugger_CWD>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\WorksLog</Debugger_CWD>
+        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
+        <DCC_MapFile>3</DCC_MapFile>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <BT_BuildType>Debug</BT_BuildType>
+        <DCC_DebugInformation>2</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>true</DCC_LocalDebugSymbols>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">

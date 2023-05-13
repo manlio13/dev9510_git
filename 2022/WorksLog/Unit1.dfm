@@ -881,8 +881,8 @@ object Form1: TForm1
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
           AllowVectorExport = True
-          Left = 200.315090000000000000
-          Width = 332.598640000000000000
+          Left = 283.464750000000000000
+          Width = 162.519790000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -891,7 +891,7 @@ object Form1: TForm1
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'Elenco lavori effettuati sull'#39'HR 40 Amarose')
+            'LIST  OF  WORKS')
           ParentFont = False
         end
         object Memo2: TfrxMemoView
@@ -903,9 +903,9 @@ object Form1: TForm1
           Frame.Typ = []
           Memo.UTF8W = (
             
-              'Data                       Cosa                                 ' +
+              'Date                        What                                ' +
               '                                                                ' +
-              'Tipo')
+              'Type')
         end
       end
       object MasterData1: TfrxMasterData
