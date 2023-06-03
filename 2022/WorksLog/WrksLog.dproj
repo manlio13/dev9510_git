@@ -116,9 +116,9 @@
         <VerInfo_AutoGenVersion>false</VerInfo_AutoGenVersion>
         <VerInfo_MinorVer>5</VerInfo_MinorVer>
         <VerInfo_MajorVer>2023</VerInfo_MajorVer>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=Work logger;FileVersion=2023.5.10.88;InternalName=;LegalCopyright=@MLSoft 2013;LegalTrademarks=;OriginalFilename=dailyLog;ProductName=Works Log;ProductVersion=5.0.0.0;Comments=mlsoft@iol.it;5.1.0=;LastCompiledTime=2023/05/10 18:03:05;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=Work logger;FileVersion=2023.5.15.88;InternalName=;LegalCopyright=@MLSoft 2013;LegalTrademarks=;OriginalFilename=dailyLog;ProductName=Works Log;ProductVersion=5.0.0.0;Comments=mlsoft@iol.it;5.1.0=;LastCompiledTime=2023/05/15 11:10:03;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Release>10</VerInfo_Release>
+        <VerInfo_Release>15</VerInfo_Release>
         <BT_BuildType>Debug</BT_BuildType>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;vclFireDAC;bindcompvclsmp;tethering;FireDACADSDriver;bindcompfmx;FmxTeeUI;fmx;FireDACIBDriver;fmxdae;vcledge;FireDACCommon;RESTBackendComponents;VCLRESTComponents;soapserver;bindengine;CloudService;FireDACMySQLDriver;FireDACCommonODBC;FireDACCommonDriver;IndyIPCommon;bindcompdbx;IndyIPServer;bindcompvclwinx;FireDACMSAccDriver;fmxFireDAC;FireDAC;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FMXTee;soapmidas;ibxbindings;fmxobj;vclwinx;CustomIPTransport;vcldsnap;bindcomp;appanalytics;IndyIPClient;bindcompvcl;dsnapxml;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
@@ -133,28 +133,28 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-        <VerInfo_Build>7</VerInfo_Build>
-        <VerInfo_Release>13</VerInfo_Release>
+        <VerInfo_Build>15</VerInfo_Build>
+        <VerInfo_Release>14</VerInfo_Release>
         <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\</DCC_DcpOutput>
         <DCC_UnitSearchPath>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\</DCC_DcuOutput>
         <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\</BRCC_OutputDir>
-        <Debugger_DebugSourcePath>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\WorksLog;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
+        <Debugger_DebugSourcePath>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_AutoGenVersion>false</VerInfo_AutoGenVersion>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Manifest_File>None</Manifest_File>
-        <VerInfo_Keys>CompanyName=;FileVersion=2023.5.13.7;InternalName=;LegalCopyright=;LegalTrademarks=MLSoft 2014;OriginalFilename=DailyLog;ProductName=WorksLog;ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2023/05/13 00:42:25;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileVersion=2023.5.14.15;InternalName=;LegalCopyright=;LegalTrademarks=MLSoft 2014;OriginalFilename=DailyLog;ProductName=WorksLog;ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2023/05/14 11:05:25;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_MajorVer>2023</VerInfo_MajorVer>
         <VerInfo_MinorVer>5</VerInfo_MinorVer>
         <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\</DCC_ExeOutput>
-        <Debugger_CWD>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2013\WorksLog</Debugger_CWD>
-        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
+        <Debugger_CWD>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog</Debugger_CWD>
         <DCC_MapFile>3</DCC_MapFile>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <BT_BuildType>Debug</BT_BuildType>
         <DCC_DebugInformation>2</DCC_DebugInformation>
         <DCC_LocalDebugSymbols>true</DCC_LocalDebugSymbols>
+        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -215,9 +215,9 @@
                     <VersionInfoKeys Name="LastCompiledTime">2022/09/07 17:09:42</VersionInfoKeys>
                 </VersionInfoKeys>
                 <Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD27\dclfrxtee27.bpl">FastReport 6.0 Tee Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD27\dclfrxtee27.bpl">FastReport 6.0 Tee Components</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
                     <Source Name="MainSource">WrksLog.dpr</Source>
