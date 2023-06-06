@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls,math,shellAPI;
 
 type
   TForm1 = class(TForm)
@@ -14,6 +14,7 @@ type
     ABSDatabase1: TABSDatabase;
     ABSTable1: TABSTable;
     Button1: TButton;
+    Label1: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
       private
@@ -26,11 +27,10 @@ type
 var
    Form1:TForm1;
    voci: array[0..2]of string; // = ('First name','Last name','email');
-
-
+   mailtostr:string;
 implementation
 
-{$R *.dfm}
+{$R *.dfm}       // rivedere il programma in funzione dei tempi di esecuzione
 
 procedure TForm1.Button1Click(Sender: TObject);
   Begin
@@ -39,17 +39,18 @@ procedure TForm1.Button1Click(Sender: TObject);
     begin
      edit1.Text:= voci[0];
      edit2.Text:= voci[1];
-     edit3.Text:= voci[2];
+     
     end;
 
-
-end;
+  end;
 
 
 
 function TForm1.Validatevoci(const voci:array of string):Boolean;
 var
-g:string;
+g,indi:string;
+pw:integer;
+subject,body:string;
 begin
    g:=Application.Title;
    Application.Title:=' Errore ';    //per modificare il titolo del displaybox
@@ -59,7 +60,32 @@ begin
     showmessage('You must enter full Name and Email data');
     Application.Title:=g;
    // Button1.click;
-  end 
+  end else
+  begin
+     Application.Title:=g;
+     showmessage(voci[2]);
+
+    // label1.Caption:=voci[2];
+     mailtostr := voci[2];//label1.caption;
+     edit3.text := mailtostr;
+      showmessage(mailtostr);
+    // indi:=string(edit3.Text) ;
+     //showmessage(indi);
+     //inizia il codice dopo l'entry
+     pw:=randomrange(1000,9999);
+    // showmessage(edit3.text);
+     mailtostr:='mailto:'+mailtostr;
+     subject:='?Subject='+ inttostr(pw);
+     body:='&Body=Please enter the code you find in subject' ;
+
+     ShellExecute(Self.Handle,
+             nil,
+            PChar( mailtostr + subject +body),
+             nil,
+             nil,
+             SW_NORMAL);
+
+  end;
   end;
 
 
@@ -74,8 +100,8 @@ begin
      Edit1.text:='';
      Edit2.text:='';
      Edit3.text:='';
-     Form1.visible:=True;
 
 end;
+
 
 end.
