@@ -1,9 +1,9 @@
 
  Start         Length     Name                   Class
- 0001:00401000 003EA6FCH .text                   CODE
+ 0001:00401000 003EA844H .text                   CODE
  0002:007EC000 000021BCH .itext                  ICODE
  0003:007EF000 00015D94H .data                   DATA
- 0004:00805000 00009D6CH .bss                    BSS
+ 0004:00805000 00009D78H .bss                    BSS
  0005:00000000 0000065CH .tls                    TLS
  0006:00400000 00000000H .pdata                  PDATA
 
@@ -143,8 +143,8 @@ Detailed map of segments
  0001:003E0228 00000884 C=CODE     S=.text    G=(none)   M=Vcl.DBLogDlg ACBP=A9
  0001:003E0AAC 000007E4 C=CODE     S=.text    G=(none)   M=Vcl.DBPWDlg ACBP=A9
  0001:003E1290 00000400 C=CODE     S=.text    G=(none)   M=Vcl.DBCtrls ACBP=A9
- 0001:003E1690 00000B78 C=CODE     S=.text    G=(none)   M=Unit1    ACBP=A9
- 0001:003E2208 000084F4 C=CODE     S=.text    G=(none)   M=InQuery  ACBP=A9
+ 0001:003E1690 00000CC0 C=CODE     S=.text    G=(none)   M=Unit1    ACBP=A9
+ 0001:003E2350 000084F4 C=CODE     S=.text    G=(none)   M=InQuery  ACBP=A9
  0002:00000000 000000E4 C=ICODE    S=.itext   G=(none)   M=System   ACBP=A9
  0002:000000E4 00000008 C=ICODE    S=.itext   G=(none)   M=SysInit  ACBP=A9
  0002:000000EC 00000014 C=ICODE    S=.itext   G=(none)   M=System.UITypes ACBP=A9
@@ -378,7 +378,7 @@ Detailed map of segments
  0004:00009D48 00000004 C=BSS      S=.bss     G=DGROUP   M=Vcl.DBLogDlg ACBP=A9
  0004:00009D4C 00000004 C=BSS      S=.bss     G=DGROUP   M=Vcl.DBPWDlg ACBP=A9
  0004:00009D50 00000004 C=BSS      S=.bss     G=DGROUP   M=Vcl.DBCtrls ACBP=A9
- 0004:00009D54 00000018 C=BSS      S=.bss     G=DGROUP   M=Unit1    ACBP=A9
+ 0004:00009D54 00000024 C=BSS      S=.bss     G=DGROUP   M=Unit1    ACBP=A9
  0005:00000000 00000010 C=TLS      S=.tls     G=(none)   M=System   ACBP=A9
  0005:00000010 00000004 C=TLS      S=.tls     G=(none)   M=System.SysUtils ACBP=A9
  0005:00000014 00000608 C=TLS      S=.tls     G=(none)   M=madExcept ACBP=A9
@@ -5975,7 +5975,7 @@ Detailed map of segments
  0001:0029C7D0       Data.SqlTimSt.VarSQLTimeStampOffsetCreate
  0001:0029C540       Data.SqlTimSt.VarToSQLTimeStamp
  0001:0029C6D4       Data.SqlTimSt.VarToSQLTimeStampOffset
- 0001:003E2208       InQuery.Finalization
+ 0001:003E2350       InQuery.Finalization
  0002:00002168       InQuery.InQuery
  0003:00003988       madCrypt.b64
  0003:00002940       madCrypt.CPArr
@@ -17153,16 +17153,16 @@ Detailed map of segments
  0001:0027737C       System.Win.TaskbarCore.TTaskbarHandler.DoWindowPreviewRequest
  0001:0027739C       System.Win.TaskbarCore.TTaskbarHandler.Initialize
  0001:002773A4       System.Win.TaskbarCore.TTaskbarHandler.UnregisterTab
- 0004:00009D68       Unit1..3
+ 0004:00009D74       Unit1..3
  0001:003E1690       Unit1..TForm1
- 0001:003E1AF0       Unit1..TForm1.Button1Click$ActRec
- 0001:003E21B4       Unit1.Finalization
+ 0001:003E1AD0       Unit1..TForm1.Button1Click$ActRec
+ 0001:003E22FC       Unit1.Finalization
  0004:00009D54       Unit1.Form1
- 0004:00009D64       Unit1.mailtostr
- 0001:003E1BE8       Unit1.TForm1.Button1Click
- 0001:003E1BBC       Unit1.TForm1.Button1Click$ActRec.$0$Body
- 0001:003E208C       Unit1.TForm1.FormCreate
- 0001:003E1D4C       Unit1.TForm1.Validatevoci
+ 0004:00009D70       Unit1.mailtostr
+ 0001:003E1BC8       Unit1.TForm1.Button1Click
+ 0001:003E1B9C       Unit1.TForm1.Button1Click$ActRec.$0$Body
+ 0001:003E21D4       Unit1.TForm1.FormCreate
+ 0001:003E1DA4       Unit1.TForm1.Validatevoci
  0002:00002160       Unit1.Unit1
  0004:00009D58       Unit1.voci
  0004:00007D40       Vcl.ActnList..7
@@ -46206,13 +46206,13 @@ Detailed map of segments
  0001:003E15CC       Vcl.DBCtrls.TVCLScreenApplication.SetTitle
  0001:003E1670       Vcl.DBCtrls.Finalization
  0001:003E1690       Unit1..TForm1
- 0001:003E1AF0       Unit1..TForm1.Button1Click$ActRec
- 0001:003E1BBC       Unit1.TForm1.Button1Click$ActRec.$0$Body
- 0001:003E1BE8       Unit1.TForm1.Button1Click
- 0001:003E1D4C       Unit1.TForm1.Validatevoci
- 0001:003E208C       Unit1.TForm1.FormCreate
- 0001:003E21B4       Unit1.Finalization
- 0001:003E2208       InQuery.Finalization
+ 0001:003E1AD0       Unit1..TForm1.Button1Click$ActRec
+ 0001:003E1B9C       Unit1.TForm1.Button1Click$ActRec.$0$Body
+ 0001:003E1BC8       Unit1.TForm1.Button1Click
+ 0001:003E1DA4       Unit1.TForm1.Validatevoci
+ 0001:003E21D4       Unit1.TForm1.FormCreate
+ 0001:003E22FC       Unit1.Finalization
+ 0001:003E2350       InQuery.Finalization
  0002:00000000       System.System
  0002:000000E4       SysInit.SysInit
  0002:000000EC       System.UITypes.System.UITypes
@@ -47809,8 +47809,8 @@ Detailed map of segments
  0004:00009D50       Vcl.DBCtrls..32
  0004:00009D54       Unit1.Form1
  0004:00009D58       Unit1.voci
- 0004:00009D64       Unit1.mailtostr
- 0004:00009D68       Unit1..3
+ 0004:00009D70       Unit1.mailtostr
+ 0004:00009D74       Unit1..3
  0005:00000000       System.RaiseListPtr
  0005:00000004       System.InOutRes
  0005:00000008       System.PrevElementType
@@ -47865,19 +47865,19 @@ Line numbers for ABSDecimalRounding(ABSDecimalRounding.pas) segment .text
 
 Line numbers for Unit1(Unit1.pas) segment .text
 
-    38 0001:003E1BBC    36 0001:003E1BE8    38 0001:003E1C31    40 0001:003E1C71
-    41 0001:003E1C88    45 0001:003E1C9F    54 0001:003E1D4C    55 0001:003E1D77
-    56 0001:003E1D86    57 0001:003E1D97    58 0001:003E1DF4    60 0001:003E1DFA
-    61 0001:003E1E0A    65 0001:003E1E1E    66 0001:003E1E2D    69 0001:003E1E57
-    70 0001:003E1E7A    71 0001:003E1E8E    75 0001:003E1E9E    77 0001:003E1EB0
-    78 0001:003E1EC5    79 0001:003E1EE0    81 0001:003E1EED    89 0001:003E1F25
-    94 0001:003E208C    95 0001:003E20AE    96 0001:003E20E6    97 0001:003E20F4
-    98 0001:003E2107   100 0001:003E2115   101 0001:003E2125   102 0001:003E2135
-   104 0001:003E2145
+    36 0001:003E1B9C    35 0001:003E1BC8    36 0001:003E1C11    37 0001:003E1C67
+    45 0001:003E1DA4    46 0001:003E1DD3    47 0001:003E1DE2    48 0001:003E1DF3
+    49 0001:003E1EFB    51 0001:003E1F01    52 0001:003E1F11    55 0001:003E1F25
+    57 0001:003E1F34    58 0001:003E1F58    59 0001:003E1F7F    60 0001:003E1FA6
+    62 0001:003E1FC9    64 0001:003E1FD5    65 0001:003E1FDD    66 0001:003E2008
+    67 0001:003E2036    68 0001:003E2064    69 0001:003E2092    74 0001:003E209D
+    79 0001:003E21D4    80 0001:003E21F6    81 0001:003E222E    82 0001:003E223C
+    83 0001:003E224F    85 0001:003E225D    86 0001:003E226D    87 0001:003E227D
+    90 0001:003E228D
 
 Line numbers for Unit1(Unit1.pas) segment .itext
 
-   107 0002:00002160
+    93 0002:00002160
 
 Line numbers for InQuery(InQuery.dpr) segment .itext
 

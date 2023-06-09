@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls,math,shellAPI;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls;
 
 type
   TForm1 = class(TForm)
@@ -14,7 +14,6 @@ type
     ABSDatabase1: TABSDatabase;
     ABSTable1: TABSTable;
     Button1: TButton;
-    Label1: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
       private
@@ -26,7 +25,7 @@ type
 
 var
    Form1:TForm1;
-   voci: array[0..2]of string; // = ('First name','Last name','email');
+   voci: array[0..5]of string; // = ('First name','Last name','email'x2,pwx2);
    mailtostr:string;
 implementation
 
@@ -34,14 +33,7 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
   Begin
-
-  if inputquery('Pls enter data',['First name', 'Last name', 'Email' ],voci,validatevoci) then
-    begin
-     edit1.Text:= voci[0];
-     edit2.Text:= voci[1];
-     
-    end;
-
+  if inputquery('Pls enter registration data',['First name', 'Last name', 'Email','Confirm Email','Password','Confirm Password' ],voci,validatevoci) then
   end;
 
 
@@ -49,44 +41,40 @@ procedure TForm1.Button1Click(Sender: TObject);
 function TForm1.Validatevoci(const voci:array of string):Boolean;
 var
 g,indi:string;
-pw:integer;
 subject,body:string;
 begin
    g:=Application.Title;
    Application.Title:=' Errore ';    //per modificare il titolo del displaybox
-  Result := (voci[0]+voci[1]+voci[2])<>'';
+  Result := ((voci[0]+voci[1]+voci[2]+voci[3]+voci[4])<>'') AND (voci[2]=voci[3]) AND (voci[4]=voci[5]) ;
   if not result then
   begin
-    showmessage('You must enter full Name and Email data');
+    showmessage('You must correctly enter full Name, Email data and Password');
     Application.Title:=g;
-   // Button1.click;
-  end else
+    end else
   begin
      Application.Title:=g;
-     showmessage(voci[2]);
-
-    // label1.Caption:=voci[2];
-     mailtostr := voci[2];//label1.caption;
-     edit3.text := mailtostr;
-      showmessage(mailtostr);
-    // indi:=string(edit3.Text) ;
-     //showmessage(indi);
+     //showmessage(voci[2]);
+     edit1.Text:= voci[0];
+     edit2.Text:= voci[1];
+     edit3.Text:= voci[2];
+     mailtostr := voci[2];
      //inizia il codice dopo l'entry
-     pw:=randomrange(1000,9999);
-    // showmessage(edit3.text);
-     mailtostr:='mailto:'+mailtostr;
-     subject:='?Subject='+ inttostr(pw);
-     body:='&Body=Please enter the code you find in subject' ;
+       with ABSTable1 do
+    begin
+       try
+         Insert;
+         FieldByName('first').AsString := voci[0];
+         FieldByName('last').AsString := voci[1];
+         FieldByName('email').AsString := voci[2];
+         FieldByName('pw').AsString := voci[4];
+       except
+         ShowMessage('Unknown error encountered');
+       end;
 
-     ShellExecute(Self.Handle,
-             nil,
-            PChar( mailtostr + subject +body),
-             nil,
-             nil,
-             SW_NORMAL);
-
+       Post;
+     end;
   end;
-  end;
+ end;
 
 
 
@@ -100,6 +88,7 @@ begin
      Edit1.text:='';
      Edit2.text:='';
      Edit3.text:='';
+
 
 end;
 
