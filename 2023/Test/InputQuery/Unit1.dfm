@@ -1,10 +1,10 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Access dialog box'
   ClientHeight = 231
   ClientWidth = 505
-  Color = clBtnFace
+  Color = clOlive
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -43,9 +43,18 @@ object Form1: TForm1
     Top = 48
     Width = 75
     Height = 25
-    Caption = 'login'
+    Caption = 'Register'
     TabOrder = 3
     OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 128
+    Top = 17
+    Width = 75
+    Height = 25
+    Caption = 'Login'
+    TabOrder = 4
+    OnClick = Button2Click
   end
   object ABSDatabase1: TABSDatabase
     CurrentVersion = '7.93 '

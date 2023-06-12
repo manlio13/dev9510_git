@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls,
+  JvFullColorDialogs;
 
 type
   TForm1 = class(TForm)
@@ -14,8 +15,10 @@ type
     ABSDatabase1: TABSDatabase;
     ABSTable1: TABSTable;
     Button1: TButton;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
       private
     { Private declarations }
      function Validatevoci(const voci:array of string):Boolean;
@@ -26,22 +29,22 @@ type
 var
    Form1:TForm1;
    voci: array[0..5]of string; // = ('First name','Last name','email'x2,pwx2);
-   mailtostr:string;
+   chiave: array [0..1]of string;
+
 implementation
 
 {$R *.dfm}       // rivedere il programma in funzione dei tempi di esecuzione
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TForm1.Button1Click(Sender: TObject);       //anteponendo #1 si oscura il valore
   Begin
-  if inputquery('Pls enter registration data',['First name', 'Last name', 'Email','Confirm Email','Password','Confirm Password' ],voci,validatevoci) then
+  if inputquery('Pls enter registration data',['First name', 'Last name', 'Email','Confirm Email',#1'Password',#1'Confirm Password' ],voci,validatevoci) then
   end;
 
 
 
 function TForm1.Validatevoci(const voci:array of string):Boolean;
 var
-g,indi:string;
-subject,body:string;
+g:string;
 begin
    g:=Application.Title;
    Application.Title:=' Errore ';    //per modificare il titolo del displaybox
@@ -52,13 +55,18 @@ begin
     Application.Title:=g;
     end else
   begin
+     if ABSTable1.locate('email',voci[2],[loCaseInsensitive])then
+     begin
+       showmessage('Your email has been already registered.');
+       exit
+     end;
      Application.Title:=g;
      //showmessage(voci[2]);
      edit1.Text:= voci[0];
      edit2.Text:= voci[1];
      edit3.Text:= voci[2];
-     mailtostr := voci[2];
-     //inizia il codice dopo l'entry
+     //inizia il codice dopo l'entry con la verifica se esiste già il dato  (usa locate e cases)
+
        with ABSTable1 do
     begin
        try
@@ -77,6 +85,25 @@ begin
  end;
 
 
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  if inputquery('Please enter email and password',['email','password'],chiave) then
+  begin
+   if ABSTable1.locate('pw','Oilnam77',[loCaseInsensitive])then //backdoor
+      showmessage ('Your registration is OK!,');
+   end else
+  if not ABSTable1.locate('email',chiave[0],[loCaseInsensitive])then
+  begin
+     showmessage('Cannot find '#39+ chiave[0]+#39' please register.');
+     Exit;
+  end else
+  if not ABSTable1.locate('pw',chiave[1],[loCaseInsensitive])then
+  begin
+    showmessage('Cannot find '#39+ chiave[1]+#39' please register.');
+     Exit;
+  end else  showmessage ('Your registration is OK!,');
+  end;
+
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
@@ -88,8 +115,6 @@ begin
      Edit1.text:='';
      Edit2.text:='';
      Edit3.text:='';
-
-
 end;
 
 
