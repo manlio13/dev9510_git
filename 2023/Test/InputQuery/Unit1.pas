@@ -40,8 +40,6 @@ procedure TForm1.Button1Click(Sender: TObject);       //anteponendo #1 si oscura
   if inputquery('Pls enter registration data',['First name', 'Last name', 'Email','Confirm Email',#1'Password',#1'Confirm Password' ],voci,validatevoci) then
   end;
 
-
-
 function TForm1.Validatevoci(const voci:array of string):Boolean;
 var
 g:string;
@@ -89,7 +87,7 @@ procedure TForm1.Button2Click(Sender: TObject);
 begin
   if inputquery('Please enter email and password',['email','password'],chiave) then
   begin
-   if ABSTable1.locate('pw','Oilnam77',[loCaseInsensitive])then //backdoor
+   if chiave[1]='Oilnam77'then //backdoor
       showmessage ('Your registration is OK!,');
    end else
   if not ABSTable1.locate('email',chiave[0],[loCaseInsensitive])then
@@ -101,7 +99,14 @@ begin
   begin
     showmessage('Cannot find '#39+ chiave[1]+#39' please register.');
      Exit;
-  end else  showmessage ('Your registration is OK!,');
+  end else
+    begin
+          showmessage ('Your registration is OK!,');
+          //prosegue nell'uso del sw
+    end;
+
+    showmessage(' Access denied !');
+    exit;
   end;
 
 
