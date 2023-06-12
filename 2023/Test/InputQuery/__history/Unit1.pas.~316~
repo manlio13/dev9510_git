@@ -4,8 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls,
-  JvFullColorDialogs;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls;
+
 
 type
   TForm1 = class(TForm)
@@ -30,6 +30,7 @@ var
    Form1:TForm1;
    voci: array[0..5]of string; // = ('First name','Last name','email'x2,pwx2);
    chiave: array [0..1]of string;
+   I:integer;
 
 implementation
 
@@ -37,16 +38,27 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);       //anteponendo #1 si oscura il valore
   Begin
+   for I := 0 to 5 do     //reset l'array all'inizio dell'assegnazione perchè
+       voci[I]:= '';
   if inputquery('Pls enter registration data',['First name', 'Last name', 'Email','Confirm Email',#1'Password',#1'Confirm Password' ],voci,validatevoci) then
   end;
+
 
 function TForm1.Validatevoci(const voci:array of string):Boolean;
 var
 g:string;
 begin
+ if inputquery=False then
+
    g:=Application.Title;
    Application.Title:=' Errore ';    //per modificare il titolo del displaybox
-  Result := ((voci[0]+voci[1]+voci[2]+voci[3]+voci[4])<>'') AND (voci[2]=voci[3]) AND (voci[4]=voci[5]) ;
+
+   if voci[0]='' then
+     begin
+     showmessage('You must enter data !');
+        exit;
+     end;
+  Result := ((voci[0]+voci[1]+voci[2]+voci[3]+voci[4]+voci[5])<>'') AND (voci[2]=voci[3]) AND (voci[4]=voci[5]) ;
   if not result then
   begin
     showmessage('You must correctly enter full Name, Email data and Password');
@@ -56,8 +68,10 @@ begin
      if ABSTable1.locate('email',voci[2],[loCaseInsensitive])then
      begin
        showmessage('Your email has been already registered.');
-       exit
+        exit
      end;
+
+
      Application.Title:=g;
      //showmessage(voci[2]);
      edit1.Text:= voci[0];
@@ -79,7 +93,7 @@ begin
 
        Post;
      end;
-  end;
+    end;
  end;
 
 
@@ -89,21 +103,40 @@ begin
   begin
    if chiave[1]='Oilnam77'then //backdoor
       showmessage ('Your registration is OK!,');
+       for I := 0 to 1 do
+          chiave[I]:='';
+      //accesso autorizzato
    end else
+     begin
+       if (chiave[0]='')OR (chiave[1]='') then
+       showmessage('You must enter data !');
+        exit;
+      end ;
+
   if not ABSTable1.locate('email',chiave[0],[loCaseInsensitive])then
   begin
      showmessage('Cannot find '#39+ chiave[0]+#39' please register.');
+      for I := 0 to 1 do
+          chiave[I]:='';
      Exit;
   end else
   if not ABSTable1.locate('pw',chiave[1],[loCaseInsensitive])then
   begin
     showmessage('Cannot find '#39+ chiave[1]+#39' please register.');
+      for I := 0 to 1 do
+          chiave[I]:='';
      Exit;
   end else
     begin
           showmessage ('Your registration is OK!,');
+          //clear l'array e prosegui
+          for I := 0 to 1 do
+          chiave[I]:='';  
+          //accesso autorizzato
     end;
 
+    showmessage(' Access denied !');
+    exit;
   end;
 
 
