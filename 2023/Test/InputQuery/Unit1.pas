@@ -50,12 +50,6 @@ g:string;
 begin
     g:=Application.Title;
     Application.Title:=' Errore ';    //per modificare il titolo del displaybox
-
-  { if voci[0]=''then
-     begin
-     showmessage('You must enter data !');
-        exit;
-     end;   }
   Result := ((voci[0]+voci[1]+voci[2]+voci[3]+voci[4]+voci[5])<>'') AND (voci[2]=voci[3]) AND (voci[4]=voci[5]) ;
   if not result then
   begin
@@ -96,47 +90,52 @@ begin
 
 
 procedure TForm1.Button2Click(Sender: TObject);
-begin
-  if inputquery('Please enter email and password',['email','password'],chiave) then
-  begin
-   if chiave[1]='Oilnam77'then //backdoor
-      showmessage ('Your registration is OK!,');
-       for I := 0 to 1 do
-          chiave[I]:='';
-      //accesso autorizzato
-   end else
-     begin
-       if (chiave[0]='')OR (chiave[1]='') then
-       showmessage('You must enter data !');
-        exit;
-      end ;
+Label
+punto;
 
-  if not ABSTable1.locate('email',chiave[0],[loCaseInsensitive])then
-  begin
-     showmessage('Cannot find '#39+ chiave[0]+#39' please register.');
-      for I := 0 to 1 do
+begin
+    for I := 0 to 1 do
           chiave[I]:='';
-     Exit;
-  end else
-  if not ABSTable1.locate('pw',chiave[1],[loCaseInsensitive])then
+  if inputquery('Please enter email and password',['email',#1'password'],chiave) then
   begin
-    showmessage('Cannot find '#39+ chiave[1]+#39' please register.');
-      for I := 0 to 1 do
-          chiave[I]:='';
-     Exit;
-  end else
+       if chiave[1]='Oilnam77'then //backdoor
+      begin
+              showmessage ('Your registration is OK!');
+                  //accesso autorizzato
+      end else
+                 if (chiave[0]='')OR (chiave[1]='') then
+              begin
+                 showmessage('Your data are not complete !');
+                 inputquery('Please enter email and password',['email',#1'password'],chiave);
+                 goto punto;
+              end else
+
     begin
+         punto:
+     if not ABSTable1.locate('email',chiave[0],[loCaseInsensitive])then
+     begin
+      showmessage('Cannot find '#39+ chiave[0]+#39' please register.');
+      //for I := 0 to 1 do
+      //    chiave[I]:='';
+         // break;//Exit;
+     end else
+        if not ABSTable1.locate('pw',chiave[1],[loCaseInsensitive])then
+       begin
+        showmessage('Cannot find '#39+ chiave[1]+#39' please register.');
+        //for I := 0 to 1 do
+        //  chiave[I]:='';
+        //Exit;
+       end else
+       begin
           showmessage ('Your registration is OK!,');
           //clear l'array e prosegui
           for I := 0 to 1 do
-          chiave[I]:='';  
+          chiave[I]:='';
           //accesso autorizzato
+       end;
     end;
-
-    showmessage(' Access denied !');
-    exit;
-  end;
-
+   end;
+end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin

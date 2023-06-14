@@ -23,7 +23,7 @@ object Form1: TForm1
     Text = 'Edit1'
   end
   object Edit2: TEdit
-    Left = 351
+    Left = 279
     Top = 133
     Width = 130
     Height = 21
