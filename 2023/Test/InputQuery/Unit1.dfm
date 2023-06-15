@@ -14,18 +14,46 @@ object Form1: TForm1
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object Label1: TLabel
+    Left = 114
+    Top = 115
+    Width = 51
+    Height = 13
+    Caption = 'First Name'
+  end
+  object Label2: TLabel
+    Left = 264
+    Top = 115
+    Width = 50
+    Height = 13
+    Caption = 'Last Name'
+  end
+  object Label3: TLabel
+    Left = 63
+    Top = 165
+    Width = 24
+    Height = 13
+    Caption = 'Email'
+  end
+  object Label4: TLabel
+    Left = 63
+    Top = 190
+    Width = 46
+    Height = 13
+    Caption = 'Password'
+  end
   object Edit1: TEdit
     Left = 112
     Top = 133
-    Width = 121
+    Width = 145
     Height = 21
     TabOrder = 0
     Text = 'Edit1'
   end
   object Edit2: TEdit
-    Left = 279
+    Left = 263
     Top = 133
-    Width = 130
+    Width = 146
     Height = 21
     TabOrder = 1
     Text = 'Edit2'
@@ -33,10 +61,9 @@ object Form1: TForm1
   object Edit3: TEdit
     Left = 112
     Top = 160
-    Width = 249
+    Width = 297
     Height = 21
     TabOrder = 2
-    Text = 'Edit3'
   end
   object Button1: TButton
     Left = 128
@@ -56,6 +83,32 @@ object Form1: TForm1
     TabOrder = 4
     OnClick = Button2Click
   end
+  object Edit4: TEdit
+    Left = 112
+    Top = 187
+    Width = 259
+    Height = 21
+    TabOrder = 5
+    Text = 'Edit4'
+  end
+  object Button3: TButton
+    Left = 377
+    Top = 185
+    Width = 33
+    Height = 25
+    Caption = 'mask'
+    TabOrder = 6
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 334
+    Top = 48
+    Width = 75
+    Height = 25
+    Caption = 'Exit'
+    TabOrder = 7
+    OnClick = Button4Click
+  end
   object ABSDatabase1: TABSDatabase
     CurrentVersion = '7.93 '
     DatabaseFileName = 'Customers.abs'
@@ -65,8 +118,8 @@ object Form1: TForm1
     MaxConnections = 500
     MultiUser = False
     SessionName = 'Default'
-    Left = 264
-    Top = 32
+    Left = 32
+    Top = 48
   end
   object ABSTable1: TABSTable
     CurrentVersion = '7.93 '
@@ -75,7 +128,7 @@ object Form1: TForm1
     ReadOnly = False
     TableName = 'Cust01'
     Exclusive = False
-    Left = 376
-    Top = 32
+    Left = 440
+    Top = 88
   end
 end

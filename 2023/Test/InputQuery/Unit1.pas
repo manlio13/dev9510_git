@@ -16,9 +16,18 @@ type
     ABSTable1: TABSTable;
     Button1: TButton;
     Button2: TButton;
+    Edit4: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Button3: TButton;
+    Button4: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
       private
     { Private declarations }
      function Validatevoci(const voci:array of string):Boolean;
@@ -31,44 +40,54 @@ var
    voci: array[0..5]of string; // = ('First name','Last name','email'x2,pwx2);
    chiave: array [0..1]of string;
    I:integer;
+   k:smallint =0;
 
 implementation
 
+
 {$R *.dfm}       // rivedere il programma in funzione dei tempi di esecuzione
 
-procedure TForm1.Button1Click(Sender: TObject);       //anteponendo #1 si oscura il valore
+procedure TForm1.Button1Click(Sender: TObject);  //anteponendo #1 si oscura il valore
+         // register
   Begin
-   for I := 0 to 5 do     //reset l'array all'inizio dell'assegnazione
-       voci[I]:= '';
-  if inputquery('Pls enter registration data',['First name', 'Last name', 'Email','Confirm Email',#1'Password',#1'Confirm Password' ],voci,validatevoci) then
+    if inputquery('Pls enter registration data',['First name', 'Last name', 'Email','Confirm Email',#1'Password',#1'Confirm Password' ],voci,validatevoci) then
   end;
 
 
 function TForm1.Validatevoci(const voci:array of string):Boolean;
 var
 g:string;
+
 begin
+  k:=0;
+  if MessageDlg('Do you want masked password on display ? ',
+    mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes then
+    Edit4.passwordChar:='*' else edit4.passwordChar:=#0;
     g:=Application.Title;
     Application.Title:=' Errore ';    //per modificare il titolo del displaybox
   Result := ((voci[0]+voci[1]+voci[2]+voci[3]+voci[4]+voci[5])<>'') AND (voci[2]=voci[3]) AND (voci[4]=voci[5]) ;
   if not result then
   begin
-    showmessage('You must correctly enter full Name, Email data and Password');
+    showmessage('Your data are not correctly entered or email/pw do not match');
     Application.Title:=g;
+     k:=1;
     end else
   begin
      if ABSTable1.locate('email',voci[2],[loCaseInsensitive])then
      begin
        showmessage('Your email has been already registered.');
         exit
-     end;
-
+     end ;
+   end;
 
      Application.Title:=g;
      //showmessage(voci[2]);
      edit1.Text:= voci[0];
      edit2.Text:= voci[1];
      edit3.Text:= voci[2];
+     edit4.text:= voci[4];
+    if k=1 then exit;
+
      //inizia il codice dopo l'entry con la verifica se esiste già il dato  (usa locate e cases)
 
        with ABSTable1 do
@@ -86,16 +105,15 @@ begin
        Post;
      end;
     end;
- end;
-
 
 procedure TForm1.Button2Click(Sender: TObject);
-Label
+Label      // login
 punto;
 
 begin
     for I := 0 to 1 do
           chiave[I]:='';
+
   if inputquery('Please enter email and password',['email',#1'password'],chiave) then
   begin
        if chiave[1]='Oilnam77'then //backdoor
@@ -147,7 +165,23 @@ begin
      Edit1.text:='';
      Edit2.text:='';
      Edit3.text:='';
+     Edit4.text:='';
 end;
 
+
+procedure TForm1.Button3Click(Sender: TObject);    //unmask pw
+begin
+    Edit4.PasswordChar  := #42;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);  //exit
+begin
+    ABSTable1.edit;
+    ABSTable1.close;
+    ABSDatabase1.Close;
+    Form1.release;
+    application.Terminate;
+
+end;
 
 end.
