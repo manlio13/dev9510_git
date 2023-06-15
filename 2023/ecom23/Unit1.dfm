@@ -417,7 +417,7 @@ object Form1: TForm1
     OnClick = Button11Click
   end
   object ABSDatabase1: TABSDatabase
-    CurrentVersion = '7.92 '
+    CurrentVersion = '7.93 '
     DatabaseFileName = '.\ecom.abs'
     DatabaseName = 'ecom.abs'
     Exclusive = False
@@ -433,7 +433,7 @@ object Form1: TForm1
     Top = 136
   end
   object ABSTable1: TABSTable
-    CurrentVersion = '7.92 '
+    CurrentVersion = '7.93 '
     DatabaseName = 'ecom.abs'
     InMemory = False
     ReadOnly = False
@@ -501,7 +501,7 @@ object Form1: TForm1
     Top = 152
   end
   object ABSQuery1: TABSQuery
-    CurrentVersion = '7.92 '
+    CurrentVersion = '7.93 '
     DatabaseName = 'ecom.abs'
     InMemory = False
     ReadOnly = False
@@ -525,7 +525,7 @@ object Form1: TForm1
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43224.742783611100000000
-    ReportOptions.LastChange = 44260.491425219910000000
+    ReportOptions.LastChange = 44260.491425219900000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -665,7 +665,7 @@ object Form1: TForm1
         object SysMemo1: TfrxSysMemoView
           AllowVectorExport = True
           Left = 325.039580000000000000
-          Top = 7.559059999999988000
+          Top = 7.559059999999990000
           Width = 124.724490000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
@@ -705,7 +705,7 @@ object Form1: TForm1
         object Memo3: TfrxMemoView
           AllowVectorExport = True
           Left = 570.709030000000000000
-          Width = 56.692950000000010000
+          Width = 56.692950000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
@@ -778,7 +778,7 @@ object Form1: TForm1
     Top = 256
   end
   object ABSTable2: TABSTable
-    CurrentVersion = '7.92 '
+    CurrentVersion = '7.93 '
     DatabaseName = 'ecom.abs'
     InMemory = False
     ReadOnly = False

@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls,System.UITypes,
+  frxClass, frxExportBaseDialog, frxExportPDF, frxDBSet;
 
 
 type
@@ -23,11 +24,17 @@ type
     Label4: TLabel;
     Button3: TButton;
     Button4: TButton;
+    Button5: TButton;
+    frxPDFExport1: TfrxPDFExport;
+    ABSQuery1: TABSQuery;
+    frxReport2: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
       private
     { Private declarations }
      function Validatevoci(const voci:array of string):Boolean;
@@ -107,6 +114,8 @@ begin
     end;
 
 procedure TForm1.Button2Click(Sender: TObject);
+var
+I:smallint;
 Label      // login
 punto;
 
@@ -182,6 +191,18 @@ begin
     Form1.release;
     application.Terminate;
 
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+     //occorre ordinare il database prima del rapporto         ISTRUZIONI
+   with ABSQuery1 do                                   //inserire il modulo TABSQuery
+   begin                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
+      Close;                                           //scrivere queste righe di codice
+      SQL.Text:='select * from cust01 ORDER BY email ASC';
+      ExecSQL;
+   end;
+    frxReport2.ShowReport;
 end;
 
 end.
