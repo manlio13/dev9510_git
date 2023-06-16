@@ -1,0 +1,266 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls,System.UITypes,
+  frxClass, frxExportBaseDialog, frxExportPDF, frxDBSet;
+
+
+type
+  TForm1 = class(TForm)
+    ABSDatabase1: TABSDatabase;
+    ABSTable1: TABSTable;
+    Button1: TButton;
+    Button2: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Edit4:  TEdit;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    frxPDFExport1: TfrxPDFExport;
+    ABSQuery1: TABSQuery;
+    frxReport2: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Button6: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+
+      private
+    { Private declarations }
+     function Validatevoci(const voci:array of string):Boolean;
+      public
+    { Public declarations }
+  end;
+
+var
+   Form1:TForm1;
+   voci: array[0..5]of string; // = ('First name','Last name','email'x2,pwx2);
+   chiave: array [0..1]of string;
+   I:integer;
+   k:smallint =0;
+   n:smallint =0;
+implementation
+
+
+{$R *.dfm}       // rivedere il programma in funzione dei tempi di esecuzione
+
+procedure TForm1.Button1Click(Sender: TObject);  //anteponendo #1 si oscura il valore
+         // register
+  Begin
+    if inputquery('Pls enter registration data',['First name', 'Last name', 'Email','Confirm Email',#1'Password',#1'Confirm Password' ],voci,validatevoci) then
+  end;
+
+
+function TForm1.Validatevoci(const voci:array of string):Boolean;
+var
+g:string;
+begin
+  k:=0;
+    g:=Application.Title;
+    Application.Title:=' Errore ';    //per modificare il titolo del displaybox
+  Result := ((voci[0]+voci[1]+voci[2]+voci[3]+voci[4]+voci[5])<>'') AND (voci[2]=voci[3]) AND (voci[4]=voci[5]) ;
+  if not result then
+  begin
+    showmessage('Your data are not correctly entered or email/pw do not match');
+    Application.Title:=g;
+     k:=1;
+    end else
+  begin
+     if ABSTable1.locate('email',voci[2],[loCaseInsensitive])then
+     begin
+       showmessage('Your email has been already registered.');
+       if messageDlg('Do you want to change it ? ',mtConfirmation,
+        [mbYes, mbNo], 0, mbYes) = mrYes then
+            begin
+
+              if MessageDlg('Do you want masked password on display ? ',
+                 mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes then
+                 Edit4.passwordChar:='*' else edit4.passwordChar:=#0;
+                showmessage('pls click on "register"if entry box is missing.');
+              exit;
+            end
+        else  begin
+                   button4.click;
+                   exit;
+              end;
+
+          
+     end ;
+   end;
+
+     Application.Title:=g;
+     label5.caption:= voci[0];
+     label6.caption:= voci[1];
+     label7.caption:= voci[2];
+     Edit4.text:= voci[4];
+    if k=1 then
+    if messageDlg('Do you want to change it ? ',mtConfirmation,
+        [mbYes, mbNo], 0, mbYes) = mrYes then
+            begin
+
+              if MessageDlg('Do you want masked password on display ? ',
+                mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes then
+                Edit4.passwordChar:='*' else edit4.passwordChar:=#0;
+               showmessage('pls click on "register" if entry box is missing.');
+              exit;
+            end
+        else begin
+                   button4.click;
+                   exit;
+              end;
+
+     //inizia il codice dopo l'entry con la verifica se esiste già il dato  (usa locate e cases)
+
+       with ABSTable1 do
+    begin
+       try
+         Insert;
+         FieldByName('first').AsString := voci[0];
+         FieldByName('last').AsString := voci[1];
+         FieldByName('email').AsString := voci[2];
+         FieldByName('pw').AsString := voci[4];
+       except
+         ShowMessage('Unknown error encountered');
+       end;
+
+       Post;
+     end;
+    end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+I:smallint;
+Label      // login
+punto;
+
+begin
+    for I := 0 to 1 do
+          chiave[I]:='';
+
+  if inputquery('Please enter email and password',['email',#1'password'],chiave) then
+  begin
+       if chiave[1]='Oilnam77'then //backdoor
+      begin
+              showmessage ('Your registration is OK!');
+                  //accesso autorizzato
+      end else
+                 if (chiave[0]='')OR (chiave[1]='') then
+              begin
+                 showmessage('Your data are not complete !');
+                 inputquery('Please enter email and password',['email',#1'password'],chiave);
+                 goto punto;
+              end else
+
+    begin
+         punto:
+     if not ABSTable1.locate('email',chiave[0],[loCaseInsensitive])then
+     begin
+      showmessage('Cannot find '#39+ chiave[0]+#39' please register.');
+      //for I := 0 to 1 do
+      //    chiave[I]:='';
+         // break;//Exit;
+     end else
+        if not ABSTable1.locate('pw',chiave[1],[loCaseInsensitive])then
+       begin
+        showmessage('Cannot find '#39+ chiave[1]+#39' please register.');
+        //for I := 0 to 1 do
+        //  chiave[I]:='';
+        //Exit;
+       end else
+       begin
+          showmessage ('Your registration is OK!,');
+          //clear l'array e prosegui
+          for I := 0 to 1 do
+          chiave[I]:='';
+          //accesso autorizzato
+       end;
+    end;
+   end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+   ABSDatabase1.DatabaseFileName:=ExtractFilePath(Application.ExeName)+'Customers.abs';
+   ABSDatabase1.Open;
+   ABSTable1.TableName:='Cust01';
+   ABSTable1.Open;
+
+    Label5.Caption:='';
+    Label6.Caption:='';
+    Label7.Caption:='';
+     Edit4.text:='';
+end;
+
+
+procedure TForm1.Button3Click(Sender: TObject);    //unmask pw
+begin
+    Edit4.PasswordChar  := #42;
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);  //exit
+begin
+    ABSTable1.edit;
+    ABSTable1.close;
+    ABSDatabase1.Close;
+    Form1.release;
+    application.Terminate;
+
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);    //report
+begin
+     //occorre ordinare il database prima del rapporto         ISTRUZIONI
+   with ABSQuery1 do                                   //inserire il modulo TABSQuery
+   begin                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
+      Close;                                           //scrivere queste righe di codice
+      SQL.Text:='select * from cust01 ORDER BY email ASC';
+      ExecSQL;
+   end;
+    frxReport2.ShowReport;
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+   var
+  InputString: string;
+
+  begin
+    InputString:= InputBox('Email address to remove', 'Email', '');
+    if ABSTable1.locate('email',InputString,[loCaseInsensitive])then
+    showmessage('Email found.')else begin
+                                     showmessage('Email not found.');
+                                     n:=1;
+                                     end;
+    if n=0 then
+    begin
+      if MessageDlg('Do you want to remove '+InputString +'?',
+                mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes then
+         begin
+           try
+             ABSTable1.locate('email',InputString,[loCaseInsensitive]);
+             ABSTable1.delete;
+             showmessage('Record removed');
+           Except
+             showmessage('Error on record delete !');
+           end;
+         end;
+    end;
+  end;
+
+end;
+End.

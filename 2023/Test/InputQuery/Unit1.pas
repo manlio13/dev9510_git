@@ -10,18 +10,15 @@ uses
 
 type
   TForm1 = class(TForm)
-    Edit1: TEdit;
-    Edit2: TEdit;
-    Edit3: TEdit;
     ABSDatabase1: TABSDatabase;
     ABSTable1: TABSTable;
     Button1: TButton;
     Button2: TButton;
-    Edit4: TEdit;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    Edit4:  TEdit;
     Button3: TButton;
     Button4: TButton;
     Button5: TButton;
@@ -29,12 +26,20 @@ type
     ABSQuery1: TABSQuery;
     frxReport2: TfrxReport;
     frxDBDataset1: TfrxDBDataset;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Button6: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+
       private
     { Private declarations }
      function Validatevoci(const voci:array of string):Boolean;
@@ -48,7 +53,7 @@ var
    chiave: array [0..1]of string;
    I:integer;
    k:smallint =0;
-
+   n:smallint =0;
 implementation
 
 
@@ -99,10 +104,10 @@ begin
    end;
 
      Application.Title:=g;
-     edit1.Text:= voci[0];
-     edit2.Text:= voci[1];
-     edit3.Text:= voci[2];
-     edit4.text:= voci[4];
+     label5.caption:= voci[0];
+     label6.caption:= voci[1];
+     label7.caption:= voci[2];
+     Edit4.text:= voci[4];
     if k=1 then
     if messageDlg('Do you want to change it ? ',mtConfirmation,
         [mbYes, mbNo], 0, mbYes) = mrYes then
@@ -132,9 +137,10 @@ begin
        except
          ShowMessage('Unknown error encountered');
        end;
-
        Post;
      end;
+     Showmessage('Data has been correctly registered.'#13#10'Please check email format');
+
     end;
 
 procedure TForm1.Button2Click(Sender: TObject);
@@ -195,9 +201,9 @@ begin
    ABSTable1.TableName:='Cust01';
    ABSTable1.Open;
 
-     Edit1.text:='';
-     Edit2.text:='';
-     Edit3.text:='';
+    Label5.Caption:='';
+    Label6.Caption:='';
+    Label7.Caption:='';
      Edit4.text:='';
 end;
 
@@ -229,4 +235,35 @@ begin
     frxReport2.ShowReport;
 end;
 
-end.
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+   var
+  InputString: string;
+
+  begin
+    InputString:= InputBox('Email address to remove', 'Email', '');
+    if ABSTable1.locate('email',InputString,[loCaseInsensitive])then
+    showmessage('Email found '+InputString+'.')else
+            begin
+              showmessage('Email not found '+InputString+'.');
+              n:=1;
+             end;
+    if n=0 then
+    begin
+      if MessageDlg('Do you want to remove '+InputString +'?',
+                mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes then
+         begin
+           try
+             ABSTable1.locate('email',InputString,[loCaseInsensitive]);
+             ABSTable1.delete;
+             showmessage('Record removed');
+           Except
+             showmessage('Error on record delete !');
+           end;
+         end;
+    end;
+    n:=0;
+  end;
+
+end;
+End.

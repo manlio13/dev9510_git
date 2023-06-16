@@ -39,34 +39,85 @@ object Form1: TForm1
     Caption = 'Email'
   end
   object Label4: TLabel
-    Left = 63
-    Top = 190
+    Left = 65
+    Top = 192
     Width = 46
     Height = 13
     Caption = 'Password'
   end
-  object Edit1: TEdit
-    Left = 112
-    Top = 133
+  object Label5: TLabel
+    Left = 115
+    Top = 134
     Width = 145
-    Height = 21
-    TabOrder = 0
-    Text = 'Edit1'
+    Height = 20
+    AutoSize = False
+    Color = clWhite
+    Constraints.MaxHeight = 20
+    Constraints.MaxWidth = 145
+    Constraints.MinHeight = 20
+    Constraints.MinWidth = 145
+    ParentColor = False
+    Transparent = False
   end
-  object Edit2: TEdit
-    Left = 263
-    Top = 133
-    Width = 146
-    Height = 21
-    TabOrder = 1
-    Text = 'Edit2'
+  object Label6: TLabel
+    Left = 266
+    Top = 134
+    Width = 145
+    Height = 20
+    AutoSize = False
+    Color = clWhite
+    Constraints.MaxHeight = 20
+    Constraints.MaxWidth = 145
+    Constraints.MinHeight = 20
+    Constraints.MinWidth = 145
+    ParentColor = False
+    Transparent = False
   end
-  object Edit3: TEdit
-    Left = 112
+  object Label7: TLabel
+    Left = 115
     Top = 160
-    Width = 297
-    Height = 21
-    TabOrder = 2
+    Width = 294
+    Height = 20
+    AutoSize = False
+    Color = clWhite
+    Constraints.MaxHeight = 20
+    Constraints.MaxWidth = 294
+    Constraints.MinHeight = 20
+    Constraints.MinWidth = 294
+    ParentColor = False
+    Transparent = False
+  end
+  object Label8: TLabel
+    Left = 171
+    Top = 89
+    Width = 200
+    Height = 20
+    AutoSize = False
+    Caption = 'DO NOT WRITE under this line'
+    Constraints.MaxHeight = 20
+    Constraints.MaxWidth = 200
+    Constraints.MinHeight = 20
+    Constraints.MinWidth = 200
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label9: TLabel
+    Left = 0
+    Top = 106
+    Width = 520
+    Height = 3
+    AutoSize = False
+    Caption = 
+      '----------------------------------------------------------------' +
+      '----------------------------------------------------------------' +
+      '-'
+    Color = clRed
+    ParentColor = False
+    Transparent = False
   end
   object Button1: TButton
     Left = 128
@@ -74,7 +125,7 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Register'
-    TabOrder = 3
+    TabOrder = 0
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -83,16 +134,8 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Login'
-    TabOrder = 4
+    TabOrder = 1
     OnClick = Button2Click
-  end
-  object Edit4: TEdit
-    Left = 112
-    Top = 187
-    Width = 259
-    Height = 21
-    TabOrder = 5
-    Text = 'Edit4'
   end
   object Button3: TButton
     Left = 377
@@ -100,7 +143,7 @@ object Form1: TForm1
     Width = 33
     Height = 25
     Caption = 'mask'
-    TabOrder = 6
+    TabOrder = 2
     OnClick = Button3Click
   end
   object Button4: TButton
@@ -109,7 +152,7 @@ object Form1: TForm1
     Width = 75
     Height = 25
     Caption = 'Exit'
-    TabOrder = 7
+    TabOrder = 3
     OnClick = Button4Click
   end
   object Button5: TButton
@@ -118,8 +161,24 @@ object Form1: TForm1
     Width = 90
     Height = 25
     Caption = 'List of registered'
-    TabOrder = 8
+    TabOrder = 4
     OnClick = Button5Click
+  end
+  object Edit4: TEdit
+    Left = 115
+    Top = 186
+    Width = 256
+    Height = 21
+    TabOrder = 5
+  end
+  object Button6: TButton
+    Left = 224
+    Top = 17
+    Width = 90
+    Height = 25
+    Caption = 'Remove '
+    TabOrder = 6
+    OnClick = Button6Click
   end
   object ABSDatabase1: TABSDatabase
     Connected = True
@@ -133,7 +192,7 @@ object Form1: TForm1
     MultiUser = False
     SessionName = 'Default'
     Left = 32
-    Top = 48
+    Top = 56
   end
   object ABSTable1: TABSTable
     CurrentVersion = '7.93 '
@@ -168,8 +227,8 @@ object Form1: TForm1
       end>
     TableName = 'Cust01'
     Exclusive = False
-    Left = 440
-    Top = 88
+    Left = 472
+    Top = 16
   end
   object frxPDFExport1: TfrxPDFExport
     FileName = 'C:\Users\manli\Downloads\aa.pdf'
@@ -197,8 +256,8 @@ object Form1: TForm1
     PdfA = False
     PDFStandard = psNone
     PDFVersion = pv17
-    Left = 112
-    Top = 88
+    Left = 72
+    Top = 16
   end
   object ABSQuery1: TABSQuery
     CurrentVersion = '7.93 '
@@ -481,7 +540,7 @@ object Form1: TForm1
       'pw=Password')
     DataSet = ABSTable1
     BCDToCurrency = False
-    Left = 32
-    Top = 128
+    Left = 8
+    Top = 16
   end
 end
