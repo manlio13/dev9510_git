@@ -64,12 +64,8 @@ procedure TForm1.Button1Click(Sender: TObject);  //anteponendo #1 si oscura il v
 function TForm1.Validatevoci(const voci:array of string):Boolean;
 var
 g:string;
-
 begin
   k:=0;
-  if MessageDlg('Do you want masked password on display ? ',
-    mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes then
-    Edit4.passwordChar:='*' else edit4.passwordChar:=#0;
     g:=Application.Title;
     Application.Title:=' Errore ';    //per modificare il titolo del displaybox
   Result := ((voci[0]+voci[1]+voci[2]+voci[3]+voci[4]+voci[5])<>'') AND (voci[2]=voci[3]) AND (voci[4]=voci[5]) ;
@@ -83,17 +79,45 @@ begin
      if ABSTable1.locate('email',voci[2],[loCaseInsensitive])then
      begin
        showmessage('Your email has been already registered.');
-        exit
+       if messageDlg('Do you want to change it ? ',mtConfirmation,
+        [mbYes, mbNo], 0, mbYes) = mrYes then
+            begin
+
+              if MessageDlg('Do you want masked password on display ? ',
+                 mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes then
+                 Edit4.passwordChar:='*' else edit4.passwordChar:=#0;
+                showmessage('pls click on "register"if entry box is missing.');
+              exit;
+            end
+        else  begin
+                   button4.click;
+                   exit;
+              end;
+
+          
      end ;
    end;
 
      Application.Title:=g;
-     //showmessage(voci[2]);
      edit1.Text:= voci[0];
      edit2.Text:= voci[1];
      edit3.Text:= voci[2];
      edit4.text:= voci[4];
-    if k=1 then exit;
+    if k=1 then
+    if messageDlg('Do you want to change it ? ',mtConfirmation,
+        [mbYes, mbNo], 0, mbYes) = mrYes then
+            begin
+
+              if MessageDlg('Do you want masked password on display ? ',
+                mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes then
+                Edit4.passwordChar:='*' else edit4.passwordChar:=#0;
+               showmessage('pls click on "register" if entry box is missing.');
+              exit;
+            end
+        else begin
+                   button4.click;
+                   exit;
+              end;
 
      //inizia il codice dopo l'entry con la verifica se esiste già il dato  (usa locate e cases)
 
@@ -193,7 +217,7 @@ begin
 
 end;
 
-procedure TForm1.Button5Click(Sender: TObject);
+procedure TForm1.Button5Click(Sender: TObject);    //report
 begin
      //occorre ordinare il database prima del rapporto         ISTRUZIONI
    with ABSQuery1 do                                   //inserire il modulo TABSQuery

@@ -14,11 +14,7 @@ uses
   EDialogWinAPIStepsToReproduce,
   ExceptionLog7,
   {$ENDIF EurekaLog}
-  madExcept,
-  madLinkDisAsm,
-  madListHardware,
-  madListProcesses,
-  madListModules,
+
   Vcl.Forms,
   Unit1 in 'Unit1.pas' {Form1};
 
@@ -30,5 +26,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.Run;
 end.
+
 
 

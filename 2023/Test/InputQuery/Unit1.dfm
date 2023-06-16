@@ -1,16 +1,19 @@
 object Form1: TForm1
-  Left = 0
-  Top = 0
+  Left = 603
+  Top = 247
+  BorderIcons = []
+  BorderStyle = bsSingle
   Caption = 'Access dialog box'
-  ClientHeight = 231
-  ClientWidth = 505
-  Color = clOlive
+  ClientHeight = 241
+  ClientWidth = 515
+  Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesigned
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
