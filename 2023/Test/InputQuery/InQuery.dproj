@@ -97,13 +97,13 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_MajorVer>2023</VerInfo_MajorVer>
         <VerInfo_MinorVer>6</VerInfo_MinorVer>
-        <VerInfo_Release>16</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2023.6.16.52;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2023/06/16 19:29:49</VerInfo_Keys>
+        <VerInfo_Release>19</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2023.6.19.61;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2023/06/19 17:02:42</VerInfo_Keys>
         <Icon_MainIcon>2023Icon.ico</Icon_MainIcon>
         <Debugger_CWD>C:\Users\manli\Documents\Lavori\Projects\2023\Test\InputQuery\</Debugger_CWD>
         <Debugger_DebugSourcePath>C:\Users\manli\Documents\Lavori\Projects\2023\Test\InputQuery\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
         <DCC_DebugDCUs>false</DCC_DebugDCUs>
-        <VerInfo_Build>52</VerInfo_Build>
+        <VerInfo_Build>61</VerInfo_Build>
         <DCC_RangeChecking>true</DCC_RangeChecking>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">

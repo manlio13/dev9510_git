@@ -7,7 +7,6 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls,ABSMain,DB,DBCtrls,System.UITypes,
   frxClass, frxExportBaseDialog, frxExportPDF, frxDBSet;
 
-
 type
   TForm1 = class(TForm)
     ABSDatabase1: TABSDatabase;
@@ -51,13 +50,26 @@ var
    Form1:TForm1;
    voci: array[0..5]of string; // = ('First name','Last name','email'x2,pwx2);
    chiave: array [0..1]of string;
-   I:integer;
+   I,nn:integer;
    k:smallint =0;
    n:smallint =0;
 implementation
 
 
 {$R *.dfm}       // rivedere il programma in funzione dei tempi di esecuzione
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+
+   ABSDatabase1.DatabaseFileName:=ExtractFilePath(Application.ExeName)+'Customers.abs';
+   ABSDatabase1.Open;
+   ABSTable1.TableName:='Cust01';
+   ABSTable1.Open;
+
+    Label5.Caption:='';
+    Label6.Caption:='';
+    Label7.Caption:='';
+     Edit4.text:='';
+end;
 
 procedure TForm1.Button1Click(Sender: TObject);  //anteponendo #1 si oscura il valore
          // register
@@ -99,7 +111,7 @@ begin
                    exit;
               end;
 
-          
+
      end ;
    end;
 
@@ -125,7 +137,6 @@ begin
               end;
 
      //inizia il codice dopo l'entry con la verifica se esiste già il dato  (usa locate e cases)
-
        with ABSTable1 do
     begin
        try
@@ -194,18 +205,7 @@ begin
    end;
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-   ABSDatabase1.DatabaseFileName:=ExtractFilePath(Application.ExeName)+'Customers.abs';
-   ABSDatabase1.Open;
-   ABSTable1.TableName:='Cust01';
-   ABSTable1.Open;
 
-    Label5.Caption:='';
-    Label6.Caption:='';
-    Label7.Caption:='';
-     Edit4.text:='';
-end;
 
 
 procedure TForm1.Button3Click(Sender: TObject);    //unmask pw
@@ -235,7 +235,7 @@ begin
     frxReport2.ShowReport;
 end;
 
-procedure TForm1.Button6Click(Sender: TObject);
+procedure TForm1.Button6Click(Sender: TObject);    //remove
 begin
    var
   InputString: string;

@@ -7,8 +7,8 @@ object Form1: TForm1
   BorderStyle = bsDialog
   BorderWidth = 2
   Caption = 'Control of online purchases. Version :'
-  ClientHeight = 405
-  ClientWidth = 929
+  ClientHeight = 415
+  ClientWidth = 1048
   Color = clOlive
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -90,8 +90,8 @@ object Form1: TForm1
     Caption = 'Payments                          Free SQL filetr'
   end
   object DBGrid1: TDBGrid
-    Left = 0
-    Top = 86
+    Left = 119
+    Top = 150
     Width = 929
     Height = 265
     Color = clYellow
