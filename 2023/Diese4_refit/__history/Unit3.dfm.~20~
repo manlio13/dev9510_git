@@ -9,7 +9,7 @@ object Form3: TForm3
   Color = clYellow
   TransparentColorValue = clWhite
   Font.Charset = DEFAULT_CHARSET
-  Font.Color = clBlack
+  Font.Color = clWhite
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
@@ -19,8 +19,8 @@ object Form3: TForm3
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 33
-    Top = 9
+    Left = 32
+    Top = 24
     Width = 192
     Height = 26
     Caption = 'Please enter the Tank Percentage to be set as Alarm Level. '
@@ -51,7 +51,7 @@ object Form3: TForm3
     WordWrap = True
   end
   object Button1: TButton
-    Left = 32
+    Left = 35
     Top = 96
     Width = 75
     Height = 25
@@ -82,13 +82,35 @@ object Form3: TForm3
     TabOrder = 1
     OnClick = Button2Click
   end
-  object edit1: TEdit
-    Left = 158
+  object Edit1: TEdit
+    Left = 165
     Top = 56
-    Width = 42
+    Width = 44
     Height = 21
     Alignment = taCenter
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     Text = '10'
+    StyleElements = []
+    OnKeyPress = Edit1KeyPress
+  end
+  object Edit2: TEdit
+    Left = 165
+    Top = 121
+    Width = 44
+    Height = 21
+    Alignment = taCenter
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
   end
 end

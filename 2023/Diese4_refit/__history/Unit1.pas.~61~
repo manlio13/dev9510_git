@@ -196,9 +196,6 @@ begin
   virgola:=',';
   zeroStr:='0'+mydecimal+'0';
   edit20.Text:=zerostr;
-    GetAppVersionStr;
-    caption:=caption + '- version: '+versione;
-
       if fileexists(dir+'diesel.ini')=True then
       begin
          MyIni := TIniFile.Create(dir+'diesel.ini') ;
@@ -433,6 +430,8 @@ begin
           button9click(Sender);
           button1click(Sender);
         end;
+        GetAppVersionStr;
+        caption:=caption + '- version: '+versione;
 end;
 
 function TForm1.GetAppVersionStr: string;
@@ -925,7 +924,7 @@ begin
            exit;
         end;
 
-     if (Flag2 = true) AND (myini.Readstring('data','CumFill','')=inttostr(0))  then // attivato il change settings
+     if Flag2 = true then // attivato il change settings
        if Dialogs.MessageDlg('Do you want, ALSO, to reset Cumul.filled/TopUp fuel ?',
          mtConfirmation, [mbYes, mbNo], 0, mbNo) = mrNo
        then

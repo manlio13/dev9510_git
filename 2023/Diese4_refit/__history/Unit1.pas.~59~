@@ -196,9 +196,6 @@ begin
   virgola:=',';
   zeroStr:='0'+mydecimal+'0';
   edit20.Text:=zerostr;
-    GetAppVersionStr;
-    caption:=caption + '- version: '+versione;
-
       if fileexists(dir+'diesel.ini')=True then
       begin
          MyIni := TIniFile.Create(dir+'diesel.ini') ;
@@ -433,6 +430,8 @@ begin
           button9click(Sender);
           button1click(Sender);
         end;
+        GetAppVersionStr;
+        caption:=caption + '- version: '+versione;
 end;
 
 function TForm1.GetAppVersionStr: string;
@@ -819,13 +818,13 @@ begin
         key:= punto else key := virgola ;
    if (key=#13) then if (StrToFloat(Edit20.Text)>0) then
    begin
-     cn2:=strToFloat(edit20.Text);
+    cn2:=strToFloat(edit20.Text);
     if cn2=0 then
-     begin
+    begin
         cn2:=cn;
-        edit20 .Text:=FloatToStr(cn2);
-     end;
-     if checkbox2.Checked=True then
+        edit20.Text:=FloatToStr(cn2);
+    end;
+    if checkbox2.Checked=True then
         begin
         dato1:=myini.ReadString('resource','actual','');
         riserva:=myini.readstring('resource','reserve','');
@@ -833,13 +832,13 @@ begin
         if atk<=0 then
           begin
                if Dialogs.MessageDlg('WARNING - Tank value negative or null. Continue ?',
-                 mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrNO then
+      mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrNO then
                 begin
                   checkbox2.Checked:=False;
                   exit;
                 end;
           end;
-          t:=  FormatFloat('###0',atk*sp/cn2);
+        t:=  FormatFloat('###0',atk*sp/cn2);
         end else
     t:=  FormatFloat('###0',atk*sp/cn2);
     edit9.Text:=t;
@@ -867,7 +866,7 @@ begin
           ShowMessage('Please check your input format details!');
           exit;
         end else
-       edit20.Text:=edit2.Text;
+        edit20.Text:=edit2.Text;
        myini.WriteString('settings','consump',edit2.Text);
        cn:=strtofloat(edit2.Text); //crea la costante del consumo
        CNS:=True;
@@ -882,13 +881,12 @@ procedure TForm1.Edit3KeyPress(Sender: TObject; var Key: Char);
 begin
    if (Key = '.') OR (key =',') then    //controllo del tasto decimale
         if punto = mydecimal then
-         key:= punto else key := virgola ;
-   if (key=#13)  then
-    if (StrToFloat(Edit3.Text)>0) then    //inserimento aliquota di variazione std
+        key:= punto else key := virgola ;
+   if (key=#13)  then if (StrToFloat(Edit3.Text)>0) then    //inserimento aliquota di variazione std
   begin
       edit3.Color:=clCream;
       if TryStrToFloat(edit3.Text,rt)=False then
-    begin
+        begin
         ShowMessage('Please check your input format details!');
         exit;
         end;
@@ -925,7 +923,7 @@ begin
            exit;
         end;
 
-     if (Flag2 = true) AND (myini.Readstring('data','CumFill','')=inttostr(0))  then // attivato il change settings
+     if Flag2 = true then // attivato il change settings
        if Dialogs.MessageDlg('Do you want, ALSO, to reset Cumul.filled/TopUp fuel ?',
          mtConfirmation, [mbYes, mbNo], 0, mbNo) = mrNo
        then

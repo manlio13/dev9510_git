@@ -60,7 +60,7 @@ procedure TForm3.FormShow(Sender: TObject);
 begin
 Form3.Visible:=True;
 edit1.SetFocus;
-//edit1.Color:=clbackground;
+edit1.Color:=clbackground;
 EXIT;
 end;
 

@@ -196,9 +196,6 @@ begin
   virgola:=',';
   zeroStr:='0'+mydecimal+'0';
   edit20.Text:=zerostr;
-    GetAppVersionStr;
-    caption:=caption + '- version: '+versione;
-
       if fileexists(dir+'diesel.ini')=True then
       begin
          MyIni := TIniFile.Create(dir+'diesel.ini') ;
@@ -433,6 +430,8 @@ begin
           button9click(Sender);
           button1click(Sender);
         end;
+        GetAppVersionStr;
+        caption:=caption + '- version: '+versione;
 end;
 
 function TForm1.GetAppVersionStr: string;

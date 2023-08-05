@@ -19,8 +19,8 @@ object Form3: TForm3
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 33
-    Top = 9
+    Left = 32
+    Top = 24
     Width = 192
     Height = 26
     Caption = 'Please enter the Tank Percentage to be set as Alarm Level. '
@@ -82,13 +82,12 @@ object Form3: TForm3
     TabOrder = 1
     OnClick = Button2Click
   end
-  object edit1: TEdit
-    Left = 158
+  object edit2: TEdit
+    Left = 175
     Top = 56
     Width = 42
     Height = 21
     Alignment = taCenter
     TabOrder = 2
-    Text = '10'
   end
 end
