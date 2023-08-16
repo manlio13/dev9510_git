@@ -372,7 +372,7 @@ object Form1: TForm1
   end
   object DBGrid1: TDBGrid
     Left = 8
-    Top = 81
+    Top = 85
     Width = 853
     Height = 306
     Anchors = []

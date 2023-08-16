@@ -105,7 +105,7 @@
         <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\</DCC_DcpOutput>
         <Debugger_CWD>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\</Debugger_CWD>
         <Debugger_DebugSourcePath>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
-        <VerInfo_Build>103</VerInfo_Build>
+        <VerInfo_Build>105</VerInfo_Build>
         <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\</BRCC_OutputDir>
         <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\</DCC_ExeOutput>
         <DCC_UnitSearchPath>$(BDSLIB)\jvcl\run\JvSHFileOperation.pas;$(USERPROFILE)\Documents\Lavori\Projects\2022\WorksLog\;$(BDSBIN);$(ProgramFiles(x86))\ComponentAce\AbsoluteDatabase\Lib\Delphi 10.4 and C++ Builder 10.4 (Sydney)</DCC_UnitSearchPath>
@@ -114,11 +114,11 @@
         <Icon_MainIcon>DailyLog_Icon2.ico</Icon_MainIcon>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_AutoGenVersion>false</VerInfo_AutoGenVersion>
-        <VerInfo_MinorVer>7</VerInfo_MinorVer>
+        <VerInfo_MinorVer>8</VerInfo_MinorVer>
         <VerInfo_MajorVer>2023</VerInfo_MajorVer>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=Work logger;FileVersion=2023.7.26.103;InternalName=;LegalCopyright=@MLSoft 2013;LegalTrademarks=;OriginalFilename=dailyLog;ProductName=Works Log;ProductVersion=5.0.0.0;Comments=mlsoft@iol.it;5.1.0=;LastCompiledTime=2023/07/26 20:22:32;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=Work logger;FileVersion=2023.8.16.105;InternalName=;LegalCopyright=@MLSoft 2013;LegalTrademarks=;OriginalFilename=dailyLog;ProductName=Works Log;ProductVersion=5.0.0.0;Comments=mlsoft@iol.it;5.1.0=;LastCompiledTime=2023 08 16 16:43:56;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Release>26</VerInfo_Release>
+        <VerInfo_Release>16</VerInfo_Release>
         <BT_BuildType>Debug</BT_BuildType>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;vclFireDAC;bindcompvclsmp;tethering;FireDACADSDriver;bindcompfmx;FmxTeeUI;fmx;FireDACIBDriver;fmxdae;vcledge;FireDACCommon;RESTBackendComponents;VCLRESTComponents;soapserver;bindengine;CloudService;FireDACMySQLDriver;FireDACCommonODBC;FireDACCommonDriver;IndyIPCommon;bindcompdbx;IndyIPServer;bindcompvclwinx;FireDACMSAccDriver;fmxFireDAC;FireDAC;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FMXTee;soapmidas;ibxbindings;fmxobj;vclwinx;CustomIPTransport;vcldsnap;bindcomp;appanalytics;IndyIPClient;bindcompvcl;dsnapxml;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
@@ -142,9 +142,9 @@
         <VerInfo_AutoGenVersion>false</VerInfo_AutoGenVersion>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Manifest_File>None</Manifest_File>
-        <VerInfo_Keys>CompanyName=;FileVersion=2023.7.26.2;InternalName=;LegalCopyright=;LegalTrademarks=MLSoft 2014;OriginalFilename=DailyLog;ProductName=WorksLog;ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2023/07/26 20:22:52;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileVersion=2023.9.3.14;InternalName=;LegalCopyright=;LegalTrademarks=MLSoft 2014;OriginalFilename=DailyLog;ProductName=WorksLog;ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2023 08 16 16:52:23;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName)</VerInfo_Keys>
         <VerInfo_MajorVer>2023</VerInfo_MajorVer>
-        <VerInfo_MinorVer>7</VerInfo_MinorVer>
+        <VerInfo_MinorVer>9</VerInfo_MinorVer>
         <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Release\</DCC_ExeOutput>
         <Debugger_CWD>C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog</Debugger_CWD>
         <DCC_MapFile>3</DCC_MapFile>
@@ -153,8 +153,7 @@
         <DCC_DebugInformation>2</DCC_DebugInformation>
         <DCC_LocalDebugSymbols>true</DCC_LocalDebugSymbols>
         <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
-        <VerInfo_Release>26</VerInfo_Release>
-        <VerInfo_Build>2</VerInfo_Build>
+        <VerInfo_Build>14</VerInfo_Build>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">

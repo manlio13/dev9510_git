@@ -1,4 +1,4 @@
-unit Unit1;        //11/05/2023 vers. 8.3  > WorksLog
+unit Unit1;        //11/05/2023 vers. 9.3  > WorksLog
 interface
 
 uses
@@ -90,7 +90,8 @@ begin
         ABSTable1.Close;
         ABSDatabase1.Close;
         ABSTable2.close;
-        CanClose:= True
+        CanClose:= True;
+        Flag:=False;
       end else
      CanClose:= False;
   end;
@@ -109,12 +110,13 @@ begin
   ABSTable2.edit;
   Datasource1.DataSet.Edit;
   DataSource2.DataSet.Edit;
-  ABSTable1.first;
+
   FormatSettings.ShortDateFormat:='dd/MM/yyyy'; //per definire il formato di un campo dbgrid
              {Attenzione per poter avere il formato data senza problemi occorre
              che ci sia coerenza tra il formato indicato in form create e quello             MOLTO IMPORTANTE
              indicato in control panel regional settings}
-
+  // Form1.Visible:=True;
+   //ABSTable1.first;
 end;
 
  procedure TForm1.ABSTable1AfterInsert(DataSet: TDataSet); //per evitare che un record inserito e non postato sia perso
