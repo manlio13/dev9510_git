@@ -89,10 +89,10 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <VerInfo_MajorVer>2023</VerInfo_MajorVer>
-        <VerInfo_MinorVer>6</VerInfo_MinorVer>
-        <VerInfo_Release>15</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2023.6.15.22;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);LastCompiledTime=2023/06/15 12:36:16</VerInfo_Keys>
+        <VerInfo_MajorVer>2024</VerInfo_MajorVer>
+        <VerInfo_MinorVer>5</VerInfo_MinorVer>
+        <VerInfo_Release>3</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2024.5.3.23;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);LastCompiledTime=2024 05 03 17:39:22</VerInfo_Keys>
         <DCC_MapFile>3</DCC_MapFile>
         <DCC_DebugInformation>2</DCC_DebugInformation>
         <DCC_UnitSearchPath>C:\Program Files (x86)\Embarcadero\down\JVCL349CompleteJCL27-Build5676.zip\jvcl\run;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
@@ -103,7 +103,7 @@
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2023\ecom23\</DCC_DcuOutput>
         <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2023\ecom23</BRCC_OutputDir>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Build>22</VerInfo_Build>
+        <VerInfo_Build>23</VerInfo_Build>
         <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
         <DCC_ImportedDataReferences>false</DCC_ImportedDataReferences>
     </PropertyGroup>

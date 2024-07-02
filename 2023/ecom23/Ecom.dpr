@@ -5,8 +5,8 @@ uses
   {$IFDEF EurekaLog}
   EMemLeaks,
   EResLeaks,
-  EDebugExports,
   EDebugJCL,
+  EDebugExports,
   EFixSafeCallException,
   EMapWin32,
   EAppVCL,
@@ -27,4 +27,5 @@ begin
   Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
+
 
