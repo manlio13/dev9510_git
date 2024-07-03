@@ -183,7 +183,7 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
        with ABSQuery1 do     //attenzione alle spaziature corrette tra testi e variabili dove (')
        begin
          Edit1.text:=LowerCase(Edit1.Text);
-           if edit5.text='All' then
+           if edit5.text='All' then         //senza dato di locazione
              begin
                Close ;
                 SQL.Text:= 'select * from Cat where lower(Title) like ' + quotedstr('%'+ Edit1.text +'%') ;
@@ -201,7 +201,7 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
          with ABSQuery1 do
          begin
             Edit2.text:=LowerCase(Edit2.Text);
-            if edit5.text='All' then
+            if edit5.text='All' then              //senza dato di locazione
              begin
                Close ;
                SQL.Text:='select * from Cat where lower(Author) like ' + quotedstr('%'+Edit2.text+'%');
@@ -279,6 +279,8 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
 procedure TForm1.Button4Click(Sender: TObject);   //List
  
 begin
+     ABSDatabase1.Open;
+     ABSTable1.TableName:='Cat';
    ABSTable1.Filtered:=False;
    ABSTable1.first;
    if ABSTable1.isEmpty then
@@ -290,7 +292,7 @@ begin
    with ABSQuery1 do                                   //inserire il modulo TABSQuery
    begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
       Close;                                           //scrivere queste righe di codice
-      SQL.Text:='select * from cat ORDER BY Col ASC';
+      SQL.Text:='select * from Cat ORDER BY Col ASC';
       ExecSQL;
       Open;
    end;

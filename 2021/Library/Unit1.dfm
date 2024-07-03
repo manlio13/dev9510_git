@@ -663,13 +663,13 @@ object Form1: TForm1
         Name = 'Author'
       end
       item
-        Name = 'Location'
-      end
-      item
         Name = 'Col'
       end
       item
         Name = 'Row'
+      end
+      item
+        Name = 'Location'
       end>
     TableName = 'Cat'
     Exclusive = False
@@ -709,15 +709,15 @@ object Form1: TForm1
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44194.644324548600000000
-    ReportOptions.LastChange = 44194.693866909720000000
+    ReportOptions.LastChange = 45477.045967824070000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
       'begin'
       ''
       'end.')
-    Left = 107
-    Top = 148
+    Left = 108
+    Top = 152
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -739,6 +739,8 @@ object Form1: TForm1
       BottomMargin = 10.000000000000000000
       Frame.Typ = []
       MirrorMode = []
+      HGuides.Strings = (
+        '148')
       object ReportTitle1: TfrxReportTitle
         FillType = ftBrush
         Frame.Typ = []
@@ -766,7 +768,7 @@ object Form1: TForm1
         FillType = ftBrush
         Frame.Typ = []
         Height = 22.677180000000000000
-        Top = 147.401670000000000000
+        Top = 230.551330000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
@@ -828,7 +830,7 @@ object Form1: TForm1
         FillType = ftBrush
         Frame.Typ = []
         Height = 22.677180000000000000
-        Top = 230.551330000000000000
+        Top = 359.055350000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
           AllowVectorExport = True
@@ -895,19 +897,83 @@ object Form1: TForm1
           ParentFont = False
         end
       end
+      object GroupHeader1: TfrxGroupHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 60.472480000000000000
+        Top = 147.401670000000000000
+        Width = 718.110700000000000000
+        Condition = 'frxDBDataset1."Location"'
+        object frxDBDataset1Location: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 177.637910000000000000
+          Top = 15.716450000000000000
+          Width = 434.645950000000000000
+          Height = 18.897650000000000000
+          DataField = 'Location'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."Location"]')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          AllowVectorExport = True
+          Left = 7.559060000000000000
+          Top = 15.716450000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Library sector')
+          ParentFont = False
+        end
+      end
+      object GroupFooter1: TfrxGroupFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 275.905690000000000000
+        Width = 718.110700000000000000
+        object Memo7: TfrxMemoView
+          AllowVectorExport = True
+          Left = 3.779530000000000000
+          Top = -3.779530000000000000
+          Width = 706.772110000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            
+              '________________________________________________________________' +
+              '____________________________________________')
+        end
+      end
     end
   end
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
     CloseDataSource = False
     FieldAliases.Strings = (
+      'Location=Location'
       'Title=Title'
       'Author=Author'
       'Col=Column'
       'Row=Row')
     DataSet = ABSQuery1
     BCDToCurrency = False
-    Left = 184
+    Left = 183
     Top = 166
   end
   object frxPDFExport1: TfrxPDFExport
