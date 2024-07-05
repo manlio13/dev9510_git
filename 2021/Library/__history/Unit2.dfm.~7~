@@ -1,0 +1,112 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  Caption = '             Move books from a shelf'
+  ClientHeight = 256
+  ClientWidth = 240
+  Color = clYellow
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clRed
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = [fsBold]
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 36
+    Top = 8
+    Width = 132
+    Height = 13
+    Caption = 'FROM shelf coordinates'
+  end
+  object Label2: TLabel
+    Left = 36
+    Top = 169
+    Width = 115
+    Height = 13
+    Caption = 'TO shelf coordinates'
+  end
+  object Label3: TLabel
+    Left = 28
+    Top = 126
+    Width = 42
+    Height = 13
+    Caption = 'Column'
+  end
+  object Label4: TLabel
+    Left = 141
+    Top = 126
+    Width = 24
+    Height = 13
+    Caption = 'Row'
+  end
+  object Label5: TLabel
+    Left = 28
+    Top = 182
+    Width = 42
+    Height = 13
+    Caption = 'Column'
+  end
+  object Label6: TLabel
+    Left = 141
+    Top = 182
+    Width = 24
+    Height = 13
+    Caption = 'Row'
+  end
+  object Edit1: TEdit
+    Left = 20
+    Top = 142
+    Width = 57
+    Height = 21
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 128
+    Top = 142
+    Width = 57
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    Left = 20
+    Top = 199
+    Width = 57
+    Height = 21
+    TabOrder = 2
+  end
+  object Edit4: TEdit
+    Left = 128
+    Top = 199
+    Width = 57
+    Height = 21
+    TabOrder = 3
+  end
+  object Button1: TButton
+    Left = 77
+    Top = 226
+    Width = 49
+    Height = 18
+    Caption = 'Done'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
+  object Edit5: TEdit
+    Left = 84
+    Top = 29
+    Width = 121
+    Height = 21
+    TabOrder = 5
+    Text = 'Edit5'
+  end
+  object Edit6: TEdit
+    Left = 85
+    Top = 88
+    Width = 121
+    Height = 21
+    TabOrder = 6
+    Text = 'Edit6'
+  end
+end
