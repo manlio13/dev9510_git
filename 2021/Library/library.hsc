@@ -14,7 +14,7 @@ c:\Program Files\JGsoft\fls\,C:\Program Files (x86)\JGsoft\fls
 BrowseButtons()
 0
 FALSE
-C:\Users\manli\Documents\Lavori\Projects\Library\
+C:\Users\manli\Documents\Lavori\Projects\2021\Library\
 FALSE
 TRUE
 16777215
@@ -56,26 +56,28 @@ Writing
 
 
 FALSE
-14
+16
 {\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fnil Arial;}}
 {\colortbl ;\red0\green0\blue255;\red128\green0\blue0;}
 \viewkind4\uc1\pard\cf1\lang1040\b\fs32 Introduction\f1 
 \par \pard\qr\cf0\b0\fs20 
 \par \pard\f0 This application is intended to record and manage a personal Library.
-\par You can add, one by one, all the books specifying the Title, the Author and the location where the book is stored.
-\par The location is identified by two numbers. The first is the \b\i column\b0\i0  where the shelf with your book can be found. The second identifies the \b\i row\b0\i0 , i.e. the vertical section of the column that contain the book.
+\par You can add, one by one, all the books specifying the Title, the Author and the position where the book is stored.
+\par The position is identified by two numbers. The first is the \b\i column\b0\i0  where the shelf with your book can be found. The second identifies the \b\i row\b0\i0 , i.e. the vertical section of the column that contain the book.
 \par The management of the Library includes to ADD, FIND, EDIT, MOVE  and LIST. 
-\par \cf2\{bmc Form.JPG\}
+\par \cf2\{bmc form.jpg\}
 \par \cf0 The application window shows the buttons for the above functions and the software will help, step by step, to perform any of them.
 \par The LIST comand allows also to obtain a pdf printed document with the full list of books available in the Library.
 \par It is possible to change the location even of groups of book: i.e. those stored on a shelf if, for any reason, you must move them to another location.
-\par This can be obtained by the button MOVE. \cf1\b\f1\fs32 
+\par This can be obtained by the button MOVE. 
+\par In addition to the above the program allows the use of different Locations. These Locations can be just as a list of libraries.
+\par The actions on books must keep note of which Location/Library has to be operated.\cf1\b\f1\fs32 
 \par }
 0
 0
 0
 0
-7
+9
 *InternetLink
 16711680
 Courier New
@@ -148,6 +150,32 @@ Arial
 16
 1
 B...
+0
+0
+0
+0
+0
+0
+<new macro>
+128
+Arial
+0
+10
+0
+....
+0
+0
+0
+0
+0
+0
+<new macro>
+128
+Arial
+0
+10
+0
+....
 0
 0
 0

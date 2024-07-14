@@ -1,4 +1,4 @@
-unit Unit1;
+unit Unit1;   //14/07/24
 
 interface
 
@@ -339,6 +339,7 @@ begin
    end;
   trova:=False;
   frxReport1.ShowReport;
+  Button3.click;
 end;
 
 procedure TForm1.Button5Click(Sender: TObject);     //Done
@@ -360,6 +361,7 @@ begin
        begin
         ABSTable1.Close;
         ABSTable1.EmptyTable;
+        Button3.Click;
        end  else Exit;
 
    end;
