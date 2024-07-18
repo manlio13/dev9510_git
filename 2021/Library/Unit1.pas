@@ -127,11 +127,12 @@ Begin
            ABSTable1.Post;
           Edit1.Text:='';
           Edit2.Text:='';
-          Edit5.text:='';
+
           if CheckBox1.checked=False then
           begin
-          Edit3.Text:='';
-          Edit4.Text:='';
+           Edit3.Text:='';
+           Edit4.Text:='';
+           Edit5.text:='';
           end;
          ShowMessage('Uploaded');
          Exit;
