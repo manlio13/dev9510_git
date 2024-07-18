@@ -64,9 +64,9 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas
-CursorX=12
-CursorY=133
-TopLine=107
+CursorX=64
+CursorY=162
+TopLine=137
 LeftCol=1
 Elisions=
 Bookmarks=

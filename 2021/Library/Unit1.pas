@@ -149,7 +149,7 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
      ABSTable1.first;
      DataSource1.DataSet:=ABSQuery1;
      t:=0;
-    if ABSTable1.isEmpty then
+    if (ABSTable1.isEmpty) or ((Edit1.text='') and (Edit2.text=''))then
     begin
        ShowMessage('There is nothing to find');
        Exit;
@@ -159,7 +159,7 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
      if (edit5.text='') AND (edit5.text <> 'All') then
 
        begin
-        showMessage('A location must be entered');
+        showMessage('A location must be entered or enter "All".');
             with ABSQuery1 do
          begin
            DataSource1.DataSet:=ABSQuery1;
