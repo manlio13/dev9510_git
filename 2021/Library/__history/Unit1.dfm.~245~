@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 0
-  Top = 0
+  Left = 329
+  Top = 247
   Hint = 'MLSoft_2021'
   HelpContext = 1
   Anchors = []
@@ -11,12 +11,11 @@ object Form1: TForm1
   ClientHeight = 386
   ClientWidth = 830
   Color = clOlive
-  Font.Charset = DEFAULT_CHARSET
+  Font.Charset = ANSI_CHARSET
   Font.Color = clBlack
   Font.Height = -11
-  Font.Name = 'Tahoma'
+  Font.Name = 'Arial'
   Font.Style = []
-  FormStyle = fsStayOnTop
   HelpFile = 'Library.chm'
   Icon.Data = {
     0000010001003030000001002000A82500001600000028000000300000006000
@@ -322,14 +321,14 @@ object Form1: TForm1
     0000000000000000000000000000000000000000000000000000000000000000
     000000000000000000000000000000000000000000000000000000000000}
   OldCreateOrder = False
-  Position = poDesktopCenter
+  Position = poDesigned
   ShowHint = True
   OnCreate = FormCreate
   DesignSize = (
     830
     386)
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 14
   object Label1: TLabel
     Left = 543
     Top = 7
@@ -396,11 +395,11 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 655
+    Left = 656
     Top = 89
     Width = 155
     Height = 26
-    Caption = 'Enter "ALL" for any library'#13#10'@ search for Title or Author'
+    Caption = 'Enter "All" for any library'#13#10'@ search for Title or Author'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
     Font.Height = -11
@@ -412,14 +411,20 @@ object Form1: TForm1
     Left = 20
     Top = 5
     Width = 497
-    Height = 21
+    Height = 22
+    Font.Charset = ARABIC_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
   end
   object Edit2: TEdit
     Left = 20
     Top = 32
     Width = 351
-    Height = 21
+    Height = 22
     TabOrder = 1
   end
   object Edit3: TEdit
@@ -517,10 +522,10 @@ object Form1: TForm1
     DataSource = DataSource1
     Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgMultiSelect, dgTitleClick, dgTitleHotTrack]
     TabOrder = 8
-    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clBlack
     TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Name = 'Arial'
     TitleFont.Style = []
     OnCellClick = DBGrid1CellClick
     Columns = <
@@ -710,7 +715,7 @@ object Form1: TForm1
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44194.644324548600000000
-    ReportOptions.LastChange = 45477.045967824070000000
+    ReportOptions.LastChange = 45477.800602743050000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -718,7 +723,7 @@ object Form1: TForm1
       ''
       'end.')
     Left = 108
-    Top = 152
+    Top = 150
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -905,6 +910,7 @@ object Form1: TForm1
         Top = 147.401670000000000000
         Width = 718.110700000000000000
         Condition = 'frxDBDataset1."Location"'
+        KeepTogether = True
         object frxDBDataset1Location: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
@@ -912,7 +918,6 @@ object Form1: TForm1
           Top = 15.716450000000000000
           Width = 434.645950000000000000
           Height = 18.897650000000000000
-          DataField = 'Location'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
