@@ -146,11 +146,11 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>2021Icon.ico</Icon_MainIcon>
-        <VerInfo_Build>155</VerInfo_Build>
+        <VerInfo_Build>157</VerInfo_Build>
         <VerInfo_MajorVer>2024</VerInfo_MajorVer>
         <VerInfo_MinorVer>7</VerInfo_MinorVer>
-        <VerInfo_Release>18</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2024.7.18.155;InternalName=Catalogo;LegalCopyright=;LegalTrademarks=;OriginalFilename=Library;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2024 07 18 11:11:08</VerInfo_Keys>
+        <VerInfo_Release>20</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2024.7.20.157;InternalName=Catalogo;LegalCopyright=;LegalTrademarks=;OriginalFilename=Library;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2024 07 20 10:31:27</VerInfo_Keys>
         <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library</DCC_DcpOutput>
         <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library</DCC_ExeOutput>
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library</DCC_DcuOutput>

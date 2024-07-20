@@ -95,6 +95,7 @@ procedure TForm2.Button1Click(Sender: TObject);     // START     acquisisce coor
      Edit4.text:='';
      Form2.visible:=False;
      Form1.FormStyle := fsStayOnTop;
+     ShowMessage('Task done !') ;
   end;
 
 end;
