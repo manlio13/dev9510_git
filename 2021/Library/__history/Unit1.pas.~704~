@@ -121,8 +121,8 @@ Begin
            ABSTable1.Append;
             ABSTable1.FieldByName('Title').AsString:=Edit1.Text;
             ABSTable1.FieldByName('Author').AsString:=Edit2.Text;
-            ABSTable1.FieldByName('Row').AsString:=Edit4.Text;
-            ABSTable1.FieldByName('Col').AsString:=Edit3.Text;
+            ABSTable1.FieldByName('Row').AsString:=Edit3.Text;
+            ABSTable1.FieldByName('Col').AsString:=Edit4.Text;
             ABSTable1.FieldByName('Location').AsString:=Edit5.Text;
            ABSTable1.Post;
           Edit1.Text:='';
