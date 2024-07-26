@@ -156,8 +156,9 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
     end else
 
    begin
-     if (edit5.text='') AND (edit5.text <> 'All') then
+     if Edit5.text ='all' then Edit5.text:='All';
 
+     if (edit5.text='') AND (edit5.text <> 'All') then
        begin
         showMessage('A location must be entered or enter "All".');
             with ABSQuery1 do
@@ -168,7 +169,7 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
            ExecSQL;
            Open;
          end;
-          showmessagePos('Insert the appropriate Location from the list',200,200);
+          showmessagePos('Insert the appropriate one in "location" by copying one from the list.',200,200);
           //Button3.Click;
          Exit;
        end else
@@ -396,7 +397,7 @@ begin
         If DBGrid1.Selectedrows.count=0 then  //porre nelle option di dbgrid   dgmultiselect=true
           begin
            ShowMessage('Please click on the record to be edited.'+#13+
-           'Use the Database Navigator to browse and edit' );
+           'Use the Database Navigator to browse edit and save' );
            Exit ;
           end else scelto:=True;
 
