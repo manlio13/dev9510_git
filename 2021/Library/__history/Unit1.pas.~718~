@@ -402,7 +402,8 @@ begin
           end else scelto:=True;
 
         if scelto=True then
-        ShowMessage('Please use the Database Navigator to browse edit and save' );
+        ShowMessage('Please click on the record to be edited.'+#13+
+           'Use the Database Navigator to browse edit and save' );
          begin
              for i := 1 to dato do
              begin
