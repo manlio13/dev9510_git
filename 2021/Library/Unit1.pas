@@ -141,7 +141,7 @@ end;
 
 procedure TForm1.Button2Click(Sender: TObject);        //find
     var
-    i,t:Integer;
+    i,t,m:Integer;
     label
     punto;
  begin
@@ -149,16 +149,16 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
      ABSTable1.first;
      DataSource1.DataSet:=ABSQuery1;
      t:=0;
-    if (ABSTable1.isEmpty) or ((Edit1.text='') and (Edit2.text=''))then
+    if (ABSTable1.isEmpty) or (((Edit1.text='') and (Edit2.text=''))and((edit3.text='')and (edit4.text='')))then
     begin
        ShowMessage('There is nothing to find');
        Exit;
     end else
 
    begin
-     if Edit5.text ='all' then Edit5.text:='All';
+     if Edit5.text ='all' then Edit5.text:='All';  // è indifferente la posizione dell'istruzione
 
-     if (edit5.text='') AND (edit5.text <> 'All') then
+     if (edit5.text='') then    //non c'è la posizione
        begin
         showMessage('A location must be entered or enter "All".');
             with ABSQuery1 do
@@ -173,14 +173,31 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
           //Button3.Click;
          Exit;
        end else
+        //cè la posizione
+       if Edit5.text<>'All' then
+     begin
+          with ABSQuery1 do
+       begin
+         DataSource1.DataSet:=ABSQuery1;
+          Close;
+         SQL.Text:='select count(location) from Cat where location ='+ quotedstr(Edit5.text);
+          ExecSQL;
+          Open;
+         m:= ABSQuery1.Fields[0].AsInteger;
+         if m=0 then
+          begin
+              ShowMessage('no that location') ;
+              exit;
+          end;
+          
+         end;
+      end;
 
     begin
-      trova:=True;
+       trova:=True;
      DataSource1.DataSet:=ABSQuery1;
-     //DBNavigator1.Datasource.Dataset:=ABSQuery1;
-     //DBGrid1.Datasource.Dataset:=ABSTable1;
     if ((Edit1.Text='') AND (Edit2.Text='') and (Edit3.Text='') and (Edit4.Text='')) then
-     begin
+     begin   // c'è la posizione ma null'altro
      ShowMessage('The search for books can be done by Author or by Title'+#13+
      'or by Shelf indicating both the column and the row'+#13+'    Please fill data');
       Exit;
@@ -188,14 +205,14 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
        if Edit1.text<>'' then  t:=t+1;                        //per verificare che ci siano i soli dati necessari
        if Edit2.text<>'' then  t:=t+1;
        if (Edit3.text<>'')AND (Edit4.text<>'') then  t:=t+1;
-       if (Edit3.text<>'')XOR (Edit4.text<>'') then  t:=2;
-       if t>2 then
+      // if (Edit3.text<>'')XOR (Edit4.text<>'') then  t:=2;
+       if t>=2 then
         begin
-        Showmessage('Attention: wrong selection entry or to many parametrs.');
+        Showmessage('Attention: wrong selection entry or too many parameters.');
         Button3Click(Self);
         Exit;
        end ;
-
+        //showMessage('Attention: in case more then one search data type'+#13+' the result cannot be unique');
          if ((Edit1.Text<>'') AND (Edit2.Text='')) then   //selezione per titolo
        with ABSQuery1 do     //attenzione alle spaziature corrette tra testi e variabili dove (')
        begin
@@ -259,17 +276,27 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
        end;
 
                if ((Edit3.Text<>'') AND (Edit4.Text<>'')) then   //selezione per dolonna e riga
-       begin
           shelf:=True;
           with ABSQuery1 do
          begin
+           if edit5.text='All' then         //senza dato di locazione
+             begin
+               ShowMessage('Attention: with generic location result is not specific');
+               Close ;
+               SQL.Text:='SELECT * From Cat where Col= '+edit3.text+' AND Row = '+Edit4.text;
+               ExecSQL;
+               Open;
+               DBNavigator1. Enabled;
+               goto punto;
+             end;
+
           Close;     //notare il formato della notazione del query. Att.ai nomi riservati SQL
           SQL.Text:='SELECT * From Cat where Col= '+edit3.text+' AND Row = '+Edit4.text +
             ' AND lower(Location) like ' + quotedstr('%'+Edit5.text+'%');
           ExecSQL;
            Open;
           end;
-         //ABSTable1.first;
+
        end;
 
       punto:
@@ -299,7 +326,7 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
 
      end;
     End;
-   End;
+  // End;
 
   procedure TForm1.Button3Click(Sender: TObject);      //clear
  begin
