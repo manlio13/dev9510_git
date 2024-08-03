@@ -1,4 +1,4 @@
-unit Unit1;   //14/07/24
+unit Unit1;   //03/08/24
 
 interface
 
@@ -108,7 +108,12 @@ Begin
          if ABSQuery1.recordCount >0 then
          if MessageDlg('A similar book already exists.'+#13+
          ' Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
-         Exit;
+          begin
+            Edit1.Text:='';
+            Edit2.Text:='';
+            Exit;
+          end;
+
        end;
 
       begin                               //registra il libro

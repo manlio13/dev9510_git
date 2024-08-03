@@ -112,8 +112,8 @@
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library\</DCC_DcuOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>MyLibrary_Icon.ico</Icon_MainIcon>
-        <VerInfo_Build>534</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2024.8.3.534;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2024 08 03 11:27:33</VerInfo_Keys>
+        <VerInfo_Build>539</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2024.8.3.539;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2024 08 03 16:26:58</VerInfo_Keys>
         <VerInfo_MajorVer>2024</VerInfo_MajorVer>
         <VerInfo_MinorVer>8</VerInfo_MinorVer>
         <VerInfo_Release>3</VerInfo_Release>
@@ -146,11 +146,11 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>2021Icon.ico</Icon_MainIcon>
-        <VerInfo_Build>188</VerInfo_Build>
+        <VerInfo_Build>194</VerInfo_Build>
         <VerInfo_MajorVer>2024</VerInfo_MajorVer>
         <VerInfo_MinorVer>8</VerInfo_MinorVer>
         <VerInfo_Release>3</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2024.8.3.188;InternalName=Catalogo;LegalCopyright=;LegalTrademarks=;OriginalFilename=Library;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2024 08 03 11:29:24</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2024.8.3.194;InternalName=Catalogo;LegalCopyright=;LegalTrademarks=;OriginalFilename=Library;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2024 08 03 16:29:19</VerInfo_Keys>
         <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library</DCC_DcpOutput>
         <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library</DCC_ExeOutput>
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library</DCC_DcuOutput>
