@@ -367,7 +367,7 @@ begin
    with ABSQuery1 do                                   //inserire il modulo TABSQuery
    begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
       Close;                                           //scrivere queste righe di codice
-      SQL.Text:='select * from Cat ORDER BY Location ASC, Title ASC, Col ASC';
+      SQL.Text:='select * from Cat ORDER BY Location ASC, Col ASC, Title ASC';
       ExecSQL;
       Open;
    end;
