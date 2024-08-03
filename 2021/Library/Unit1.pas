@@ -30,7 +30,6 @@ type
     DBNavigator1: TDBNavigator;
     DataSource1: TDataSource;
     Button6: TButton;
-    frxReport1: TfrxReport;
     frxDBDataset1: TfrxDBDataset;
     frxPDFExport1: TfrxPDFExport;
     Button7: TButton;
@@ -40,6 +39,7 @@ type
     CheckBox1: TCheckBox;
     Edit5: TEdit;
     Label5: TLabel;
+    frxReport1: TfrxReport;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -362,7 +362,7 @@ begin
    with ABSQuery1 do                                   //inserire il modulo TABSQuery
    begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
       Close;                                           //scrivere queste righe di codice
-      SQL.Text:='select * from Cat ORDER BY Location ASC';
+      SQL.Text:='select * from Cat ORDER BY Location ASC, Title ASC, Col ASC';
       ExecSQL;
       Open;
    end;

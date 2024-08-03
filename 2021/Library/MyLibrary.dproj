@@ -112,11 +112,11 @@
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library\</DCC_DcuOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>MyLibrary_Icon.ico</Icon_MainIcon>
-        <VerInfo_Build>478</VerInfo_Build>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2024.8.1.478;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2024 08 01 07:36:39</VerInfo_Keys>
+        <VerInfo_Build>534</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2024.8.3.534;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2024 08 03 11:27:33</VerInfo_Keys>
         <VerInfo_MajorVer>2024</VerInfo_MajorVer>
         <VerInfo_MinorVer>8</VerInfo_MinorVer>
-        <VerInfo_Release>1</VerInfo_Release>
+        <VerInfo_Release>3</VerInfo_Release>
         <DCC_UnitSearchPath>C:\Users\manli\Documents\Lavori\Projects\2021\Library\;C:\Users\manli\Documents\Lavori\Projects\2021\Library\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
@@ -146,11 +146,11 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>2021Icon.ico</Icon_MainIcon>
-        <VerInfo_Build>185</VerInfo_Build>
+        <VerInfo_Build>188</VerInfo_Build>
         <VerInfo_MajorVer>2024</VerInfo_MajorVer>
         <VerInfo_MinorVer>8</VerInfo_MinorVer>
-        <VerInfo_Release>1</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2024.8.1.185;InternalName=Catalogo;LegalCopyright=;LegalTrademarks=;OriginalFilename=Library;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2024 08 01 07:42:55</VerInfo_Keys>
+        <VerInfo_Release>3</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=MLSoft;FileDescription=$(MSBuildProjectName);FileVersion=2024.8.3.188;InternalName=Catalogo;LegalCopyright=;LegalTrademarks=;OriginalFilename=Library;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2024 08 03 11:29:24</VerInfo_Keys>
         <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library</DCC_DcpOutput>
         <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library</DCC_ExeOutput>
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\Library</DCC_DcuOutput>
