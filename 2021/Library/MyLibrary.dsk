@@ -1,22 +1,25 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas',0,1,350,66,370,0,0,,{1,188,2}
-File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data\Data.DB.pas',0,1,12594,1,12660,0,0,,
-File_2=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Forms.pas',0,1,6626,1,6695,0,0,{{1891,4}
-File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Controls.pas',0,1,10752,1,10770,0,0,,
-File_4=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.StdCtrls.pas',0,1,5422,1,5440,0,0,{{1715,4}
-File_5=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\rtl\common\System.Classes.pas',0,1,18011,1,18022,0,0,,
-File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data\vclctrls\Vcl.DbGrids.pas',0,1,3803,1,3812,0,0,,
-File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.pas',0,1,31224,1,31232,0,0,,
-File_8=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Dialogs.pas',0,1,6750,1,6761,0,0,,
-File_9=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\rtl\common\System.Generics.Collections.pas',0,1,2799,1,2810,0,0,,
-File_10=TSourceModule,'C:\Program Files (x86)\Embarcadero\Studio\21.0\source\fmx\FMX.Dialogs.pas',0,1,1,1,1,0,0,,
-File_11=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,8382,1,8394,0,0,,
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data\Data.DB.pas',0,1,12594,1,12660,0,0,,
+File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Forms.pas',0,1,6626,1,6695,0,0,{{1891,4}
+File_2=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Controls.pas',0,1,10752,1,10770,0,0,,
+File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.StdCtrls.pas',0,1,5422,1,5440,0,0,{{1715,4}
+File_4=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\rtl\common\System.Classes.pas',0,1,18011,1,18022,0,0,,
+File_5=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data\vclctrls\Vcl.DbGrids.pas',0,1,3803,1,3812,0,0,,
+File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.pas',0,1,31224,1,31232,0,0,,
+File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Dialogs.pas',0,1,6750,1,6761,0,0,,
+File_8=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\rtl\common\System.Generics.Collections.pas',0,1,2799,1,2810,0,0,,
+File_9=TSourceModule,'C:\Program Files (x86)\Embarcadero\Studio\21.0\source\fmx\FMX.Dialogs.pas',0,1,1,1,1,0,0,,
+File_10=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,8382,1,8394,0,0,,
 
 [Modules]
-Module0=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit2.pas
-Module1=default.htm
-Count=2
+Module0=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas
+Module1=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit2.pas
+Module2=default.htm
+Count=3
 EditWindowCount=1
+
+[C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas]
+ModuleType=TSourceModule
 
 [C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit2.pas]
 ModuleType=TSourceModule
@@ -25,10 +28,11 @@ ModuleType=TSourceModule
 ModuleType=TURLModule
 
 [EditWindow0]
-ViewCount=2
-CurrentEditView=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit2.pas
+ViewCount=3
+CurrentEditView=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas
 View0=0
 View1=1
+View2=2
 PercentageSizes=1
 Create=1
 Visible=1
@@ -65,13 +69,24 @@ WelcomePageURL=bds:/default.htm
 [View1]
 CustomEditViewType=TEditView
 Module=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit2.pas
-CursorX=25
+CursorX=8
 CursorY=38
 TopLine=33
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit2.pas
+EditViewName=Borland.FormDesignerView
+
+[View2]
+CustomEditViewType=TEditView
+Module=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas
+CursorX=66
+CursorY=370
+TopLine=350
+LeftCol=1
+Elisions=
+Bookmarks={1,188,1}
+EditViewName=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas
 
 [Watches]
 Count=0
@@ -209,11 +224,16 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1895
 ClientHeight=3009
-TBDockHeight=8472
+TBDockHeight=9016
 LRDockWidth=1895
 Dockable=1
 StayOnTop=0
 SplitPos=111
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=DataSet,
+ExpandedItems=EngineOptions=0,"LiveBindings Designer=0",PreviewOptions=0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -684,7 +704,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
 ClientHeight=4259
-TBDockHeight=8472
+TBDockHeight=9016
 LRDockWidth=1999
 Dockable=1
 StayOnTop=0
@@ -708,7 +728,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1895
 ClientHeight=3252
-TBDockHeight=8472
+TBDockHeight=9016
 LRDockWidth=1895
 Dockable=1
 StayOnTop=0
@@ -732,7 +752,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1999
 ClientHeight=2002
-TBDockHeight=8472
+TBDockHeight=9016
 LRDockWidth=1999
 Dockable=1
 StayOnTop=0
