@@ -1,4 +1,4 @@
-unit Unit1;   //14/07/24
+unit Unit1;   //03/08/24
 
 interface
 
@@ -30,7 +30,6 @@ type
     DBNavigator1: TDBNavigator;
     DataSource1: TDataSource;
     Button6: TButton;
-    frxReport1: TfrxReport;
     frxDBDataset1: TfrxDBDataset;
     frxPDFExport1: TfrxPDFExport;
     Button7: TButton;
@@ -40,6 +39,7 @@ type
     CheckBox1: TCheckBox;
     Edit5: TEdit;
     Label5: TLabel;
+    frxReport1: TfrxReport;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -108,7 +108,12 @@ Begin
          if ABSQuery1.recordCount >0 then
          if MessageDlg('A similar book already exists.'+#13+
          ' Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
-         Exit;
+          begin
+            Edit1.Text:='';
+            Edit2.Text:='';
+            Exit;
+          end;
+
        end;
 
       begin                               //registra il libro
@@ -205,14 +210,14 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
        if Edit1.text<>'' then  t:=t+1;                        //per verificare che ci siano i soli dati necessari
        if Edit2.text<>'' then  t:=t+1;
        if (Edit3.text<>'')AND (Edit4.text<>'') then  t:=t+1;
-       if (Edit3.text<>'')XOR (Edit4.text<>'') then  t:=2;
-       if t>2 then
+      // if (Edit3.text<>'')XOR (Edit4.text<>'') then  t:=2;
+       if t>=2 then
         begin
-        Showmessage('Attention: wrong selection entry or to many parametrs.');
+        Showmessage('Attention: wrong selection entry or too many parameters.');
         Button3Click(Self);
         Exit;
        end ;
-        showMessage('Attention:in case more then one search data type'+#13+' the result cannot be unique');
+        //showMessage('Attention: in case more then one search data type'+#13+' the result cannot be unique');
          if ((Edit1.Text<>'') AND (Edit2.Text='')) then   //selezione per titolo
        with ABSQuery1 do     //attenzione alle spaziature corrette tra testi e variabili dove (')
        begin
@@ -362,7 +367,7 @@ begin
    with ABSQuery1 do                                   //inserire il modulo TABSQuery
    begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
       Close;                                           //scrivere queste righe di codice
-      SQL.Text:='select * from Cat ORDER BY Location ASC';
+      SQL.Text:='select * from Cat ORDER BY Location ASC, Col ASC,Row ASC, Title ASC';
       ExecSQL;
       Open;
    end;
