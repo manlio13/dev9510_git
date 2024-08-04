@@ -209,7 +209,7 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
      'or by Shelf indicating both the column and the row'+#13+'    Please fill data');
       Exit;
      end ;
-       if Edit1.text<>'' then  t:=t+1;                        //per verificare che ci siano i soli dati necessari
+       if Edit1.text<>'' then  t:=t+1;         //per verificare che ci siano i soli dati necessari
        if Edit2.text<>'' then  t:=t+1;
        if (Edit3.text<>'')AND (Edit4.text<>'') then  t:=t+1;
       // if (Edit3.text<>'')XOR (Edit4.text<>'') then  t:=2;
@@ -218,9 +218,9 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
         Showmessage('Attention: wrong selection entry or too many parameters.');
         Button3Click(Self);
         Exit;
-       end ;
+       end ;                                              //selezione per titolo
         //showMessage('Attention: in case more then one search data type'+#13+' the result cannot be unique');
-         if ((Edit1.Text<>'') AND (Edit2.Text='')) then   //selezione per titolo
+         if ((Edit1.Text<>'') AND (Edit2.Text='')) then
        with ABSQuery1 do     //attenzione alle spaziature corrette tra testi e variabili dove (')
        begin
          Edit1.text:=LowerCase(Edit1.Text);
@@ -235,7 +235,7 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
              end;
          Close;
          SQL.Text:= 'select * from Cat where lower(Title) like ' + quotedstr('%'+ Edit1.text +'%') +
-         'AND lower(Location) like ' + quotedstr('%'+Edit5.text+'%');
+         ' AND lower(Location) like ' + quotedstr('%'+Edit5.text+'%');
          ExecSQL;
          Open;
        end;
@@ -283,6 +283,7 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
        end;
 
                if ((Edit3.Text<>'') AND (Edit4.Text<>'')) then   //selezione per dolonna e riga
+       begin
           shelf:=True;
           with ABSQuery1 do
          begin
@@ -303,7 +304,7 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
           ExecSQL;
            Open;
           end;
-
+      end;
        end;
 
       punto:
