@@ -1,4 +1,4 @@
-unit Unit1;           // Release 2020 en
+unit Unit1;           // Release 2024.9.7 en
 interface
 
 uses
@@ -96,13 +96,18 @@ begin
  ABSTable2.TableName:='ecom2TB';
  ABSTable2.Open;
  TFloatField(ABSTable1.FieldByName('Prezzo')).DisplayFormat := '0.00';
+ TDateField(ABSTable1.FieldByName('DataOrd')).DisplayFormat := 'dd.mm.yy';
+ TDateField(ABSTable1.FieldByName('DataPag')).DisplayFormat := 'dd.mm.yy';
+ TDateField(ABSTable1.FieldByName('DataSped')).DisplayFormat := 'dd.mm.yy';
+ TDateField(ABSTable1.FieldByName('DataCons')).DisplayFormat := 'dd.mm.yy';
+
  ABSTable1.Last;
  ABSTable1.Edit;
  ABSTable2.Edit;
  DataSource1.DataSet.Edit;
  //inizializzazione
  edit5.Text:='';
- edit1.Text:=DateToStr(Now);
+ Edit1.text := FormatDateTime('dd.mm.yyyy',Now);  //formattare una stringa
  edit2.Text:='';
  edit3.Text:='';
  edit4.Text:='';
@@ -111,7 +116,7 @@ begin
  try
   AbsTable1.First; { Go to first record, which sets Eof False }
   inizio:= ABSTable1.FieldByName('DataOrd').AsDateTime;
-  Edit5.Text:= DateTimeToStr(inizio);
+  Edit5.Text:= FormatDateTime('dd.mm.yyyy',inizio);
   Label4.Caption:='From '+ABSTable1.FieldByName('DataOrd').AsString;
   while (not AbsTable1.Eof) do { Cycle until Eof is True }
   begin
