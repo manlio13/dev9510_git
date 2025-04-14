@@ -1,0 +1,228 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D746FD73-8CBB-4E42-9E45-A26DF7D2EA93}</ProjectGuid>
+        <ProjectVersion>19.2</ProjectVersion>
+        <MainSource>Diesel4.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <VCL_Custom_Styles>&quot;Aqua Graphite|VCLSTYLE|$(PUBLIC)\Documents\RAD Studio\12.0\Styles\AquaGraphite.vsf&quot;;&quot;Aqua Light Slate|VCLSTYLE|$(PUBLIC)\Documents\RAD Studio\12.0\Styles\AquaLightSlate.vsf&quot;;&quot;Auric|VCLSTYLE|$(PUBLIC)\Documents\RAD Studio\12.0\Styles\Auric.vsf&quot;;&quot;Emerald Light Slate|VCLSTYLE|$(PUBLIC)\Documents\RAD Studio\12.0\Styles\EmeraldLightSlate.vsf&quot;;&quot;Iceberg Classico|VCLSTYLE|$(PUBLIC)\Documents\RAD Studio\12.0\Styles\IcebergClassico.vsf&quot;;&quot;Ruby Graphite|VCLSTYLE|$(PUBLIC)\Documents\RAD Studio\12.0\Styles\RubyGraphite.vsf&quot;;&quot;Smokey Quartz Kamri|VCLSTYLE|$(PUBLIC)\Documents\RAD Studio\12.0\Styles\SmokeyQuartzKamri.vsf&quot;</VCL_Custom_Styles>
+        <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
+        <VerInfo_Debug>true</VerInfo_Debug>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_PreRelease>true</VerInfo_PreRelease>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_MinorVer>1</VerInfo_MinorVer>
+        <VerInfo_MajorVer>2</VerInfo_MajorVer>
+        <VerInfo_Build>48</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=MLSoft 2012;FileDescription=Controllo carburante disponibile;FileVersion=2.1.0.48;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=Diesel when sailing;ProductName=Diesel;ProductVersion=2.0;Comments=info mailto:mlsoft@iol.it</VerInfo_Keys>
+        <DCC_UsePackage>vclimg;vcl;vclx;dbrtl;Rave90VCL;bdertl;VclSmp;rtl;TeeUI;TeeDB;Tee;vclactnband;vcldb;vcldbx;vcltouch;xmlrtl;dsnap;dsnapcon;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_110_150;Intraweb_110_150;vclie;inetdb;webdsnap;websnap;inetdbbde;inetdbxpress;soaprtl;vclribbon;dbexpress;DbxCommonDriver;DbxClientDriver;AzureCloud;DBXInterBaseDriver;DBXMySQLDriver;dbxcds;CodeSiteExpressVcl;PBbis;$(DCC_UsePackage)</DCC_UsePackage>
+        <BRCC_OutputDir>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2017\Diesel4\</BRCC_OutputDir>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <DCC_DcuOutput>.\$(Config)\$(Platform)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Config)\$(Platform)</DCC_ExeOutput>
+        <SanitizedProjectName>Diesel4</SanitizedProjectName>
+        <Custom_Styles>Luna|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Luna.vsf;&quot;Ruby Graphite|VCLSTYLE|$(BDSCOMMONDIR)\Styles\RubyGraphite.vsf&quot;;&quot;Smokey Quartz Kamri|VCLSTYLE|$(BDSCOMMONDIR)\Styles\SmokeyQuartzKamri.vsf&quot;</Custom_Styles>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UnitSearchPath>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2017\Diesel4</DCC_UnitSearchPath>
+        <DCC_ExeOutput>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2017\Diesel4\</DCC_ExeOutput>
+        <DCC_DcuOutput>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2017\Diesel4\</DCC_DcuOutput>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_MajorVer>1</VerInfo_MajorVer>
+        <VerInfo_Build>0</VerInfo_Build>
+        <DCC_UsePackage>svnui;svn;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>Diesel4_Icon3.ico</Icon_MainIcon>
+        <Debugger_DebugSourcePath>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2017\Diesel4;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
+        <Debugger_CWD>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2017\Diesel4</Debugger_CWD>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>Diesel_Icon4.ico</Icon_MainIcon>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_ExeOutput>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2017\Diesel4\</DCC_ExeOutput>
+        <DCC_DcuOutput>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2017\Diesel4\</DCC_DcuOutput>
+        <BRCC_OutputDir>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2017\Diesel4\</BRCC_OutputDir>
+        <DCC_Define>DEBUG;Platform32Bit;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_PreRelease>false</VerInfo_PreRelease>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <VerInfo_MinorVer>7</VerInfo_MinorVer>
+        <Manifest_File>None</Manifest_File>
+        <OutputExt>exe</OutputExt>
+        <VerInfo_AutoGenVersion>false</VerInfo_AutoGenVersion>
+        <VerInfo_Build>304</VerInfo_Build>
+        <VerInfo_MajorVer>2023</VerInfo_MajorVer>
+        <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2023\Diese4_refit\</DCC_ExeOutput>
+        <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2023\Diese4_refit\</BRCC_OutputDir>
+        <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2023\Diese4_refit\</DCC_DcuOutput>
+        <Debugger_CWD>C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2017\Diesel4</Debugger_CWD>
+        <VerInfo_Keys>CompanyName=ML_Soft;FileDescription=Diesel Control;FileVersion=2023.7.31.304;InternalName=Diesel_DB;LegalCopyright=ML_Soft Milan Italy;LegalTrademarks=;OriginalFilename=;ProductName=Diesel4;ProductVersion=4.0;Comments=mlsoft@iol.it 2017;ProgramID=com.embarcadero.$(MSBuildProjectName);LastCompiledTime=2023/07/31 17:59:57</VerInfo_Keys>
+        <VerInfo_Release>31</VerInfo_Release>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <BT_BuildType>Debug</BT_BuildType>
+        <DCC_UnitSearchPath>C:\Users\manli\Documents\Lavori\Projects\2023\Diese4_refit\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <Debugger_IncludeSystemVars>true</Debugger_IncludeSystemVars>
+        <Debugger_EnvVars>BDSPROJECTSDIR=C:\Users\manli\Documents\Lavori\Projects;$(Debugger_EnvVars)</Debugger_EnvVars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Icon_MainIcon>Diesel2_Icon.ico</Icon_MainIcon>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2023\Diese4_refit\</DCC_DcpOutput>
+        <Icon_MainIcon>Diesel4_Icon4.ico</Icon_MainIcon>
+        <VerInfo_AutoGenVersion>false</VerInfo_AutoGenVersion>
+        <VerInfo_Debug>false</VerInfo_Debug>
+        <VerInfo_Release>31</VerInfo_Release>
+        <Manifest_File>None</Manifest_File>
+        <VerInfo_MinorVer>7</VerInfo_MinorVer>
+        <VerInfo_MajorVer>2023</VerInfo_MajorVer>
+        <VerInfo_Build>233</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=MLSoft Milan;FileDescription=Diesel management on board of sailing vessel;FileVersion=2023.7.31.233;InternalName=;LegalCopyright=MLSoft Milan 2014;LegalTrademarks=;OriginalFilename=;ProductName=Diesel 2;ProductVersion=4.5.4.231;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);LastCompiledTime=2023/07/31 18:01:59</VerInfo_Keys>
+        <BT_BuildType>Debug</BT_BuildType>
+        <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2023\Diese4_refit\</DCC_ExeOutput>
+        <DCC_UnitSearchPath>C:\Users\manli\Documents\Lavori\Projects\2023\Diese4_refit\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2023\Diese4_refit\</DCC_DcuOutput>
+        <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2023\Diese4_refit\</BRCC_OutputDir>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="Unit1.pas">
+            <Form>Form1</Form>
+        </DCCReference>
+        <DCCReference Include="Unit2.pas">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit3.pas">
+            <Form>Form3</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="DebugSourceDirs">C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2011\Diesel</Parameters>
+                    <Parameters Name="DebugCWD">C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2011\Diesel</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">True</VersionInfo>
+                    <VersionInfo Name="MajorVer">2</VersionInfo>
+                    <VersionInfo Name="MinorVer">1</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">207</VersionInfo>
+                    <VersionInfo Name="Debug">True</VersionInfo>
+                    <VersionInfo Name="PreRelease">True</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1033</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">MLSoft 2012</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription">Controllo carburante disponibile</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileVersion">2.1.0.207</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename">Diesel when sailing</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductName">Diesel</VersionInfoKeys>
+                    <VersionInfoKeys Name="ProductVersion">2.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments">info mailto:mlsoft@iol.it</VersionInfoKeys>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">Diesel4.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <ModelSupport>False</ModelSupport>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+</Project>

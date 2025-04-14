@@ -1,14 +1,35 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
+<<<<<<< HEAD
+<<<<<<<< HEAD:2022/Sicurezza/Sicurezza.dproj
         <ProjectGuid>{C68A3823-D074-4D2B-9947-E0F994648E08}</ProjectGuid>
+========
+        <ProjectGuid>{D944524F-66E6-4097-B625-042C9FA05916}</ProjectGuid>
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2021/TagStore/.svn/pristine/fb/fb4be20d31be4a4e66b1b8e03d1ec495cdfdd62a.svn-base
+=======
+        <ProjectGuid>{C68A3823-D074-4D2B-9947-E0F994648E08}</ProjectGuid>
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
         <ProjectVersion>19.2</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
+<<<<<<< HEAD
+<<<<<<<< HEAD:2022/Sicurezza/Sicurezza.dproj
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>Sicurezza.dpr</MainSource>
+<<<<<<< HEAD
+========
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <TargetedPlatforms>3</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <MainSource>TagStore.dpr</MainSource>
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2021/TagStore/.svn/pristine/fb/fb4be20d31be4a4e66b1b8e03d1ec495cdfdd62a.svn-base
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -46,8 +67,18 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+<<<<<<< HEAD
+<<<<<<<< HEAD:2022/Sicurezza/Sicurezza.dproj
         <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
         <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+========
+        <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</DCC_DcuOutput>
+        <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</DCC_ExeOutput>
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2021/TagStore/.svn/pristine/fb/fb4be20d31be4a4e66b1b8e03d1ec495cdfdd62a.svn-base
+=======
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
@@ -57,10 +88,24 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+<<<<<<< HEAD
+<<<<<<<< HEAD:2022/Sicurezza/Sicurezza.dproj
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
         <SanitizedProjectName>Sicurezza</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;vclactnband;vclFireDAC;bindcompvclsmp;tethering;svnui;JvGlobus;FireDACADSDriver;JvPluginSystem;frx27;JvMM;vcltouch;JvBands;vcldb;bindcompfmx;svn;JvJans;JvNet;inetdb;JvAppFrm;JvDotNetCtrls;fmx;FireDACIBDriver;fmxdae;vcledge;JvWizards;dbexpress;IndyCore;vclx;JvPageComps;dsnap;FireDACCommon;JvDB;RESTBackendComponents;VCLRESTComponents;soapserver;JclDeveloperTools;vclie;bindengine;DBXMySQLDriver;CloudService;JvCmp;FireDACMySQLDriver;JvHMI;FireDACCommonODBC;FireDACCommonDriver;inet;IndyIPCommon;bindcompdbx;JvCustom;frxDB27;vcl;IndyIPServer;JvXPCtrls;IndySystem;bindcompvclwinx;dsnapcon;madExcept_;dclAbsDBd27;FireDACMSAccDriver;fmxFireDAC;vclimg;madBasic_;Jcl;FireDAC;JvCore;JvCrypt;FireDACSqliteDriver;FireDACPgDriver;soaprtl;DbxCommonDriver;JvDlgs;JvRuntimeDesign;JvManagedThreads;xmlrtl;soapmidas;JvTimeFramework;fmxobj;vclwinx;vclAbsDBd27;rtl;madDisAsm_;DbxClientDriver;CustomIPTransport;vcldsnap;JvSystem;JvStdCtrls;bindcomp;appanalytics;IndyIPClient;EurekaLogCore;bindcompvcl;frxe27;JvDocking;dbxcds;VclSmp;JvPascalInterpreter;adortl;JclVcl;dsnapxml;dbrtl;IndyProtocols;inetdbxpress;JvControls;JvPrintPreview;JclContainers;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+<<<<<<< HEAD
+========
+        <SanitizedProjectName>TagStore</SanitizedProjectName>
+        <DCC_UnitSearchPath>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;vclactnband;vclFireDAC;bindcompvclsmp;tethering;svnui;JvGlobus;FireDACADSDriver;JvPluginSystem;frx27;JvMM;vcltouch;JvBands;vcldb;bindcompfmx;svn;JvJans;JvNet;inetdb;JvAppFrm;FmxTeeUI;JvDotNetCtrls;fmx;FireDACIBDriver;fmxdae;vcledge;vclib;JvWizards;dbexpress;IndyCore;vclx;frxTee27;JvPageComps;dsnap;FireDACCommon;JvDB;RESTBackendComponents;VCLRESTComponents;soapserver;JclDeveloperTools;vclie;FMXfrxDB27;bindengine;DBXMySQLDriver;CloudService;JvCmp;FireDACMySQLDriver;JvHMI;FireDACCommonODBC;FireDACCommonDriver;inet;IndyIPCommon;bindcompdbx;frxDB27;FMXfrx27;vcl;IndyIPServer;JvCustom;JvXPCtrls;IndySystem;bindcompvclwinx;dsnapcon;madExcept_;dclAbsDBd27;FireDACMSAccDriver;fmxFireDAC;vclimg;madBasic_;TeeDB;FireDAC;Jcl;JvCore;JvCrypt;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FMXTee;soaprtl;DbxCommonDriver;JvDlgs;JvRuntimeDesign;ibxpress;Tee;JvManagedThreads;xmlrtl;soapmidas;ibxbindings;fmxobj;vclwinx;JvTimeFramework;rtl;vclAbsDBd27;DbxClientDriver;madDisAsm_;CustomIPTransport;vcldsnap;CodeSiteExpressPkg;JvSystem;JvStdCtrls;bindcomp;appanalytics;IndyIPClient;EurekaLogCore;bindcompvcl;frxe27;TeeUI;JvDocking;dbxcds;VclSmp;JvPascalInterpreter;adortl;JclVcl;dsnapxml;dbrtl;IndyProtocols;inetdbxpress;JvControls;JvPrintPreview;JclContainers;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2021/TagStore/.svn/pristine/fb/fb4be20d31be4a4e66b1b8e03d1ec495cdfdd62a.svn-base
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -69,7 +114,23 @@
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
+<<<<<<< HEAD
+<<<<<<<< HEAD:2022/Sicurezza/Sicurezza.dproj
         <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;vclactnband;vclFireDAC;bindcompvclsmp;tethering;FireDACADSDriver;vcltouch;vcldb;bindcompfmx;inetdb;fmx;FireDACIBDriver;fmxdae;vcledge;dbexpress;IndyCore;vclx;dsnap;FireDACCommon;RESTBackendComponents;VCLRESTComponents;soapserver;vclie;bindengine;DBXMySQLDriver;CloudService;FireDACMySQLDriver;FireDACCommonODBC;FireDACCommonDriver;inet;IndyIPCommon;bindcompdbx;vcl;IndyIPServer;IndySystem;bindcompvclwinx;dsnapcon;FireDACMSAccDriver;fmxFireDAC;vclimg;FireDAC;FireDACSqliteDriver;FireDACPgDriver;soaprtl;DbxCommonDriver;xmlrtl;soapmidas;fmxobj;vclwinx;rtl;DbxClientDriver;CustomIPTransport;vcldsnap;bindcomp;appanalytics;IndyIPClient;bindcompvcl;dbxcds;VclSmp;adortl;dsnapxml;dbrtl;IndyProtocols;inetdbxpress;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+========
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;vclactnband;vclFireDAC;bindcompvclsmp;tethering;FireDACADSDriver;vcltouch;vcldb;bindcompfmx;inetdb;FmxTeeUI;fmx;FireDACIBDriver;fmxdae;vcledge;vclib;dbexpress;IndyCore;vclx;dsnap;FireDACCommon;RESTBackendComponents;VCLRESTComponents;soapserver;vclie;bindengine;DBXMySQLDriver;CloudService;FireDACMySQLDriver;FireDACCommonODBC;FireDACCommonDriver;inet;IndyIPCommon;bindcompdbx;vcl;IndyIPServer;IndySystem;bindcompvclwinx;dsnapcon;FireDACMSAccDriver;fmxFireDAC;vclimg;TeeDB;FireDAC;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FMXTee;soaprtl;DbxCommonDriver;ibxpress;Tee;xmlrtl;soapmidas;ibxbindings;fmxobj;vclwinx;rtl;DbxClientDriver;CustomIPTransport;vcldsnap;bindcomp;appanalytics;IndyIPClient;bindcompvcl;TeeUI;dbxcds;VclSmp;adortl;dsnapxml;dbrtl;IndyProtocols;inetdbxpress;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</DCC_ExeOutput>
+        <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</DCC_DcuOutput>
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2021/TagStore/.svn/pristine/fb/fb4be20d31be4a4e66b1b8e03d1ec495cdfdd62a.svn-base
+=======
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;vclactnband;vclFireDAC;bindcompvclsmp;tethering;FireDACADSDriver;vcltouch;vcldb;bindcompfmx;inetdb;fmx;FireDACIBDriver;fmxdae;vcledge;dbexpress;IndyCore;vclx;dsnap;FireDACCommon;RESTBackendComponents;VCLRESTComponents;soapserver;vclie;bindengine;DBXMySQLDriver;CloudService;FireDACMySQLDriver;FireDACCommonODBC;FireDACCommonDriver;inet;IndyIPCommon;bindcompdbx;vcl;IndyIPServer;IndySystem;bindcompvclwinx;dsnapcon;FireDACMSAccDriver;fmxFireDAC;vclimg;FireDAC;FireDACSqliteDriver;FireDACPgDriver;soaprtl;DbxCommonDriver;xmlrtl;soapmidas;fmxobj;vclwinx;rtl;DbxClientDriver;CustomIPTransport;vcldsnap;bindcomp;appanalytics;IndyIPClient;bindcompvcl;dbxcds;VclSmp;adortl;dsnapxml;dbrtl;IndyProtocols;inetdbxpress;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
@@ -78,11 +139,19 @@
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
+<<<<<<< HEAD
+        <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</DCC_DcuOutput>
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+<<<<<<< HEAD
+<<<<<<<< HEAD:2022/Sicurezza/Sicurezza.dproj
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
         <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2022\Sicurezza\</DCC_DcpOutput>
         <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2022\Sicurezza\</DCC_ExeOutput>
         <DCC_UnitSearchPath>C:\Users\manli\Documents\Lavori\Projects\2022\Sicurezza\;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
@@ -90,6 +159,7 @@
         <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2022\Sicurezza\</BRCC_OutputDir>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
+<<<<<<< HEAD
         <VerInfo_Build>1</VerInfo_Build>
         <VerInfo_MajorVer>2022</VerInfo_MajorVer>
         <VerInfo_MinorVer>12</VerInfo_MinorVer>
@@ -97,6 +167,44 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2022.12.28.1;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2022/12/28 21:08:20</VerInfo_Keys>
         <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
         <DCC_MapFile>3</DCC_MapFile>
+========
+        <VerInfo_MajorVer>2021</VerInfo_MajorVer>
+        <VerInfo_MinorVer>10</VerInfo_MinorVer>
+        <VerInfo_Release>26</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2021.10.26.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/10/26 15:49:25</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</DCC_DcpOutput>
+        <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</DCC_ExeOutput>
+        <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</DCC_DcuOutput>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\</BRCC_OutputDir>
+        <Debugger_HostApplication>C:\Users\manli\Documents\Lavori\Projects\TabStore\</Debugger_HostApplication>
+        <Debugger_CWD>C:\Users\manli\Documents\Lavori\Projects\TabStore\</Debugger_CWD>
+        <Debugger_DebugSourcePath>C:\Users\manli\Documents\Lavori\Projects\TabStore\;$(Debugger_DebugSourcePath)</Debugger_DebugSourcePath>
+        <VerInfo_Build>37</VerInfo_Build>
+        <VerInfo_MajorVer>2021</VerInfo_MajorVer>
+        <VerInfo_MinorVer>11</VerInfo_MinorVer>
+        <VerInfo_Release>30</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=MLSoft 2021;FileDescription=$(MSBuildProjectName);FileVersion=2021.11.30.37;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2021/11/30 14:22:34</VerInfo_Keys>
+        <BRCC_IncludePath>C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\;$(BRCC_IncludePath)</BRCC_IncludePath>
+        <VerInfo_Debug>true</VerInfo_Debug>
+        <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
+        <Icon_MainIcon>TagStore_Icon.ico</Icon_MainIcon>
+        <OutputExt>exe</OutputExt>
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2021/TagStore/.svn/pristine/fb/fb4be20d31be4a4e66b1b8e03d1ec495cdfdd62a.svn-base
+=======
+        <VerInfo_Build>3</VerInfo_Build>
+        <VerInfo_MajorVer>2023</VerInfo_MajorVer>
+        <VerInfo_MinorVer>5</VerInfo_MinorVer>
+        <VerInfo_Release>15</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2023.5.15.3;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;LastCompiledTime=2023/05/15 18:32:05</VerInfo_Keys>
+        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
+        <DCC_MapFile>3</DCC_MapFile>
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -133,11 +241,21 @@
         <Borland.ProjectType>Application</Borland.ProjectType>
         <BorlandProject>
             <Delphi.Personality>
+<<<<<<< HEAD
+                <Source>
+                    <Source Name="MainSource">TagStore.dpr</Source>
+                </Source>
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
                 <Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD27\dclfrxtee27.bpl">FastReport 6.0 Tee Components</Excluded_Packages>
                 </Excluded_Packages>
+<<<<<<< HEAD
+<<<<<<<< HEAD:2022/Sicurezza/Sicurezza.dproj
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
                 <Source>
                     <Source Name="MainSource">Sicurezza.dpr</Source>
                 </Source>
@@ -146,6 +264,28 @@
                 <DeployFile LocalName="Sicurezza.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>Sicurezza.exe</RemoteName>
+<<<<<<< HEAD
+========
+            </Delphi.Personality>
+            <Deployment Version="3">
+                <DeployFile LocalName="TagStore.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>TagStore.rsm</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win32\Debug\TagStore.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>TagStore.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="TagStore.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>TagStore.exe</RemoteName>
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2021/TagStore/.svn/pristine/fb/fb4be20d31be4a4e66b1b8e03d1ec495cdfdd62a.svn-base
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

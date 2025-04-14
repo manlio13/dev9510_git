@@ -2,6 +2,7 @@
 program Ecom;
 {$WEAKLINKRTTI ON} //per eliminare RTTI e ridurre size
 uses
+<<<<<<< HEAD
   {$IFDEF EurekaLog}
   EMemLeaks,
   EResLeaks,
@@ -15,6 +16,13 @@ uses
   EDialogWinAPIStepsToReproduce,
   ExceptionLog7,
   {$ENDIF EurekaLog}
+=======
+  madExcept,
+  madLinkDisAsm,
+  madListHardware,
+  madListProcesses,
+  madListModules,
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   Vcl.Forms,
   Unit1 in 'Unit1.pas' {Form1};
 
@@ -27,4 +35,7 @@ begin
   Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0

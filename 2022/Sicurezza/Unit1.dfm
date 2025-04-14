@@ -18,7 +18,11 @@ object Form1: TForm1
     Top = 32
     Width = 75
     Height = 25
+<<<<<<< HEAD
     Caption = 'Button1'
+=======
+    Caption = 'Send mail'
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     TabOrder = 0
     OnClick = Button1Click
   end

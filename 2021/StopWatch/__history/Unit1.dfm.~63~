@@ -1,0 +1,111 @@
+object Form1: TForm1
+  Left = 457
+  Top = 257
+  BorderIcons = []
+  Caption = 'Reaction times - Cicles of 10           Please read Readme file'
+  ClientHeight = 186
+  ClientWidth = 418
+  Color = clNavy
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsStayOnTop
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poDesigned
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 160
+    Width = 350
+    Height = 14
+    Caption = 'Click on spacebar when red circle appears or hear a  beep'
+    Color = clBlue
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -12
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 272
+    Top = 32
+    Width = 75
+    Height = 25
+    Caption = 'start'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 272
+    Top = 63
+    Width = 75
+    Height = 25
+    Caption = 'stop'
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+  object Edit1: TEdit
+    Left = 272
+    Top = 127
+    Width = 121
+    Height = 21
+    TabOrder = 2
+    Text = 'ms'
+  end
+  object Panel1: TPanel
+    Left = 48
+    Top = 8
+    Width = 81
+    Height = 65
+    TabOrder = 3
+    object Shape1: TShape
+      Left = 16
+      Top = 15
+      Width = 49
+      Height = 34
+      Brush.Color = clRed
+      Shape = stCircle
+      Visible = False
+    end
+  end
+  object Edit2: TEdit
+    Left = 61
+    Top = 78
+    Width = 57
+    Height = 21
+    TabOrder = 4
+  end
+  object Button3: TButton
+    Left = 24
+    Top = 106
+    Width = 75
+    Height = 25
+    Caption = 'Visual'
+    TabOrder = 5
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 120
+    Top = 106
+    Width = 75
+    Height = 25
+    Caption = 'Acustic'
+    TabOrder = 6
+    OnClick = Button4Click
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 0
+    OnTimer = Timer1Timer
+    Left = 192
+    Top = 56
+  end
+end

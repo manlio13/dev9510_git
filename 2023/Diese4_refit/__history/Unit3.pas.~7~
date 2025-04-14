@@ -1,0 +1,68 @@
+unit Unit3;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm3 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    procedure Button2Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Edit1KeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+  alrmstr:string;
+implementation
+
+{$R *.dfm}
+ uses
+ unit1;
+procedure TForm3.Button1Click(Sender: TObject);
+begin
+        alrmstr:=edit1.Text;
+        myini.WriteString('settings','alarm',alrmstr);
+        alarm:=strToFloat(alrmstr);
+        alarm:=alarm/100;   //viene diviso per 100 quì e alla lettura dall'INI
+        ALRM:=True;
+        Form1.PBComputing(sender);
+        showmessage('Settings OK - Fuel reserve recorded !');
+        form3.Visible:=False;
+        Exit;
+end;
+
+procedure TForm3.Button2Click(Sender: TObject);
+begin
+showmessage('Value not loaded - exit ');
+close;
+end;
+
+procedure TForm3.Edit1KeyPress(Sender: TObject; var Key: Char);
+begin
+if key=#13 then
+button1click(Sender);
+end;
+
+procedure TForm3.FormShow(Sender: TObject);
+begin
+Form3.Visible:=True;
+edit1.SetFocus;
+edit1.Color:=clbackground;
+EXIT;
+end;
+
+end.

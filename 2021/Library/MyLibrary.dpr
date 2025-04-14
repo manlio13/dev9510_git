@@ -12,7 +12,11 @@ uses
 
 begin
   Application.Initialize;
+<<<<<<< HEAD
   //ABSMain.StartDisconnected:=True;      //consigliato da Absolute Database support
+=======
+  ABSMain.StartDisconnected:=True;      //consigliato da Absolute Database support
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Library';
   Application.HelpFile := '.\library.chm';

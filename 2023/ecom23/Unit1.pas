@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ï»¿unit Unit1;           // Release 2020 en
+=======
+unit Unit1;           // Release 2024.9.7 en
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 interface
 
 uses
@@ -7,7 +11,11 @@ uses
   Datasnap.DBClient, Data.DB, ABSMain, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.StdCtrls,
   Vcl.Mask,System.UITypes, Vcl.ComCtrls,System.DateUtils,JvSHFileOperation,JvBaseDlg,
   frxClass, frxDBSet, frxExportPDF, JvExStdCtrls, JvHtControls, JvExControls,
+<<<<<<< HEAD
   JvDBLookup,System.Types,ShellAPI, frxExportBaseDialog, Vcl.ToolWin;
+=======
+  JvDBLookup,System.Types,ShellAPI, frxExportBaseDialog;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 
   function GetAppVersionStr : string; forward;
 type
@@ -51,7 +59,10 @@ type
     Label7: TLabel;
     frxReport2: TfrxReport;
     Button10: TButton;
+<<<<<<< HEAD
     StatusBar1: TStatusBar;
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -97,13 +108,25 @@ begin
  ABSTable2.TableName:='ecom2TB';
  ABSTable2.Open;
  TFloatField(ABSTable1.FieldByName('Prezzo')).DisplayFormat := '0.00';
+<<<<<<< HEAD
+=======
+ TDateField(ABSTable1.FieldByName('DataOrd')).DisplayFormat := 'dd.mm.yy';
+ TDateField(ABSTable1.FieldByName('DataPag')).DisplayFormat := 'dd.mm.yy';
+ TDateField(ABSTable1.FieldByName('DataSped')).DisplayFormat := 'dd.mm.yy';
+ TDateField(ABSTable1.FieldByName('DataCons')).DisplayFormat := 'dd.mm.yy';
+
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
  ABSTable1.Last;
  ABSTable1.Edit;
  ABSTable2.Edit;
  DataSource1.DataSet.Edit;
  //inizializzazione
  edit5.Text:='';
+<<<<<<< HEAD
  edit1.Text:=DateToStr(Now);
+=======
+ Edit1.text := FormatDateTime('dd.mm.yyyy',Now);  //formattare una stringa
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
  edit2.Text:='';
  edit3.Text:='';
  edit4.Text:='';
@@ -112,7 +135,11 @@ begin
  try
   AbsTable1.First; { Go to first record, which sets Eof False }
   inizio:= ABSTable1.FieldByName('DataOrd').AsDateTime;
+<<<<<<< HEAD
   Edit5.Text:= DateTimeToStr(inizio);
+=======
+  Edit5.Text:= FormatDateTime('dd.mm.yyyy',inizio);
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   Label4.Caption:='From '+ABSTable1.FieldByName('DataOrd').AsString;
   while (not AbsTable1.Eof) do { Cycle until Eof is True }
   begin
@@ -130,7 +157,11 @@ begin
    end;
   
   end;
+<<<<<<< HEAD
 
+=======
+  Form1.Visible:=True;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
    Form1.Caption:='Online orders control , ' + ' Version : '+ GetAppVersionStr;
 end;
 
@@ -302,7 +333,11 @@ end;
 procedure TForm1.Button8Click(Sender: TObject);     //Backup
    var
    dir:string;
+<<<<<<< HEAD
    dirList:TStringList;      //occorre creare un StringList perchï¿½ JVshFileOperation non accetta altro che da StingList
+=======
+   dirList:TStringList;      //occorre creare un StringList perchè JVshFileOperation non accetta altro che da StingList
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 begin
    if MessageDlg('Do you confirm to backup the database ?',
              mtconfirmation, [mbYes,mbNo], 0) = mrYes then
@@ -377,6 +412,10 @@ begin
                dbgrid1.Columns.Items[clnu].Field.Value:=DateToStr(Now);
                //ABSTable1.Post;
                Form1.DBNavigator1Click(nil,nbPost);
+<<<<<<< HEAD
+=======
+               Exit;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
              end;
        end;
 
@@ -422,7 +461,11 @@ begin
             begin
               ABSTable2.Edit;
               salta:=False;
+<<<<<<< HEAD
               Exit;                  //  fermato quï¿½ nella procedura di inserire un dato nuovo
+=======
+              Exit;                  //  fermato quì nella procedura di inserire un dato nuovo
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
             end;
              5 :
             begin
@@ -509,8 +552,13 @@ begin
           end;
         end;
 
+<<<<<<< HEAD
    end; {else              // righe di codice eliminate perchï¿½ bloccavano la dbgrid quando
        if clnu=1 then      // si cliccava sul campo prodotto cioï¿½ clnu=1
+=======
+   end; {else              // righe di codice eliminate perchè bloccavano la dbgrid quando
+       if clnu=1 then      // si cliccava sul campo prodotto cioè clnu=1
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
      begin
        DBGrid1.SetFocus;
        // dbgrid1.SelectedIndex := 1;
@@ -554,8 +602,14 @@ procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
      if (Button = nbPost)  then
     begin
          ABSTable1.First;
+<<<<<<< HEAD
          while not ABSTable1.Eof do   //lo scan serve per consentire piï¿½ di una modifica/aggiunta
           begin
+=======
+         while not ABSTable1.Eof do   //lo scan serve per consentire più di una modifica/aggiunta
+          begin
+           Form1.Visible:=False;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
              d1:=ABSTable1.FieldByName('DataOrd').AsDateTime;
              d2:=ABSTable1.FieldByName('Datacons').AsDateTime;
              d3:=ABSTable1.FieldByName('DataSped').AsDateTime;
@@ -579,7 +633,11 @@ procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
             end;
             ABSTable1.Next;
           end;
+<<<<<<< HEAD
 
+=======
+         // Form1.Visible:=True;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
            FormCreate(Self);
     end;
   end;

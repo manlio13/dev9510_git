@@ -3,15 +3,29 @@ object Form1: TForm1
   Top = 0
   Hint = 'MLSoft-2013'
   HelpContext = 10
+<<<<<<< HEAD
   ActiveControl = DBNavigator1
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   Anchors = []
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   BorderWidth = 3
+<<<<<<< HEAD
   Caption = 'Works   LOG   v. 8.1'
   ClientHeight = 515
   ClientWidth = 869
   Color = clSkyBlue
+=======
+  Caption = 'Works   LOG   v. 9.0'
+  ClientHeight = 516
+  ClientWidth = 868
+  Color = clSkyBlue
+  Constraints.MaxHeight = 551
+  Constraints.MaxWidth = 880
+  Constraints.MinHeight = 551
+  Constraints.MinWidth = 880
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clNavy
   Font.Height = -11
@@ -327,8 +341,13 @@ object Form1: TForm1
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   DesignSize = (
+<<<<<<< HEAD
     869
     515)
+=======
+    868
+    516)
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -369,7 +388,11 @@ object Form1: TForm1
   end
   object DBGrid1: TDBGrid
     Left = 8
+<<<<<<< HEAD
     Top = 81
+=======
+    Top = 85
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     Width = 853
     Height = 306
     Anchors = []
@@ -701,7 +724,11 @@ object Form1: TForm1
   end
   object Button6: TButton
     Left = 275
+<<<<<<< HEAD
     Top = 484
+=======
+    Top = 483
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     Width = 75
     Height = 25
     Caption = 'Done'
@@ -711,7 +738,11 @@ object Form1: TForm1
   object Button7: TButton
     Left = 434
     Top = 482
+<<<<<<< HEAD
     Width = 75
+=======
+    Width = 89
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     Height = 25
     Caption = 'Backup'
     TabOrder = 21
@@ -821,6 +852,7 @@ object Form1: TForm1
     Left = 360
     Top = 272
   end
+<<<<<<< HEAD
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
     CloseDataSource = False
@@ -832,6 +864,16 @@ object Form1: TForm1
     BCDToCurrency = False
     Left = 576
     Top = 320
+=======
+  object ABSQuery1: TABSQuery
+    CurrentVersion = '7.93 '
+    DatabaseName = 'DailyLog.abs'
+    InMemory = False
+    ReadOnly = False
+    DataSource = DataSource1
+    Left = 152
+    Top = 256
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   end
   object frxReport1: TfrxReport
     Version = '6.7'
@@ -841,15 +883,25 @@ object Form1: TForm1
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
+<<<<<<< HEAD
     ReportOptions.CreateDate = 43222.774254953700000000
     ReportOptions.LastChange = 43222.774254953700000000
+=======
+    ReportOptions.CreateDate = 45056.795786157400000000
+    ReportOptions.LastChange = 45057.457746030090000000
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
+<<<<<<< HEAD
     Left = 488
     Top = 304
+=======
+    Left = 520
+    Top = 264
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -871,19 +923,70 @@ object Form1: TForm1
       BottomMargin = 10.000000000000000000
       Frame.Typ = []
       MirrorMode = []
+<<<<<<< HEAD
       object MasterData1: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
         Height = 18.897650000000000000
         Top = 84.000000000000000000
+=======
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 49.133890000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          AllowVectorExport = True
+          Left = 283.464750000000000000
+          Width = 162.519790000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'LIST  OF  WORKS')
+          ParentFont = False
+        end
+        object Memo2: TfrxMemoView
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 30.236240000000000000
+          Width = 608.504330000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            
+              'Date                        What                                ' +
+              '                                                                ' +
+              'Type')
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 26.456710000000000000
+        Top = 128.504020000000000000
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
         Width = 718.110700000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
         object frxDBDataset1Data: TfrxMemoView
+<<<<<<< HEAD
           AllowVectorExport = True
           Left = 3.779530000000000000
           Width = 79.370130000000000000
+=======
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 7.559060000000000000
+          Top = 3.779530000000000000
+          Width = 113.385900000000000000
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
           Height = 18.897650000000000000
           DataField = 'Data'
           DataSet = frxDBDataset1
@@ -893,15 +996,26 @@ object Form1: TForm1
             '[frxDBDataset1."Data"]')
         end
         object frxDBDataset1Cosa: TfrxMemoView
+<<<<<<< HEAD
           AllowVectorExport = True
           Left = 86.929190000000000000
           Width = 517.795610000000000000
           Height = 18.897650000000000000
           DataField = ' Cosa'
+=======
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 128.504020000000000000
+          Top = 3.779530000000000000
+          Width = 393.071120000000000000
+          Height = 18.897650000000000000
+          DataField = 'Cosa'
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Frame.Typ = []
           Memo.UTF8W = (
+<<<<<<< HEAD
             '[frxDBDataset1." Cosa"]')
         end
         object frxDBDataset1Tipo: TfrxMemoView
@@ -910,17 +1024,34 @@ object Form1: TForm1
           Width = 128.504020000000000000
           Height = 18.897650000000000000
           DataField = ' Tipo'
+=======
+            '[frxDBDataset1."Cosa"]')
+        end
+        object frxDBDataset1Tipo: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 532.913730000000000000
+          Top = 3.779530000000000000
+          Width = 158.740260000000000000
+          Height = 18.897650000000000000
+          DataField = 'Tipo'
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Frame.Typ = []
           Memo.UTF8W = (
+<<<<<<< HEAD
             '[frxDBDataset1." Tipo"]')
+=======
+            '[frxDBDataset1."Tipo"]')
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
         end
       end
       object PageFooter1: TfrxPageFooter
         FillType = ftBrush
         Frame.Typ = []
         Height = 22.677180000000000000
+<<<<<<< HEAD
         Top = 124.000000000000000000
         Width = 718.110700000000000000
         object Memo3: TfrxMemoView
@@ -935,11 +1066,30 @@ object Form1: TForm1
         object Page: TfrxMemoView
           AllowVectorExport = True
           Left = 642.520100000000000000
+=======
+        Top = 215.433210000000000000
+        Width = 718.110700000000000000
+        object Page: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 544.252320000000000000
+          Width = 45.354360000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Page]')
+        end
+        object Page2: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 604.724800000000000000
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
           Width = 79.370130000000000000
           Height = 18.897650000000000000
           Frame.Typ = []
           Memo.UTF8W = (
             '[Page#]')
+<<<<<<< HEAD
         end
       end
       object PageHeader1: TfrxPageHeader
@@ -980,10 +1130,27 @@ object Form1: TForm1
               'Data                          Cosa                              ' +
               '                                              Tipo')
           ParentFont = False
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
         end
       end
     end
   end
+<<<<<<< HEAD
+=======
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'Filed=Data'
+      'What=Cosa'
+      'Type=Tipo')
+    DataSet = ABSQuery1
+    BCDToCurrency = False
+    Left = 152
+    Top = 136
+  end
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   object frxPDFExport1: TfrxPDFExport
     UseFileCache = True
     ShowProgress = True
@@ -1008,6 +1175,7 @@ object Form1: TForm1
     PdfA = False
     PDFStandard = psNone
     PDFVersion = pv17
+<<<<<<< HEAD
     Left = 680
     Top = 304
   end
@@ -1019,5 +1187,9 @@ object Form1: TForm1
     DataSource = DataSource1
     Left = 152
     Top = 256
+=======
+    Left = 432
+    Top = 312
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   end
 end

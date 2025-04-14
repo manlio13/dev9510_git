@@ -1,15 +1,27 @@
 ﻿[Closed Files]
+<<<<<<<< HEAD:2021/TagStore/TagStore.dsk
 File_0=TSourceModule,'C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Unit1.pas',0,1,1,43,8,0,0,,
 File_1=TSourceModule,'K:\Embarcadero\DelphiXE5\Installazione_Delphi\jedi\versione perXE5\files\jvcl\run\JvSHFileOperation.pas',0,1,1,19,39,0,0,,
 File_2=TSourceModule,'C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2010\Name2date\Fotofile.pas',0,1,62,1,138,0,0,,
 
 [Modules]
 Module0=C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\Unit1.pas
+========
+File_0=TSourceModule,'K:\Embarcadero\DelphiXE5\Installazione_Delphi\jedi\versione perXE5\files\jvcl\run\JvSHFileOperation.pas',0,1,1,19,39,0,0,,
+File_1=TSourceModule,'C:\Users\Manlio Laschena\Documents\RAD Studio\Projects\2010\Name2date\Fotofile.pas',0,1,62,1,138,0,0,,
+
+[Modules]
+Module0=C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Unit1.pas
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2022/WorksLog/WrksLog.~dsk
 Module1=default.htm
 Count=2
 EditWindowCount=1
 
+<<<<<<<< HEAD:2021/TagStore/TagStore.dsk
 [C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\Unit1.pas]
+========
+[C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Unit1.pas]
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2022/WorksLog/WrksLog.~dsk
 ModuleType=TSourceModule
 
 [default.htm]
@@ -17,7 +29,11 @@ ModuleType=TURLModule
 
 [EditWindow0]
 ViewCount=2
+<<<<<<<< HEAD:2021/TagStore/TagStore.dsk
 CurrentEditView=C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\Unit1.pas
+========
+CurrentEditView=C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Unit1.pas
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2022/WorksLog/WrksLog.~dsk
 View0=0
 View1=1
 PercentageSizes=1
@@ -55,6 +71,7 @@ WelcomePageURL=bds:/default.htm
 
 [View1]
 CustomEditViewType=TEditView
+<<<<<<<< HEAD:2021/TagStore/TagStore.dsk
 Module=C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\Unit1.pas
 CursorX=1
 CursorY=1
@@ -63,6 +80,16 @@ LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=C:\Users\manli\Documents\Lavori\Projects\2021\TagStore\Unit1.pas
+========
+Module=C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Unit1.pas
+CursorX=82
+CursorY=7
+TopLine=1
+LeftCol=23
+Elisions=
+Bookmarks=
+EditViewName=C:\Users\manli\Documents\Lavori\Projects\2022\WorksLog\Unit1.pas
+>>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0:2022/WorksLog/WrksLog.~dsk
 
 [Watches]
 Count=0

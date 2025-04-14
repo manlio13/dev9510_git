@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 unit Unit1;
+=======
+unit Unit1;   //03/08/24
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 
 interface
 
@@ -30,7 +34,10 @@ type
     DBNavigator1: TDBNavigator;
     DataSource1: TDataSource;
     Button6: TButton;
+<<<<<<< HEAD
     frxReport1: TfrxReport;
+=======
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     frxDBDataset1: TfrxDBDataset;
     frxPDFExport1: TfrxPDFExport;
     Button7: TButton;
@@ -38,6 +45,12 @@ type
     Button8: TButton;
     Button5: TButton;
     CheckBox1: TCheckBox;
+    Edit5: TEdit;
+    Label5: TLabel;
+<<<<<<< HEAD
+=======
+    frxReport1: TfrxReport;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -50,18 +63,30 @@ type
     procedure CheckBox1Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
+<<<<<<< HEAD
   private
     { Private declarations }
   public
+=======
+    private
+    { Private declarations }
+    public
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     { Public declarations }
   end;
 
-var
+  var
   Form1: TForm1;               //per inserire un chm serve caricare la unit
   versione:string;             //Vcl.HtmlHelViewer ed inserire
   dato,k:Integer;                //Application.HelpFile := '.\library.chm'; in .dpr
   N:array[1..100] of Integer;   //e settare in Form1 HelpContext ed HelpFile
+<<<<<<< HEAD
   trova,scelto,shelf:Boolean   ;
+=======
+  trova,scelto,shelf:Boolean;
+
+
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 implementation
 uses
 Unit2,Vcl.HtmlHelpViewer;
@@ -70,9 +95,9 @@ Unit2,Vcl.HtmlHelpViewer;
 procedure TForm1.FormCreate(Sender: TObject);        //form
 
   begin
+     ABSTable1.Active:=True;
      ABSDatabase1.DatabaseFilename:= ExtractFilePath(Application.ExeName)+'MyLibrary.ABS';
      ABSDatabase1.Connected:=True;
-     ABSTable1.Active:=True;
      ABSDatabase1.Open;
      ABSTable1.TableName:='Cat';
      ABSTable1.Open;
@@ -82,13 +107,23 @@ procedure TForm1.FormCreate(Sender: TObject);        //form
      trova:=False;
      scelto:=False;
      shelf:=False;
+<<<<<<< HEAD
+=======
+     //Form1.FormStyle := fsStayOnTop;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   end;
 
 procedure TForm1.Button1Click(Sender: TObject);  //ADD
 Begin
+<<<<<<< HEAD
    if (Edit1.Text='')OR (Edit2.Text='') or (Edit3.Text='') or (Edit4.Text='') then
      begin
      ShowMessage('Please fill in Data to be stored ');
+=======
+   if (Edit1.Text='')OR (Edit2.Text='') or (Edit3.Text='') or (Edit4.Text='')or (Edit5.text='')then
+     begin
+     ShowMessage('Please fill in Data to be stored'+#13+ ' or Data still missing !');
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
      Exit;
      end else
       with ABSQuery1 do
@@ -103,11 +138,22 @@ Begin
          if ABSQuery1.recordCount >0 then
          if MessageDlg('A similar book already exists.'+#13+
          ' Do you want to quit? ',mtConfirmation, mbYesNo,0)=mrYes then
+<<<<<<< HEAD
          Exit;
+=======
+          begin
+            Edit1.Text:='';
+            Edit2.Text:='';
+            Edit1.SetFocus;
+            Exit;
+          end;
+
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
        end;
 
       begin                               //registra il libro
            ABSTable1.ReadOnly:=False;
+<<<<<<< HEAD
        ABSTable1.Append;
             ABSTable1.FieldByName('Title').AsString:=Edit1.Text;
             ABSTable1.FieldByName('Author').AsString:=Edit2.Text;
@@ -122,30 +168,128 @@ Begin
           Edit4.Text:='';
           end;
          ShowMessage('Uploaded');
+=======
+           if (Edit1.Text='')OR (Edit2.Text='') or (Edit3.Text='') or (Edit4.Text='')or (Edit5.text='')then
+           begin
+             ShowMessage('Data still missing ! ');
+             Exit;
+           end else
+           ABSTable1.Append;
+            ABSTable1.FieldByName('Title').AsString:=Edit1.Text;
+            ABSTable1.FieldByName('Author').AsString:=Edit2.Text;
+            ABSTable1.FieldByName('Row').AsString:=Edit4.Text;
+            ABSTable1.FieldByName('Col').AsString:=Edit3.Text;
+            ABSTable1.FieldByName('Location').AsString:=Edit5.Text;
+           ABSTable1.Post;
+          Edit1.Text:='';
+          Edit2.Text:='';
+
+          if CheckBox1.checked=False then
+          begin
+           Edit3.Text:='';
+           Edit4.Text:='';
+           Edit5.text:='';
+          end;
+         ShowMessage('Uploaded');
+         Edit1.SetFocus;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
          Exit;
        end;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);        //find
     var
+<<<<<<< HEAD
     i,t:Integer;
  begin
      ABSTable1.Filtered:=False;
      ABSTable1.first;
+     t:=0;
     if ABSTable1.isEmpty then
+=======
+    i,t,m:Integer;
+    label
+    punto;
+ begin
+     ABSTable1.Filtered:=False;
+     ABSTable1.first;
+     DataSource1.DataSet:=ABSQuery1;
+     t:=0;
+    if (ABSTable1.isEmpty) or (((Edit1.text='') and (Edit2.text=''))and((edit3.text='')and (edit4.text='')))then
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     begin
        ShowMessage('There is nothing to find');
        Exit;
-    end;
-    t:=0;
+    end else
+
+   begin
+<<<<<<< HEAD
+     if (edit5.text='') AND (edit5.text <> 'All') then
+
+       begin
+        showMessage('A location must be entered');
+=======
+     if Edit5.text ='all' then Edit5.text:='All';  // è indifferente la posizione dell'istruzione
+
+     if (edit5.text='') then    //non c'è la posizione
+       begin
+        showMessage('A location must be entered or enter "All".');
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
+            with ABSQuery1 do
+         begin
+           DataSource1.DataSet:=ABSQuery1;
+           Close;
+           SQL.Text:='select distinct location from Cat';
+           ExecSQL;
+           Open;
+         end;
+<<<<<<< HEAD
+          showmessage('Insert the appropriate Location from the list ');
+          Button3.Click;
+         Exit;
+       end else
+
+    begin
    // trova:=True;
      DataSource1.DataSet:=ABSQuery1;
     if ((Edit1.Text='') AND (Edit2.Text='') and (Edit3.Text='') and (Edit4.Text='')) then
      begin
+=======
+          showmessagePos('Insert the appropriate one in "location" by copying one from the list.',200,200);
+          //Button3.Click;
+         Exit;
+       end else
+        //cè la posizione
+       if Edit5.text<>'All' then
+     begin
+          with ABSQuery1 do
+       begin
+         DataSource1.DataSet:=ABSQuery1;
+          Close;
+         SQL.Text:='select count(location) from Cat where location ='+ quotedstr(Edit5.text);
+          ExecSQL;
+          Open;
+         m:= ABSQuery1.Fields[0].AsInteger;
+         if m=0 then
+          begin
+              ShowMessage('no that location') ;
+              exit;
+          end;
+          
+         end;
+      end;
+
+    begin
+       trova:=True;
+     DataSource1.DataSet:=ABSQuery1;
+    if ((Edit1.Text='') AND (Edit2.Text='') and (Edit3.Text='') and (Edit4.Text='')) then
+     begin   // c'è la posizione ma null'altro
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
      ShowMessage('The search for books can be done by Author or by Title'+#13+
      'or by Shelf indicating both the column and the row'+#13+'    Please fill data');
       Exit;
      end ;
+<<<<<<< HEAD
        if Edit1.text<>'' then  t:=t+1;                        //per verificare che ci siano i soli dati necessari
        if Edit2.text<>'' then  t:=t+1;
        if (Edit3.text<>'')AND (Edit4.text<>'') then  t:=t+1;
@@ -156,45 +300,153 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
         Button3Click(Self);
         Exit;
        end else
-   begin
-    if ((Edit1.Text<>'') AND (Edit2.Text='')) then
-       with ABSQuery1 do
+     begin
+         if ((Edit1.Text<>'') AND (Edit2.Text='')) then   //selezione per titolo
+       with ABSQuery1 do     //attenzione alle spaziature corrette tra testi e variabili dove (')
        begin
          Edit1.text:=LowerCase(Edit1.Text);
-         Close;
-         SQL.Text:='select * from Cat where lower(Title) like '+
-          quotedstr('%'+Edit1.text+'%');
-         ExecSQL;
-         Open;
-       end;
-    if ((Edit1.Text='') AND (Edit2.Text<>'')) then
-     begin
-        Edit2.text:=LowerCase(Edit2.Text);
-        with ABSQuery1 do
+           if edit5.text='All' then
+=======
+       if Edit1.text<>'' then  t:=t+1;         //per verificare che ci siano i soli dati necessari
+       if Edit2.text<>'' then  t:=t+1;
+       if (Edit3.text<>'')AND (Edit4.text<>'') then  t:=t+1;
+      // if (Edit3.text<>'')XOR (Edit4.text<>'') then  t:=2;
+       if t>=2 then
+        begin
+        Showmessage('Attention: wrong selection entry or too many parameters.');
+        Button3Click(Self);
+        Exit;
+       end ;                                              //selezione per titolo
+        //showMessage('Attention: in case more then one search data type'+#13+' the result cannot be unique');
+         if ((Edit1.Text<>'') AND (Edit2.Text='')) then
+       with ABSQuery1 do     //attenzione alle spaziature corrette tra testi e variabili dove (')
        begin
+         Edit1.text:=LowerCase(Edit1.Text);
+           if edit5.text='All' then         //senza dato di locazione
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
+             begin
+               Close ;
+                SQL.Text:= 'select * from Cat where lower(Title) like ' + quotedstr('%'+ Edit1.text +'%') ;
+               ExecSQL;
+               Open;
+<<<<<<< HEAD
+               Exit;
+             end;
          Close;
-         SQL.Text:='select * from Cat where lower(Author) like ' + quotedstr('%'+Edit2.text+'%');
+         SQL.Text:= 'select * from Cat where lower(Title) like ' + quotedstr('%'+ Edit1.text +'%') +
+         'AND lower(Location) like ' + quotedstr('%'+Edit5.text+'%');
          ExecSQL;
          Open;
        end;
-     end;
-    if ((Edit3.Text<>'') AND (Edit4.Text<>'')) then
-     begin
-        shelf:=True;
-        with ABSQuery1 do
+=======
+               DBNavigator1. Enabled;
+               goto punto;
+             end;
+         Close;
+         SQL.Text:= 'select * from Cat where lower(Title) like ' + quotedstr('%'+ Edit1.text +'%') +
+         ' AND lower(Location) like ' + quotedstr('%'+Edit5.text+'%');
+         ExecSQL;
+         Open;
+       end;
+
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
+          if ((Edit1.Text='') AND (Edit2.Text<>'')) then  //selezione  per autore
+         with ABSQuery1 do
+         begin
+            Edit2.text:=LowerCase(Edit2.Text);
+<<<<<<< HEAD
+            if edit5.text='All' then
+=======
+            if edit5.text='All' then              //senza dato di locazione
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
+             begin
+               Close ;
+               SQL.Text:='select * from Cat where lower(Author) like ' + quotedstr('%'+Edit2.text+'%');
+               ExecSQL;
+               Open;
+<<<<<<< HEAD
+               Exit;
+=======
+               goto punto;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
+             end;
+            Close;
+          SQL.Text:='select * from Cat where lower(Author) like ' + quotedstr('%'+Edit2.text+'%')+
+          'AND lower(Location) like ' +quotedstr('%'+Edit5.text+'%');
+           ExecSQL;
+           Open;
+         end;
+<<<<<<< HEAD
+       end;
+=======
+
+            if ((Edit1.Text<>'') AND (Edit2.Text<>'')) then   //selezione per titolo e autore
+       with ABSQuery1 do     //attenzione alle spaziature corrette tra testi e variabili dove (')
        begin
-         Close;     //notare il formato della notazione del query. Att.ai nomi riservati SQL
-         SQL.Text:='SELECT * From Cat where Col='+ edit3.text+' AND row ='+Edit4.text;
+          Edit1.text:=LowerCase(Edit1.Text);
+          Edit2.text:=LowerCase(Edit2.Text);
+           if edit5.text='All' then         //senza dato di locazione
+             begin
+               Close ;
+                SQL.Text:='select * from Cat where lower(Title) like ' + quotedstr('%'+ Edit1.text +'%')+
+                ' AND lower(Author) like ' + quotedstr('%'+Edit2.text+'%');
+               ExecSQL;
+               Open;
+               //DBNavigator1. Enabled;
+               goto punto;
+             end;
+         Close;
+         SQL.Text:= 'select * from Cat where lower(Title) like ' + quotedstr('%'+ Edit1.text +'%') +
+         ' AND lower(Author) like ' + quotedstr('%'+Edit2.text+'%')+
+         'AND lower(Location) like ' + quotedstr('%'+Edit5.text+'%');
          ExecSQL;
          Open;
        end;
-        ABSTable1.first;
-     end;
-   end;         //qui inizia l'utilizzo del risultato del query
+
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
+               if ((Edit3.Text<>'') AND (Edit4.Text<>'')) then   //selezione per dolonna e riga
+       begin
+          shelf:=True;
+          with ABSQuery1 do
+         begin
+<<<<<<< HEAD
+          Close;     //notare il formato della notazione del query. Att.ai nomi riservati SQL
+          SQL.Text:='SELECT * From Cat where Col= '+edit3.text+' AND row = '+Edit4.text +
+=======
+           if edit5.text='All' then         //senza dato di locazione
+             begin
+               ShowMessage('Attention: with generic location result is not specific');
+               Close ;
+               SQL.Text:='SELECT * From Cat where Col= '+edit3.text+' AND Row = '+Edit4.text;
+               ExecSQL;
+               Open;
+               DBNavigator1. Enabled;
+               goto punto;
+             end;
+
+          Close;     //notare il formato della notazione del query. Att.ai nomi riservati SQL
+          SQL.Text:='SELECT * From Cat where Col= '+edit3.text+' AND Row = '+Edit4.text +
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
+            ' AND lower(Location) like ' + quotedstr('%'+Edit5.text+'%');
+          ExecSQL;
+           Open;
+          end;
+<<<<<<< HEAD
+         ABSTable1.first;
+       end;
+     end;         //qui inizia l'utilizzo del risultato del query
+=======
+      end;
+       end;
+
+      punto:
+             //qui inizia l'utilizzo del risultato del query
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
        dato:=ABSQuery1.RecordCount;
      if dato>0 then
      with ABSQuery1  do
        begin
+
         ABSQuery1.First;   //costruisce una lista nell'array N dei Num trovati in ABSQuery
         while not EOF do
            begin
@@ -212,14 +464,26 @@ procedure TForm1.Button2Click(Sender: TObject);        //find
 
        Exit;
      end;
-    end;
 
-procedure TForm1.Button3Click(Sender: TObject);        //clear
-begin
+     end;
+    End;
+<<<<<<< HEAD
+
+
+
+   procedure TForm1.Button3Click(Sender: TObject);      //clear
+   begin
+=======
+  // End;
+
+  procedure TForm1.Button3Click(Sender: TObject);      //clear
+ begin
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     Edit1.Text:='';
     Edit2.Text:='';
     Edit3.Text:='';
     Edit4.Text:='';
+    Edit5.text:='';
      DataSource1.DataSet:=ABSQuery1;
       with ABSQuery1 do
        begin
@@ -228,13 +492,17 @@ begin
          ExecSQL;
          Open;
         end;
-   Form2.visible:=False;
-     trova:=False;
- end;
+      Form2.visible:=False;
+   end;
 
 procedure TForm1.Button4Click(Sender: TObject);   //List
  
 begin
+<<<<<<< HEAD
+=======
+     ABSDatabase1.Open;
+     ABSTable1.TableName:='Cat';
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
    ABSTable1.Filtered:=False;
    ABSTable1.first;
    if ABSTable1.isEmpty then
@@ -246,12 +514,20 @@ begin
    with ABSQuery1 do                                   //inserire il modulo TABSQuery
    begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
       Close;                                           //scrivere queste righe di codice
+<<<<<<< HEAD
       SQL.Text:='select * from cat ORDER BY Col ASC';
+=======
+      SQL.Text:='select * from Cat ORDER BY Location ASC, Col ASC,Row ASC, Title ASC';
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
       ExecSQL;
       Open;
    end;
   trova:=False;
   frxReport1.ShowReport;
+<<<<<<< HEAD
+=======
+  Button3.click;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 end;
 
 procedure TForm1.Button5Click(Sender: TObject);     //Done
@@ -273,10 +549,19 @@ begin
        begin
         ABSTable1.Close;
         ABSTable1.EmptyTable;
+<<<<<<< HEAD
+=======
+        Button3.Click;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
        end  else Exit;
 
    end;
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
   procedure TForm1.Button7Click(Sender: TObject);  //edit
      var
      S:array[1..100]of string;
@@ -284,10 +569,17 @@ begin
      filtro:string;
  begin
   // ABSTable1.disablecontrols;
+<<<<<<< HEAD
       if trova=False then
       begin
       ShowMessage('Must use "Find" before you can Edit !' );
       Exit;
+=======
+      if (trova=False) AND (DBGrid1.SelectedRows.Count=0) then
+      begin
+        ShowMessage('Must use "Find" before you can Edit !' );
+        Exit;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
       end else
     begin
       with ABSTable1 do
@@ -304,6 +596,7 @@ begin
         If DBGrid1.Selectedrows.count=0 then  //porre nelle option di dbgrid   dgmultiselect=true
           begin
            ShowMessage('Please click on the record to be edited.'+#13+
+<<<<<<< HEAD
            'Use the Database Navigator to browse and edit' );
            Exit ;
           end ;
@@ -313,6 +606,14 @@ begin
           ABSTable1.locate('Num',k,[]);
           ShowMessage('If records to be edited are many '+#13+'click on post at the end of editing');
          end else
+=======
+           'Use the Database Navigator to browse edit and save' );
+           Exit ;
+          end else scelto:=True;
+
+        if scelto=True then
+        ShowMessage('Please use the Database Navigator to browse edit and save' );
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
          begin
              for i := 1 to dato do
              begin
@@ -343,7 +644,11 @@ procedure TForm1.Button8Click(Sender: TObject);    //move
         Exit;
     end;
     Form1.FormStyle:=fsNormal;  //altrimenti la InputBox non è visibile se fsStayOnTop
+<<<<<<< HEAD
       if MessageDlg('Confirm you want to move all books'+#13+'from shelf A to shelf B (to be specified)',mtConfirmation,mbYesNo,0)= mrNo then
+=======
+      if MessageDlg('Confirm you want to move all books'+#13+'from their current shelf (to be specified)',mtConfirmation,mbYesNo,0)= mrNo then
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
         Exit else  showmessage('You have confirmed to move a shelf of your library.');
         begin
           form2.visible :=True;

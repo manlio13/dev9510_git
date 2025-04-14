@@ -1,0 +1,130 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  BorderIcons = []
+  Caption = '             Move books from a shelf'
+  ClientHeight = 301
+  ClientWidth = 339
+  Color = clYellow
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clRed
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = [fsBold]
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 86
+    Top = 8
+    Width = 132
+    Height = 13
+    Caption = 'FROM shelf coordinates'
+  end
+  object Label2: TLabel
+    Left = 86
+    Top = 150
+    Width = 115
+    Height = 13
+    Caption = 'TO shelf coordinates'
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 80
+    Width = 42
+    Height = 13
+    Caption = 'Column'
+  end
+  object Label4: TLabel
+    Left = 86
+    Top = 78
+    Width = 24
+    Height = 13
+    Caption = 'Row'
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 212
+    Width = 42
+    Height = 13
+    Caption = 'Column'
+  end
+  object Label6: TLabel
+    Left = 96
+    Top = 212
+    Width = 24
+    Height = 13
+    Caption = 'Row'
+  end
+  object Label7: TLabel
+    Left = 8
+    Top = 27
+    Width = 130
+    Height = 13
+    Caption = 'Original Library section'
+  end
+  object Label8: TLabel
+    Left = 7
+    Top = 169
+    Width = 113
+    Height = 13
+    Caption = 'Final Library section'
+  end
+  object Edit1: TEdit
+    Left = 8
+    Top = 99
+    Width = 57
+    Height = 21
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 86
+    Top = 99
+    Width = 57
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    Left = 8
+    Top = 231
+    Width = 57
+    Height = 21
+    TabOrder = 2
+  end
+  object Edit4: TEdit
+    Left = 86
+    Top = 231
+    Width = 57
+    Height = 21
+    TabOrder = 3
+  end
+  object Button1: TButton
+    Left = 131
+    Top = 275
+    Width = 49
+    Height = 18
+    Caption = 'START'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 4
+    OnClick = Button1Click
+  end
+  object Edit5: TEdit
+    Left = 8
+    Top = 53
+    Width = 323
+    Height = 21
+    TabOrder = 5
+  end
+  object Edit6: TEdit
+    Left = 8
+    Top = 188
+    Width = 323
+    Height = 21
+    TabOrder = 6
+  end
+end

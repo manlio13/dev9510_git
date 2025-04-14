@@ -1,0 +1,530 @@
+{\rtf1\ansi\ansicpg0\deff0\deflang1033\deflangfe1040{\fonttbl {\f0\fnil\fprq0\fcharset1 Courier New;}{\f1\fnil\fprq0\fcharset1 Courier New;}{\f2\fnil\fprq0\fcharset1 Courier New;}{\f3\fnil\fprq0\fcharset1 Courier New;}{\f4\fnil\fprq0\fcharset1 Courier New;}{\f5\fnil\fprq0\fcharset1 Courier New;}{\f6\fnil\fprq0\fcharset1 Courier New;}{\f7\fnil\fprq0\fcharset1 Courier New;}{\f8\fnil\fprq0\fcharset1 Courier New;}{\f9\fnil\fprq0\fcharset1 Courier New;}{\f10\fnil\fprq0\fcharset1 Courier New;}{\f11\fnil\fprq0\fcharset1 Courier New;}}
+{\colortbl ;\red255\green0\blue0;\red0\green0\blue128;\red0\green0\blue255;\red0\green128\blue0;\red0\green0\blue0;\red0\green0\blue0;\red0\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;\red0\green0\blue255;\red0\green0\blue0;\red0\green0\blue255;}
+{\info{\author CnPack Source2RTF Wizard (https://www.cnpack.org)}{\creatim\yr2024\mo8\dy3\hr15\min49}{\comment CnPack Source2RTF Wizard (https://www.cnpack.org)}}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\lang1040\b\cf6\f5\fs20 unit\f0\cf0\b0  \cf5\f4\fs20 Unit1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0    \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //03/08/24\f0\cf0\i0 
+\par 
+\par \b\cf6\f5\fs20 interface\f0\cf0\b0 
+\par 
+\par \b\cf6\f5\fs20 uses\f0\cf0\b0 
+\par   \cf5\f4\fs20 Winapi\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Windows\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Winapi\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Messages\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 System\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 SysUtils\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 System\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Variants\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 System\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Classes\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Graphics\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 
+\par   \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Controls\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Forms\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Dialogs\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 StdCtrls\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 Data\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DB\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Grids\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 
+\par   \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DBGrids\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 ABSMain\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 ExtCtrls\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DBCtrls\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 frxClass\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 frxDBSet\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 
+\par   \cf5\f4\fs20 frxExportBaseDialog\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 frxExportPDF\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 System\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 UITypes\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Buttons\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par  \b\cf6\f5\fs20 function\f0\cf0\b0  \cf5\f4\fs20 GetAppVersionStr\f0\cf0  \cf11\f10\fs20 :\f0\cf0  \b\cf6\f5\fs20 string\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0  \b\cf6\f5\fs20 forward\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par \b\cf6\f5\fs20 type\f0\cf0\b0 
+\par   \cf5\f4\fs20 TForm1\f0\cf0  \cf11\f10\fs20 =\f0\cf0  \b\cf6\f5\fs20 class\f0\cf0\b0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 TForm\f0\cf0 \cf11\f10\fs20 )\f0\cf0 
+\par     \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TEdit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TEdit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Edit3\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TEdit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TEdit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Label1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TLabel\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Label2\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TLabel\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Label3\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TLabel\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Button1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TButton\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Label4\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TLabel\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Button2\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TButton\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Button3\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TButton\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Button4\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TButton\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 DBGrid1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TDBGrid\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TABSTable\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TABSQuery\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 ABSDatabase1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TABSDatabase\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 DBNavigator1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TDBNavigator\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 DataSource1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TDataSource\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Button6\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TButton\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 frxDBDataset1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TfrxDBDataset\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 frxPDFExport1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TfrxPDFExport\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Button7\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TButton\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Location\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TLabel\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Button8\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TButton\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Button5\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TButton\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 CheckBox1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TCheckBox\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TEdit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Label5\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TLabel\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 frxReport1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TfrxReport\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 FormCreate\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 Button1Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 Button2Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 Button3Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 Button6Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 Button4Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 Button5Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 Button7Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 Button8Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 CheckBox1Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 DBGrid1CellClick\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Column\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TColumn\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 DBNavigator1Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 ;\f0\cf0  \cf5\f4\fs20 Button\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TNavigateBtn\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par     \b\cf6\f5\fs20 private\f0\cf0\b0 
+\par     \i\cf2\f1\fs20 \{ Private declarations \}\f0\cf0\i0 
+\par     \b\cf6\f5\fs20 public\f0\cf0\b0 
+\par     \i\cf2\f1\fs20 \{ Public declarations \}\f0\cf0\i0 
+\par   \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par   \b\cf6\f5\fs20 var\f0\cf0\b0 
+\par   \cf5\f4\fs20 Form1\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0                \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //per inserire un chm serve caricare la unit\f0\cf0\i0 
+\par   \cf5\f4\fs20 versione\f0\cf0 \cf11\f10\fs20 :\f0\cf0 \b\cf6\f5\fs20 string\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0              \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //Vcl.HtmlHelViewer ed inserire\f0\cf0\i0 
+\par   \cf5\f4\fs20 dato\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 k\f0\cf0 \cf11\f10\fs20 :\f0\cf0 \cf5\f4\fs20 Integer\f0\cf0 \cf11\f10\fs20 ;\f0\cf0                 \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //Application.HelpFile := '.\\library.chm'; in .dpr\f0\cf0\i0 
+\par   \cf5\f4\fs20 N\f0\cf0 \cf11\f10\fs20 :\f0\cf0 \b\cf6\f5\fs20 array\f0\cf0\b0 \cf11\f10\fs20 [\f0\cf0 \cf7\f6\fs20 1..100\f0\cf0 \cf11\f10\fs20 ]\f0\cf0  \b\cf6\f5\fs20 of\f0\cf0\b0  \cf5\f4\fs20 Integer\f0\cf0 \cf11\f10\fs20 ;\f0\cf0    \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //e settare in Form1 HelpContext ed HelpFile\f0\cf0\i0 
+\par   \cf5\f4\fs20 trova\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 scelto\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 shelf\f0\cf0 \cf11\f10\fs20 :\f0\cf0 \cf5\f4\fs20 Boolean\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par 
+\par \b\cf6\f5\fs20 implementation\f0\cf0\b0 
+\par \b\cf6\f5\fs20 uses\f0\cf0\b0 
+\par \cf5\f4\fs20 Unit2\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 Vcl\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 HtmlHelpViewer\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par \cf4\f3\fs20 \{$R *.dfm\}\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 FormCreate\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0         \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //form\f0\cf0\i0 
+\par 
+\par   \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par      \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Active\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 True\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 ABSDatabase1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DatabaseFilename\f0\cf0 \cf11\f10\fs20 :=\f0\cf0  \cf5\f4\fs20 ExtractFilePath\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Application\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 ExeName\f0\cf0 \cf11\f10\fs20 )+\f0\cf0 \cf9\f8\fs20 'MyLibrary.ABS'\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 ABSDatabase1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Connected\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 True\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 ABSDatabase1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 TableName\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'Cat'\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Last\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 GetAppVersionStr\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 Form1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Caption\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 Form1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Caption\f0\cf0  \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 ': Library Catalogue, ver. '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 Versione\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 trova\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 scelto\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 shelf\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //Form1.FormStyle := fsStayOnTop;\f0\cf0\i0 
+\par   \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Button1Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0   \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //ADD\f0\cf0\i0 
+\par \b\cf6\f5\fs20 Begin\f0\cf0\b0 
+\par    \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0 \b\cf6\f5\fs20 OR\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 or\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 or\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0 \b\cf6\f5\fs20 or\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0 \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par      \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par      \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Please fill in Data to be stored'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 #13\f0\cf0 \cf11\f10\fs20 +\f0\cf0  \cf9\f8\fs20 ' or Data still missing !'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par      \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0 
+\par       \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0 
+\par       \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par          \cf5\f4\fs20 DataSource1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSet\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 LowerCase\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par          \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'select * from Cat where lower(Title) like '\f0\cf0 \cf11\f10\fs20 +\f0\cf0 
+\par           \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par          \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 recordCount\f0\cf0  \cf11\f10\fs20 >\f0\cf0 \cf7\f6\fs20 0\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par          \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 MessageDlg\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'A similar book already exists.'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 #13\f0\cf0 \cf11\f10\fs20 +\f0\cf0 
+\par          \cf9\f8\fs20 ' Do you want to quit? '\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 mtConfirmation\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 mbYesNo\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf7\f6\fs20 0\f0\cf0 \cf11\f10\fs20 )=\f0\cf0 \cf5\f4\fs20 mrYes\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par           \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par       \b\cf6\f5\fs20 begin\f0\cf0\b0                                \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //registra il libro\f0\cf0\i0 
+\par            \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 ReadOnly\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0 \b\cf6\f5\fs20 OR\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 or\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 or\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0 \b\cf6\f5\fs20 or\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0 \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par            \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par              \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Data still missing ! '\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par              \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0 
+\par            \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Append\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par             \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 FieldByName\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Title'\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 AsString\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par             \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 FieldByName\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Author'\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 AsString\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par             \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 FieldByName\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Row'\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 AsString\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par             \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 FieldByName\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Col'\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 AsString\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 Edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par             \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 FieldByName\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Location'\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 AsString\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Post\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par           \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 CheckBox1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 checked\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf5\f4\fs20 False\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par           \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par            \cf5\f4\fs20 Edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Uploaded'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par          \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Button2Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0         \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //find\f0\cf0\i0 
+\par     \b\cf6\f5\fs20 var\f0\cf0\b0 
+\par     \cf5\f4\fs20 i\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 t\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 m\f0\cf0 \cf11\f10\fs20 :\f0\cf0 \cf5\f4\fs20 Integer\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 label\f0\cf0\b0 
+\par     \cf5\f4\fs20 punto\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par  \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par      \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Filtered\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 first\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 DataSource1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSet\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 t\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf7\f6\fs20 0\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 isEmpty\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 or\f0\cf0\b0  \cf11\f10\fs20 (((\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 and\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ))\f0\cf0 \b\cf6\f5\fs20 and\f0\cf0\b0 \cf11\f10\fs20 ((\f0\cf0 \cf5\f4\fs20 edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0 \b\cf6\f5\fs20 and\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )))\f0\cf0 \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par     \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par        \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'There is nothing to find'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par        \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0 
+\par 
+\par    \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par      \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0  \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 'all'\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0  \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'All'\f0\cf0 \cf11\f10\fs20 ;\f0\cf0   \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 // \u232? indifferente la posizione dell'istruzione\f0\cf0\i0 
+\par 
+\par      \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0     \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //non c'\u232? la posizione\f0\cf0\i0 
+\par        \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par         \cf5\f4\fs20 showMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'A location must be entered or enter "All".'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par             \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0 
+\par          \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par            \cf5\f4\fs20 DataSource1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSet\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'select distinct location from Cat'\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 showmessagePos\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Insert the appropriate one in "location" by copying one from the list.'\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf7\f6\fs20 200\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf7\f6\fs20 200\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par           \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //Button3.Click;\f0\cf0\i0 
+\par          \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0 
+\par         \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //c\u232? la posizione\f0\cf0\i0 
+\par        \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 'All'\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par      \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par           \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0 
+\par        \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par          \cf5\f4\fs20 DataSource1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSet\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'select count(location) from Cat where location ='\f0\cf0 \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par           \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 m\f0\cf0 \cf11\f10\fs20 :=\f0\cf0  \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Fields\f0\cf0 \cf11\f10\fs20 [\f0\cf0 \cf7\f6\fs20 0\f0\cf0 \cf11\f10\fs20 ].\f0\cf0 \cf5\f4\fs20 AsInteger\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 m\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf7\f6\fs20 0\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par           \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par               \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'no that location'\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \cf11\f10\fs20 ;\f0\cf0 
+\par               \cf5\f4\fs20 exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par           
+\par          \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par     \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par        \cf5\f4\fs20 trova\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 True\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 DataSource1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSet\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 ((\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 AND\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 and\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 and\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ))\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par      \b\cf6\f5\fs20 begin\f0\cf0\b0    \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 // c'\u232? la posizione ma null'altro\f0\cf0\i0 
+\par      \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'The search for books can be done by Author or by Title'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 #13\f0\cf0 \cf11\f10\fs20 +\f0\cf0 
+\par      \cf9\f8\fs20 'or by Shelf indicating both the column and the row'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 #13\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '    Please fill data'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par       \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \b\cf6\f5\fs20 end\f0\cf0\b0  \cf11\f10\fs20 ;\f0\cf0 
+\par        \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 ''\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0   \cf5\f4\fs20 t\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 t\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf7\f6\fs20 1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0                         \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //per verificare che ci siano i soli dati necessari\f0\cf0\i0 
+\par        \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 ''\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0   \cf5\f4\fs20 t\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 t\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf7\f6\fs20 1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0 \b\cf6\f5\fs20 AND\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0   \cf5\f4\fs20 t\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 t\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf7\f6\fs20 1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 // if (Edit3.text<>'')XOR (Edit4.text<>'') then  t:=2;\f0\cf0\i0 
+\par        \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 t\f0\cf0 \cf11\f10\fs20 >=\f0\cf0 \cf7\f6\fs20 2\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par         \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par         \cf5\f4\fs20 Showmessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Attention: wrong selection entry or too many parameters.'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par         \cf5\f4\fs20 Button3Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Self\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par         \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \b\cf6\f5\fs20 end\f0\cf0\b0  \cf11\f10\fs20 ;\f0\cf0 
+\par         \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //showMessage('Attention: in case more then one search data type'+#13+' the result cannot be unique');\f0\cf0\i0 
+\par          \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 ((\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 AND\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ))\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0    \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //selezione per titolo\f0\cf0\i0 
+\par        \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0      \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //attenzione alle spaziature corrette tra testi e variabili dove (')\f0\cf0\i0 
+\par        \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par          \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 LowerCase\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par            \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 'All'\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0          \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //senza dato di locazione\f0\cf0\i0 
+\par              \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par                \cf5\f4\fs20 Close\f0\cf0  \cf11\f10\fs20 ;\f0\cf0 
+\par                 \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0  \cf9\f8\fs20 'select * from Cat where lower(Title) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0  \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf5\f4\fs20 DBNavigator1\f0\cf0 \cf11\f10\fs20 .\f0\cf0  \cf5\f4\fs20 Enabled\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \b\cf6\f5\fs20 goto\f0\cf0\b0  \cf5\f4\fs20 punto\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par              \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0  \cf9\f8\fs20 'select * from Cat where lower(Title) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0  \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \cf11\f10\fs20 +\f0\cf0 
+\par          \cf9\f8\fs20 'AND lower(Location) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par          \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par           \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 ((\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 AND\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ))\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0   \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //selezione  per autore\f0\cf0\i0 
+\par          \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0 
+\par          \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par             \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 LowerCase\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par             \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 'All'\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0               \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //senza dato di locazione\f0\cf0\i0 
+\par              \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par                \cf5\f4\fs20 Close\f0\cf0  \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'select * from Cat where lower(Author) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par                \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \b\cf6\f5\fs20 goto\f0\cf0\b0  \cf5\f4\fs20 punto\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par              \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par             \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'select * from Cat where lower(Author) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 )+\f0\cf0 
+\par           \cf9\f8\fs20 'AND lower(Location) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par            \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par             \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 ((\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 AND\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ))\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0    \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //selezione per titolo e autore\f0\cf0\i0 
+\par        \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0      \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //attenzione alle spaziature corrette tra testi e variabili dove (')\f0\cf0\i0 
+\par        \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par           \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 LowerCase\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par           \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 LowerCase\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par            \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 'All'\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0          \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //senza dato di locazione\f0\cf0\i0 
+\par              \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par                \cf5\f4\fs20 Close\f0\cf0  \cf11\f10\fs20 ;\f0\cf0 
+\par                 \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'select * from Cat where lower(Title) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0  \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 )+\f0\cf0 
+\par                 \cf9\f8\fs20 ' AND lower(Author) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par                \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //DBNavigator1. Enabled;\f0\cf0\i0 
+\par                \b\cf6\f5\fs20 goto\f0\cf0\b0  \cf5\f4\fs20 punto\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par              \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0  \cf9\f8\fs20 'select * from Cat where lower(Title) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0  \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \cf11\f10\fs20 +\f0\cf0 
+\par          \cf9\f8\fs20 ' AND lower(Author) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 )+\f0\cf0 
+\par          \cf9\f8\fs20 'AND lower(Location) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par          \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par                \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 ((\f0\cf0 \cf5\f4\fs20 Edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 AND\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 <>\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ))\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0    \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //selezione per dolonna e riga\f0\cf0\i0 
+\par           \cf5\f4\fs20 shelf\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 True\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0 
+\par          \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par            \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf9\f8\fs20 'All'\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0          \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //senza dato di locazione\f0\cf0\i0 
+\par              \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par                \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Attention: with generic location result is not specific'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par                \cf5\f4\fs20 Close\f0\cf0  \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'SELECT * From Cat where Col= '\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 ' AND Row = '\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \cf5\f4\fs20 DBNavigator1\f0\cf0 \cf11\f10\fs20 .\f0\cf0  \cf5\f4\fs20 Enabled\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                \b\cf6\f5\fs20 goto\f0\cf0\b0  \cf5\f4\fs20 punto\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par              \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par           \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0      \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //notare il formato della notazione del query. Att.ai nomi riservati SQL\f0\cf0\i0 
+\par           \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'SELECT * From Cat where Col= '\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 ' AND Row = '\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0  \cf11\f10\fs20 +\f0\cf0 
+\par             \cf9\f8\fs20 ' AND lower(Location) like '\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf5\f4\fs20 quotedstr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '%'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par           \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par            \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par        \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par       \cf5\f4\fs20 punto\f0\cf0 \cf11\f10\fs20 :\f0\cf0 
+\par              \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //qui inizia l'utilizzo del risultato del query\f0\cf0\i0 
+\par        \cf5\f4\fs20 dato\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 RecordCount\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 dato\f0\cf0 \cf11\f10\fs20 >\f0\cf0 \cf7\f6\fs20 0\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par      \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0   \b\cf6\f5\fs20 do\f0\cf0\b0 
+\par        \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par 
+\par         \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 First\f0\cf0 \cf11\f10\fs20 ;\f0\cf0    \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //costruisce una lista nell'array N dei Num trovati in ABSQuery\f0\cf0\i0 
+\par         \b\cf6\f5\fs20 while\f0\cf0\b0  \b\cf6\f5\fs20 not\f0\cf0\b0  \cf5\f4\fs20 EOF\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0 
+\par            \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par              \b\cf6\f5\fs20 for\f0\cf0\b0  \cf5\f4\fs20 i\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf7\f6\fs20 1\f0\cf0  \b\cf6\f5\fs20 to\f0\cf0\b0  \cf5\f4\fs20 dato\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0    \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //indice deve inziare da 1 NON =0\f0\cf0\i0 
+\par              \b\cf6\f5\fs20 begin\f0\cf0\b0         \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //senza begin-end esegue tutto il ciclo\f0\cf0\i0 
+\par               \cf5\f4\fs20 N\f0\cf0 \cf11\f10\fs20 [\f0\cf0 \cf5\f4\fs20 i\f0\cf0 \cf11\f10\fs20 ]:=\f0\cf0  \cf5\f4\fs20 FieldByName\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Num'\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 AsInteger\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par                 \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 // ShowMessage(IntToStr(N[i]));\f0\cf0\i0 
+\par               \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Next\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par               \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 trova\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 True\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0 
+\par      \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par        \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Cannot find any record. Please check your entry.'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par 
+\par        \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par      \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 End\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par   \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 // End;\f0\cf0\i0 
+\par 
+\par   \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Button3Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0       \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //clear\f0\cf0\i0 
+\par  \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par     \cf5\f4\fs20 Edit1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Edit2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Edit5\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 DataSource1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSet\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0 
+\par        \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par          \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'select * from Cat where Num=0'\f0\cf0 \cf11\f10\fs20 ;\f0\cf0  \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //per cancellare la DBGrid perch\u232? Num=0 \u232? vuoto\f0\cf0\i0 
+\par          \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par         \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \cf5\f4\fs20 Form2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 visible\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par    \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Button4Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0    \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //List\f0\cf0\i0 
+\par  
+\par \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par      \cf5\f4\fs20 ABSDatabase1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 TableName\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'Cat'\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par    \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Filtered\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par    \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 first\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par    \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 isEmpty\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par             \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par               \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'There is nothing to list'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par               \cf5\f4\fs20 Exit\f0\cf0 
+\par             \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \cf5\f4\fs20 DataSource1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSet\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par    \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSQuery1\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0                                    \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //inserire il modulo TABSQuery\f0\cf0\i0 
+\par    \b\cf6\f5\fs20 begin\f0\cf0\b0                                                \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 // cambiare in frsDBDataset1 il DataSet in ABSQuery1\f0\cf0\i0 
+\par       \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0                                            \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //scrivere queste righe di codice\f0\cf0\i0 
+\par       \cf5\f4\fs20 SQL\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 'select * from Cat ORDER BY Location ASC, Title ASC, Col ASC'\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \cf5\f4\fs20 ExecSQL\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \cf5\f4\fs20 Open\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par    \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par   \cf5\f4\fs20 trova\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par   \cf5\f4\fs20 frxReport1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 ShowReport\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par   \cf5\f4\fs20 Button3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 click\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Button5Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0      \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //Done\f0\cf0\i0 
+\par \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par       \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 MessageDlg\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Do you want to quit? '\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 mtConfirmation\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 mbYesNo\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf7\f6\fs20 0\f0\cf0 \cf11\f10\fs20 )=\f0\cf0 \cf5\f4\fs20 mrYes\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par     \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par        \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 ReadOnly\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \cf5\f4\fs20 ABSDatabase1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Readonly\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \cf5\f4\fs20 ABSQuery1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \cf5\f4\fs20 ABSDatabase1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \cf5\f4\fs20 application\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Terminate\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0  \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Button6Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0     \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //Empty DB\f0\cf0\i0 
+\par \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par    \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 MessageDlg\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Attention ! You are going to erase all data.'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 #13\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '   DO YOU CONFIRM ?'\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 mtConfirmation\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 mbYesNo\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf7\f6\fs20 0\f0\cf0 \cf11\f10\fs20 )=\f0\cf0 \cf5\f4\fs20 mrYes\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par        \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par         \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Close\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par         \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 EmptyTable\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par         \cf5\f4\fs20 Button3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Click\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \b\cf6\f5\fs20 end\f0\cf0\b0   \b\cf6\f5\fs20 else\f0\cf0\b0  \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par    \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par 
+\par 
+\par   \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Button7Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0   \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //edit\f0\cf0\i0 
+\par      \b\cf6\f5\fs20 var\f0\cf0\b0 
+\par      \cf5\f4\fs20 S\f0\cf0 \cf11\f10\fs20 :\f0\cf0 \b\cf6\f5\fs20 array\f0\cf0\b0 \cf11\f10\fs20 [\f0\cf0 \cf7\f6\fs20 1..100\f0\cf0 \cf11\f10\fs20 ]\f0\cf0 \b\cf6\f5\fs20 of\f0\cf0\b0  \b\cf6\f5\fs20 string\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 i\f0\cf0 \cf11\f10\fs20 :\f0\cf0 \cf5\f4\fs20 Integer\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \cf5\f4\fs20 filtro\f0\cf0 \cf11\f10\fs20 :\f0\cf0 \b\cf6\f5\fs20 string\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par  \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par   \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 // ABSTable1.disablecontrols;\f0\cf0\i0 
+\par       \b\cf6\f5\fs20 if\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 trova\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 AND\f0\cf0\b0  \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 DBGrid1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 SelectedRows\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Count\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf7\f6\fs20 0\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par       \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par         \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Must use "Find" before you can Edit !'\f0\cf0  \cf11\f10\fs20 );\f0\cf0 
+\par         \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0 
+\par     \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par       \b\cf6\f5\fs20 with\f0\cf0\b0  \cf5\f4\fs20 ABSTable1\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0 
+\par       \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par         \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //disablecontrols;\f0\cf0\i0 
+\par          \cf5\f4\fs20 Filter\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 filtro\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \cf5\f4\fs20 Filtered\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 DBGrid1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSource\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSet\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 IsEmpty\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par          \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par            \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'There is nothing to edit !'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par            \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \b\cf6\f5\fs20 end\f0\cf0\b0  \cf11\f10\fs20 ;\f0\cf0 
+\par         \b\cf6\f5\fs20 If\f0\cf0\b0  \cf5\f4\fs20 DBGrid1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Selectedrows\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 count\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf7\f6\fs20 0\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0   \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //porre nelle option di dbgrid   dgmultiselect=true\f0\cf0\i0 
+\par           \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par            \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Please click on the record to be edited.'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 #13\f0\cf0 \cf11\f10\fs20 +\f0\cf0 
+\par            \cf9\f8\fs20 'Use the Database Navigator to browse edit and save'\f0\cf0  \cf11\f10\fs20 );\f0\cf0 
+\par            \cf5\f4\fs20 Exit\f0\cf0  \cf11\f10\fs20 ;\f0\cf0 
+\par           \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0  \cf5\f4\fs20 scelto\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 True\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par         \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 scelto\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf5\f4\fs20 True\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par         \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Please use the Database Navigator to browse edit and save'\f0\cf0  \cf11\f10\fs20 );\f0\cf0 
+\par          \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par              \b\cf6\f5\fs20 for\f0\cf0\b0  \cf5\f4\fs20 i\f0\cf0  \cf11\f10\fs20 :=\f0\cf0  \cf7\f6\fs20 1\f0\cf0  \b\cf6\f5\fs20 to\f0\cf0\b0  \cf5\f4\fs20 dato\f0\cf0  \b\cf6\f5\fs20 do\f0\cf0\b0 
+\par              \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par                \cf5\f4\fs20 S\f0\cf0 \cf11\f10\fs20 [\f0\cf0 \cf5\f4\fs20 i\f0\cf0 \cf11\f10\fs20 ]:=\f0\cf0 \cf9\f8\fs20 'Num='\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 IntToStr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 N\f0\cf0 \cf11\f10\fs20 [\f0\cf0 \cf5\f4\fs20 i\f0\cf0 \cf11\f10\fs20 ]);\f0\cf0 
+\par                \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 i\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf7\f6\fs20 1\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par                \cf5\f4\fs20 Filtro\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 S\f0\cf0 \cf11\f10\fs20 [\f0\cf0 \cf5\f4\fs20 i\f0\cf0 \cf11\f10\fs20 ]\f0\cf0 \b\cf6\f5\fs20 else\f0\cf0\b0 
+\par                \cf5\f4\fs20 Filtro\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 Filtro\f0\cf0  \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 ' '\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 'OR'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 ' '\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf5\f4\fs20 S\f0\cf0 \cf11\f10\fs20 [\f0\cf0 \cf5\f4\fs20 i\f0\cf0 \cf11\f10\fs20 ];\f0\cf0 
+\par              \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 FilterOptions\f0\cf0  \cf11\f10\fs20 :=\f0\cf0  \cf5\f4\fs20 FilterOptions\f0\cf0  \cf11\f10\fs20 +\f0\cf0  \cf11\f10\fs20 [\f0\cf0 \cf5\f4\fs20 foCaseInsensitive\f0\cf0 \cf11\f10\fs20 ];\f0\cf0 
+\par           \cf5\f4\fs20 Filter\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 filtro\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 Filtered\f0\cf0  \cf11\f10\fs20 :=\f0\cf0  \cf5\f4\fs20 True\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 DBGrid1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSource\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DataSet\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par          \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 scelto\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par           \cf5\f4\fs20 trova\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //   EnableControls;\f0\cf0\i0 
+\par       \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par    \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par   \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Button8Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0     \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //move\f0\cf0\i0 
+\par  \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par      \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Filtered\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 first\f0\cf0 \cf11\f10\fs20 ;\f0\cf0       \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //per refresh\f0\cf0\i0 
+\par     \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 ABSTable1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 isEmpty\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par     \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par        \cf5\f4\fs20 ShowMessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'There is nothing to move'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par         \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \cf5\f4\fs20 Form1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 FormStyle\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 fsNormal\f0\cf0 \cf11\f10\fs20 ;\f0\cf0   \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //altrimenti la InputBox non \u232? visibile se fsStayOnTop\f0\cf0\i0 
+\par       \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 MessageDlg\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Confirm you want to move all books'\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 #13\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 'from their current shelf (to be specified)'\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 mtConfirmation\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf5\f4\fs20 mbYesNo\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 \cf7\f6\fs20 0\f0\cf0 \cf11\f10\fs20 )=\f0\cf0  \cf5\f4\fs20 mrNo\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par         \cf5\f4\fs20 Exit\f0\cf0  \b\cf6\f5\fs20 else\f0\cf0\b0   \cf5\f4\fs20 showmessage\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'You have confirmed to move a shelf of your library.'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par         \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par           \cf5\f4\fs20 form2\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 visible\f0\cf0  \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 True\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par         \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par   \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 CheckBox1Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 );\f0\cf0      \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //cancella la locazione se unclicked\f0\cf0\i0 
+\par \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par      \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 CheckBox1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 checked\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf5\f4\fs20 False\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par      \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par         \cf5\f4\fs20 Edit3\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par         \cf5\f4\fs20 Edit4\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Text\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf9\f8\fs20 ''\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par      \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0  \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DBGrid1CellClick\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Column\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TColumn\f0\cf0 \cf11\f10\fs20 );\f0\cf0         \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //caso shelf find\f0\cf0\i0 
+\par  \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par     \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 shelf\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf5\f4\fs20 True\f0\cf0    \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par     \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par        \cf5\f4\fs20 k\f0\cf0 \cf11\f10\fs20 :=\f0\cf0  \cf5\f4\fs20 Dbgrid1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Datasource\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 Dataset\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 FieldByName\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Num'\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 AsInteger\f0\cf0  \cf11\f10\fs20 ;\f0\cf0 
+\par        \cf5\f4\fs20 scelto\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 True\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 // ShowMessage(IntToStr(k));\f0\cf0\i0 
+\par        \cf5\f4\fs20 shelf\f0\cf0 \cf11\f10\fs20 :=\f0\cf0 \cf5\f4\fs20 False\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0  \cf5\f4\fs20 Exit\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 procedure\f0\cf0\b0  \cf5\f4\fs20 TForm1\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 DBNavigator1Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Sender\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TObject\f0\cf0 \cf11\f10\fs20 ;\f0\cf0  \cf5\f4\fs20 Button\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TNavigateBtn\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par  \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 Button\f0\cf0 \cf11\f10\fs20 =\f0\cf0 \cf5\f4\fs20 nbPost\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par   \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par    \cf5\f4\fs20 ShowMessage\f0\cf0  \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 'Field has been changed.'\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par    \cf5\f4\fs20 Button3Click\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Self\f0\cf0 \cf11\f10\fs20 )\f0\cf0 
+\par   \b\cf6\f5\fs20 end\f0\cf0\b0  \b\cf6\f5\fs20 else\f0\cf0\b0  \cf5\f4\fs20 Exit\f0\cf0 
+\par   \cf11\f10\fs20 ;\f0\cf0 
+\par \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par 
+\par \b\cf6\f5\fs20 function\f0\cf0\b0  \cf5\f4\fs20 GetAppVersionStr\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \b\cf6\f5\fs20 string\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0      \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //routine per la versione\f0\cf0\i0 
+\par        \b\cf6\f5\fs20 var\f0\cf0\b0 
+\par        \cf5\f4\fs20 Exe\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \b\cf6\f5\fs20 string\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \cf5\f4\fs20 Size\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Handle\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 DWORD\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \cf5\f4\fs20 Buffer\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 TBytes\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par        \cf5\f4\fs20 FixedPtr\f0\cf0 \cf11\f10\fs20 :\f0\cf0  \cf5\f4\fs20 PVSFixedFileInfo\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 begin\f0\cf0\b0 
+\par       \cf5\f4\fs20 Exe\f0\cf0  \cf11\f10\fs20 :=\f0\cf0  \cf5\f4\fs20 ParamStr\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf7\f6\fs20 0\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par       \cf5\f4\fs20 Size\f0\cf0  \cf11\f10\fs20 :=\f0\cf0  \cf5\f4\fs20 GetFileVersionInfoSize\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 PChar\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Exe\f0\cf0 \cf11\f10\fs20 ),\f0\cf0  \cf5\f4\fs20 Handle\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par       \b\cf6\f5\fs20 if\f0\cf0\b0  \cf5\f4\fs20 Size\f0\cf0  \cf11\f10\fs20 =\f0\cf0  \cf7\f6\fs20 0\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par       \cf5\f4\fs20 RaiseLastOSError\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \cf5\f4\fs20 SetLength\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Buffer\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Size\f0\cf0 \cf11\f10\fs20 );\f0\cf0 
+\par       \b\cf6\f5\fs20 if\f0\cf0\b0  \b\cf6\f5\fs20 not\f0\cf0\b0  \cf5\f4\fs20 GetFileVersionInfo\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 PChar\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Exe\f0\cf0 \cf11\f10\fs20 ),\f0\cf0  \cf5\f4\fs20 Handle\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Size\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Buffer\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par       \cf5\f4\fs20 RaiseLastOSError\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \b\cf6\f5\fs20 if\f0\cf0\b0  \b\cf6\f5\fs20 not\f0\cf0\b0  \cf5\f4\fs20 VerQueryValue\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 Buffer\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf9\f8\fs20 '\\'\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf5\f4\fs20 Pointer\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 FixedPtr\f0\cf0 \cf11\f10\fs20 ),\f0\cf0  \cf5\f4\fs20 Size\f0\cf0 \cf11\f10\fs20 )\f0\cf0  \b\cf6\f5\fs20 then\f0\cf0\b0 
+\par       \cf5\f4\fs20 RaiseLastOSError\f0\cf0 \cf11\f10\fs20 ;\f0\cf0 
+\par       \cf5\f4\fs20 Result\f0\cf0  \cf11\f10\fs20 :=\f0\cf0  \cf5\f4\fs20 Format\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf9\f8\fs20 '%d.%d.%d.%d'\f0\cf0 \cf11\f10\fs20 ,\f0\cf0 
+\par       \cf11\f10\fs20 [\f0\cf0 \cf5\f4\fs20 LongRec\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 FixedPtr\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 dwFileVersionMS\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 Hi\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //major\f0\cf0\i0 
+\par       \cf5\f4\fs20 LongRec\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 FixedPtr\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 dwFileVersionMS\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 Lo\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //minor\f0\cf0\i0 
+\par       \cf5\f4\fs20 LongRec\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 FixedPtr\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 dwFileVersionLS\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 Hi\f0\cf0 \cf11\f10\fs20 ,\f0\cf0  \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //release\f0\cf0\i0 
+\par       \cf5\f4\fs20 LongRec\f0\cf0 \cf11\f10\fs20 (\f0\cf0 \cf5\f4\fs20 FixedPtr\f0\cf0 \cf11\f10\fs20 .\f0\cf0 \cf5\f4\fs20 dwFileVersionLS\f0\cf0 \cf11\f10\fs20 ).\f0\cf0 \cf5\f4\fs20 Lo\f0\cf0 \cf11\f10\fs20 ]);\f0\cf0  \cf11\f10\fs20 \f0\cf0 \i\cf2\f1\fs20 //build\f0\cf0\i0 
+\par       \cf5\f4\fs20 versione\f0\cf0 \cf11\f10\fs20 :=\f0\cf0  \cf5\f4\fs20 Result\f0\cf0 \cf11\f10\fs20 +\f0\cf0 \cf9\f8\fs20 '                      Help :F1'\f0\cf0  \cf11\f10\fs20 ;\f0\cf0 
+\par     \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 ;\f0\cf0 
+\par   \b\cf6\f5\fs20 end\f0\cf0\b0 \cf11\f10\fs20 .\f0\cf0 
+\par 
+}

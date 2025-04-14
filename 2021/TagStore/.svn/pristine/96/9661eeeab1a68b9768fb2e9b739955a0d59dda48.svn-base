@@ -1,0 +1,186 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, ABSMain, Vcl.StdCtrls,
+  Vcl.DBCtrls, Vcl.ExtCtrls, Vcl.Mask,System.UITypes;
+
+type
+  TForm1 = class(TForm)
+    ABSDatabase1: TABSDatabase;
+    ABSTable1: TABSTable;
+    DBMemo1: TDBMemo;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Label4: TLabel;
+    DataSource1: TDataSource;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    Edit1: TEdit;
+    Label5: TLabel;
+    ABSQuery1: TABSQuery;
+    Button7: TButton;
+    Button8: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    function GetAppVersionStr: string;
+  end;
+
+var
+  Form1: TForm1;
+  dir,versione :string;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+dir:= ExtractFilePath(Application.ExeName)+'TSdata.ABS';
+ABSDatabase1.DatabaseFilename  :=dir;
+ABSDatabase1.Open;
+ABSTable1.TableName:='TS';
+ABSTable1.Open;
+ABSTable1.Last;
+GetAppVersionStr;
+  caption:=caption + '  - ver: '+versione;
+  Button4.Enabled:=False;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);  //New
+begin
+  ABSTable1.Insert;
+  ABSTable1.Edit;
+  DBMemo1.SetFocus;
+  Label4.Caption:='New record created.Fill Memo && One or more Tab, Click on Save';
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);   //Save
+begin
+  if DBEdit1.text='' then
+    begin
+      ShowMessage('Tab data cannot be empty!');
+      Exit;
+    end else begin
+               ABSTable1.Post;
+               Label4.Caption:='Record saved.';
+             end;
+
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);   //find
+var
+n:SmallInt;
+begin
+  if Edit1.text='' then
+   begin
+     ShowMessage('Enter tag text to find');
+     Exit;
+   end
+     else
+     begin
+      Button4.Enabled:=False;
+      DataSource1.DataSet:=ABSQuery1;
+          with ABSQuery1 do
+        begin
+         Close;
+         SQL.Text:='Select * from TS where tag1 ='+ quotedstr(Edit1.text)+'OR tag2='+
+         QuotedStr(Edit1.text) +'OR tag3='+QuotedStr(Edit1.text);;
+         ExecSQL;
+           Open;
+          n:=RecordCount ;
+          showMessage ('Found '+IntToStr(n)+' records with requested tag');
+          if n>0 then
+          begin
+            Button4.enabled:=True;
+          end else
+                begin
+                  Edit1.text:='';
+                  Exit;
+                end;
+
+        end;
+
+     end;
+
+end;
+
+procedure TForm1.Button4Click(Sender: TObject); //next
+begin
+  DataSource1.DataSet:=ABSQuery1;
+  ABSQuery1.Next;
+  if ABSQuery1.eof=True then
+    begin
+      ShowMessage('No more records with requested tag !');
+      Edit1.text:='';
+      Button4.enabled:=False;
+      Exit;
+    end;
+
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);     //delete
+begin
+  if MessageDlg('Delete This Record?', mtConfirmation, mbYesNoCancel, 0) <> mrYes then
+    Abort else
+    ABSTable1.Delete;
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);   //Done
+begin
+   ABSTable1.edit;
+    ABSTable1.close;
+    ABSDatabase1.Close;
+    Form1.release;
+    application.Terminate;
+end;
+
+function TForm1.GetAppVersionStr: string;
+var
+Exe: string;
+Size, Handle: DWORD;
+Buffer: TBytes;
+FixedPtr: PVSFixedFileInfo;
+begin
+Exe := ParamStr(0);
+Size := GetFileVersionInfoSize(PChar(Exe), Handle);
+if Size = 0 then
+RaiseLastOSError;
+SetLength(Buffer, Size);
+if not GetFileVersionInfo(PChar(Exe), Handle, Size, Buffer) then
+RaiseLastOSError;
+if not VerQueryValue(Buffer, '\', Pointer(FixedPtr), Size) then
+RaiseLastOSError;
+Result := Format('%d.%d.%d.%d',
+[LongRec(FixedPtr.dwFileVersionMS).Hi, //major
+LongRec(FixedPtr.dwFileVersionMS).Lo, //minor
+LongRec(FixedPtr.dwFileVersionLS).Hi, //release
+LongRec(FixedPtr.dwFileVersionLS).Lo]); //build
+versione:= Result;
+end;
+
+
+
+
+end.

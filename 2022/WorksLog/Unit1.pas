@@ -1,11 +1,20 @@
+<<<<<<< HEAD
 unit Unit1;        //07/09/2022 vers. 8.1  > WorksLog
+=======
+unit Unit1;        //11/05/2023 vers. 9.3  > WorksLog
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls,Grids,DBGrids,DB,ABSmain,ComCtrls,ExtCtrls,Buttons, DBCtrls,
+<<<<<<< HEAD
   Mask,HTMLHelpViewer,System.UITypes, Datasnap.DBClient,printers,JvSHFileOperation,JvBaseDlg,
   frxClass, frxExportPDF, frxDBSet, frxExportBaseDialog;
+=======
+  Mask,HTMLHelpViewer,System.UITypes, Datasnap.DBClient,printers,JvSHFileOperation,
+  JvBaseDlg,frxClass, frxExportPDF, frxDBSet, frxExportBaseDialog, frxRich;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 
 type
   TForm1 = class(TForm)
@@ -41,11 +50,19 @@ type
     Button6: TButton;
     Button7: TButton;
     jvshfile1: TJvSHFileOperation;
+<<<<<<< HEAD
     frxDBDataset1: TfrxDBDataset;
     frxReport1: TfrxReport;
     frxPDFExport1: TfrxPDFExport;
     Button8: TButton;
     ABSQuery1: TABSQuery;
+=======
+    Button8: TButton;
+    ABSQuery1: TABSQuery;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    frxPDFExport1: TfrxPDFExport;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject); //lookup
     Procedure FilterUp(var filtro: string);
@@ -75,6 +92,10 @@ var
   conta:smallint;
   filtro: string;
   flag:boolean;
+<<<<<<< HEAD
+=======
+  cambio:boolean=false;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 implementation
 
 {$R *.dfm}
@@ -89,7 +110,12 @@ begin
         ABSTable1.Close;
         ABSDatabase1.Close;
         ABSTable2.close;
+<<<<<<< HEAD
         CanClose:= True
+=======
+        CanClose:= True;
+        Flag:=False;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
       end else
      CanClose:= False;
   end;
@@ -97,6 +123,7 @@ begin
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+<<<<<<< HEAD
 Application.HelpFile:='log.chm';
 ABSDatabase1.DatabaseFilename:= ExtractFilePath(Application.ExeName)+'DailyLog.ABS';
 ABSDatabase1.Open;
@@ -112,6 +139,29 @@ FormatSettings.ShortDateFormat:='dd/MM/yyyy'; //per definire il formato di un ca
 end;
 
 procedure TForm1.ABSTable1AfterInsert(DataSet: TDataSet); //per evitare che un record inserito e non postato sia perso
+=======
+  Application.HelpFile:='log.chm';
+  ABSDatabase1.DatabaseFilename:= ExtractFilePath(Application.ExeName)+'DailyLog.ABS';
+  ABSDatabase1.Open;
+  ABSTable1.TableName:='Dlog';
+  ABSTable2.TableName:='TagTB';
+  ABSTable1.Open;
+  ABSTable2.Open;
+  ABSTable1.edit;
+  ABSTable2.edit;
+  Datasource1.DataSet.Edit;
+  DataSource2.DataSet.Edit;
+
+  FormatSettings.ShortDateFormat:='dd/MM/yyyy'; //per definire il formato di un campo dbgrid
+             {Attenzione per poter avere il formato data senza problemi occorre
+             che ci sia coerenza tra il formato indicato in form create e quello             MOLTO IMPORTANTE
+             indicato in control panel regional settings}
+  // Form1.Visible:=True;
+   //ABSTable1.first;
+end;
+
+ procedure TForm1.ABSTable1AfterInsert(DataSet: TDataSet); //per evitare che un record inserito e non postato sia perso
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
  var
  forma :string;
 begin
@@ -128,10 +178,17 @@ var                           //carica il record nella tabella 1
 st:string;                    //se il tag è di più parole cancella ed esce
 s1,s2,s3:string;
 begin
+<<<<<<< HEAD
 RadioButton3.Checked:=True;
 s1:=ABSTable1.FieldByName('location').AsString;
 s2:=ABSTable1.FieldByName('who').AsString;
 s3:=ABSTable1.FieldByName('type').AsString;
+=======
+  RadioButton3.Checked:=True;
+  s1:=ABSTable1.FieldByName('location').AsString;
+  s2:=ABSTable1.FieldByName('who').AsString;
+  s3:=ABSTable1.FieldByName('type').AsString;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
       if (pos(' ',s1)>0) OR(pos(' ',s2)>0)OR(pos(' ',s3)>0) then
       begin
       showmessage(' Tag fields must contain only one word. Redo !');
@@ -140,15 +197,25 @@ s3:=ABSTable1.FieldByName('type').AsString;
       ABSTable1.First;
       exit;
       end;
+<<<<<<< HEAD
 flag:=false;
 st:=ABSTable1.FieldByName('location').AsString;
 if ABSTable2.Locate('tag1',st,[loCaseInsensitive])= false then
+=======
+  flag:=false;
+  st:=ABSTable1.FieldByName('location').AsString;
+  if ABSTable2.Locate('tag1',st,[loCaseInsensitive])= false then
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
  begin
    ABSTable2.insert;
    ABSTable2.FieldByName('tag1').AsString:=st;
    ABSTable2.Post;
  end;
+<<<<<<< HEAD
 ABSTable1.First;
+=======
+  ABSTable1.First;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);   //filtra
@@ -246,6 +313,7 @@ var
   grd : array of array of string;
   f:TextFile;
 begin                        //seleziona tutti i record in DBGrid
+<<<<<<< HEAD
                              J:=0;
                              numgrid:=0;
                              SetLength (grd,numgrid,2);
@@ -267,6 +335,28 @@ begin                        //seleziona tutti i record in DBGrid
                                     end;
                                   numgrid:=J;   //determina la lunghezza della DBGrid
                                  end;
+=======
+   J:=0;
+   numgrid:=0;
+   SetLength (grd,numgrid,2);
+   DBGrid1.SelectedRows.Clear;
+   with DBGrid1.DataSource.DataSet do
+     begin
+        DisableControls;
+        First;
+          try
+              while not EOF do
+                  begin
+                   DBGrid1.SelectedRows.CurrentRowSelected := True;
+                   J:=J+1;
+                   Next;
+                  end;
+          finally
+           EnableControls;
+          end;
+      numgrid:=J;   //determina la lunghezza della DBGrid
+     end;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
           //carica l'array con i valori dei record;
                                  SetLength (grd,numgrid,2);
                    with DBGrid1.DataSource.DataSet do
@@ -304,8 +394,21 @@ begin                        //seleziona tutti i record in DBGrid
           grd:=nil;
 end;
 
+<<<<<<< HEAD
 procedure TForm1.Button6Click(Sender: TObject);
 begin
+=======
+procedure TForm1.Button6Click(Sender: TObject);     //done
+begin
+    if cambio=True then
+        if MessageDlg('Do you have data to confirm ?',
+         mtconfirmation, [mbYes,mbNo], 0) = mrYes then
+         begin
+           ABSTable1.edit;
+           ABSTable1.post;
+         end;
+    cambio:=False;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
     ABSTable1.close;
     ABSTable2.close;
     ABSDatabase1.Close;
@@ -335,7 +438,11 @@ begin
       SQL.Text:='select * from dlog ORDER BY Filed ASC';
       ExecSQL;
    end;
+<<<<<<< HEAD
 frxReport1.ShowReport;
+=======
+    frxReport1.ShowReport;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 end;
 
 procedure TForm1.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
@@ -362,6 +469,10 @@ st2 :string;
 begin
    st2:= ABSTable2.FieldByName('tag1').AsString;
    ABSTable1.FieldByName('location').AsString:=st2;
+<<<<<<< HEAD
+=======
+   cambio:=True;
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 end;
 
 
@@ -375,8 +486,13 @@ begin
             if radiobutton3.Checked=True then scelta:='Maintenance' else
             if radiobutton4.Checked=True then scelta := 'Installation' else
             scelta := 'Repair';
+<<<<<<< HEAD
        DBgrid1.DataSource.DataSet.First;
     if MessageDlg('Do you confirm Work Type is '+scelta+' ?',mtConfirmation, mbYesNo,0)=mrNo then
+=======
+         DBgrid1.DataSource.DataSet.First;
+         if MessageDlg('Do you confirm Work Type is '+scelta+' ?',mtConfirmation, mbYesNo,0)=mrNo then
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
           begin
           showmessage(' Check type of action first !');
           SysUtils.Abort; //cancel the insert action

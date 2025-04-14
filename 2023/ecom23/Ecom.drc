@@ -1419,10 +1419,17 @@ END
 /* C:\Program Files (x86)\FastReports\LibD27\frxExportPDFDialog.dfm */
 /* C:\Program Files (x86)\FastReports\LibD27\frxExportPDFMetafile.RES */
 /* C:\Program Files (x86)\FastReports\LibD27\frxExportPDFProfile.RES */
+<<<<<<< HEAD
 /* C:\DelphiComponents\JCL\lib\d27\Win32\JclUnicode.res */
 /* C:\DelphiComponents\JVCL\resources\JvConsts.res */
 /* c:\program files (x86)\embarcadero\studio\21.0\lib\Win32\release\ExtDlgs.res */
 /* C:\DelphiComponents\JVCL\resources\JvToolEdit.res */
+=======
+/* C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\jcl\source\common\JclUnicode.res */
+/* C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\jvcl\resources\JvConsts.res */
+/* c:\program files (x86)\embarcadero\studio\21.0\lib\Win32\release\ExtDlgs.res */
+/* C:\Program Files (x86)\Embarcadero\Studio\21.0\lib\jvcl\resources\JvToolEdit.res */
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 /* C:\Users\manli\Documents\Lavori\Projects\2023\ecom23\Unit1.dfm */
 /* C:\Users\manli\Documents\Lavori\Projects\2023\ecom23\Ecom.res */
 /* C:\Users\manli\Documents\Lavori\Projects\2023\ecom23\Ecom.drf */

@@ -1,10 +1,19 @@
 ﻿[Closed Files]
+<<<<<<< HEAD
 File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Forms.pas',0,1,11189,1,11196,0,0,{{1891,4}
 File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Controls.pas',0,1,7586,1,7597,0,0,,
 File_2=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\rtl\common\System.Classes.pas',0,1,18011,1,18022,0,0,,
 File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.StdCtrls.pas',0,1,5427,1,5438,0,0,{{1715,4}
 File_4=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data\vclctrls\Vcl.DbGrids.pas',0,1,3803,1,3812,0,0,,
 File_5=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data\Data.DB.pas',0,1,13264,1,13276,0,0,,
+=======
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data\Data.DB.pas',0,1,10733,1,10751,0,0,,
+File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Controls.pas',0,1,7600,1,7597,0,0,,
+File_2=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Forms.pas',0,1,6626,1,6695,0,0,{{1891,4}
+File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.StdCtrls.pas',0,1,5422,1,5440,0,0,{{1715,4}
+File_4=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\rtl\common\System.Classes.pas',0,1,18011,1,18022,0,0,,
+File_5=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\data\vclctrls\Vcl.DbGrids.pas',0,1,3803,1,3812,0,0,,
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.pas',0,1,31224,1,31232,0,0,,
 File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\VCL\Vcl.Dialogs.pas',0,1,6750,1,6761,0,0,,
 File_8=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\source\rtl\common\System.Generics.Collections.pas',0,1,2799,1,2810,0,0,,
@@ -12,24 +21,43 @@ File_9=TSourceModule,'C:\Program Files (x86)\Embarcadero\Studio\21.0\source\fmx\
 File_10=TSourceModule,'c:\program files (x86)\embarcadero\studio\21.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,8382,1,8394,0,0,,
 
 [Modules]
+<<<<<<< HEAD
 Module0=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
-Module1=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
-Module2=default.htm
+Module1=default.htm
+Module2=C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas
 Count=3
 EditWindowCount=1
 
 [C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas]
+=======
+Module0=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas
+Module1=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit2.pas
+Module2=default.htm
+Count=3
+EditWindowCount=1
+
+[C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas]
 ModuleType=TSourceModule
 
-[C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas]
+[C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit2.pas]
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 ModuleType=TSourceModule
 
 [default.htm]
 ModuleType=TURLModule
 
+<<<<<<< HEAD
+[C:\Users\manli\Documents\Lavori\Projects\Library\Unit2.pas]
+ModuleType=TSourceModule
+
 [EditWindow0]
 ViewCount=3
 CurrentEditView=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
+=======
+[EditWindow0]
+ViewCount=3
+CurrentEditView=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 View0=0
 View1=1
 View2=2
@@ -40,6 +68,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=9773
 Height=7889
 MaxLeft=-1
@@ -61,6 +90,29 @@ BottomPanelData=000008000102020000000F0000004D65737361676556696577466F726D090000
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779F1D00000000000002F206000000000000FFFFFFFF
+=======
+Width=9896
+Height=8796
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=9896
+ClientHeight=8796
+DockedToMainForm=1
+BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
+TopPanelSize=0
+LeftPanelSize=1185
+LeftPanelClients=PropertyInspector,DockSite3
+LeftPanelData=00000800010100000000541300000000000001A1040000000000000100000000550E000009000000446F636B536974653301000000005C2200001100000050726F7065727479496E73706563746F72FFFFFFFF
+RightPanelSize=1999
+RightPanelClients=DockSite2,DockSite4
+RightPanelData=00000800010100000000541300000000000001CF0700000000000001000000004412000009000000446F636B536974653201000000005C22000009000000446F636B5369746534FFFFFFFF
+BottomPanelSize=0
+BottomPanelClients=MessageView,DockSite1
+BottomPanelData=000008000102020000000F0000004D65737361676556696577466F726D09000000446F636B53697465311534000000000000022606000000000000FFFFFFFF
+BottomMiddlePanelSize=0
+BottomMiddlePanelClients=DockSite0,GraphDrawingModel
+BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E67566965779D1D00000000000002F606000000000000FFFFFFFF
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 
 [View0]
 CustomEditViewType=TWelcomePageView
@@ -68,6 +120,7 @@ WelcomePageURL=bds:/default.htm
 
 [View1]
 CustomEditViewType=TEditView
+<<<<<<< HEAD
 Module=C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas
 CursorX=107
 CursorY=313
@@ -87,6 +140,27 @@ LeftCol=1
 Elisions=
 Bookmarks={7,92,5}
 EditViewName=Borland.FormDesignerView
+=======
+Module=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit2.pas
+CursorX=8
+CursorY=38
+TopLine=33
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=Borland.FormDesignerView
+
+[View2]
+CustomEditViewType=TEditView
+Module=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas
+CursorX=1
+CursorY=336
+TopLine=318
+LeftCol=1
+Elisions=
+Bookmarks={1,190,1}
+EditViewName=C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 
 [Watches]
 Count=0
@@ -101,6 +175,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=3820
 Height=1028
 MaxLeft=-1
@@ -109,12 +184,31 @@ ClientWidth=3820
 ClientHeight=1028
 TBDockHeight=208
 LRDockWidth=13602
+=======
+Width=3822
+Height=1100
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=3822
+ClientHeight=1100
+TBDockHeight=220
+LRDockWidth=13600
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
 [Breakpoints]
+<<<<<<< HEAD
 Count=1
 Breakpoint0='C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas',59,'',0,1,'',1,0,0,'',1,'','','',0,''
+=======
+Count=5
+Breakpoint0='C:\Users\manli\Documents\Lavori\Projects\Library\Unit1.pas',59,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint1='C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas',101,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint2='C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas',156,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint3='C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas',166,'',0,1,'',1,0,0,'',1,'','','',0,''
+Breakpoint4='C:\Users\manli\Documents\Lavori\Projects\2021\Library\Unit1.pas',184,'',0,1,'',1,0,0,'',1,'','','',0,''
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 
 [EmbarcaderoWin32Debugger_AddressBreakpoints]
 Count=0
@@ -136,6 +230,7 @@ PercentageSizes=1
 Create=1
 Visible=1
 Docked=0
+<<<<<<< HEAD
 State=0
 Left=0
 Top=0
@@ -146,6 +241,20 @@ MaxTop=-14
 ClientWidth=9898
 ClientHeight=9444
 BottomPanelSize=7889
+=======
+State=2
+Left=143
+Top=278
+Width=8932
+Height=8519
+MaxLeft=-7
+MaxTop=-12
+MaxWidth=8932
+MaxHeight=8519
+ClientWidth=10000
+ClientHeight=10093
+BottomPanelSize=8796
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 BottomPanelClients=EditWindow0
 BottomPanelData=0000080000000000000000000000000000000000000000000000000100000000000000000C0000004564697457696E646F775F30FFFFFFFF
 
@@ -157,6 +266,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=844
 Height=3792
 MaxLeft=-1
@@ -165,6 +275,16 @@ ClientWidth=844
 ClientHeight=3792
 TBDockHeight=5903
 LRDockWidth=2352
+=======
+Width=1999
+Height=3935
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1999
+ClientHeight=3935
+TBDockHeight=5903
+LRDockWidth=2350
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -176,6 +296,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=2773
 Height=1417
 MaxLeft=-1
@@ -213,6 +334,19 @@ Column2=120
 Column3=100
 Column4=140
 
+=======
+Width=2767
+Height=1424
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2767
+ClientHeight=1424
+TBDockHeight=1424
+LRDockWidth=2767
+Dockable=1
+StayOnTop=0
+
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 [ToolForm]
 PercentageSizes=1
 Create=1
@@ -221,6 +355,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=844
 Height=2819
 MaxLeft=-1
@@ -229,6 +364,16 @@ ClientWidth=844
 ClientHeight=2819
 TBDockHeight=7153
 LRDockWidth=2000
+=======
+Width=1999
+Height=3796
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1999
+ClientHeight=3796
+TBDockHeight=7153
+LRDockWidth=1999
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -239,6 +384,7 @@ Visible=1
 Docked=1
 State=0
 Left=0
+<<<<<<< HEAD
 Top=292
 Width=1242
 Height=3833
@@ -246,7 +392,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1242
 ClientHeight=3833
-TBDockHeight=4444
+TBDockHeight=7500
 LRDockWidth=1242
 Dockable=1
 StayOnTop=0
@@ -256,6 +402,20 @@ SplitPos=73
 ArrangeBy=Name
 SelectedItem=Name,
 ExpandedItems=LiveBindings=0,"LiveBindings Designer=0",Margins=0,Options=0
+=======
+Top=345
+Width=1185
+Height=4803
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1185
+ClientHeight=4803
+TBDockHeight=9016
+LRDockWidth=1185
+Dockable=1
+StayOnTop=0
+SplitPos=111
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 
 [frmDesignPreview]
 PercentageSizes=1
@@ -265,6 +425,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=1562
 Height=7111
 MaxLeft=-1
@@ -273,6 +434,16 @@ ClientWidth=1562
 ClientHeight=7111
 TBDockHeight=5958
 LRDockWidth=2508
+=======
+Width=1999
+Height=3935
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1999
+ClientHeight=3935
+TBDockHeight=5961
+LRDockWidth=2513
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -285,12 +456,21 @@ State=0
 Left=0
 Top=0
 Width=273
+<<<<<<< HEAD
 Height=361
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=273
 ClientHeight=361
 TBDockHeight=361
+=======
+Height=359
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=273
+ClientHeight=359
+TBDockHeight=359
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 LRDockWidth=273
 Dockable=1
 StayOnTop=0
@@ -306,6 +486,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=3820
 Height=1028
 MaxLeft=-1
@@ -314,6 +495,16 @@ ClientWidth=3820
 ClientHeight=1028
 TBDockHeight=417
 LRDockWidth=4953
+=======
+Width=3822
+Height=1100
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=3822
+ClientHeight=1100
+TBDockHeight=417
+LRDockWidth=4948
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -325,6 +516,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=3820
 Height=1028
 MaxLeft=-1
@@ -333,12 +525,26 @@ ClientWidth=3820
 ClientHeight=1028
 TBDockHeight=208
 LRDockWidth=7406
+=======
+Width=3822
+Height=1100
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=3822
+ClientHeight=1100
+TBDockHeight=220
+LRDockWidth=7409
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 Column0Width=145
 Column1Width=100
 Column2Width=115
+<<<<<<< HEAD
 Column3Width=129
+=======
+Column3Width=227
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 
 [LocalVarsWindow]
 PercentageSizes=1
@@ -348,6 +554,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=3820
 Height=1028
 MaxLeft=-1
@@ -356,6 +563,16 @@ ClientWidth=3820
 ClientHeight=1028
 TBDockHeight=1542
 LRDockWidth=3484
+=======
+Width=3822
+Height=1100
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=3822
+ClientHeight=1100
+TBDockHeight=1539
+LRDockWidth=3483
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -367,6 +584,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=3820
 Height=1028
 MaxLeft=-1
@@ -375,6 +593,16 @@ ClientWidth=3820
 ClientHeight=1028
 TBDockHeight=2069
 LRDockWidth=3484
+=======
+Width=3822
+Height=1100
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=3822
+ClientHeight=1100
+TBDockHeight=2060
+LRDockWidth=3483
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -386,6 +614,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=2336
 Height=1083
 MaxLeft=-1
@@ -394,6 +623,16 @@ ClientWidth=2336
 ClientHeight=1083
 TBDockHeight=2319
 LRDockWidth=2820
+=======
+Width=2337
+Height=1157
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2337
+ClientHeight=1157
+TBDockHeight=2315
+LRDockWidth=2826
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -405,6 +644,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=2336
 Height=1083
 MaxLeft=-1
@@ -413,6 +653,16 @@ ClientWidth=2336
 ClientHeight=1083
 TBDockHeight=3208
 LRDockWidth=2820
+=======
+Width=2337
+Height=1157
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2337
+ClientHeight=1157
+TBDockHeight=3206
+LRDockWidth=2826
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -424,6 +674,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=2336
 Height=778
 MaxLeft=-1
@@ -432,6 +683,16 @@ ClientWidth=2336
 ClientHeight=778
 TBDockHeight=1153
 LRDockWidth=3680
+=======
+Width=2337
+Height=1157
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2337
+ClientHeight=1157
+TBDockHeight=1157
+LRDockWidth=3678
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 Column0Width=314
@@ -451,6 +712,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=125
 Height=7111
 MaxLeft=-1
@@ -458,6 +720,15 @@ MaxTop=-1
 ClientWidth=125
 ClientHeight=7111
 TBDockHeight=4889
+=======
+Width=1999
+Height=3935
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1999
+ClientHeight=3935
+TBDockHeight=4884
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 LRDockWidth=7148
 Dockable=1
 StayOnTop=0
@@ -470,6 +741,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=2859
 Height=3208
 MaxLeft=-1
@@ -478,6 +750,16 @@ ClientWidth=2859
 ClientHeight=3208
 TBDockHeight=3208
 LRDockWidth=2859
+=======
+Width=2858
+Height=3206
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2858
+ClientHeight=3206
+TBDockHeight=3206
+LRDockWidth=2858
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -489,6 +771,7 @@ Docked=1
 State=0
 Left=-8
 Top=-8
+<<<<<<< HEAD
 Width=1844
 Height=3139
 MaxLeft=-1
@@ -497,6 +780,16 @@ ClientWidth=1844
 ClientHeight=3139
 TBDockHeight=3139
 LRDockWidth=1844
+=======
+Width=1849
+Height=3137
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1849
+ClientHeight=3137
+TBDockHeight=3137
+LRDockWidth=1849
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -508,6 +801,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=2336
 Height=1389
 MaxLeft=-1
@@ -516,6 +810,16 @@ ClientWidth=2336
 ClientHeight=1389
 TBDockHeight=4833
 LRDockWidth=3562
+=======
+Width=2337
+Height=1157
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2337
+ClientHeight=1157
+TBDockHeight=4838
+LRDockWidth=3561
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -527,6 +831,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=2336
 Height=1389
 MaxLeft=-1
@@ -535,6 +840,16 @@ ClientWidth=2336
 ClientHeight=1389
 TBDockHeight=4833
 LRDockWidth=3562
+=======
+Width=2337
+Height=1157
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2337
+ClientHeight=1157
+TBDockHeight=4838
+LRDockWidth=3561
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -546,6 +861,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=3820
 Height=1028
 MaxLeft=-1
@@ -554,6 +870,16 @@ ClientWidth=3820
 ClientHeight=1028
 TBDockHeight=1542
 LRDockWidth=8742
+=======
+Width=3822
+Height=1100
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=3822
+ClientHeight=1100
+TBDockHeight=1551
+LRDockWidth=8743
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 Column0Width=200
@@ -572,6 +898,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=1242
 Height=3167
 MaxLeft=-1
@@ -580,6 +907,16 @@ ClientWidth=1242
 ClientHeight=3167
 TBDockHeight=3681
 LRDockWidth=1898
+=======
+Width=1185
+Height=3252
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1185
+ClientHeight=3252
+TBDockHeight=3681
+LRDockWidth=1895
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -591,6 +928,7 @@ Docked=0
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=3219
 Height=5222
 MaxLeft=-8
@@ -599,6 +937,16 @@ ClientWidth=3094
 ClientHeight=4681
 TBDockHeight=5222
 LRDockWidth=3219
+=======
+Width=2682
+Height=4352
+MaxLeft=-7
+MaxTop=-12
+ClientWidth=2578
+ClientHeight=3900
+TBDockHeight=4352
+LRDockWidth=2682
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -610,6 +958,7 @@ Docked=0
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=2578
 Height=3569
 MaxLeft=-8
@@ -637,6 +986,16 @@ ClientWidth=3523
 ClientHeight=4236
 TBDockHeight=4778
 LRDockWidth=3648
+=======
+Width=2148
+Height=2975
+MaxLeft=-7
+MaxTop=-12
+ClientWidth=2044
+ClientHeight=2523
+TBDockHeight=2975
+LRDockWidth=2148
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -648,6 +1007,7 @@ Docked=1
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=844
 Height=7111
 MaxLeft=-1
@@ -656,6 +1016,16 @@ ClientWidth=844
 ClientHeight=7111
 TBDockHeight=4889
 LRDockWidth=5305
+=======
+Width=1999
+Height=3935
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1999
+ClientHeight=3935
+TBDockHeight=4884
+LRDockWidth=5306
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -667,6 +1037,7 @@ Docked=0
 State=0
 Left=0
 Top=0
+<<<<<<< HEAD
 Width=1828
 Height=6181
 MaxLeft=-8
@@ -675,6 +1046,16 @@ ClientWidth=1703
 ClientHeight=5639
 TBDockHeight=6181
 LRDockWidth=1828
+=======
+Width=1823
+Height=6169
+MaxLeft=-7
+MaxTop=-12
+ClientWidth=1719
+ClientHeight=5718
+TBDockHeight=6169
+LRDockWidth=1823
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 
@@ -691,6 +1072,7 @@ Docked=1
 State=0
 Left=8
 Top=8
+<<<<<<< HEAD
 Width=2336
 Height=1472
 MaxLeft=-1
@@ -699,6 +1081,16 @@ ClientWidth=2336
 ClientHeight=1472
 TBDockHeight=1472
 LRDockWidth=2336
+=======
+Width=2337
+Height=1481
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=2337
+ClientHeight=1481
+TBDockHeight=1481
+LRDockWidth=2337
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 TabPosition=1
@@ -715,6 +1107,7 @@ Docked=1
 State=0
 Left=8
 Top=8
+<<<<<<< HEAD
 Width=3820
 Height=1417
 MaxLeft=-1
@@ -723,6 +1116,16 @@ ClientWidth=3820
 ClientHeight=1417
 TBDockHeight=1417
 LRDockWidth=3820
+=======
+Width=3822
+Height=1424
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=3822
+ClientHeight=1424
+TBDockHeight=1424
+LRDockWidth=3822
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 TabPosition=1
@@ -739,6 +1142,7 @@ Docked=1
 State=0
 Left=0
 Top=28
+<<<<<<< HEAD
 Width=844
 Height=4181
 MaxLeft=-1
@@ -747,6 +1151,16 @@ ClientWidth=844
 ClientHeight=4181
 TBDockHeight=7500
 LRDockWidth=844
+=======
+Width=1999
+Height=4259
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1999
+ClientHeight=4259
+TBDockHeight=9016
+LRDockWidth=1999
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 TabPosition=1
@@ -763,14 +1177,25 @@ Docked=1
 State=0
 Left=0
 Top=28
+<<<<<<< HEAD
 Width=1242
 Height=3167
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1242
 ClientHeight=3167
-TBDockHeight=4444
+TBDockHeight=7500
 LRDockWidth=1242
+=======
+Width=1185
+Height=3252
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1185
+ClientHeight=3252
+TBDockHeight=9016
+LRDockWidth=1185
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 TabPosition=1
@@ -786,6 +1211,7 @@ Visible=1
 Docked=1
 State=0
 Left=0
+<<<<<<< HEAD
 Top=365
 Width=844
 Height=2819
@@ -795,6 +1221,17 @@ ClientWidth=844
 ClientHeight=2819
 TBDockHeight=7500
 LRDockWidth=844
+=======
+Top=432
+Width=1999
+Height=3796
+MaxLeft=-1
+MaxTop=-1
+ClientWidth=1999
+ClientHeight=3796
+TBDockHeight=9016
+LRDockWidth=1999
+>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
 Dockable=1
 StayOnTop=0
 TabPosition=1
