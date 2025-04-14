@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/06/09 17:43:20.000.385,=C:\Users\manli\Documents\Lavori\Projects\Unit1.pas</Transaction>
+<<<<<<< HEAD
+    <Transaction>2021/06/09 17:51:52.000.938,C:\Users\manli\Documents\Lavori\Projects\Cosa\Unit1.pas=C:\Users\manli\Documents\Lavori\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/06/09 17:51:52.000.938,C:\Users\manli\Documents\Lavori\Projects\Cosa\Unit1.dfm=C:\Users\manli\Documents\Lavori\Projects\Unit1.dfm</Transaction>
+    <Transaction>2021/06/09 17:52:11.000.543,C:\Users\manli\Documents\Lavori\Projects\Cosa\Cosa1.dproj=C:\Users\manli\Documents\Lavori\Projects\Project1.dproj</Transaction>
+=======
+    <Transaction>2021/06/09 17:51:52.000.938,C:\Users\manli\Documents\Lavori\Projects\Unit1.dfm=C:\Users\manli\Documents\Lavori\Projects\Cosa\Unit1.dfm</Transaction>
+    <Transaction>2021/06/09 17:51:52.000.938,C:\Users\manli\Documents\Lavori\Projects\Unit1.pas=C:\Users\manli\Documents\Lavori\Projects\Cosa\Unit1.pas</Transaction>
+    <Transaction>2021/06/09 17:52:11.000.543,C:\Users\manli\Documents\Lavori\Projects\Project1.dproj=C:\Users\manli\Documents\Lavori\Projects\Cosa\Cosa1.dproj</Transaction>
+>>>>>>> e6c0c708d19dea3f7f555a0c6aa61463cd0d2f08
+  </Transactions>
+</BorlandProject>
