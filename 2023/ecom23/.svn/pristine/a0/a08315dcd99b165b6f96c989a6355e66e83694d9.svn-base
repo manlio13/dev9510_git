@@ -1,4 +1,5 @@
-unit Unit1;           // Release 2020 en
+ï»¿unit Unit1;    //versione finale aprile 2025
+
 interface
 
 uses
@@ -7,9 +8,8 @@ uses
   Datasnap.DBClient, Data.DB, ABSMain, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.StdCtrls,
   Vcl.Mask,System.UITypes, Vcl.ComCtrls,System.DateUtils,JvSHFileOperation,JvBaseDlg,
   frxClass, frxDBSet, frxExportPDF, JvExStdCtrls, JvHtControls, JvExControls,
-  JvDBLookup,System.Types,ShellAPI, frxExportBaseDialog;
+  JvDBLookup,System.Types,ShellAPI, frxExportBaseDialog, Vcl.ToolWin;
 
-  function GetAppVersionStr : string; forward;
 type
   TForm1 = class(TForm)
     ABSDatabase1: TABSDatabase;
@@ -51,6 +51,7 @@ type
     Label7: TLabel;
     frxReport2: TfrxReport;
     Button10: TButton;
+    StatusBar1: TStatusBar;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -73,77 +74,81 @@ type
   private
     { Private declarations }
   public
-
     { Public declarations }
+  function GetAppVersionStr: string;
   end;
-
 var
   Form1: TForm1;
   filtro,result,mom:string;
   somma:double;
   inizio:TDateTime;
   nk,salta,cambio:boolean;
+  versione:string;
+
 implementation
 
 {$R *.dfm}
 
 procedure TForm1.FormCreate(Sender: TObject);
-begin
- ABSDatabase1.DatabaseFileName:=ExtractFilePath(Application.ExeName)+'ecom.abs';
- ABSDatabase1.Open;
- ABSTable1.TableName:='ecomTB';
- ABSTable1.Open;
- ABSTable2.TableName:='ecom2TB';
- ABSTable2.Open;
- TFloatField(ABSTable1.FieldByName('Prezzo')).DisplayFormat := '0.00';
- TDateField(ABSTable1.FieldByName('DataOrd')).DisplayFormat := 'dd.mm.yy';
- TDateField(ABSTable1.FieldByName('DataPag')).DisplayFormat := 'dd.mm.yy';
- TDateField(ABSTable1.FieldByName('DataSped')).DisplayFormat := 'dd.mm.yy';
- TDateField(ABSTable1.FieldByName('DataCons')).DisplayFormat := 'dd.mm.yy';
-
- ABSTable1.Last;
- ABSTable1.Edit;
- ABSTable2.Edit;
- DataSource1.DataSet.Edit;
- //inizializzazione
- edit5.Text:='';
- Edit1.text := FormatDateTime('dd.mm.yyyy',Now);  //formattare una stringa
- edit2.Text:='';
- edit3.Text:='';
- edit4.Text:='';
- salta:=False;
- cambio:=False;
- try
-  AbsTable1.First; { Go to first record, which sets Eof False }
-  inizio:= ABSTable1.FieldByName('DataOrd').AsDateTime;
-  Edit5.Text:= FormatDateTime('dd.mm.yyyy',inizio);
-  Label4.Caption:='From '+ABSTable1.FieldByName('DataOrd').AsString;
-  while (not AbsTable1.Eof) do { Cycle until Eof is True }
   begin
-    somma:=somma+AbsTable1.FieldByName('prezzo').AsFloat;
-    AbsTable1.Next; { Eof False on success; Eof True when Next fails on last record }
-  end;
- finally
-  Label3.Caption:='Total purchased =  : '+ floattostr(somma);
-  if DaysBetween(Now,inizio)>0 then
-   begin
+     ABSDatabase1.DatabaseFileName:=ExtractFilePath(Application.ExeName)+'ecom.abs';
+     ABSDatabase1.Open;
+     ABSTable1.TableName:='ecomTB';
+     ABSTable1.Open;
+     ABSTable2.TableName:='ecom2TB';
+     ABSTable2.Open;
+     TFloatField(ABSTable1.FieldByName('Prezzo')).DisplayFormat := '0.00';
+     TDateField(ABSTable1.FieldByName('DataOrd')).DisplayFormat := 'dd.mm.yy';
+     TDateField(ABSTable1.FieldByName('DataPag')).DisplayFormat := 'dd.mm.yy';
+     TDateField(ABSTable1.FieldByName('DataSped')).DisplayFormat := 'dd.mm.yy';
+     TDateField(ABSTable1.FieldByName('DataCons')).DisplayFormat := 'dd.mm.yy';
+     ABSTable1.Last;
+     ABSTable1.Edit;
+     ABSTable2.Edit;
+     DataSource1.DataSet.Edit;
+     //inizializzazione
+     edit5.Text:='';
+     edit1.Text:=DateToStr(Now);
+     Edit1.text := FormatDateTime('dd.mm.yyyy',Now);  //formattare una stringa
+     edit2.Text:='';
+     edit3.Text:='';
+     edit4.Text:='';
+     salta:=False;
+     cambio:=False;
+   try
+      AbsTable1.First; { Go to first record, which sets Eof False }
+      inizio:= ABSTable1.FieldByName('DataOrd').AsDateTime;
+      Edit5.Text:= DateTimeToStr(inizio);
+      Edit5.Text:= FormatDateTime('dd.mm.yyyy',inizio);
+      Label4.Caption:='From '+ABSTable1.FieldByName('DataOrd').AsString;
+      while (not AbsTable1.Eof) do { Cycle until Eof is True }
+    begin
+        somma:=somma+AbsTable1.FieldByName('prezzo').AsFloat;
+        AbsTable1.Next; { Eof False on success; Eof True when Next fails on last record }
+    end;
+    finally
+       Label3.Caption:='Total purchased =  : '+ floattostr(somma);
+       if DaysBetween(Now,inizio)>0 then
+    begin
       Label5.Caption:=FloatToStrF(Somma/(DaysBetween(Now,inizio)/30),ffFixed,4,2)+' for month';
       if ABSTable1.RecNo<0 then mom:='0' else mom := IntToStr(ABSTable1.RecNo);
       Label6.Caption:='N. items : '+ mom;
       somma:=0;
+    end;
+
    end;
-  
+
+
+     Form1.Visible:=True;
+     Form1.Caption:='Online orders control , ' + ' Version : '+ GetAppVersionStr;
   end;
-  Form1.Visible:=True;
-   Form1.Caption:='Online orders control , ' + ' Version : '+ GetAppVersionStr;
-end;
 
 
 procedure TForm1.Button11Click(Sender: TObject);   //undelivered
-begin
+ begin
     var
    testo:string;
-begin
+  begin
       DataSource1.DataSet:=ABSQuery1;
         testo:='Select * from ecomTB where DataCons="" ';
     //   testo:= StringReplace(testo,',','.',[rfReplaceAll]);
@@ -156,8 +161,8 @@ begin
        open;
        TFloatField(ABSQuery1.FieldByName('Prezzo')).DisplayFormat := '##0.00';
      end;
-end;
-end;
+  end;
+ end;
 
 procedure TForm1.Button1Click(Sender: TObject);  //cerca
 label vai;
@@ -166,7 +171,7 @@ var
  chi: array[1..3] of smallint;
   i: Integer;
 
-begin
+ begin
      i:=0;
             if edit2.text<>'' then
               begin
@@ -230,10 +235,10 @@ begin
      ABSQuery1.Filter := datafiltro;
      ABSQuery1.Filtered:=True;
 
-end;
+ end;
 
 procedure TForm1.Button2Click(Sender: TObject);
-begin
+ begin
   edit5.Text:='01/02/2014';
   edit1.Text:=DateToStr(Now);
   edit2.Text:='';
@@ -243,16 +248,16 @@ begin
   DataSource1.DataSet:=ABSTable1;
   ABSTable1.Filtered:= False;
   ABSTable1.Last;
-end;
+ end;
 
 procedure TForm1.Button3Click(Sender: TObject);
-begin
+ begin
         DataSource1.DataSet:=ABSTable1;
         ABSQuery1.Close;
-end;
+ end;
 
 procedure TForm1.Button4Click(Sender: TObject);
-begin
+ begin
        DataSource1.DataSet:=ABSQuery1;
        edit6.Text:= StringReplace(edit6.text,',','.',[rfReplaceAll]);  //SQL vuole il punto come separatore decimale
        with ABSQuery1 do
@@ -263,26 +268,26 @@ begin
        open;
        TFloatField(ABSQuery1.FieldByName('Prezzo')).DisplayFormat := '##0.00';
      end;
-end;
+ end;
 
 procedure TForm1.Button5Click(Sender: TObject);
-begin
+ begin
          Edit6.Text:= 'select * from ecomTB ORDER by DataOrd Desc';
          Button4Click(Sender);
          Edit6.Text:= 'select * from ecomTB';
-end;
+ end;
 
 
 procedure TForm1.Button6Click(Sender: TObject);  //azzera il database
-begin
+ begin
       if messageDlg('Do you really want to remove all data ?',mtConfirmation,mbYesNo,0)=mrNo then
        exit;
       ABSTable1.Close;
       ABSTable1.EmptyTable;
-end;
+ end;
 
 procedure TForm1.Button7Click(Sender: TObject);   // Done
-begin
+ begin
         if cambio=True then
         if MessageDlg('Do you have data to confirm ?',
          mtconfirmation, [mbYes,mbNo], 0) = mrYes then
@@ -300,14 +305,22 @@ begin
     ABSDatabase1.Close;
     Form1.release;
     application.Terminate;
-  end;
-end;
+  end else
+     begin
+       DataSource1.DataSet:=ABSTable1;
+       ABSTable1.edit;
+       FormCreate(nil);
+       exit;
+     end;
+ end;
 
 procedure TForm1.Button8Click(Sender: TObject);     //Backup
    var
    dir:string;
-   dirList:TStringList;      //occorre creare un StringList perchè JVshFileOperation non accetta altro che da StingList
-begin
+   dirList:TStringList;      //occorre creare un StringList perchï¿½ JVshFileOperation non accetta altro che da StingList
+  // dirList:TStringList;      //occorre creare un StringList perchï¿½ JVshFileOperation non accetta altro che da StingList
+   //>>>>>>> 2bf46da135a59f236260ba97a57c71df11ee62b0
+ begin
    if MessageDlg('Do you confirm to backup the database ?',
              mtconfirmation, [mbYes,mbNo], 0) = mrYes then
      begin
@@ -319,9 +332,7 @@ begin
                   dir:=InputBox('Enter the new path','Pls enter the whole path, ending by \','');  // creare la string
                   dir:=dir+'ecom.bkp';                                              //list passando attraverso una comune string
                   dirList.Add(dir) ;     // nuovo path
-
                   jvshfile1.DestFiles  :=dirList  ;
-
                 end;
          JVSHFile1.Execute;
          ABSDatabase1.Open;
@@ -336,11 +347,11 @@ begin
 
        //  Ricordarsi di mettere in event OnClose -> Button10 e in Object explorer del componente JvsHFile1 il nome del database
       end else Exit;   //in source e in "destFile" il nome del bckup
-end;
+ end;
 
 
 procedure TForm1.Button9Click(Sender: TObject);       //report
-begin
+ begin
    //occorre ordinare il database prima del rapporto         ISTRUZIONI
    with ABSQuery1 do                                   //inserire il modulo TABSQuery
    begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
@@ -348,29 +359,29 @@ begin
       SQL.Text:='select * from ecomTB ORDER BY DataOrd ASC';
       ExecSQL;
    end;
-frxReport1.ShowReport;
-end;
+       frxReport1.ShowReport;
+ end;
 
 procedure TForm1.Button10Click(Sender: TObject); //Statistiche
-begin
-//occorre ordinare il database prima del rapporto         ISTRUZIONI
+  begin
+           //occorre ordinare il database prima del rapporto         ISTRUZIONI
    with ABSQuery1 do                                   //inserire il modulo TABSQuery
    begin                                               // cambiare in frsDBDataset1 il DataSet in ABSQuery1
       Close;                                           //scrivere queste righe di codice
       SQL.Text:='select * from ecomTB ORDER BY Fornitore,DataOrd ASC';
       ExecSQL;
    end;
-frxReport2.ShowReport;
-end;
+             frxReport2.ShowReport;
+ end;
 
 procedure TForm1.DBGrid1CellClick(Column: TColumn);
  var
  clnu:integer;       //per inserire in modo semiautomatica la data del giorno
-begin
+ begin
    cambio:=True;
 
    clnu:=DBGrid1.SelectedIndex;
-  if (clnu = 0)or (clnu=4) or (clnu=6) or (clnu=7) then
+          if (clnu = 0)or (clnu=4) or (clnu=6) or (clnu=7) then
     begin
      if dbgrid1.Columns.Items[clnu].Field.Value=null then
        begin
@@ -389,11 +400,11 @@ begin
    if (clnu=1) or (clnu=2) or (clnu=3) or (clnu=5) then ABSTable1.Edit;
 
 
-end ;
+ end ;
 
 
 procedure TForm1.DBGrid1ColExit(Sender: TObject);  //per rendere invisibile la dropBox
-begin
+ begin
 
    if DBGrid1.SelectedField.FieldName = JvDBLookupCombo1.DataField then
       begin
@@ -408,17 +419,17 @@ begin
         JvDBLookupCombo2.Visible := False;
       end;
 
-end;
+ end;
 
 
 procedure TForm1.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
   var
   clnu:Integer;        // per creare le combo box
-begin
+ begin
 
   if GetKeyState(VK_SHIFT)<0 //tests if shiftkey is down per inserire un nuovo dato nelle combobox
- then salta :=True;
+      then salta :=True;
    if salta=True then
      begin
         clnu:=DBGrid1.SelectedIndex;
@@ -427,7 +438,8 @@ begin
             begin
               ABSTable2.Edit;
               salta:=False;
-              Exit;                  //  fermato quì nella procedura di inserire un dato nuovo
+              Exit;                  //  fermato quï¿½ nella procedura di inserire un dato nuovo
+              Exit;                  //  fermato quï¿½ nella procedura di inserire un dato nuovo
             end;
              5 :
             begin
@@ -514,20 +526,14 @@ begin
           end;
         end;
 
-   end; {else              // righe di codice eliminate perchè bloccavano la dbgrid quando
-       if clnu=1 then      // si cliccava sul campo prodotto cioè clnu=1
-     begin
-       DBGrid1.SetFocus;
-       // dbgrid1.SelectedIndex := 1;
-     end;}
-
-end;
+   end;
+ end;
 
 procedure TForm1.DBGrid1KeyPress(Sender: TObject; var Key: Char);
  var
  clnu:Integer;
-begin
-  clnu:=DBGrid1.SelectedIndex;
+ begin
+     clnu:=DBGrid1.SelectedIndex;
    case clnu of
      1,3,4 :
       if Key=#13 then
@@ -540,7 +546,7 @@ begin
         Exit;
    end;
 
-end;
+ end;
 
 procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
            var
@@ -559,7 +565,9 @@ procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
      if (Button = nbPost)  then
     begin
          ABSTable1.First;
-         while not ABSTable1.Eof do   //lo scan serve per consentire più di una modifica/aggiunta
+         while not ABSTable1.Eof do   //lo scan serve per consentire piï¿½ di una modifica/aggiunta
+          begin
+         while not ABSTable1.Eof do   //lo scan serve per consentire piï¿½ di una modifica/aggiunta
           begin
            Form1.Visible:=False;
              d1:=ABSTable1.FieldByName('DataOrd').AsDateTime;
@@ -585,20 +593,12 @@ procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
             end;
             ABSTable1.Next;
           end;
-         // Form1.Visible:=True;
            FormCreate(Self);
     end;
-  end;
+   end;
+ end;
 
- { function GetAppVersionStr: string;
-  var                                             // prima alternativa per la versione ed un decimale
-    Rec: LongRec;
-  begin
-    Rec := LongRec(GetFileVersion(ParamStr(0)));
-    Result := Format('%d.%d', [Rec.Hi, Rec.Lo])
-  end; }
-
-  function GetAppVersionStr: string;         // seconda versione per una versione completa
+  function TForm1.GetAppVersionStr: string;
   var
     Exe: string;
     Size, Handle: DWORD;
@@ -618,8 +618,7 @@ procedure TForm1.DBNavigator1Click(Sender: TObject; Button: TNavigateBtn);
       [LongRec(FixedPtr.dwFileVersionMS).Hi,  //major
        LongRec(FixedPtr.dwFileVersionMS).Lo,  //minor
        LongRec(FixedPtr.dwFileVersionLS).Hi,  //release
-       LongRec(FixedPtr.dwFileVersionLS).Lo]) //build
+       LongRec(FixedPtr.dwFileVersionLS).Lo]);
+       versione:= Result;
   end;
-
-
 end.

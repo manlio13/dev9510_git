@@ -305,13 +305,7 @@ procedure TForm1.Button7Click(Sender: TObject);   // Done
     ABSDatabase1.Close;
     Form1.release;
     application.Terminate;
-  end else
-     begin
-       DataSource1.DataSet:=ABSTable1;
-       ABSTable1.edit;
-       FormCreate(nil);
-       exit;
-     end;
+  end;
  end;
 
 procedure TForm1.Button8Click(Sender: TObject);     //Backup
@@ -332,7 +326,9 @@ procedure TForm1.Button8Click(Sender: TObject);     //Backup
                   dir:=InputBox('Enter the new path','Pls enter the whole path, ending by \','');  // creare la string
                   dir:=dir+'ecom.bkp';                                              //list passando attraverso una comune string
                   dirList.Add(dir) ;     // nuovo path
+
                   jvshfile1.DestFiles  :=dirList  ;
+
                 end;
          JVSHFile1.Execute;
          ABSDatabase1.Open;
