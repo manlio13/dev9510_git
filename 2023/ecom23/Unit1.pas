@@ -116,6 +116,7 @@ procedure TForm1.FormCreate(Sender: TObject);
      salta:=False;
      cambio:=False;
    try
+      Form1.Visible:=False;
       AbsTable1.First; { Go to first record, which sets Eof False }
       inizio:= ABSTable1.FieldByName('DataOrd').AsDateTime;
       Edit5.Text:= DateTimeToStr(inizio);
