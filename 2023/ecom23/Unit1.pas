@@ -98,10 +98,10 @@ procedure TForm1.FormCreate(Sender: TObject);
      ABSTable2.TableName:='ecom2TB';
      ABSTable2.Open;
      TFloatField(ABSTable1.FieldByName('Prezzo')).DisplayFormat := '0.00';
-     TDateField(ABSTable1.FieldByName('DataOrd')).DisplayFormat := 'dd.mm.yy';
-     TDateField(ABSTable1.FieldByName('DataPag')).DisplayFormat := 'dd.mm.yy';
-     TDateField(ABSTable1.FieldByName('DataSped')).DisplayFormat := 'dd.mm.yy';
-     TDateField(ABSTable1.FieldByName('DataCons')).DisplayFormat := 'dd.mm.yy';
+     TDateField(ABSTable1.FieldByName('DataOrd')).DisplayFormat := 'dd/mm/yy';
+     TDateField(ABSTable1.FieldByName('DataPag')).DisplayFormat := 'dd/mm/yy';
+     TDateField(ABSTable1.FieldByName('DataSped')).DisplayFormat := 'dd/mm/yy';
+     TDateField(ABSTable1.FieldByName('DataCons')).DisplayFormat := 'dd/mm/yy';
      ABSTable1.Last;
      ABSTable1.Edit;
      ABSTable2.Edit;
@@ -109,7 +109,7 @@ procedure TForm1.FormCreate(Sender: TObject);
      //inizializzazione
      edit5.Text:='';
      edit1.Text:=DateToStr(Now);
-     Edit1.text := FormatDateTime('dd.mm.yyyy',Now);  //formattare una stringa
+     Edit1.text := FormatDateTime('dd/mm/yy',Now);  //formattare una stringa
      edit2.Text:='';
      edit3.Text:='';
      edit4.Text:='';
@@ -119,7 +119,7 @@ procedure TForm1.FormCreate(Sender: TObject);
       AbsTable1.First; { Go to first record, which sets Eof False }
       inizio:= ABSTable1.FieldByName('DataOrd').AsDateTime;
       Edit5.Text:= DateTimeToStr(inizio);
-      Edit5.Text:= FormatDateTime('dd.mm.yyyy',inizio);
+      Edit5.Text:= FormatDateTime('dd/mm/yy',inizio);
       Label4.Caption:='From '+ABSTable1.FieldByName('DataOrd').AsString;
       while (not AbsTable1.Eof) do { Cycle until Eof is True }
     begin
@@ -256,7 +256,7 @@ procedure TForm1.Button3Click(Sender: TObject);
         ABSQuery1.Close;
  end;
 
-procedure TForm1.Button4Click(Sender: TObject);
+procedure TForm1.Button4Click(Sender: TObject);  //filter   con free sql entry
  begin
        DataSource1.DataSet:=ABSQuery1;
        edit6.Text:= StringReplace(edit6.text,',','.',[rfReplaceAll]);  //SQL vuole il punto come separatore decimale
@@ -438,7 +438,7 @@ procedure TForm1.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
             begin
               ABSTable2.Edit;
               salta:=False;
-              Exit;                  //  fermato qu� nella procedura di inserire un dato nuovo
+              //Exit;                  //  fermato qu� nella procedura di inserire un dato nuovo
               Exit;                  //  fermato qu� nella procedura di inserire un dato nuovo
             end;
              5 :

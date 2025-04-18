@@ -89,11 +89,11 @@
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2024.9.8.35;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);LastCompiledTime=2024 09 08 10:54:14</VerInfo_Keys>
-        <VerInfo_Release>8</VerInfo_Release>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2025.2.9.37;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);LastCompiledTime=2024 09 08 10:54:14</VerInfo_Keys>
+        <VerInfo_Release>9</VerInfo_Release>
         <DCC_MapFile>3</DCC_MapFile>
-        <VerInfo_MinorVer>9</VerInfo_MinorVer>
-        <VerInfo_MajorVer>2024</VerInfo_MajorVer>
+        <VerInfo_MinorVer>2</VerInfo_MinorVer>
+        <VerInfo_MajorVer>2025</VerInfo_MajorVer>
         <DCC_DebugInformation>2</DCC_DebugInformation>
         <DCC_UnitSearchPath>C:\Program Files (x86)\Embarcadero\down\JVCL349CompleteJCL27-Build5676.zip\jvcl\run;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2023\ecom23</DCC_DcpOutput>
@@ -103,7 +103,7 @@
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2023\ecom23\</DCC_DcuOutput>
         <BRCC_OutputDir>C:\Users\manli\Documents\Lavori\Projects\2023\ecom23</BRCC_OutputDir>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Build>35</VerInfo_Build>
+        <VerInfo_Build>37</VerInfo_Build>
         <DCC_AssertionsAtRuntime>false</DCC_AssertionsAtRuntime>
         <DCC_ImportedDataReferences>false</DCC_ImportedDataReferences>
     </PropertyGroup>
@@ -117,10 +117,9 @@
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_MinorVer>9</VerInfo_MinorVer>
         <VerInfo_Release>7</VerInfo_Release>
-        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2024.9.7.17;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);LastCompiledTime=2024 09 07 17:40:37</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2024.9.7.19;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);LastCompiledTime=2024 09 07 17:40:37</VerInfo_Keys>
         <VerInfo_MajorVer>2024</VerInfo_MajorVer>
         <DCC_MapFile>3</DCC_MapFile>
-        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
         <DCC_DcpOutput>C:\Users\manli\Documents\Lavori\Projects\2023\ecom23\</DCC_DcpOutput>
         <DCC_ExeOutput>C:\Users\manli\Documents\Lavori\Projects\2023\ecom23\</DCC_ExeOutput>
         <DCC_DcuOutput>C:\Users\manli\Documents\Lavori\Projects\2023\ecom23\</DCC_DcuOutput>
@@ -131,7 +130,8 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <VerInfo_Build>17</VerInfo_Build>
+        <VerInfo_Build>19</VerInfo_Build>
+        <VerInfo_Debug>true</VerInfo_Debug>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -161,9 +161,9 @@
                     <Source Name="MainSource">Ecom.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD27\dclfrxtee27.bpl">FastReport 6.0 Tee Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD27\dclfrxtee27.bpl">FastReport 6.0 Tee Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Platforms>

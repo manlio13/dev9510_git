@@ -116,7 +116,7 @@ object Form1: TForm1
     Color = clYellow
     DataSource = DataSource1
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clNavy
     Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
