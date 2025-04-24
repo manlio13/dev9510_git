@@ -764,7 +764,7 @@ object Form1: TForm1
     OnClick = EditBClick
   end
   object ABSDatabase1: TABSDatabase
-    CurrentVersion = '7.93 '
+    CurrentVersion = '7.92 '
     DatabaseFileName = '.\TSdata.abs'
     DatabaseName = 'TSData.abs'
     Exclusive = False
@@ -775,7 +775,7 @@ object Form1: TForm1
     Top = 88
   end
   object ABSTable1: TABSTable
-    CurrentVersion = '7.93 '
+    CurrentVersion = '7.92 '
     DatabaseName = 'TSData.abs'
     InMemory = False
     ReadOnly = False
@@ -815,7 +815,7 @@ object Form1: TForm1
     Top = 56
   end
   object ABSQuery1: TABSQuery
-    CurrentVersion = '7.93 '
+    CurrentVersion = '7.92 '
     DatabaseName = 'TSData.abs'
     InMemory = False
     ReadOnly = False

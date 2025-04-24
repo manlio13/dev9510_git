@@ -9,6 +9,7 @@ atWin32=1
 DeleteMapAfterCompile=0
 dpJCL=1
 Encrypt Password=""
+GUID="{A6FE6CA1-1AC2-495A-8958-E458F7F41786}"
 idEurekaLog=1
 idEurekaLogDetailed=1
 idMSClassic=1

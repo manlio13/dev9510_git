@@ -1,4 +1,4 @@
-﻿unit Unit1;        //TagStore 5/12/2021 versione 1 preliminare
+﻿unit Unit1;        //TagStore 240425 versione 1 pre-release
 
 interface
 
